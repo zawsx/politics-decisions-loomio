@@ -93,6 +93,8 @@ group :test do
   gem "rails_best_practices", :require => false
   gem 'email_spec'
   gem 'poltergeist', :git => 'https://github.com/jonleighton/poltergeist.git'
+  gem 'sauce'
+  gem 'sauce-cucumber'
 end
 
 group :staging, :production do
