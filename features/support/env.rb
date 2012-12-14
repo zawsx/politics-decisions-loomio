@@ -18,7 +18,7 @@ Sauce.config do |config|
   config.browser = "iexplore"
   config.os = "Windows 2003"
   config.browser_version = "7"
-  config[:start_tunnel] = true
+  config.max_duration = 5400
 end
 
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
@@ -32,5 +32,6 @@ ActionController::Base.allow_rescue = false
 Cucumber::Rails::Database.javascript_strategy = :truncation
 # Capybara.default_driver = :selenium
 Capybara.default_driver = :sauce
+Capybara.server_port = 3333
 Capybara.default_wait_time = 50
 
