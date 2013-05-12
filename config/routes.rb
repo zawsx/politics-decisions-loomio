@@ -88,6 +88,10 @@ Loomio::Application.routes.draw do
     root :to => 'dashboard#show'
   end
 
+
+  get '/inbox' => 'inbox#index'
+  post '/inbox/mark_as_read' => 'inbox#mark_as_read'
+
   root :to => 'pages#home'
 
   scope controller: 'pages' do

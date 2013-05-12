@@ -1,0 +1,31 @@
+%h1 Inbox
+
+.page-container
+  =form_tag(inbox_mark_as_read_path) do
+    .pull-right
+      With Selected
+      =submit_tag 'Mark as read'
+    -@groups.each do |group|
+      .group
+        -next unless @unread_discussions_by_group[group.id].present?
+        -@results = @unread_discussions_by_group[group.id]
+
+        .group-title.clearfix
+          %h1=group.full_name
+          %a.inbox-select-all-in-group{href: '#'} Select all
+          ,
+          %a.inbox-unselect-all-in-group{href: '#'} Select none
+
+        .row.main-content
+          %section.span8
+            %ul.selector-list.bordered
+              -@results[:unread_discussions].each do |discussion|
+                %li.selector-item
+                  .discussion-preview
+                    .discussion-check-box
+                      =check_box_tag("discussion_ids[]", discussion.id, false ,class: 'mark-as-read-cb')
+                    =link_to(discussion_url(discussion), class: 'selector-discussion-link') do
+                      .discussion-title=discussion.title
+                    .activity-icon.discussion-icon.enabled-icon.large-icon
+                      %span.activity-count.label.label-info
+                        =discussion.number_of_comments_since(@results[:last_read_at])

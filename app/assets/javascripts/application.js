@@ -34,3 +34,4 @@
 //= require jquery.atwho
 //= require pop-over
 //= require announcements
+//= require inbox

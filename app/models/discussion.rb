@@ -81,7 +81,11 @@ class Discussion < ActiveRecord::Base
   end
 
   def number_of_comments_since(time)
-    comments.where('comments.created_at > ?', time).count
+    if time.nil?
+      comments.count + 1
+    else
+      comments.where('comments.created_at > ?', time).count
+    end
   end
 
   def has_activity_since_group_last_viewed?(user)
