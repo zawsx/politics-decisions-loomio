@@ -20,12 +20,12 @@
         %th Closes&nbsp;in
         %td= time_ago_in_words(@motion.close_date) + " (" + @motion.close_date.localtime.strftime('%a %d %b %Y, %I:%M%p, %Z') + ")"
 
-    - if @motion.description.present?
+    - if @rendered_motion_description.present?
       %tr
         %th &nbsp;
         %td &nbsp;
       %tr
         %th Details
-        %td= @motion.description
+        %td= @rendered_motion_description
 
   = render 'user_mailer/unsubscribe_link'

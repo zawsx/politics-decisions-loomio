@@ -34,6 +34,11 @@ class UserMailer < ActionMailer::Base
   def motion_closing_soon(user, motion)
     @user = user
     @motion = motion
+    if motion.description.present?
+      @rendered_motion_description = render_rich_text(motion.description, false) #later: change false to motion.uses_markdown
+    else
+      @rendered_motion_description = ''
+    end
     mail to: user.email,
          reply_to: @motion.author.email,
          subject: "[Loomio - #{@motion.group.name}] Proposal closing soon: #{@motion.name}"

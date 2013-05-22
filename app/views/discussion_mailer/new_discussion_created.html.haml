@@ -2,15 +2,12 @@
 %html
   %p A new discussion was created in a Loomio group that you belong to.
 
-  %p
-    = link_to("Click here to view this discussion", discussion_url(@discussion))
-
   %table
     %tr
       %th
         Discussion
       %td
-        = @discussion.title
+        = link_to @discussion.title, discussion_url(@discussion)
     %tr
       %th
         Group
@@ -21,5 +18,19 @@
         Started by
       %td
         = @discussion.author.name
+    -if @rendered_discussion_description.present?
+      %tr
+        %th
+          &nbsp;
+        %td
+          &nbsp;
+      %tr
+        %th
+          Details
+        %td
+          = @rendered_discussion_description
+
+  %p
+    = link_to("Click here to view this discussion", discussion_url(@discussion))
 
   = render 'user_mailer/unsubscribe_link'

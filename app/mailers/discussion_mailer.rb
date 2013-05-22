@@ -6,6 +6,7 @@ class DiscussionMailer < ActionMailer::Base
     @user = user
     @discussion = discussion
     @group = discussion.group
+    @rendered_discussion_description = render_rich_text(discussion.description, discussion.uses_markdown)
     mail(
       to: user.email,
       reply_to: discussion.author_email,
