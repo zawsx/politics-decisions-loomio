@@ -19,6 +19,10 @@ Then /^a new proposal is created$/ do
   Motion.where(:name => @proposal_name).should exist
 end
 
+Then(/^the time zone should match my time zone setting$/) do
+  find('#motion_close_at_time_zone').find("option[value=#{@user.time_zone}]")
+end
+
 When /^I am on a group page$/ do
   pending "is this needed?"
   group = Group.all.first

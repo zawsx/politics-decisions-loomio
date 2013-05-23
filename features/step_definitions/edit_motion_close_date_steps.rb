@@ -5,7 +5,7 @@ Given /^I am an admin of a group with a discussion$/ do
 end
 
 Given /^my time zone setting has been set$/ do
-  @user.time_zone = "Bokota"
+  @user.time_zone = "Bogota"
   @user.save!
 end
 

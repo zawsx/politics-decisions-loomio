@@ -6,22 +6,19 @@ When /^I visit the Request New Group page$/ do
 end
 
 When /^I fill in the Request New Group Form$/ do
+  @group_name = "The whole world"
+  @group_description = "Everyone in the entire world"
+  @group_request_sector = "Company"
+  @group_size = 90
   @group_admin = "Group master Sam"
   @group_admin_email = "supreme_ruler@world.com"
-  @group_country_name = "nz"
-  @group_name = "The whole world"
-  @group_request_sector = "Company"
-  @group_why_do_you_want = "Everyone in the entire world"
-  @group_core_purpose = "Change the entire world"
-  @group_size = 90
+  fill_in "group_request_name", with: @group_name
+  fill_in "group_request_description", with: @group_description
+  find(:css, '#group_request_sectors_company').set(true)
+  fill_in "group_request_expected_size", with: @group_size
   fill_in "group_request_admin_name", with: @group_admin
   fill_in "group_request_admin_email", with: @group_admin_email
-  select(@group_country_name, from: 'group_request_country_name')
-  fill_in "group_request_name", with: @group_name
-  find(:css, '#group_request_sectors_company').set(true)
-  fill_in "group_request_why_do_you_want", with: @group_why_do_you_want
-  fill_in "group_request_group_core_purpose", with: @group_core_purpose
-  fill_in "group_request_expected_size", with: @group_size
+  choose("group_request_cannot_contribute_1")
 end
 
 When /^I fill in and submit the Request New Group Form$/ do
