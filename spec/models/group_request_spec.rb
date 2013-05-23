@@ -8,12 +8,6 @@ describe GroupRequest do
     @group_request = build(:group_request)
   end
 
-  it "should have 'other_sector' string field" do
-    @group_request.other_sector = "logging"
-    @group_request.save
-    @group_request.other_sector.should == "logging"
-  end
-
   describe "#status" do
     it "should default to unverified" do
       @group_request.save!
