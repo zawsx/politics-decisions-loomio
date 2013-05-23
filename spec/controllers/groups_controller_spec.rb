@@ -172,6 +172,7 @@ describe GroupsController do
     end
 
     describe "viewing an archived group" do
+      integrate_views
       before do
         @group = create(:group)
         @group.archived_at = Time.now
@@ -179,7 +180,7 @@ describe GroupsController do
       end
       it "should render the page not found template" do
         get :show, :id => @group.id
-        response.should redirect_to(error_path(message: I18n.t('error.group_private_or_not_found')))
+        response.body.should have_content( I18n.t('error.group_private_or_not_found'))
       end
     end
 

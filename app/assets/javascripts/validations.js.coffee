@@ -42,7 +42,7 @@ hidePresenceErrorMessageFor = (field) ->
 parentFor = (field) ->
   $(field).closest('.control-group').parent().closest('.control-group')
 
-hideAllErrorMessages = () ->
+Application.hideAllErrorMessages = () ->
   $(".inline-help").hide()
   $(".email-validation-help").hide()
 

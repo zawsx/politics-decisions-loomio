@@ -123,7 +123,7 @@ FactoryGirl.define do
     members_invitable_by :admins
     discussion_title Faker::Name.name
     discussion_description "My text outlining the discussion"
-    motion_title Faker::Name.name
+    motion_title {Faker::Name.name}
     motion_description "My text outlining the proposal"
     close_at_date (Date.today + 3.day).strftime("%d-%m-%Y")
     close_at_time "12:00"
@@ -136,6 +136,7 @@ FactoryGirl.define do
 
   factory :invitation do
     recipient_email { Faker::Internet.email }
+    intent {'join_group'}
     association :inviter, factory: :user
   end
 end

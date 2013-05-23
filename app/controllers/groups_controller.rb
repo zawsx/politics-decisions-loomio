@@ -6,7 +6,7 @@ class GroupsController < GroupBaseController
   after_filter :store_location, :only => :show
 
   rescue_from ActiveRecord::RecordNotFound do
-    render('application/display_error', message: t('error.not_found', item: t(:group)))
+    render('application/display_error', locals: {message: t('error.group_private_or_not_found', item: t(:group))})
   end
 
   def create
