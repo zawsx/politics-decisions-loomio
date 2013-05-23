@@ -14,8 +14,9 @@ Feature: User creates proposal
     And I click "Create new proposal"
     Then I should see the create proposal page
     And the time zone should match my time zone setting
-    And fill in the proposal details and submit the form
-    Then a new proposal is created
+ 
+    When I fill in the proposal details and submit the form
+    Then a new proposal should be created
     And I should see the proposal details
 
   Scenario: Members get emailed when a proposal is created

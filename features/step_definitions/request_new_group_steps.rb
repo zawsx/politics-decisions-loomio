@@ -41,7 +41,7 @@ When /^I open the verification email sent to me$/ do
 end
 
 When /^I click the verification link$/ do
-  click_first_link_in_email
+  step 'I click the third link in the email'
 end
 
 Then /^the group admins should receive an email with subject "(.*?)"$/ do |subject|
