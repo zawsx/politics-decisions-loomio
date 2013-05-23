@@ -102,7 +102,7 @@ class Discussion < ActiveRecord::Base
   end
 
   def current_motion
-    motions.where("phase = 'voting'").last
+    motion = motions.where("phase = 'voting'").last
     if motion
       motion.close_if_expired
       motion if motion.voting?

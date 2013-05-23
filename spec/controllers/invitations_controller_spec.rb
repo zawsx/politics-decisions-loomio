@@ -13,7 +13,9 @@ describe InvitationsController do
       #render invited_but_please_sign_in
     
     context "user not signed in" do
+      let(:invitation){stub(:invitation, intent: 'join_group')}
       before do
+        Invitation.should_receive(:find_by_token).and_return(invitation)
         get :show, :id => 'asdfghjkl'
       end
 
@@ -22,7 +24,7 @@ describe InvitationsController do
       end
 
       it "renders sign in page" do
-        response.should render_template 'please_sign_in'
+        response.should render_template 'invitations/join_group'
       end
 
       it 'does not accept the invitation' do
