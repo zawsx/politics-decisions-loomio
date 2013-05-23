@@ -6,6 +6,7 @@ describe Invitation do
     let(:group){FactoryGirl.create(:group)}
     before do
       @invitation = Invitation.create(recipient_email: 'test@example.org',
+                                      intent: 'join_group',
                                       inviter: admin_user,
                                       group: group)
     end
