@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130520091855) do
-=======
-ActiveRecord::Schema.define(:version => 20130515123316) do
->>>>>>> master
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -195,7 +191,6 @@ ActiveRecord::Schema.define(:version => 20130515123316) do
 
   add_index "group_requests", ["group_id"], :name => "index_group_requests_on_group_id"
 
-<<<<<<< HEAD
   create_table "group_setups", :force => true do |t|
     t.integer  "group_id"
     t.string   "group_name"
@@ -217,8 +212,6 @@ ActiveRecord::Schema.define(:version => 20130515123316) do
     t.datetime "updated_at",                                    :null => false
   end
 
-=======
->>>>>>> master
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"

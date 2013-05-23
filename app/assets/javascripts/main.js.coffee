@@ -9,7 +9,6 @@ window.Application ||= {}
 $ ->
   Application.enableInlineEdition()
   Application.seeMoreDescription()
-  hideAllErrorMessages()
   initializeDatepicker()
   initializeHelpNotices()
   collapseHomepageAccordian()

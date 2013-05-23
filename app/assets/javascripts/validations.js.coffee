@@ -1,6 +1,11 @@
- #The following methods are used to provide client side validation for
- #- character count
- #- date validation specific for motion-form
+window.Application ||= {}
+
+### INITIALIZATION ###
+$ ->
+  hideAllErrorMessages()
+
+
+### EVENTS ###
 
 $ -> # Remove error class on field if not empty
   $(".validate-presence").change () ->
@@ -15,6 +20,9 @@ $ -> # Run validations and prevent default if false
     form = $(this).parents("form")
     unless Application.validateForm(form)
       event.preventDefault()
+
+
+### FUNCTIONS ###
 
 Application.validateForm = (form) ->
   formValid = true
