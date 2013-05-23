@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     if current_user
-      if current_user.language_preference.nil?
+      if current_user.language_preference.blank?
         current_user.language_preference = extract_locale_from_accept_language_header
       end
       I18n.locale = current_user.language_preference

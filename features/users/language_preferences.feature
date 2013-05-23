@@ -18,9 +18,9 @@ Feature: Language preferences
 
   @javascript
   Scenario: Logged in user without language preference
-    Given I am logged in
+    Given my browser language header is set to "es"
+    And I am logged in
     And I have not set my language preference
-    And my browser language header is set to "es"
     When I am on the settings page
     Then I should see "Preferencias de Usuario"
 

@@ -1,3 +1,4 @@
+window.Application ||= {}
  #The following methods are used to provide client side validation for
  #- character count
  #- date validation specific for motion-form

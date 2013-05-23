@@ -15,10 +15,8 @@ When /^I fill in the Request New Group Form$/ do
   @group_size = 90
   fill_in "group_request_admin_name", with: @group_admin
   fill_in "group_request_admin_email", with: @group_admin_email
-  select(@group_country_name, from: 'group_request_country_name')
   fill_in "group_request_name", with: @group_name
-  fill_in "group_request_why_do_you_want", with: @group_why_do_you_want
-  fill_in "group_request_group_core_purpose", with: @group_core_purpose
+  fill_in "group_request_description", with: @group_why_do_you_want
   fill_in "group_request_expected_size", with: @group_size
 end
 

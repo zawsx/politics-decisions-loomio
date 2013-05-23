@@ -25,7 +25,7 @@ def login_automatically(user)
   visit "/users/sign_in"
   fill_in 'user_email', with: user.email
   fill_in 'user_password', :with => 'password'
-  click_button 'Sign in'
+  click_on 'sign-in-btn'
 end
 
 def logout

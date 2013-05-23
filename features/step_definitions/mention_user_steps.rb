@@ -4,7 +4,6 @@ Given(/^"(.*?)" has been invited to the group but has not accepted$/) do |recipi
 end
 
 Then(/^I should not see "(.*?)" in the menu that pops up$/) do |recipient_email|
-  wait_until { find("#at-view", visible: true) }
   within('#at-view') do
     page.should_not have_content(recipient_email)
   end
@@ -38,7 +37,6 @@ Then /^I should see "(.*?)" added to the "(.*?)" field$/ do |text, field|
 end
 
 Then /^I should see a link to "(.*?)"\'s user$/ do |user|
-  visit(current_path)
   page.should have_link("@#{user}")
 end
 

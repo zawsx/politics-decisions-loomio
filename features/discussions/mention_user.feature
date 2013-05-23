@@ -53,7 +53,6 @@ Scenario: User tries to mention a group non-member
 
 Scenario: User views a comment with a mention
   Given "Harry" is a member of the group
-  When I visit the discussion page
   And a comment exists mentioning "@harry"
-  And take a screenshot
+  When I visit the discussion page
   Then I should see a link to "harry"'s user
