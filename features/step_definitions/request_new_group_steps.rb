@@ -10,7 +10,6 @@ When /^I fill in the Request New Group Form$/ do
   @group_admin_email = "supreme_ruler@world.com"
   @group_country_name = "nz"
   @group_name = "The whole world"
-  @group_request_sector = "Company"
   @group_why_do_you_want = "Everyone in the entire world"
   @group_core_purpose = "Change the entire world"
   @group_size = 90
@@ -18,7 +17,6 @@ When /^I fill in the Request New Group Form$/ do
   fill_in "group_request_admin_email", with: @group_admin_email
   select(@group_country_name, from: 'group_request_country_name')
   fill_in "group_request_name", with: @group_name
-  find(:css, '#group_request_sectors_company').set(true)
   fill_in "group_request_why_do_you_want", with: @group_why_do_you_want
   fill_in "group_request_group_core_purpose", with: @group_core_purpose
   fill_in "group_request_expected_size", with: @group_size

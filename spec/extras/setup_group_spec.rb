@@ -18,7 +18,7 @@ describe SetupGroup do
     end
 
     it 'copies attributes from group_request' do
-      %w[name country_name cannot_contribute max_size sectors other_sector].each do |attr|
+      %w[name country_name cannot_contribute max_size].each do |attr|
         @group.send(attr).should == @group_request.send(attr)
       end
     end

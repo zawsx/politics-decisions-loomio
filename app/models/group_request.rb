@@ -1,6 +1,6 @@
 class GroupRequest < ActiveRecord::Base
 
-  attr_accessible :admin_name, :admin_email, :country_name, :name, :sectors, :other_sector,
+  attr_accessible :admin_name, :admin_email, :country_name, :name,
                   :description, :expected_size, :max_size, :cannot_contribute, :high_touch, :robot_trap
 
   attr_accessor :robot_trap
@@ -11,8 +11,6 @@ class GroupRequest < ActiveRecord::Base
   validates :description, presence: true
   validates :expected_size, presence: true
   validates_inclusion_of :cannot_contribute, :in => [true, false]
-
-  serialize :sectors, Array
 
   belongs_to :group
   belongs_to :approved_by, class_name: 'User'

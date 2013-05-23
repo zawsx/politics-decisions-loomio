@@ -81,7 +81,7 @@ ActiveAdmin.register GroupRequest do
       :notice => ("Group approved: " +
       "<a href='#{admin_group_path(group)}'>#{group.name}</a>").html_safe
   end
-  
+
   member_action :update, method: :put do
     update! do |format|
       format.html {redirect_to admin_group_requests_path}
@@ -159,7 +159,6 @@ ActiveAdmin.register GroupRequest do
       f.input :expected_size
       f.input :max_size
       f.input :description
-      f.input :sectors, as: :check_boxes, collection: {'Community' => 'community', 'Business' => 'business', 'Government' => 'government', 'Other:' => 'other'}, :validate => { :presence => true }, label: "What type of group/organisation is it?"
       f.actions
     end
   end

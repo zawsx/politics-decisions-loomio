@@ -9,7 +9,7 @@ class SetupGroup
     @group = Group.new
     @group.group_request = group_request
 
-    %w[name country_name cannot_contribute max_size sectors other_sector].each do |attr|
+    %w[name country_name cannot_contribute max_size].each do |attr|
       @group.send("#{attr}=", group_request.send(attr))
     end
 

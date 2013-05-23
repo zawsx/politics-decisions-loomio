@@ -15,8 +15,6 @@ class Group < ActiveRecord::Base
   validate :limit_inheritance
   validate :max_size_is_nil, if: :is_a_subgroup?
 
-  serialize :sectors_metric, Array
-
   after_initialize :set_defaults
   before_validation :set_max_group_size, on: :create
 

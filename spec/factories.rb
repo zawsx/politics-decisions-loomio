@@ -110,7 +110,6 @@ FactoryGirl.define do
     admin_email { Faker::Internet.email }
     description "I really like it"
     country_name "nz"
-    sectors ["community"]
     name { Faker::Name.name }
     expected_size 50
     cannot_contribute false
