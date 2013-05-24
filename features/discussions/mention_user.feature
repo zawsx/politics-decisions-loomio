@@ -52,8 +52,8 @@ Scenario: User tries to mention a group non-member
   Then the user should not be notified that they were mentioned
 
 Scenario: User views a comment with a mention
-  Given we should make this spec work
+  Then we should make this test work
   Given "Harry" is a member of the group
   And a comment exists mentioning "@harry"
   When I visit the discussion page
-  Then I should see a link to "harry"'s user
+  Then I should see a link to "harry"s user

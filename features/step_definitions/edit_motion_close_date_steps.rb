@@ -5,7 +5,7 @@ Given /^I am an admin of a group with a discussion$/ do
 end
 
 Given /^my time zone setting has been set$/ do
-  @user.time_zone = "Bokota"
+  @user.time_zone = "Bogota"
   @user.save!
 end
 
@@ -31,8 +31,4 @@ end
 
 Then /^I should see the edit close date modal$/ do
   find("#edit-close-date")
-end
-
-Then /^the proposal close date should change$/ do
-  pending # express the regexp above with the code you wish you had
 end

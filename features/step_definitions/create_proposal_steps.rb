@@ -32,6 +32,5 @@ Then /^I should see the proposal details$/ do
 end
 
 Then(/^the time zone should match my time zone setting$/) do
-  raise
+  find('#motion_close_at_time_zone').find("option[value=#{@user.time_zone}]")
 end
-

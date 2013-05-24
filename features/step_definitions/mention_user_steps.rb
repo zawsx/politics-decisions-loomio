@@ -4,9 +4,7 @@ Given(/^"(.*?)" has been invited to the group but has not accepted$/) do |recipi
 end
 
 Then(/^I should not see "(.*?)" in the menu that pops up$/) do |recipient_email|
-  within('#at-view') do
-    page.should_not have_content(recipient_email)
-  end
+  page.should_not have_content(recipient_email)
 end
 
 When /^I am adding a comment and type in "(.*?)"$/ do |arg1|
@@ -15,10 +13,8 @@ end
 
 When /^I click on "(.*?)" in the menu that pops up$/ do |arg1|
   # this is failing intermittently (on Poltergeist at least)
-  within('#at-view') do
-    page.should have_content(arg1)
-    page.find(:css, "li", :text => arg1).click
-  end
+  page.should have_content(arg1)
+  page.find(:css, "li", :text => arg1).click
 end
 
 When /^a comment exists mentioning "(.*?)"$/ do |text|
@@ -35,7 +31,7 @@ Then /^I should see "(.*?)" added to the "(.*?)" field$/ do |text, field|
   input.value.should =~ /#{text}/
 end
 
-Then /^I should see a link to "(.*?)"\'s user$/ do |user|
+Then /^I should see a link to "(.*?)"\s user$/ do |user|
   page.should have_link("@#{user}")
 end
 
