@@ -172,7 +172,7 @@ describe GroupsController do
     end
 
     describe "viewing an archived group" do
-      integrate_views
+      render_views
       before do
         @group = create(:group)
         @group.archived_at = Time.now

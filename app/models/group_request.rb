@@ -1,15 +1,15 @@
 class GroupRequest < ActiveRecord::Base
 
-  attr_accessible :admin_name, :admin_email, :country_name, :name,
-                  :description, :expected_size, :max_size, :cannot_contribute, :high_touch, :robot_trap
+  attr_accessible :name, :description, :expected_size, :admin_name, :admin_email,
+                  :cannot_contribute, :max_size, :high_touch, :robot_trap
 
   attr_accessor :robot_trap
 
-  validates :admin_name, presence: true, length: {maximum: 250}
-  validates :admin_email, presence: true, email: true
   validates :name, presence: true, length: {maximum: 250}
   validates :description, presence: true
   validates :expected_size, presence: true
+  validates :admin_name, presence: true, length: {maximum: 250}
+  validates :admin_email, presence: true, email: true
   validates_inclusion_of :cannot_contribute, :in => [true, false]
 
   belongs_to :group
