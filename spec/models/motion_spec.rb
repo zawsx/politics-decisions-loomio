@@ -12,13 +12,13 @@ describe Motion do
   it {should have(1).errors_on(:author)}
 
   it "calculates and assigins the close_at date" do
-    current_time = Time.now
+    current_time = Time.now.utc
     close_date = current_time.to_date
     close_time = current_time.strftime("%H:00")
-    time_zone = "NZST"
+    time_zone = "GMT"
     motion = build(:motion, close_at_date: close_date, close_at_time: close_time, close_at_time_zone: time_zone)
     motion.save!
-    Time.parse(motion.close_at.strftime('%Y-%m-%d %H:00 %Z')).utc.should == Time.parse(current_time.strftime('%Y-%m-%d %H:00 %Z'))
+    motion.close_at.in_time_zone("London").should == Time.parse(current_time.strftime('%Y-%m-%d %H:00 %Z'))
   end
 
   describe "#user_has_voted?(user)" do
