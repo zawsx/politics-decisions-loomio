@@ -1,8 +1,6 @@
 Loomio::Application.routes.draw do
   ActiveAdmin.routes(self)
 
-  get :error, to: 'application#display_error'
-
   devise_for :users, controllers: { sessions: 'users/sessions',
                                     registrations: 'users/registrations' }
 

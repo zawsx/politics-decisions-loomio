@@ -28,12 +28,12 @@ class Groups::GroupSetupController < GroupBaseController
 
   def permitted_to_setup
     @group = Group.find(params[:id])
-    render_template('application/display_error', message: t('error.not_permitted_to_setup_group')) unless current_user.is_group_admin?(@group)
+    render('application/display_error', message: t('error.not_permitted_to_setup_group')) unless current_user.is_group_admin?(@group)
   end
 
   def already_setup
     @group = Group.find(params[:id])
-    render_template('application/display_error', message: t('error.group_already_setup')) unless current_user.is_group_admin?(@group)
+    render('application/display_error', message: t('error.group_already_setup')) unless @group.setup_completed_at.nil?
   end
 
   def build_invite_attributes(attrs)
