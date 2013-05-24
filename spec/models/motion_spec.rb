@@ -18,7 +18,7 @@ describe Motion do
     time_zone = "NZST"
     motion = build(:motion, close_at_date: close_date, close_at_time: close_time, close_at_time_zone: time_zone)
     motion.save!
-    motion.close_at.should == current_time.strftime('%Y-%m-%d %H:00 %Z')
+    Time.parse(motion.close_at.strftime('%Y-%m-%d %H:00 %Z')).utc.should == Time.parse(current_time.strftime('%Y-%m-%d %H:00 %Z')).utc
   end
 
   describe "#user_has_voted?(user)" do
