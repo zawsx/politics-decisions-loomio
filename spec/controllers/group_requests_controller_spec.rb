@@ -57,7 +57,7 @@ describe GroupRequestsController do
       before { group_request.stub(:verified?).and_return(true) }
       it "renders the invitation_accepted_error_page" do
         put :verify, token: group_request.token
-        response.should redirect_to(error_path(message: I18n.t('error.group_request_already_verified')))
+        response.should render_template('application/display_error', message: I18n.t('error.group_already_setup'))
       end
     end
   end
@@ -89,14 +89,14 @@ describe GroupRequestsController do
 
         it "redirects to an invitation_already_accepted page" do
           get :start_new_group, token: @group_request.token
-          response.should redirect_to(error_path(message: I18n.t('error.group_request_already_accepted')))
+          response.should render_template('application/display_error', message: I18n.t('error.group_request_already_accepted'))
         end
       end
     end
     context "token is incorrect" do
       it "redirects to an invlaid token page" do
         get :start_new_group, token: "iudf897987897"
-        response.should redirect_to(error_path(message: I18n.t('error.group_request_invalid_token')))
+        response.should render_template('application/display_error', message: I18n.t('error.group_request_invalid_token'))
       end
     end
   end

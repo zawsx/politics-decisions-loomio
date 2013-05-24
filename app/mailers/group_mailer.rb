@@ -23,7 +23,7 @@ class GroupMailer < ActionMailer::Base
 
   def deliver_group_email(group, sender, subject, message)
     group.users.each do |user|
-      unless user == sender 
+      unless user == sender
         GroupMailer.group_email(group, sender, subject, message, user).deliver
       end
     end

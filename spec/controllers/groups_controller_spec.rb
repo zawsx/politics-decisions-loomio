@@ -56,7 +56,7 @@ describe GroupsController do
         end
         it "viewing a group should redirect to private message page" do
           get :show, :id => @group.id
-          response.should redirect_to(error_path(message: I18n.t('error.group_private_or_not_found')))
+          response.should render_template('application/display_error', message: I18n.t('error.group_private_or_not_found'))
         end
       end
     end
@@ -180,7 +180,7 @@ describe GroupsController do
       end
       it "should render the page not found template" do
         get :show, :id => @group.id
-        response.body.should have_content( I18n.t('error.group_private_or_not_found'))
+        response.should render_template('application/display_error', message: I18n.t('error.group_private_or_not_found'))
       end
     end
 

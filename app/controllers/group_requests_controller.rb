@@ -18,13 +18,11 @@ class GroupRequestsController < BaseController
   end
 
   def start_new_group
-    group_request = GroupRequest.find_by_token(params[:token])
     session[:start_new_group_token] = group_request.token
     redirect_to group_url(group_request.group) if user_signed_in?
   end
 
   def verify
-    group_request = GroupRequest.find_by_token(params[:token])
     group_request.verify!
   end
 
@@ -34,18 +32,20 @@ class GroupRequestsController < BaseController
 
   private
 
+  def group_request
+    return @group_request if @group_request
+    @group_request = GroupRequest.find_by_token(params[:token])
+  end
+
   def already_verified
-    group_request = GroupRequest.find_by_token(params[:token])
-    redirect_to error_path(message: t('error.group_request_already_verified')) if group_request.verified?
+    render('application/display_error', message: t('error.group_request_already_verified')) if group_request.verified?
   end
 
   def already_accepted
-    group_request = GroupRequest.find_by_token(params[:token])
-    redirect_to error_path(message: t('error.group_request_already_accepted')) if group_request.accepted?
+    render('application/display_error', message: t('error.group_request_already_accepted')) if group_request.accepted?
   end
 
   def validate_token
-    group_request = GroupRequest.find_by_token(params[:token])
-    redirect_to error_path(message: t('error.group_request_invalid_token')) unless group_request
+    render('application/display_error', message: t('error.group_request_invalid_token')) unless group_request
   end
 end

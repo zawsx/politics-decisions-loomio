@@ -16,7 +16,7 @@ class GroupBaseController < BaseController
   def check_group_read_permissions
     if cannot? :show, group
       if user_signed_in?
-        redirect_to error_path(message: t('error.group_private_or_not_found'))
+        render('application/display_error', message: t('error.group_private_or_not_found'))
       else
         authenticate_user!
       end

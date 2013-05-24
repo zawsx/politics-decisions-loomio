@@ -28,7 +28,7 @@ describe Groups::GroupSetupController do
         group.setup_completed_at = Time.now
         group.save
         get :setup, id: group.id
-        response.should redirect_to(error_path(message: I18n.t('error.group_already_setup')))
+        response.should render_template('application/display_error', message: I18n.t('error.group_already_setup'))
       end
     end
   end
