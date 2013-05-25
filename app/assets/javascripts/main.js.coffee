@@ -81,7 +81,7 @@ $ -> # closed motions modal
         $("#closed-motions-list").removeClass('hidden')
         $("#closed-motions-loading").addClass('hidden')
         $("#closed-motions").find('.pie').each(->
-          displayGraph($(this), $(this).attr('id'),  $.parseJSON($(this).attr('data-votes')))
+          Application.displayGraph($(this), $(this).attr('id'),  $.parseJSON($(this).attr('data-votes')))
         )
       )
       event.preventDefault()
@@ -101,7 +101,7 @@ $ -> # Pagination load on closed motions
           $("#closed-motion-list").removeClass('hidden')
           $("#closed-motions-loading").addClass('hidden')
           $("#closed-motions").find('.pie').each(->
-            displayGraph($(this), $(this).attr('id'),  $.parseJSON($(this).attr('data-votes')))
+            Application.displayGraph($(this), $(this).attr('id'),  $.parseJSON($(this).attr('data-votes')))
             )
           )
         e.preventDefault()

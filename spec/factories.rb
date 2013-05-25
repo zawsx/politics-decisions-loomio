@@ -106,12 +106,11 @@ FactoryGirl.define do
   end
 
   factory :group_request do
+    name { Faker::Name.name }
+    description "I really like it"
+    expected_size 50
     admin_name { Faker::Name.name }
     admin_email { Faker::Internet.email }
-    description "I really like it"
-    country_name "nz"
-    name { Faker::Name.name }
-    expected_size 50
     cannot_contribute false
   end
 
