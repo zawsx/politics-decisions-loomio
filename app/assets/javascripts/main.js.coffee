@@ -51,7 +51,7 @@ $ ->
 
 $ -> # closed motions modal
   if $("body.groups.show").length > 0 || $("body.dashboard.show").length > 0
-    if $("body.groups.show").length > 0 && $("#permission-message").length == 0
+    if $("body.groups.show").length > 0 && $("#error-page").length == 0
       idStr = new Array
       idStr = $('#closed-motions-page').children().attr('class').split('_')
     $("#show-closed-motions").click((event) ->
