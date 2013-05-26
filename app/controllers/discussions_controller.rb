@@ -6,7 +6,7 @@ class DiscussionsController < GroupBaseController
   after_filter :store_location, :only => :show
 
   rescue_from ActiveRecord::RecordNotFound do
-    render('application/display_error', message: t('error.not_found'))
+    render 'application/display_error', locals: { message: t('error.not_found') }
   end
 
   def new
@@ -123,6 +123,7 @@ class DiscussionsController < GroupBaseController
   def edit_title
     @discussion = Discussion.find(params[:id])
     @discussion.set_title!(params[:title], current_user)
+    redirect_to @discussion
   end
 
   def show_description_history

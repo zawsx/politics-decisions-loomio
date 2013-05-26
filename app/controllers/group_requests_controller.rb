@@ -38,14 +38,14 @@ class GroupRequestsController < BaseController
   end
 
   def already_verified
-    render('application/display_error', message: t('error.group_request_already_verified')) if group_request.verified?
+    render 'application/display_error', locals: { message: t('error.group_request_already_verified') } if group_request.verified?
   end
 
   def already_accepted
-    render('application/display_error', message: t('error.group_request_already_accepted')) if group_request.accepted?
+    render 'application/display_error', locals: { message: t('error.group_request_already_accepted') } if group_request.accepted?
   end
 
   def validate_token
-    render('application/display_error', message: t('error.group_request_invalid_token')) unless group_request
+    render 'application/display_error', locals: { message: t('error.group_request_invalid_token') } unless group_request
   end
 end

@@ -23,6 +23,10 @@ Application.validateForm = (form) ->
     formValid = false unless validatePresence(field)
     return
     )
+  form.find(".inputError").each((index, field) ->
+    formValid = false unless validateInputLength(field)
+    return
+    )
   formValid = false unless Application.validateEmailsAndConfirm($(".validate-emails"))
   formValid = false unless Application.validateMotionCloseDate($(".motion-closing-inputs"))
   alert('There is a problem with the form') unless formValid
@@ -33,6 +37,10 @@ validatePresence = (field) ->
     parentFor(field).addClass("error")
     parentFor(field).find(".inline-help").show()
     return false
+  true
+
+validateInputLength = (field) ->
+  return false if $(field).closest('.control-group').hasClass('error')
   true
 
 hidePresenceErrorMessageFor = (field) ->
