@@ -116,7 +116,7 @@
 
 #group-form {
   form {
-    .inputError {
+    .validate-length {
       display: inline-block;
       @include ie7-inline-block();
     }

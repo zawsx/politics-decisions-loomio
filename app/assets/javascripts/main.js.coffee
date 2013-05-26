@@ -23,20 +23,6 @@ $ ->
     event.preventDefault()
     event.stopPropagation()
 
-$ -> # Character count for 250 characters max
-  $(".limit-250").keyup () ->
-    $(".error-message").hide()
-    chars = $(this).val().length
-    left = 250 - chars
-    display_count(left, $(this))
-
-$ -> # Character count for 150 characters max
-  $(".limit-150").keyup () ->
-    $(".error-message").hide()
-    chars = $(this).val().length
-    left = 150 - chars
-    display_count(left, $(this))
-
 $ -> # check if discussion with motions list is empty
   if $("body.groups.show").length > 0 ||  $("body.dashboard.show").length > 0
     if $("#discussions-with-motions").children().html() != ""
@@ -210,23 +196,6 @@ Application.getPageParam = () ->
     page
   else
     ""
-
-# Character count for statement on discussion:show page
-pluralize_characters = (num) ->
-  if(num == 1)
-    return num + " character"
-  else
-    return num + " characters"
-
-# Display charcaters left
-display_count = (num, object) ->
-  if(num >= 0)
-    object.parent().find(".character-counter").text(pluralize_characters(num) + " left")
-    object.parent().removeClass("error")
-  else
-    num = num * (-1)
-    object.parent().find(".character-counter").text(pluralize_characters(num) + " too long")
-    object.parent().addClass("error")
 
 # Edit description
 Application.enableInlineEdition = ()->

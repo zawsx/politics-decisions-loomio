@@ -125,7 +125,7 @@ li.selector-item a.selector-link:hover {
   text-indent: -9999px;
 }
 .field_with_errors { display: inline; }
-.inputError {
+.validate-length {
   display: inline-block;
   @include ie7-inline-block();
 }
