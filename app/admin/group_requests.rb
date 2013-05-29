@@ -34,14 +34,15 @@ ActiveAdmin.register GroupRequest do
       row :high_touch
       row :status if group_request.unverified? or group_request.verified?
       if group_request.unverified?
-        row ('Resend Verification Link') { link_to "resend",
+        row('Verification link') { verify_group_request_url(group_request, token: group_request.token) }
+        row('Resend Verification Link') { link_to "resend",
             resend_verification_admin_group_request_path(group_request.id)}
       end
       if group_request.verified? and not group_request.approved?
-        row ('Approve request') { link_to "approve",
+        row('Approve request') { link_to "approve",
           approve_and_send_form_admin_group_request_path(group_request.id),
           id: "approve_group_request_#{group_request.id}" }
-        row ('Defer request until a later date') {
+        row('Defer request until a later date') {
           if group_request.defered_until.nil?
             confirm_message = false
           else
@@ -51,17 +52,17 @@ ActiveAdmin.register GroupRequest do
       end
       if group_request.approved? or group_request.manually_approved?
         row :approved_at
-        row ('Action') { link_to "resend invitation to start group",
+        row('Action') { link_to "resend invitation to start group",
             resend_invitation_to_start_group_admin_group_request_path(group_request.id) }
       end
       if group_request.defered?
         row :defered_until
-        row ('Action') { link_to "approve", approve_and_send_form_admin_group_request_path(group_request.id) }
-        row ('Action') { link_to "move to verified", mark_as_verified_admin_group_request_path(group_request.id),
+        row('Action') { link_to "approve", approve_and_send_form_admin_group_request_path(group_request.id) }
+        row('Action') { link_to "move to verified", mark_as_verified_admin_group_request_path(group_request.id),
             :method => :put }
       end
       if group_request.marked_as_spam?
-        row ('Mark as unverified') { link_to "reset", mark_as_unverified_admin_group_request_path(group_request.id),
+        row('Mark as unverified') { link_to "reset", mark_as_unverified_admin_group_request_path(group_request.id),
             :method => :put }
       end
     end
