@@ -72,6 +72,10 @@ class Group < ActiveRecord::Base
   delegate :users, :to => :parent, :prefix => true
   delegate :name, :to => :parent, :prefix => true
 
+  def is_setup?
+    setup_completed_at.present?
+  end
+
   def beta_features
     if parent && (parent.beta_features == true)
       true

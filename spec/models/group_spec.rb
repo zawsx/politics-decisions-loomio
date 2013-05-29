@@ -122,6 +122,20 @@ describe Group do
     end
   end
 
+  context 'is_setup?', focus: true do
+    before do
+      @group = Group.new
+    end
+    subject {@group.is_setup?}
+    context 'setup_completed_at present' do
+      before {@group.setup_completed_at = DateTime.now}
+      it {should be_true}
+    end
+    context 'setup_completed_at blank' do
+      it {should be_false}
+    end
+  end
+
   context "subgroup" do
     before :each do
       @group = create(:group)

@@ -355,6 +355,7 @@ en:
     recipients: "Enter email addresses, seperated by commas:"
     invitees_placeholder: "User Name <user1@example.com>, user2@example.com"
     subject: "Please join our new Loomio group, %{group}"
+    body2: "Please join our group on Loomio"
     body_editable: |
       Hi,
 
