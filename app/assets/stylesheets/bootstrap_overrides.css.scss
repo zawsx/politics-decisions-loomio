@@ -1,0 +1,41 @@
+/* bootstrap UI CSS overrides - better IE7 compatibility */
+.btn {
+  margin: 0 0 9px 0;
+}
+
+.control-label { display: inline; }
+
+.modal-backdrop { top: 0; }
+
+.modal {
+  opacity: 100%;
+  filter:alpha(opacity=100);
+  form {
+    margin: 0;
+    .btn{ margin: 0; }
+  }
+}
+
+.modal-header h3 {
+  display: inline;
+  width: 80%;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.modal-header h2 {
+  display: inline;
+  width: 80%;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.popover-inner {
+  background: black;
+}
+
+.selector-panel {
+  ul.tool-bar-list {
+    background-color: #f6f6f6;
+  }
+}
