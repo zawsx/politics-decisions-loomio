@@ -541,3 +541,6 @@ en:
   unlike: "Unlike"
   until_close: "until close"
   update: "Update"
+
+  common:
+    from: "From"

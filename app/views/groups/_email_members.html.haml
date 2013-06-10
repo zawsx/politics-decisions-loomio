@@ -4,6 +4,9 @@
 = form_tag email_members_group_path(group) do
   .modal-body
     .control-group
+      = label_tag "group_email_from", t("common.from")
+      = text_field_tag "group_email_from", "#{current_user.name} <#{current_user.email}>", disabled: true
+    .control-group
       = label_tag "group_email_subject", t(:subject)
       %span.presence-error-message= t :subject_error
       = text_field_tag "group_email_subject", nil, :placeholder => t(:subject_placeholder), :class => "validate-presence"

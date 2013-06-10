@@ -17,7 +17,8 @@ class GroupMailer < ActionMailer::Base
     @message = message
     @recipient = recipient
     mail  :to => @recipient.email,
-          :reply_to => @group.admin_email,
+          :from => "#{sender.name} <noreply@loomio.org>",
+          :reply_to => "#{sender.name} <#{sender.email}",
           :subject => "#{email_subject_prefix(@group.full_name)} #{subject}"
   end
 
