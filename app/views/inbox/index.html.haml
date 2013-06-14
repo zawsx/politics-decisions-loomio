@@ -1,0 +1,15 @@
+%h1 Inbox
+- @inbox.items_by_group do |group, items|
+  %h2= group.full_name
+  %table.table
+    - items.each do |item|
+      %tr
+        %td
+          = link_to item.title, item
+          -if item.is_a? Motion
+            motion!
+
+- if @inbox.empty?
+  You're up to date! There are no comments you haven't seen.
+
+

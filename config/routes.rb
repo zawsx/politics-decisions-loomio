@@ -4,6 +4,8 @@ Loomio::Application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions',
                                     registrations: 'users/registrations' }
 
+  match "/inbox", to: "inbox#index", as: :inbox
+
   resources :invitations, only: [:show]
 
   resources :group_requests, only: [:create, :new] do

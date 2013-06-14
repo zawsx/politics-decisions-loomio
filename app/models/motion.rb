@@ -50,6 +50,10 @@ class Motion < ActiveRecord::Base
     joins(:votes).where("votes.user_id = ?", user.id)
   }
 
+  def title
+    name
+  end
+
   def group_users_without_motion_author
     group.users.where(User.arel_table[:id].not_eq(author.id))
   end
