@@ -4,7 +4,10 @@ Loomio::Application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions',
                                     registrations: 'users/registrations' }
 
-  match "/inbox", to: "inbox#index", as: :inbox
+  get "/inbox", to: "inbox#index", as: :inbox
+  get '/inbox/preferences', to: 'inbox#preferences', as: :inbox_preferences
+  put '/inbox/update_preferences', to: 'inbox#update_preferences', as: :update_inbox_preferences
+
 
   resources :invitations, only: [:show]
 

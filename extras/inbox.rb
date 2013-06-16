@@ -25,7 +25,7 @@ class Inbox
   end
 
   def groups
-    @user.groups
+    @user.memberships.where('inbox_position is not null').order(:inbox_position).map(&:group)
   end
 
   def unread_discussions_for(group)
