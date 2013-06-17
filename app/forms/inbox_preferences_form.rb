@@ -29,6 +29,7 @@ class InboxPreferencesForm
   def all_memberships
     @user.
       memberships.
+      joins(:group).
       order(:inbox_position)
   end
 
