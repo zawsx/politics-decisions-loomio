@@ -7,5 +7,7 @@
     height: '50px', width: '50px')
 
 = link_to item.title, item
-.pull-right= time_formatted_relative_to_age(item.close_at)
+.pull-right
+  closes
+  = time_formatted_relative_to_age(item.close_at)
 motion!

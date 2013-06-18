@@ -77,6 +77,7 @@ Loomio::Application.routes.draw do
   post "/discussion/update_version/:version_id", :to => "discussions#update_version", :as => "update_version_discussion"
 
   resources :notifications, :only => :index do
+    get :groups_tree_dropdown, on: :collection
     get :dropdown_items, on: :collection
     post :mark_as_viewed, :on => :collection, :via => :post
   end
