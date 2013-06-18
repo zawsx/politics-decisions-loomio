@@ -1,4 +1,7 @@
 Loomio::Application.routes.draw do
+
+  get "/groups", to: 'groups/public_groups#index', as: :public_groups
+
   ActiveAdmin.routes(self)
 
   devise_for :users, controllers: { sessions: 'users/sessions',
@@ -7,6 +10,7 @@ Loomio::Application.routes.draw do
   get "/inbox", to: "inbox#index", as: :inbox
   get '/inbox/preferences', to: 'inbox#preferences', as: :inbox_preferences
   put '/inbox/update_preferences', to: 'inbox#update_preferences', as: :update_inbox_preferences
+  match '/inbox/mark_as_read', to: 'inbox#mark_as_read', as: :mark_as_read_inbox
 
 
   resources :invitations, only: [:show]

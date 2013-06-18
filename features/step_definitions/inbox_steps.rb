@@ -41,3 +41,12 @@ When(/^I have voted on the motion$/) do
   vote.user = @user
   vote.save!
 end
+
+When(/^I mark the discussion as read$/) do
+  save_and_open_page
+  click_on 'mark as read'
+end
+
+Then(/^the discussion should disappear$/) do
+  page.should_not have_content @discussion.title
+end

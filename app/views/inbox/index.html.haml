@@ -1,16 +1,22 @@
 %h1 Inbox
 =link_to 'Preferences', inbox_preferences_path
-- @inbox.items_by_group do |group, items|
-  %h2= group.full_name
-  %table.table
-    - items.each do |item|
-      %tr
-        %td
-          = link_to item.title, item
-          -if item.is_a? Motion
-            motion!
+.inbox-container
+  - @inbox.items_by_group do |group, items|
+    .inbox-group
+      %h2= group.full_name
+      %table.table
+        - items.each do |item|
+          %tr
+            %td
+              = link_to item.title, item
+              = link_to 'mark as read', mark_as_read_inbox_path({class:item.class.to_s, id: item.id} ),  class: 'mark-as-read-btn pull-right', remote: true, method: :post
+              -if item.is_a? Motion
+                motion!
 
 - if @inbox.empty?
   You're up to date! There are no comments you haven't seen.
+-else
+  .inbox-empty-msg.hidden
+    You're up to date! There are no comments you haven't seen.
 
 

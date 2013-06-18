@@ -30,6 +30,10 @@ Feature: Inbox
     Then the inbox should be empty
 
   Scenario: User marks discussion as read
+    Given I belong to a group with a discussion
+    When I visit the inbox
+    And I mark the discussion as read
+    Then the discussion should disappear
 
   Scenario: Signed out user tries to view inbox
 

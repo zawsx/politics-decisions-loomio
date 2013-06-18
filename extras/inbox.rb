@@ -3,6 +3,17 @@ class Inbox
     @user = user
   end
 
+  def mark_as_read!(class_name, id)
+    if class_name.to_s == 'Discussion'
+      item = Discussion.find id
+    end
+
+    if @user.can? :index, item
+      ViewLogger.discussion_viewed(item, @user)
+    end
+
+  end
+
   def load
     @grouped_items = {}
     groups.each do |group|
