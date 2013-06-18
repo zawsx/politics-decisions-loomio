@@ -1,5 +1,6 @@
 class Motion < ActiveRecord::Base
   PHASES = %w[voting closed]
+  CHART_COLOURS = ["#90D490", "#F0BB67", "#D49090", "#dd0000", '#ccc']
 
   belongs_to :author, :class_name => 'User'
   belongs_to :discussion

@@ -19,5 +19,6 @@ $ ->
 
     # put up inbox empty message if inbox is empty
     if inbox_container.find('.inbox-group').length == 0
-      $('inbox-empty-msg').show()
+      $('.inbox-empty-msg').show()
+
 

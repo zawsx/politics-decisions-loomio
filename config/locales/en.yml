@@ -8,8 +8,14 @@ en:
     messages:
       email: "Not a valid email address"
 
+  time:
+    formats:
+      for_today: '%l:%M %P'
+
   date:
     formats:
+      for_this_year: '%e %b'
+      for_another_year: '%-d/%-m/%y'
       datepicker: "%d-%m-%Y"
 
   error:

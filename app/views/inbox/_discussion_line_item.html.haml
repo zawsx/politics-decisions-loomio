@@ -1,0 +1,6 @@
+.large-icon.discussion-icon.activity-icon.enabled-icon
+  %span.activity-count.label.label-info
+    =discussion_activity_count_for(item, current_user)
+= link_to item.title, item
+= link_to 'mark as read', mark_as_read_inbox_path({class:item.class.to_s, id: item.id} ),  class: 'mark-as-read-btn pull-right', remote: true, method: :post
+.pull-right= time_formatted_relative_to_age(item.last_comment_at)

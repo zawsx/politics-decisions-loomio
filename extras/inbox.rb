@@ -40,7 +40,7 @@ class Inbox
   end
 
   def unread_discussions_for(group)
-    Queries::UnreadDiscussions.for(@user, group)
+    Queries::UnreadDiscussions.for(@user, group).order('last_comment_at DESC')
   end
 
   def unvoted_motions_for(group)

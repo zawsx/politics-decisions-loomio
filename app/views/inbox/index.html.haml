@@ -3,20 +3,20 @@
 .inbox-container
   - @inbox.items_by_group do |group, items|
     .inbox-group
-      %h2= group.full_name
+      %h2= link_to group.full_name, group
       %table.table
         - items.each do |item|
           %tr
             %td
-              = link_to item.title, item
-              = link_to 'mark as read', mark_as_read_inbox_path({class:item.class.to_s, id: item.id} ),  class: 'mark-as-read-btn pull-right', remote: true, method: :post
+              -if item.is_a? Discussion
+                =render 'discussion_line_item', item: item
               -if item.is_a? Motion
-                motion!
+                =render 'motion_line_item', item: item
 
 - if @inbox.empty?
-  You're up to date! There are no comments you haven't seen.
--else
-  .inbox-empty-msg.hidden
-    You're up to date! There are no comments you haven't seen.
+  =t(:'inbox.empty')
+- else
+  .inbox-empty-msg{style: 'display: none'}
+    =t(:'inbox.empty')
 
 

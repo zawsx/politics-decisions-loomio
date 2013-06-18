@@ -23,6 +23,18 @@ describe Queries::UnvotedMotions do
           Queries::UnvotedMotions.for(user, group).should_not include(motion)
         end
       end
+
+      context "another user has voted on it" do
+        it "returns the motion" do
+          other_guy = create(:user)
+          group.add_member!(other_guy)
+          vote = Vote.new(position: 'yes')
+          vote.motion = motion
+          vote.user = other_guy
+          vote.save!
+          Queries::UnvotedMotions.for(user, group).should include(motion)
+        end
+      end
     end
 
     context 'there is a closed motion in the group' do
