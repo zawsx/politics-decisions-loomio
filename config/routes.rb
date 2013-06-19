@@ -11,6 +11,7 @@ Loomio::Application.routes.draw do
   get '/inbox/preferences', to: 'inbox#preferences', as: :inbox_preferences
   put '/inbox/update_preferences', to: 'inbox#update_preferences', as: :update_inbox_preferences
   match '/inbox/mark_as_read', to: 'inbox#mark_as_read', as: :mark_as_read_inbox
+  match '/inbox/unfollow', to: 'inbox#unfollow', as: :unfollow_inbox
 
 
   resources :invitations, only: [:show]
@@ -65,6 +66,7 @@ Loomio::Application.routes.draw do
   end
 
   resources :discussions, except: [:edit] do
+    get :activity_counts, on: :collection
     post :update_description, :on => :member
     post :add_comment, :on => :member
     post :show_description_history, :on => :member

@@ -1,6 +1,18 @@
-.large-icon.discussion-icon.activity-icon.enabled-icon
-  %span.activity-count.label.label-info
-    =discussion_activity_count_for(item, current_user)
-= link_to item.title, item
-= link_to 'mark as read', mark_as_read_inbox_path({class:item.class.to_s, id: item.id} ),  class: 'mark-as-read-btn pull-right', remote: true, method: :post
-.pull-right= time_formatted_relative_to_age(item.last_comment_at)
+%li.discussion.row-fluid{data:{discussion_id: item.id }}
+  .span1
+    .icon
+      .activity-count
+        0
+
+  .span8.title
+    = link_to item.title, item
+
+  .span1.time
+    = time_formatted_relative_to_age(item.last_comment_at)
+  .span1
+    .unfollow-btn
+      = link_to 'h', unfollow_inbox_path({class: item.class.to_s, id: item.id}), remote: true, method: :post, id: 'unfollow-btn'
+  .span1
+    .mark-as-read-btn
+      = link_to 'x', mark_as_read_inbox_path({class:item.class.to_s, id: item.id} ),  remote: true, method: :post, id: 'mark-as-read-btn'
+

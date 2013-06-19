@@ -69,11 +69,17 @@ class Motion < ActiveRecord::Base
 
   def votes_breakdown
     last_votes = unique_votes()
-    positions = Array.new(Vote::POSITIONS)
-    positions.delete("did_not_vote")
-    positions.map {|position|
+    Vote::POSITIONS.map {|position|
       [position, last_votes.find_all{|vote| vote.position == position}]
     }.to_hash
+  end
+
+  def vote_counts
+    counts = {}
+    Vote::POSITIONS.each do |position|
+      counts[position] = self.send("#{position}_votes_count")
+    end
+    counts
   end
 
   def votes_for_graph
@@ -185,6 +191,7 @@ class Motion < ActiveRecord::Base
     vote = user.votes.new(:position => position, :statement => statement)
     vote.motion = self
     vote.save!
+    update_vote_counts!
     vote
   end
 
@@ -196,6 +203,24 @@ class Motion < ActiveRecord::Base
   def set_default_close_at_date_and_time
     self.close_at_date ||= 3.days.from_now.to_date
     self.close_at_time ||= Time.now.strftime("%H:00")
+  end
+
+  def update_vote_counts!
+    position_counts = {}
+
+    Vote::POSITIONS.each do |position|
+      position_counts[position] = 0
+    end
+
+    Vote.unique_votes(self).each do |vote|
+      position_counts[vote.position] += 1
+    end
+    
+    Vote::POSITIONS.each do |position|
+      self.send("#{position}_votes_count=", position_counts[position])
+    end
+
+    save!
   end
 
 

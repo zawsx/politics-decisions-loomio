@@ -113,6 +113,7 @@ en:
         other: "%{count} years"
 
   inbox:
+    dropdown-btn: 'Inbox'
     empty: You're up to date! There are no comments you haven't seen.
 
   notifications:

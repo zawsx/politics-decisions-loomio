@@ -3,15 +3,16 @@ class Inbox
     @user = user
   end
 
-  def mark_as_read!(class_name, id)
-    if class_name.to_s == 'Discussion'
-      item = Discussion.find id
-    end
-
+  def mark_as_read!(item)
     if @user.can? :index, item
       ViewLogger.discussion_viewed(item, @user)
     end
+  end
 
+  def unfollow!(item)
+    if @user.can? :unfollow, item
+      ViewLogger.discussion_unfollowed(item, @user)
+    end
   end
 
   def load

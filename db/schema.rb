@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130617091617) do
+ActiveRecord::Schema.define(:version => 20130619093833) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(:version => 20130617091617) do
     t.datetime "updated_at"
     t.integer  "discussion_id"
     t.datetime "discussion_last_viewed_at"
+    t.boolean  "following",                 :default => true, :null => false
   end
 
   add_index "discussion_read_logs", ["discussion_id"], :name => "index_motion_read_logs_on_discussion_id"
@@ -290,16 +291,20 @@ ActiveRecord::Schema.define(:version => 20130617091617) do
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "phase",              :default => "voting", :null => false
-    t.string   "discussion_url",     :default => "",       :null => false
+    t.string   "phase",               :default => "voting", :null => false
+    t.string   "discussion_url",      :default => "",       :null => false
     t.datetime "close_at"
     t.integer  "discussion_id"
     t.string   "outcome"
     t.datetime "last_vote_at"
-    t.boolean  "uses_markdown",      :default => true,     :null => false
+    t.boolean  "uses_markdown",       :default => true,     :null => false
     t.date     "close_at_date"
     t.string   "close_at_time"
     t.string   "close_at_time_zone"
+    t.integer  "yes_votes_count",     :default => 0,        :null => false
+    t.integer  "no_votes_count",      :default => 0,        :null => false
+    t.integer  "abstain_votes_count", :default => 0,        :null => false
+    t.integer  "block_votes_count",   :default => 0,        :null => false
   end
 
   add_index "motions", ["author_id"], :name => "index_motions_on_author_id"

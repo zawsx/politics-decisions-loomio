@@ -43,10 +43,21 @@ When(/^I have voted on the motion$/) do
 end
 
 When(/^I mark the discussion as read$/) do
-  save_and_open_page
-  click_on 'mark as read'
+  click_on :'mark-as-read-btn'
 end
 
 Then(/^the discussion should disappear$/) do
+  page.should_not have_content @discussion.title
+end
+
+When(/^I mark the discussion as hidden$/) do
+  click_on :'unfollow-btn'
+end
+
+When(/^there is more activity on the discussion$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^the discussion should not show in inbox$/) do
   page.should_not have_content @discussion.title
 end

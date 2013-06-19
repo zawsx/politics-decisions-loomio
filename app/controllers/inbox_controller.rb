@@ -1,7 +1,10 @@
 class InboxController < BaseController
-  before_filter :load_inbox, only: [:index, :mark_as_read]
+  before_filter :load_inbox, only: [:index, :mark_as_read, :unfollow]
 
   def index
+    if request.xhr?
+      render layout: false
+    end
   end
 
   def preferences
@@ -15,7 +18,20 @@ class InboxController < BaseController
   end
 
   def mark_as_read
-    @inbox.mark_as_read!(params[:class], params[:id])
+    item = load_resource_from_params
+    @inbox.mark_as_read!(item)
+
+    if request.xhr?
+      head :ok
+    else
+      redirect_to inbox_path
+    end
+  end
+
+  def unfollow
+    item = load_resource_from_params
+    @inbox.unfollow!(item)
+
     if request.xhr?
       head :ok
     else
@@ -28,4 +44,13 @@ class InboxController < BaseController
     @inbox = Inbox.new(current_user)
     @inbox.load
   end
+
+  def load_resource_from_params
+    class_name = params[:class]
+    id = params[:id]
+    if class_name == 'Discussion'
+      Discussion.find id
+    end
+  end
+
 end

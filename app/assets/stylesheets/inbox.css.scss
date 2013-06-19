@@ -1,9 +1,56 @@
 // Place all the styles related to the inbox controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.inbox-item-icon {
-  width: 50px;
-  height: 50px;
-  float: left;
+@import "settings";
+@import "mixins";
+
+
+ul.inbox-list{
+  li {
+    &:hover {
+      background-color: white;
+    }
+    .title a{
+      display: block;
+      width: 100%;
+    }
+    line-height: 2em;
+    padding: .5em 0;
+
+    .icon {
+      .motion-sparkline{
+        margin: 1px 0 0 1px;
+        line-height: 4em;
+      }
+      width: 2em;
+      margin: 0 0.5em;
+      display: inline-block;
+      height: 2em;
+      .activity-count{
+        text-align: center;
+      }
+    }
+
+    .mark-as-read-btn, .unfollow-btn a {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+      /*margin: .5em;*/
+      /*padding: 0;*/
+      /*display: inline-block;*/
+      /*background: #ccc;*/
+      /*width: 2em;*/
+      /*height: 2em;*/
+    /*}*/
+    background: $even-lighter-grey;
+    border-top: 1px solid $lighter-grey;
+    .time {
+      span {
+        line-height: 0;
+      }
+      text-align: right;
+    }
+  }
 }
 

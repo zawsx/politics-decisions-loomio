@@ -9,8 +9,13 @@ describe Inbox do
       inbox.load
       inbox
     end
+  end
 
-
-
+  context '#unfollow' do
+    let(:discussion){FactoryGirl.create(:discussion)}
+    let(:user){FactoryGirl.create(:user)}
+    it 'calls ViewLogger#discussion_unfollowed' do
+      ViewLogger.should_receive(:discussion_unfollowed).with(discussion, user)
+    end
   end
 end

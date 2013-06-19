@@ -35,5 +35,14 @@ Feature: Inbox
     And I mark the discussion as read
     Then the discussion should disappear
 
+  Scenario: User unfollows discussion
+    Given I belong to a group with a discussion
+    When I visit the inbox
+    And I mark the discussion as hidden
+    And there is more activity on the discussion
+    Then the discussion should not show in inbox
+   
+
+
   Scenario: Signed out user tries to view inbox
 
