@@ -1,0 +1,14 @@
+%li.discussion.row-fluid{data:{discussion_id: item.id }}
+  .span1
+    .icon
+      .activity-count
+        0
+
+  .span8.title
+    = link_to item.title, item
+
+  .span1.time
+    = time_formatted_relative_to_age(item.last_comment_at)
+  .span1
+  .span1
+

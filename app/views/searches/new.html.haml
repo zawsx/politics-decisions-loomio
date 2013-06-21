@@ -1,0 +1,5 @@
+%h1 Searches#new
+=simple_form_for @search, url: search_path, method: :get do |f|
+  =f.input :query
+  =f.submit 'Search'
+

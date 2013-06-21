@@ -1,5 +1,4 @@
 Loomio::Application.routes.draw do
-
   get "/groups", to: 'groups/public_groups#index', as: :public_groups
 
   ActiveAdmin.routes(self)
@@ -20,8 +19,9 @@ Loomio::Application.routes.draw do
     get :verify, on: :member
   end
 
-  match "/request_new_group", to: "group_requests#new", as: :request_new_group
+  resource :search, only: [:new, :show]
 
+  match "/request_new_group", to: "group_requests#new", as: :request_new_group
   match "/group_request_confirmation", to: "group_requests#confirmation", as: :group_request_confirmation
 
   resources :groups, except: [:index, :new] do
