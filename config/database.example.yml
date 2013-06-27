@@ -11,6 +11,11 @@ test:
   database: loomio_test
   username: postgres
 
+performance:
+  adapter: postgresql
+  database: loomio_performance
+  username: postgres
+
 production:
   adapter: sqlite3
   database: db/production.sqlite3
