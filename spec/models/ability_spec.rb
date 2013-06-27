@@ -11,7 +11,8 @@ describe "User abilities" do
 
   context "member of a group" do
     let(:group) { create(:group) }
-    let(:membership_request) { group.add_request!(create(:user)) }
+    let(:membership_request) { create(:membership_request, group: group) }
+    # let(:membership_request) { group.add_request!(create(:user)) }
     let(:discussion) { create(:discussion, group: group) }
     let(:new_discussion) { user.authored_discussions.new(
                            group: group, title: "new discussion") }
@@ -71,16 +72,18 @@ describe "User abilities" do
     context "group members invitable by members" do
       before { group.update_attributes(:members_invitable_by => :members) }
       it { should be_able_to(:add_members, group) }
-      it { should be_able_to(:approve_request, membership_request) }
-      it { should be_able_to(:ignore_request, membership_request) }
+      it { should be_able_to(:manage_membership_requests, group) }
+      it { should be_able_to(:approve, membership_request) }
+      it { should be_able_to(:ignore, membership_request) }
       it { should_not be_able_to(:destroy, @other_user_membership) }
     end
 
     context "group members invitable by admins" do
       before { group.update_attributes(:members_invitable_by => :admins) }
       it { should_not be_able_to(:add_members, group) }
-      it { should_not be_able_to(:approve_request, membership_request) }
-      it { should_not be_able_to(:ignore_request, membership_request) }
+      it { should_not be_able_to(:manage_membership_requests, group) }
+      it { should_not be_able_to(:approve, membership_request) }
+      it { should_not be_able_to(:ignore, membership_request) }
     end
 
     context "group viewable by members" do
@@ -107,11 +110,12 @@ describe "User abilities" do
     let(:discussion) { create(:discussion, group: group) }
     let(:another_user_comment) { discussion.add_comment(other_user, "hello", false) }
     let(:other_users_motion) { create(:motion, author: other_user, discussion: discussion) }
+    let(:membership_request) { create(:membership_request, group: group) }
 
     before do
       @user_membership = group.add_admin! user
       @other_user_membership = group.add_member! other_user
-      @membership_request = group.add_request! create(:user)
+      # @membership_request = group.add_request! create(:user)
     end
 
     it { should be_able_to(:update, group) }
@@ -119,8 +123,8 @@ describe "User abilities" do
     it { should be_able_to(:hide_next_steps, group) }
     it { should be_able_to(:destroy, discussion) }
     it { should be_able_to(:move, discussion) }
-    it { should be_able_to(:make_admin, @membership_request) }
-    it { should be_able_to(:remove_admin, @membership_request) }
+    it { should be_able_to(:make_admin, @other_user_membership) }
+    it { should be_able_to(:remove_admin, @other_user_membership) }
     it { should be_able_to(:destroy, @other_user_membership) }
     it { should be_able_to(:edit_description, group) }
     it { should be_able_to(:edit_privacy, group) }
@@ -138,7 +142,9 @@ describe "User abilities" do
     context "group members invitable by admins" do
       before { group.update_attributes(:members_invitable_by => :admins) }
       it { should be_able_to(:add_members, group) }
-      it { should be_able_to(:approve_request, @membership_request) }
+      it { should be_able_to(:manage_membership_requests, group) }
+      it { should be_able_to(:approve, membership_request) }
+      it { should be_able_to(:ignore, membership_request) }
     end
   end
 
@@ -151,12 +157,18 @@ describe "User abilities" do
     let(:new_discussion) { user.authored_discussions.new(
                            group: group, title: "new discussion") }
     let(:another_user_comment) { discussion.add_comment(discussion.author, "hello", false) }
+    let(:membership_request) { create(:membership_request, group: group) }
+    let(:my_membership_request) { create(:membership_request, group: group, requestor: user) }
+    let(:other_membership_request) { create(:membership_request, group: group, requestor: other_user) }
 
     it { should_not be_able_to(:update, group) }
     it { should_not be_able_to(:show, discussion) }
     it { should_not be_able_to(:email_members, group) }
     it { should_not be_able_to(:add_subgroup, group) }
     it { should_not be_able_to(:add_members, group) }
+    it { should_not be_able_to(:manage_membership_requests, group) }
+    it { should_not be_able_to(:approve, membership_request) }
+    it { should_not be_able_to(:ignore, membership_request) }
     it { should_not be_able_to(:hide_next_steps, group) }
     it { should_not be_able_to(:new_proposal, discussion) }
     it { should_not be_able_to(:add_comment, discussion) }
@@ -174,6 +186,8 @@ describe "User abilities" do
     it { should_not be_able_to(:open, motion) }
     it { should_not be_able_to(:update, motion) }
     it { should_not be_able_to(:destroy, motion) }
+    it { should be_able_to(:cancel, my_membership_request) }
+    it { should_not be_able_to(:cancel, other_membership_request) }
 
     context "group viewable_by: everyone" do
       before { group.update_attributes(:viewable_by => :everyone) }

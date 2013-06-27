@@ -40,15 +40,18 @@ en:
     group_private_or_not_found: "Group not found. \n\nThis group might be private. If someone gave you this link, ask them to invite you to the group."
     group_already_setup: "The group you are trying to setup already exists."
     proposal_already_exists: "There is already an open proposal in this discussion."
+    user_with_email_address_already_in_group: "A user with that email address already belongs to this group."
+    you_have_already_requested_membership: "You have already requested membership to this group."
     not_found: "Item not found. It may have been deleted."
   alert:
     duplicate_email: "%{which_email} is already in the group."
 
   notice:
     admin_rights_removed: "%{which_user}'s admin rights have been removed."
-    email_added: "%{which_email} has been added to the group."
+    user_added: "%{user_email_or_name} has been added to the group."
+    new_user_added: "%{user_email_or_name} has been added to the group after they have set up a Loomio account."
     member_removed: "Member removed."
-    membership_approved: "Membership approved"
+    membership_approved: "Membership approved."
     membership_requested: "Membership requested."
     membership_request_canceled: "Membership request canceled."
     membership_request_ignored: "Membership request ignored."
@@ -57,6 +60,7 @@ en:
     you_have_left_group: "You have left %{which_group}."
   warning:
     cant_remove_last_admin: "You are the last admin and cannot be removed."
+    membership_request_already_approved: "Membership request has already been approved."
     membership_request_already_ignored: "Membership request has already been ignored."
     membership_request_already_canceled: "Membership request has already been canceled."
     position_not_submitted: "Your position could not be submitted"
@@ -170,7 +174,8 @@ en:
   invite_people: "Invite people"
   no_invitations_button: "No invitations left"
   pending_invitations: 'Pending invitations'
-  number_pending: 'and %{pending} pending'
+  number_pending: '%{pending} pending'
+  and_number_pending: 'and %{pending} pending'
   edit_memberships: 'Edit memberships'
 
   add_new_member: "Add new member"
@@ -204,7 +209,7 @@ en:
   confirm_approve_membership_request: "Are you sure you want to add %{which_user} to the group?"
   ignore_request: "Ignore request"
   confirm_ignore_membership_request: "Are you sure you want to ignore the member request from %{which_user}?"
-  membership_requested: "Membership Requested"
+  membership_requested: "Membership requested"
   request_membership: "Request membership"
   confirm_remove_membership_request: "Are you sure you wish to withdraw your membership request for this group?"
 

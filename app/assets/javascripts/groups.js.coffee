@@ -2,9 +2,9 @@ $ ->
   if $("body.groups.show").length > 0
     $("#membership-requested").hover(
       (e) ->
-        $(this).text("Cancel Request")
+        $("#membership-requested span").text("Cancel Request")
       (e) ->
-        $(this).text("Membership Requested")
+        $("#membership-requested span").text("Membership Requested")
     )
 
 #*** edit privacy settings from dropdown ***

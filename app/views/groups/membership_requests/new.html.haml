@@ -1,0 +1,4 @@
+- set_title @group.name, t(:edit_group)
+= render '/groups/title', group: @group
+
+= render 'form', group: @group, membership_request: @membership_request, form_title: t(:request_membership)
