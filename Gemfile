@@ -50,6 +50,7 @@ gem 'sass-rails',   '~> 3.2.6'
 gem 'coffee-rails', '~> 3.2.2'
 gem 'fog'
 gem 'rack-mini-profiler', '~> 0.1.23'
+gem 'ruby-prof'
 gem 'roadie', '~> 2.3.4'
 
 # Gems used only for assets and not required
