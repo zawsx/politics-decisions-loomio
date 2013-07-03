@@ -1,0 +1,22 @@
+.row
+  .span4
+    %h1 Sign up your group
+    %p 30 day free trial
+    %h6 No credit card required
+    = simple_form_for @group_request do |f|
+      = f.input :name, label: 'Group name'
+      = f.input :admin_name, label: 'Your name'
+      = f.input :admin_email, label: 'Email'
+      = f.submit 'Sign up', class: 'btn-info btn-large'
+
+  .span4
+    .info-box
+      %h2 $5/person/month
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      %p= link_to 'See Pay What You Can', '/group_requests/3/group_sign_up_informal'

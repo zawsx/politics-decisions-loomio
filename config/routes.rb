@@ -19,6 +19,8 @@ Loomio::Application.routes.draw do
 
   resources :group_requests, only: [:create, :new] do
     get :verify, on: :member
+    get :group_sign_up_informal, on: :member
+    get :group_sign_up_formal, on: :member
   end
 
   match "/request_new_group", to: "group_requests#new", as: :request_new_group

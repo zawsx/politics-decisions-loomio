@@ -23,6 +23,13 @@ class GroupRequestsController < BaseController
   def confirmation
   end
 
+  def group_sign_up_formal
+    @group_request = GroupRequest.new
+  end
+
+  def group_sign_up_informal
+    @group_request = GroupRequest.new
+  end
 
   private
 
