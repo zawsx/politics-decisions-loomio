@@ -1,5 +1,5 @@
 class GroupRequestsController < BaseController
-  before_filter :authenticate_user!, except: [:verify, :new, :create, :confirmation]
+  before_filter :authenticate_user!, except: [:verify, :new, :create, :confirmation, :group_sign_up_formal, :group_sign_up_informal]
   before_filter :already_verified, only: :verify
 
   def new
