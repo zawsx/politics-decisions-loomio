@@ -33,4 +33,12 @@ body.group_requests {
       }
     }
   }
+  &.group_sign_up_which {
+    #intro { margin-bottom: 20px; }
+    .payment-model-box {
+      @include border-radius(4px);
+      border: 1px solid #DDD;
+      padding: 10px 20px;
+    }
+  }
 }
