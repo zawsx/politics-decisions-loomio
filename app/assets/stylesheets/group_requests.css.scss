@@ -27,6 +27,10 @@ body.group_requests {
       margin-left: 40px;
       padding: 10px 20px;
       h2 { font-weight: 400; }
+      ul {
+        list-style: disc;
+        margin-left: 20px;
+      }
     }
   }
 }

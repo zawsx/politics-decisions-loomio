@@ -1,0 +1,5 @@
+= simple_form_for @group_request do |f|
+  = f.input :name, label: 'Group name'
+  = f.input :admin_name, label: 'Your name'
+  = f.input :admin_email, label: 'Email'
+  = f.submit 'Sign up', class: 'btn-info btn-large'
