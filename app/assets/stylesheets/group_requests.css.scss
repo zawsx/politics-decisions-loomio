@@ -37,12 +37,14 @@ body.group_requests {
     }
   }
   &.group_sign_up_which {
+    p { padding: 0 6px; }
+    .examples { font-style: italic; color: #777;}
     #intro { margin: 20px; }
 
     .payment-model-box {
       @include border-radius(4px);
       border: 1px solid #DDD;
-      padding: 10px 20px 20px;
+      padding: 10px 16px 16gapx;
       .btn { margin: 20px 0 0; }
     }
   }
