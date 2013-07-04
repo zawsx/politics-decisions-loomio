@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     redirect_to :back
   end
 
+  def search
+    @query = params[:query]
+    @results = current_user.discussions
+  end
+
 
   protected
 

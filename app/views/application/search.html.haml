@@ -1,0 +1,15 @@
+.row
+  .span8
+    %h1= "Search results for '#{@query}'"
+  .span4#explanation
+    %p= "Below is a list of discussions and proposals that have '#{@query}' in their title or description."
+.row
+  .span12
+    / - @results.items_by_group do |group, items|
+    /   %h2= link_to group.full_name, group
+    %ul#search-results
+      - @results.each do |result|
+        -if result.is_a? Discussion
+          =render 'discussion_line_item', item: result
+        -if result.is_a? Motion
+          =render 'motion_line_item', item: result

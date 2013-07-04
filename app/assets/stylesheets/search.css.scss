@@ -1,0 +1,58 @@
+@import "settings";
+@import "mixins";
+
+body.application.search {
+  #explanation { text-align: right; }
+  ul#search-results {
+    li {
+      background: $even-lighter-grey;
+      border-top: 1px solid $lighter-grey;
+      line-height: 2em;
+      padding: .5em 0;
+      .description {
+        color: $mid-grey;
+        font-size: $font-medium;
+      }
+      .discussion-icon{
+        color: #fff;
+        top: 0.2em;
+        left: 0.3em;
+        background: #999;
+        border-radius: 0.2em;
+        position: relative;
+        &:before {
+          position:absolute;  
+          content: "";
+          bottom: -0.3em;
+          right: 0.4em;
+          width:0em;
+          height:0em;
+          border-bottom:0.4em solid transparent;
+          border-left:0.4em solid #999;
+        }
+      }
+      .icon {
+        font-size: .9em;
+        .motion-sparkline{
+          margin: 1px 0 0 1px;
+          line-height: 4em;
+        }
+        width: 2em;
+        margin: 0 0.5em;
+        display: inline-block;
+        height: 1.7em;
+        .activity-count{
+          bottom: 3px;
+          position: relative;
+          text-align: center;
+        }
+      }
+      .span11 { margin-left: -10px; }
+      .title { font-size: $font-medium-large; }
+      #search-results .title a{
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

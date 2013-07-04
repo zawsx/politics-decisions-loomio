@@ -1,0 +1,13 @@
+%li.discussion.row-fluid{data:{discussion_id: item.id }}
+  = link_to item do
+    .span1
+      .icon.discussion-icon
+        .activity-count{title: 'Unread comments'}
+          &nbsp;
+
+    .span11
+      %span.title= item.title
+      %span.description= "- #{item.description}" unless item.description.blank?
+
+    / .span1.time{title: 'Last comment at'}
+    /   = time_formatted_relative_to_age(item.last_comment_at)
