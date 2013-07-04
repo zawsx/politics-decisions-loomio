@@ -1,6 +1,6 @@
 = simple_form_for @group_request do |f|
-  = f.input :name, label: 'Group name'
-  = f.input :admin_name, label: 'Your name'
-  = f.input :admin_email, label: 'Email'
+  = f.input :admin_name, label: 'What is your name?'
+  = f.input :admin_email, label: 'What is your email address?'
+  = f.input :name, label: 'What is the name of your group?'
   / = f.submit 'Sign up', class: 'btn btn-info btn-large'
   = link_to 'Sign up', "/group_requests/3/sign_up_confirmation", class: 'btn btn-info btn-large'

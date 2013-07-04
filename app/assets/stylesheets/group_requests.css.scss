@@ -19,7 +19,6 @@ body.group_requests {
 body.group_requests {
   #organisation { background-color: #F9FFF9; }
   #informal-group { background-color: #F9F9FF; }
-
   &.group_sign_up_formal, &.group_sign_up_informal {
     form { margin-top: 10px; }
     h6 { font-weight: 400; }
@@ -35,16 +34,24 @@ body.group_requests {
         margin-left: 20px;
       }
     }
+    table {
+      margin-bottom: 10px;
+      td {
+        text-align: center;
+        width: 80px;
+      }
+    }
   }
   &.group_sign_up_which {
     p { padding: 0 6px; }
     .examples { font-style: italic; color: #777;}
-    #intro { margin: 20px; }
-
+    #intro { margin: 10px; }
+    #trial { font-weight: bold; }
+    #footer { margin: 10px 0 0 10px; }
     .payment-model-box {
       @include border-radius(4px);
       border: 1px solid #DDD;
-      padding: 10px 16px 16gapx;
+      padding: 10px 16px 16px;
       .btn { margin: 20px 0 0; }
     }
   }

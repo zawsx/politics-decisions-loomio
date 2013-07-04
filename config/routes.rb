@@ -25,6 +25,13 @@ Loomio::Application.routes.draw do
     get :sign_up_confirmation
   end
 
+  # mockup routes
+  match "/start_group_mailer/invitation", to: 'group_requests#invitation_mailer'
+  match "/start_group_mailer/trial_follow_up", to: 'group_requests#trial_follow_up_mailer'
+  match "/start_group_mailer/trial_expiry", to: 'group_requests#trial_expiry_mailer'
+  
+
+
   match "/request_new_group", to: "group_requests#new", as: :request_new_group
 
   match "/group_request_confirmation", to: "group_requests#confirmation", as: :group_request_confirmation

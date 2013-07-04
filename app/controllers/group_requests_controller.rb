@@ -1,5 +1,7 @@
 class GroupRequestsController < BaseController
-  before_filter :authenticate_user!, except: [:verify, :new, :create, :confirmation, :group_sign_up_which, :group_sign_up_formal, :group_sign_up_informal]
+  before_filter :authenticate_user!, except: [:verify, :new, :create, :confirmation, 
+    #mockups
+    :sign_up_confirmation, :group_sign_up_which, :group_sign_up_formal, :group_sign_up_informal, :invitation_mailer, :trial_expiry_mailer, :trial_follow_up_mailer]
   before_filter :already_verified, only: :verify
 
   def new
@@ -23,6 +25,8 @@ class GroupRequestsController < BaseController
   def confirmation
   end
 
+
+# mockups actions
   def group_sign_up_which
     @group_request = GroupRequest.new
   end
@@ -34,6 +38,20 @@ class GroupRequestsController < BaseController
   def group_sign_up_informal
     @group_request = GroupRequest.new
   end
+
+  def invitation_mailer
+    render "/start_group_mailer/invitation"
+  end
+
+  def trial_follow_up_mailer
+    render "/start_group_mailer/trial_follow_up"
+  end
+
+  def trial_expiry_mailer
+    render "/start_group_mailer/trial_expiry"
+  end
+
+
 
   private
 

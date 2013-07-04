@@ -659,6 +659,11 @@ en:
     group_membership_approved:
       intro: "Your request for access to the group '%{group_name}' on Loomio has been approved."
       subject: "Membership approved"
+    invitation:
+      header: "Start your group on Loomio"
+      hi: "Hi %{name},"
+      intro: "Click the link below to set up your group %{group_name}:"
+      closing_message: "If you’ve got any questions or if there’s anything at all we can do to help you get up and running, we’d love to hear from you."
     membership_request:
       intro: "%{name} (%{email}) has requested access to one of your Loomio groups."
       subject: "New membership request from %{who}"
@@ -678,6 +683,21 @@ en:
       closes_in: "Closes in"
       subject: "Proposal closing soon: %{which}"
       summary: "Summary"
+    trial_expiry:
+      header: "%{group_name}: Your Loomio trial is almost up."
+      hi: "Hi there,"
+      intro_html: |
+        Just a friendly reminder to let you know that your trial will expire in 5 days. We hope you're enjoying Loomio so far.
+        <p>Once the trial period runs out, you'll need to enter your payment details so your group can keep using Loomio.</p>
+        <p><a href=''>Click here</a> to set up your payment details now.</p>
+        <p>If you’ve got any questions or if there’s anything at all we can do to help your group succeed with Loomio, we’d love to hear from you.</p>
+    trial_follow_up:
+      header: "%{group_name}: How’s your Loomio trial going so far?"
+      hi: "Hi there,"
+      intro_html: |
+        Just a friendly reminder to let you know you're halfway through your trial. We hope you’re enjoying Loomio so far! If you’d like some tips about getting the most out of Loomio, <a href='/help#getting-the-most-out-of-Loomio'>have a look here.</a>
+        <p>You'll need to enter your payment information before the end of your trial to keep using Loomio. <a href=''>Click here</a> to set up your payment details now.</p>
+        <p>If you’ve got any questions or if there’s anything at all we can do to help your group succeed with Loomio, we’d love to hear from you.</p>
     verification:
       header: "You're almost done!"
       intro: "Please click this verification link to finalise your request:"
@@ -733,6 +753,7 @@ en:
   show_more: "Show More"
   starting: "Starting"
   subject: "Subject"
+  thanks: "Thanks!"
   unlike: "Unlike"
   until_close: "until close"
   update: "Update"
