@@ -73,19 +73,15 @@
 
   li.nav-item#search {
     form {
+      body { color: #fff; }
       float: right;
       margin: 0;
+      .add-on {
+        background-color: #FFF;
+      }
       .input-prepend { 
         margin-bottom: 0;
         margin-top: 4px;
-        position: relative; 
-      }
-      .search-query { padding-left: 22px; }
-      .icon-search {
-        position: absolute;
-        z-index: 10;
-        top: 6px;
-        left: 6px;
       }
     }
   }
