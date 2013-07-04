@@ -1,0 +1,5 @@
+%li.nav-item#search
+  = form_tag method: 'get', id: 'search-form' do |f|
+    .input-prepend
+      %i.icon-search
+      = text_field_tag :query, nil, label: false, placeholder: " search", class: 'search-query input-medium'

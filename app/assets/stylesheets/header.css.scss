@@ -68,7 +68,26 @@
   }
 
   li.nav-item#help {
-    float: right;
+    float: left;
+  }
+
+  li.nav-item#search {
+    form {
+      float: right;
+      margin: 0;
+      .input-prepend { 
+        margin-bottom: 0;
+        margin-top: 4px;
+        position: relative; 
+      }
+      .search-query { padding-left: 22px; }
+      .icon-search {
+        position: absolute;
+        z-index: 10;
+        top: 6px;
+        left: 6px;
+      }
+    }
   }
 
   li.nav-item#notifications-container {
@@ -141,3 +160,6 @@
 .logged-in-navigation #contribute a {
   height: 20px;
 }
+
+
+
