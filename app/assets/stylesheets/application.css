@@ -6,6 +6,7 @@
  *= require lib/jquery.jqplot.min
  *= require lib/jquery.atwho
  *= require main
+ *= require flat-ui
  *= require overide_bootstrap
  *= require icons
  *= require header

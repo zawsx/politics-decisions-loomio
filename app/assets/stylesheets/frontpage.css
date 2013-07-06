@@ -1,5 +1,7 @@
 /*
  *= require main
+ *= require flat-ui
+ *= require overide_bootstrap
  *= require pages
  *= require help
 */

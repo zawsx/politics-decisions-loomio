@@ -68,7 +68,8 @@ body.discussions.show {
     .content-proposal-body {
       padding: 0 10px 10px 50px;
       ul.selector-list {
-        li.empty-list-message { padding: 4px; }
+        border-top: 1px solid $lighter-grey;
+        li.empty-list-message { padding: 10px; }
         li .motion {
           .close-date {
             color: $mid-grey;

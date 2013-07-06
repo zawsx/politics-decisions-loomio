@@ -59,6 +59,20 @@ module ApplicationHelper
     end
   end
 
+  def info_icon_button(link, text, icon, id, is_modal = false)
+    modal_string = "modal" if is_modal
+    content_tag(:a, :href => link, :class => 'btn btn-info btn-app', :id => id, 'data-toggle' => modal_string) do
+      image_tag(icon, :class => 'button-icon') + text
+    end
+  end
+
+  def primary_icon_button(link, text, icon, id, is_modal = false)
+    modal_string = "modal" if is_modal
+    content_tag(:a, :href => link, :class => 'btn btn-primary btn-app', :id => id, 'data-toggle' => modal_string) do
+      image_tag(icon, :class => 'button-icon') + text
+    end
+  end
+
   def signed_out?
     not signed_in?
   end

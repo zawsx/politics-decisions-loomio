@@ -25,8 +25,6 @@
       #any-amount
         %h2= t("contribution.any_amount")
         =form_tag(contributions_path) do
-          .input-prepend
-            %span.add-on= '$'
-            %input.input-mini{:id => "custom_amount", :name => "amount", :type => "text"}
-            =select_tag(:currency, options_for_select(SwipeWrapper::CURRENCIES), class: 'input-mini')
+          %input.input-mini{:id => "custom_amount", :name => "amount", :placeholder => "$", :type => "text"}
+          =select_tag(:currency, options_for_select(SwipeWrapper::CURRENCIES), class: 'input-mini')
           %input{:id => "custom_amount_input", type: 'submit', value: 'submit', class: "btn"}

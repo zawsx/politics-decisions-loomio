@@ -1,6 +1,19 @@
-// override bootstrap
+// override bootstrap and flat-ui
+
+a { text-decoration: none; }
 
 .btn { margin-bottom: 5px; }
+
+.btn-group > .btn { text-align: left; }
+
+.open > .dropdown-menu { margin-top: 14px; }
+
+.dropdown-menu {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 5px 0;
+  width: auto;
+  li:last-child > a { border-radius: 0; }
+}
 
 .modal {
   opacity: 100%;
@@ -35,4 +48,28 @@
 
 .popover-inner {
   background: black;
+}
+
+.navbar-inverse .navbar-inner {
+  background: #444;
+  padding: 2px 0;
+}
+
+.row-fluid textarea,
+.row-fluid input[type="text"],
+.row-fluid input[type="password"],
+.row-fluid input[type="datetime"],
+.row-fluid input[type="datetime-local"],
+.row-fluid input[type="date"],
+.row-fluid input[type="month"],
+.row-fluid input[type="time"],
+.row-fluid input[type="week"],
+.row-fluid input[type="number"],
+.row-fluid input[type="email"],
+.row-fluid input[type="url"],
+.row-fluid input[type="search"],
+.row-fluid input[type="tel"],
+.row-fluid input[type="color"],
+.row-fluid .uneditable-input {
+  height: 18px;
 }
