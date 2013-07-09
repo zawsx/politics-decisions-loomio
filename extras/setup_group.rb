@@ -5,25 +5,22 @@ class SetupGroup
     self.group_request = group_request
   end
 
-  def approve_group_request(args)
+  def approve_group_request
     @group = Group.new
-    @group.group_request = group_request
-
-    %w[name cannot_contribute max_size].each do |attr|
-      @group.send("#{attr}=", group_request.send(attr))
-    end
-
-    group_request.approve!(args)
+    group_request.group = @group
+    @group.name = group_request.name
+    group_request.approve!
+    send_invitation_to_start_group(SetupGroup.find_or_create_helper_bot)
     @group.save!
     @group
   end
 
-  def send_invitation_to_start_group(args)
+  def send_invitation_to_start_group(inviter)
     invitation = CreateInvitation.to_start_group(group: group_request.group,
-                                                inviter: args[:inviter],
+                                                inviter: inviter,
                                                 recipient_email: group_request.admin_email)
 
-    InvitePeopleMailer.to_start_group(invitation, args[:inviter].email, args[:message_body]).deliver
+    InvitePeopleMailer.to_start_group(invitation, inviter.email).deliver
     invitation
   end
 

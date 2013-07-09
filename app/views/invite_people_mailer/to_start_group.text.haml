@@ -1,1 +1,11 @@
-= @message_body.gsub('{invitation_link}', invitation_url(@invitation))
+= t("email.invitation.header")
+\
+= t("email.invitation.hi", name: "Mix master Jerving")
+\
+= t("email.invitation.intro", group_name: "Jimmies on Jammies")
+\
+= invitation_url(@invitation)
+\
+= t("email.invitation.closing_message")
+\
+= t :thanks

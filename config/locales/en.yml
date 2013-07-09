@@ -134,7 +134,7 @@ en:
     motion_blocked: "blocked the proposal"
 
   edit_discussion_context: "Edit discussion context"
-  request_new_group: "Request New Group"
+  request_new_group: "Start a group"
   request_new_group_details: "or wait until you are invited to one."
   empty_notifications: "You do not have any notifications yet."
   see_all_notifications: "See all notifications"

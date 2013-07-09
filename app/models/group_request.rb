@@ -1,19 +1,12 @@
 class GroupRequest < ActiveRecord::Base
 
-  attr_accessible :name, :description, :expected_size, :admin_name, :admin_email,
-                  :cannot_contribute, :max_size, :high_touch, :robot_trap, :admin_notes
-
-  attr_accessor :robot_trap
+  attr_accessible :name, :admin_name, :admin_email
 
   validates :name, presence: true, length: {maximum: 250}
-  validates :description, presence: true
-  validates :expected_size, presence: true
   validates :admin_name, presence: true, length: {maximum: 250}
   validates :admin_email, presence: true, email: true
-  validates_inclusion_of :cannot_contribute, :in => [true, false], message: I18n.t("error.group_request_contribution")
 
   belongs_to :group
-  belongs_to :approved_by, class_name: 'User'
 
   scope :verified, where(status: :verified)
   scope :starred, where(high_touch: true)
@@ -30,8 +23,8 @@ class GroupRequest < ActiveRecord::Base
 
   include AASM
   aasm column: :status do  # defaults to aasm_state
-    state :unverified, initial: true
-    state :verified
+    state :unverified
+    state :verified, initial: true
     state :approved
     state :defered
     state :manually_approved
@@ -63,8 +56,7 @@ class GroupRequest < ActiveRecord::Base
 
   end
 
-  def approve!(args)
-    self.approved_by = args[:approved_by]
+  def approve!
     update_attribute(:approved_at, DateTime.now)
     approve_request
     save!

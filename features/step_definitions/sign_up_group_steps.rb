@@ -1,9 +1,5 @@
 When(/^I click on the start new group link in the group dropdown$/) do
-  click_on "Start a group"
-end
-
-Then(/^I should see the group selection page$/) do
-  page.should have_content("body.group_sign_up.new")
+  find(".new-group a").click
 end
 
 Then(/^I should see my name and email in the form$/) do
@@ -22,34 +18,40 @@ Given(/^I am on the group selection page$/) do
   page.should have_content("body.group_sign_up.new")
 end
 
-When(/^click the subscription button$/) do
+When(/^I click the subscription button$/) do
   find("#organisation a").click
 end
 
 When(/^I fill in and submit the subscription form$/) do
+  @name = "Herby's Erbs"
   fill_in :group_request_admin_name, with: "Herby Hancock"
   fill_in :group_request_admin_email, with: "herb@home.com"
-  fill_in :group_request_name, with: "Herby's Erbs"
+  fill_in :group_request_name, with: @name
   click_on 'Sign up'
 end
 
 Then(/^I should see the thank you page$/) do
-  page.should have_content("body.group_sign_up.thanks")
+  page.should have_css("body.group_requests.confirmation")
 end
 
-Then(/^I should recieve an invitation email to start the group$/) do
-  pending# express the regexp above with the code you wish you had
+Then (/^the group is created$/) do
+  @group = Group.where(name: @name).first
+  @group_request = @group.group_request
 end
 
 When(/^I click the invitation link$/) do
-  click_on 'Get in touch'
+  link = links_in_email(current_email)[2]
+  request_uri = URI::parse(link).request_uri
+  visit request_uri
+  # click_email_link_matching(invitation_url(@group_request.token))
 end
 
 Then(/^I should see the group page$/) do
-  page.should have_content("body.groups.show")
+  page.should have_css("body.groups.show")
 end
 
 Then(/^I should be added to the group as a coordinator$/) do
+  @user = User.find_by_email(@group.admin_email)
   @user.adminable_groups.should include @group
 end
 
@@ -58,7 +60,7 @@ When(/^I click the pay what you can button$/) do
 end
 
 Then(/^I should see the group page with a contribute link$/) do
-  page.should have_content("body.groups.show")
+  page.should have_css("body.groups.show")
   page.should have_css("#contribute")
 end
 

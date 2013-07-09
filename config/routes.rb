@@ -17,24 +17,23 @@ Loomio::Application.routes.draw do
 
   resources :invitations, only: [:show]
 
-  resources :group_requests, only: [:create, :new] do
-    get :verify, on: :member
-    get :group_sign_up_which, on: :member
-    get :group_sign_up_informal, on: :member
-    get :group_sign_up_formal, on: :member
-    get :sign_up_confirmation
+  resources :group_requests, only: [:create] do
   end
 
-  # mockup routes
-  match "/start_group_mailer/invitation", to: 'group_requests#invitation_mailer'
-  match "/start_group_mailer/trial_follow_up", to: 'group_requests#trial_follow_up_mailer'
-  match "/start_group_mailer/trial_expiry", to: 'group_requests#trial_expiry_mailer'
+  get "/group_requests/selection", to: 'groups/group_requests#selection', as: :group_requests_selection
+  get "/group_requests/subscription", to: 'groups/group_requests#subscription', as: :group_requests_subscription
+  get "/group_requests/pwyc", to: 'groups/group_requests#pwyc', as: :group_requests_pwyc
+  get "/group_request/confirmation", to: "group_requests#confirmation", as: :group_request_confirmation
+
+  # # mockup routes
+  # match "/start_group_mailer/invitation", to: 'group_requests#invitation_mailer'
+  # match "/start_group_mailer/trial_follow_up", to: 'group_requests#trial_follow_up_mailer'
+  # match "/start_group_mailer/trial_expiry", to: 'group_requests#trial_expiry_mailer'
   
 
 
   match "/request_new_group", to: "group_requests#new", as: :request_new_group
 
-  match "/group_request_confirmation", to: "group_requests#confirmation", as: :group_request_confirmation
 
   resources :groups, except: [:index, :new] do
     resources :invitations, only: [:index, :destroy, :new, :create], controller: 'groups/invitations'
@@ -49,9 +48,6 @@ Loomio::Application.routes.draw do
        delete :cancel_request, as: :cancel_request_for
       end
     end
-
-    get :setup, on: :member, to: 'groups/group_setup#setup'
-    put :finish, on: :member, to: 'groups/group_setup#finish'
 
     post :add_members, on: :member
     post :hide_next_steps, on: :member

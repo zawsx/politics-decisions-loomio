@@ -1,7 +1,6 @@
 class InvitePeopleMailer < ActionMailer::Base
-  def to_start_group(invitation, sender_email, message_body)
+  def to_start_group(invitation, sender_email)
     @invitation = invitation
-    @message_body = message_body
     mail to: invitation.recipient_email, 
          from: 'contact@loomio.org',
          reply_to: sender_email,
