@@ -2,9 +2,7 @@
   .span9.offset1
     #intro
       %h1 What kind of group are you?
-      %p Money shouldn’t be a barrier to good collaborative decision making. Groups with a budget pay a subscription for using the tool, members of informal groups contribute what they can.
-      %p Your contribution means we can keep Loomio independent, free of advertising, and driven by our community of users.
-.row
+.row#payment_models
   .span4.offset1
     .payment-model-box#organisation
       %h2 Organisation
@@ -19,3 +17,8 @@
       %p.examples e.g. families, social movements, collectives
       %p Members of your group will be asked to pay what they can.
       = link_to 'Pay what you can', group_requests_pwyc_path, class: "btn btn-info btn-large btn-block"
+
+.row
+  .span7.offset1
+    %p Money shouldn’t be a barrier to good collaborative decision making. Groups with a budget pay a subscription for using the tool, members of informal groups contribute what they can.
+    %p Your contribution means we can keep Loomio independent, free of advertising, and driven by our community of users.

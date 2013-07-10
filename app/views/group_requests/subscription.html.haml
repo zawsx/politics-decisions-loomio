@@ -1,30 +1,33 @@
 .row
   .span4.offset1
     #intro
-      %h1 30 day free trial
-      %p No credit card required
-    = render 'sign_up_form'
+      %h1 Try Loomio for free
 
-  .span4#pricing
+.row
+  .span4.offset1
+    = render 'sign_up_form'
+  .span4
     .info-box#organisation
-      %h2 Pricing tiers
       %table
         %tr
-          %th Group size
-          %th Price
+          %td Up to 10 people
+          %td 
+            %span US
+            $30/mo
         %tr
-          %td <10
-          %td $30
+          %td Up to 25
+          %td 
+            %span US
+            $50/mo
         %tr
-          %td 11-25
-          %td $50
+          %td Up to 50
+          %td 
+            %span US
+            $100/mo
         %tr
-          %td 26-50
-          %td $100
-        %tr
-          %td 51-100
-          %td $200
-        %tr
-          %td >100
-          %td talk to us
-      %p At the end of your 30 day free trial, you’ll be asked to enter credit card details to continue using Loomio.
+          %td More than 100
+          %td 
+            = mail_to('contact@loomio.org', 'Talk to us!' )
+      %p  
+        You'll be asked to enter credit card details at the end of your 
+        %span 30-day free trial.

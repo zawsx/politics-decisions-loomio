@@ -7,10 +7,10 @@ Scenario: New user creates subscripton group
   Given I am on the home page of the website
   When I click the start new group button
   And I click the subscription button
-  And I fill in and submit the subscription form
+  And I fill in and submit the form
   Then the group is created
   And I should see the thank you page
-  And an email should be sent to the group admin with an invitation link
+  And I should recieve an email with an invitation link
   When I click the invitation link
   And I sign up as a new user
   And I should see the group page
@@ -20,11 +20,10 @@ Scenario: Logged in existing user creates subscripton group
   Given I am logged in
   When I click on the start new group link in the group dropdown
   And I click the subscription button
-  Then I should see my name and email in the form
-  When I fill in the group name submit the subscription form
+  When I fill in the group name and submit the form
   Then the group is created
   And I should see the thank you page
-  And I should recieve an invitation email to start the group
+  And I should recieve an email with an invitation link
   When I click the invitation link
   And I should see the group page
   And I should be added to the group as a coordinator
@@ -32,13 +31,13 @@ Scenario: Logged in existing user creates subscripton group
 Scenario: Logged out existing user creates subscripton group
   Given I am on the home page of the website
   When I click the start new group button
-  And click the subscription button
-  And I fill in and submit the subscription form
+  And I click the subscription button
+  And I fill in and submit the form
   Then the group is created
   And I should see the thank you page
-  And I should recieve an invitation email to start the group
+  And I should recieve an email with an invitation link
   When I click the invitation link
-  And I sign in
+  And I sign in via the sign up page
   And I should see the group page
   And I should be added to the group as a coordinator
 
@@ -46,10 +45,10 @@ Scenario: New user creates Pay What You Can group
   Given I am on the home page of the website
   When I click the start new group button
   And I click the pay what you can button
-  And I fill in and submit the subscription form
+  And I fill in and submit the form
   Then the group is created
   And I should see the thank you page
-  And I should recieve an invitation email to start the group
+  And I should recieve an email with an invitation link
   When I click the invitation link
   And I sign up as a new user
   Then the group is created
@@ -60,11 +59,10 @@ Scenario: Logged in existing user creates Pay What You Can group
   Given I am logged in
   When I click on the start new group link in the group dropdown
   And I click the pay what you can button
-  Then I should see my name and email in the form
-  And I fill in the group name submit the subscription form
+  And I fill in the group name and submit the form
   Then the group is created
   And I should see the thank you page
-  And I should recieve an invitation email to start the group
+  And I should recieve an email with an invitation link
   When I click the invitation link
   And I should see the group page with a contribute link
   And I should be added to the group as a coordinator
@@ -73,11 +71,11 @@ Scenario: Logged out existing user creates Pay What You Can group
   Given I am on the home page of the website
   When I click the start new group button
   And I click the pay what you can button
-  And I fill in and submit the subscription form
+  And I fill in and submit the form
   Then the group is created
   And I should see the thank you page
-  And I should recieve an invitation email to start the group
+  And I should recieve an email with an invitation link
   When I click the invitation link
-  And I sign in
+  And I sign in via the sign up page
   And I should see the group page with a contribute link
   And I should be added to the group as a coordinator
