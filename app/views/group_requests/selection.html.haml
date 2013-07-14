@@ -1,24 +1,47 @@
 .row
   .span9.offset1
     #intro
-      %h1 What kind of group are you?
+      %h1= t("group_request.selection.intro")
 .row#payment_models
   .span4.offset1
     .payment-model-box#organisation
+<<<<<<< HEAD
       %h2 Organisation
       %p.examples e.g. businesses, government agencies, community organisations
       %p
         Your group will be invoiced monthly after a
         %span#trial 30 day free trial.
       = link_to 'Subscription',  group_requests_subscription_path, class: "btn btn-success btn-large btn-block"
+||||||| parent of 83e273b... add translations
+      %h2 Organisation
+      %p.examples e.g. businesses, government agencies, community organisations
+      %p
+        Your group will be invoiced monthly after a
+        %span#trial 30 day free trial.
+      = link_to 'Subscription',  subscription_group_requests_path, class: "btn btn-success btn-large btn-block"
+=======
+      %h2= t("group_request.selection.organisation.header")
+      %p.examples= t("group_request.selection.organisation.description_html")
+      = link_to t("group_request.selection.organisation.submit"),  subscription_group_requests_path, class: "btn btn-success btn-large btn-block"
+>>>>>>> 83e273b... add translations
   .span4
     .payment-model-box#informal-group
+<<<<<<< HEAD
       %h2 Informal group
       %p.examples e.g. families, social movements, collectives
       %p Members of your group will be asked to pay what they can.
       = link_to 'Pay what you can', group_requests_pwyc_path, class: "btn btn-info btn-large btn-block"
+||||||| parent of 83e273b... add translations
+      %h2 Informal group
+      %p.examples e.g. families, social movements, collectives
+      %p Members of your group will be asked to pay what they can.
+      = link_to 'Pay what you can', pwyc_group_requests_path, class: "btn btn-info btn-large btn-block"
+=======
+      %h2= t("group_request.selection.informal_group.header")
+      %p.examples= t("group_request.selection.informal_group.description_html")
+      = link_to t("group_request.selection.informal_group.submit"), pwyc_group_requests_path, class: "btn btn-info btn-large btn-block"
+>>>>>>> 83e273b... add translations
 
 .row
   .span7.offset1
-    %p Money shouldn’t be a barrier to good collaborative decision making. Groups with a budget pay a subscription for using the tool, members of informal groups contribute what they can.
-    %p Your contribution means we can keep Loomio independent, free of advertising, and driven by our community of users.
+    %p= t("group_request.selection.description_html")

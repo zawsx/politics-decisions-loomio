@@ -5,13 +5,13 @@
 
 body.group_requests {
   abbr { display: none; }
-  p { 
-    font-size: $font-medium-large; 
+  p {
+    font-size: $font-medium-large;
     font-weight: 300;
   }
   #informal-group { background-color: #D8EBF1; }
-  #organisation { 
-    background-color: #DEF1DE; 
+  #organisation {
+    background-color: #DEF1DE;
     p { font-style: italic;
     span { font-weight: 700; }
     }
@@ -61,8 +61,8 @@ body.group_requests {
   }
   &.group_requests.selection {
     p { padding: 0 6px; }
-    .row:last-child { 
-      p:last-child { font-weight: 700; }
+    .row:last-child {
+      p#last { font-weight: 700; }
     }
     .examples { font-style: italic; color: #777;}
     #intro { margin: 10px 10px 30px; }

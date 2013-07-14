@@ -241,6 +241,49 @@ en:
   group_description: "Group description"
   edit_group_description: "Edit group description"
 
+
+  #
+  # GROUP REQUESTS
+  #
+
+  group_request:
+    form:
+      name: "What is your name?"
+      email: "What is your email address?"
+      group_name: "What is the name of your group?"
+      placeholders:
+        name: "e.g. Jane Bloggs"
+        email: "e.g. jane@organisation.com"
+        group_name: "e.g. Jane's Accounting Services"
+    pwyc:
+      description_html: "Your group members will be invited to pay what they can.<p>If you would rather pay on behalf of your group, <a href='subscription'>sign up for a subscription.</a></p>"
+      header: "Pay what you can"
+      intro: "Start your group"
+      submit: "Start group!"
+    selection:
+      description_html: "Money shouldn’t be a barrier to good collaborative decision making. Groups with a budget pay a subscription for using the tool, members of informal groups contribute what they can.</p><p id='last'>Your contribution means we can keep Loomio independent, free of advertising, and driven by our community of users.</p>"
+      intro: "What kind of group are you?"
+      informal_group:
+        description_html: "e.g. families, social movements, collectives</p><p>Members of your group will be asked to pay what they can.</p>"
+        header: "Informal group"
+        submit: "Pay what you can"
+      organisation:
+        description_html: "e.g. businesses, government agencies, community organisations</p><p>Your group will be invoiced monthly after a <span id='trial'>30 day free trial.</span></p>"
+        header: "Organisation"
+        submit: "Subscription"
+    subscription:
+      intro: "Try Loomio for free"
+      table:
+        description_html: "You'll be asked to enter credit card details at the end of your <span>30-day free trial.</span>"
+        price1_html: "<span>US</span> $30/mo"
+        price2_html: "<span>US</span> $50/mo"
+        price3_html: "<span>US</span> $100/mo"
+        price4_html: "<a mailto='contact@loomio.org'>Talk to us!</a>"
+        quantity1: "Up to 10 people"
+        quantity2: "Up to 25"
+        quantity3: "Up to 50"
+        quantity4: "more than 100"
+      submit: "Start your free trial!"
   #
   # DISCUSSION PAGE
   #

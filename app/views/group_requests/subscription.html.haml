@@ -1,33 +1,24 @@
 .row
   .span4.offset1
     #intro
-      %h1 Try Loomio for free
-
+      %h1= t("group_request.subscription.intro")
 .row
   .span4.offset1
-    = render 'sign_up_form'
+    = render 'form', submit_label: t("group_request.subscription.submit")
   .span4
     .info-box#organisation
       %table
         %tr
-          %td Up to 10 people
-          %td 
-            %span US
-            $30/mo
+          %td= t("group_request.subscription.table.quantity1")
+          %td= t("group_request.subscription.table.price1_html")
         %tr
-          %td Up to 25
-          %td 
-            %span US
-            $50/mo
+          %td= t("group_request.subscription.table.quantity2")
+          %td= t("group_request.subscription.table.price2_html")
         %tr
-          %td Up to 50
-          %td 
-            %span US
-            $100/mo
+          %td= t("group_request.subscription.table.quantity3")
+          %td= t("group_request.subscription.table.price3_html")
         %tr
-          %td More than 100
-          %td 
-            = mail_to('contact@loomio.org', 'Talk to us!' )
-      %p  
-        You'll be asked to enter credit card details at the end of your 
-        %span 30-day free trial.
+          %td= t("group_request.subscription.table.quantity4")
+          %td= t("group_request.subscription.table.price4_html")
+      %p= t("group_request.subscription.table.description_html")
+
