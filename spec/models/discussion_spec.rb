@@ -34,6 +34,13 @@ describe Discussion do
     discussion.last_comment_at.should == discussion.created_at
   end
 
+  describe "#search_by_title(query)" do 
+    it "returns a matched set of discussions on the string query" do 
+      discussion = create(:discussion, title: "jam")
+      Discussion.search_by_title("jam").should == [discussion]
+    end
+  end
+
   describe "#latest_comment_time" do
     it "returns time of latest comment if comments exist" do
       discussion = create :discussion

@@ -10,7 +10,6 @@ Given(/^I am logged in and belong to a group$/) do
 end
 
 When(/^I search for "(.*?)"$/) do |search_item|
-	fill_in "query", with: search_item
 	visit search_path(query: search_item)
 end
 

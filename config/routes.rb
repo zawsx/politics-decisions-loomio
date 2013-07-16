@@ -1,7 +1,7 @@
 Loomio::Application.routes.draw do
 
   get "/groups", to: 'groups/public_groups#index', as: :public_groups
-  get "/search", to: 'application#search'
+  get "/search", to: 'searches#show'
 
   ActiveAdmin.routes(self)
 
