@@ -2,6 +2,7 @@ class BaseController < ApplicationController
   include AutodetectTimeZone
   before_filter :authenticate_user!, :check_browser, :check_for_invitation, :load_announcements
   before_filter :set_time_zone_from_javascript
+  before_filter :initialize_search_form
   helper_method :time_zone
 
   protected
@@ -44,5 +45,9 @@ class BaseController < ApplicationController
     if session[:invitation_token] and user_signed_in?
       redirect_to invitation_path(session[:invitation_token])
     end
+  end
+
+  def initialize_search_form
+    @search_form = SearchForm.new(current_user)
   end
 end
