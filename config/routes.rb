@@ -136,6 +136,7 @@ Loomio::Application.routes.draw do
 
   scope controller: 'pages' do
     get :about
+    get :pricing
     get :privacy
     get :browser_not_supported
   end
