@@ -61,7 +61,6 @@ describe "User abilities" do
     it { should_not be_able_to(:destroy, @other_user_membership) }
     it { should be_able_to(:destroy, @user_membership) }
     it { should be_able_to(:create, new_motion) }
-    it { should be_able_to(:get_and_clear_new_activity, other_users_motion) }
     it { should be_able_to(:close, user_motion) }
     it { should be_able_to(:edit_close_date, user_motion) }
     it { should be_able_to(:destroy, user_motion) }
@@ -207,7 +206,7 @@ describe "User abilities" do
     it { should_not be_able_to(:destroy, motion) }
 
     context "group viewable_by: everyone" do
-      before do 
+      before do
         group.update_attributes!(:viewable_by => 'everyone')
         discussion.reload
       end
@@ -218,7 +217,6 @@ describe "User abilities" do
       it { should be_able_to(:cancel, my_membership_request) }
       it { should_not be_able_to(:cancel, other_membership_request) }
       it { should be_able_to(:show, discussion) }
-      it { should be_able_to(:get_and_clear_new_activity, motion) }
       it { should_not be_able_to(:update, group) }
       it { should_not be_able_to(:email_members, group) }
       it { should_not be_able_to(:add_subgroup, group) }
@@ -248,7 +246,6 @@ describe "User abilities" do
       before { group.update_attributes!(:viewable_by => 'members') }
       it { should_not be_able_to(:show, group) }
       it { should_not be_able_to(:show, discussion) }
-      it { should_not be_able_to(:get_and_clear_new_activity, motion) }
     end
 
     context 'group viewable by parent group members' do
