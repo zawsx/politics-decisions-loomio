@@ -8,10 +8,28 @@ class Groups::InvitationsController < GroupBaseController
   end
 
   def create
+
+    emails = params[:invite_people][:recipients].split(',')
+    existing_users = User.where(email: emails)
+    existing_emails = existing_users.pluck(:email)
+    new_emails = emails - existing_emails
+
+    existing_users.each do |user|
+      @group.add_member!(user)
+    end
+
+
     @invite_people = InvitePeople.new(params[:invite_people])
+    @invite_people.recipients = new_emails.join
+    p "000000000000000000000000000000000000"
+    p @invite_people
+    p "000000000000000000000000000000000000"
     if @invite_people.valid?
       num = CreateInvitation.to_people_and_email_them(@invite_people, group: @group, inviter: current_user)
       flash[:notice] = "#{num} invitation(s) sent" if num > 0
+      redirect_to group_path(@group)
+    elsif @invite_people.recipients.empty?
+      flash[:notice] = "yussss"
       redirect_to group_path(@group)
     else
       load_decorated_group

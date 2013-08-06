@@ -14,6 +14,10 @@ Given(/^I am on the group show page$/) do
   visit group_path(@group)
 end
 
+Given(/^there is a user called "(.*?)" with email "(.*?)"$/) do |name, email|
+  @user = FactoryGirl.create(:user, name: name, email: email )
+end
+
 When(/^I click Invite people from the members box$/) do
   click_on 'group-member-options'
   within 'ul.group-member-options' do
@@ -37,6 +41,10 @@ Then(/^"(.*?)" should get an invitation to join the group$/) do |arg1|
   last_email = ActionMailer::Base.deliveries.last
   last_email.to.should == [arg1]
   last_email.reply_to.should == [@group_admin.email]
+end
+
+Then(/^I should see "(.*?)" is a member$/) do |name|
+  page.should have_content(name)
 end
 
 Given(/^an invitation to join the group has been sent to "(.*?)"$/) do |arg1|
