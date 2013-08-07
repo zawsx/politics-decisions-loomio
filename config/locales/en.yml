@@ -59,6 +59,15 @@ en:
     settings_updated: "Your settings have been updated."
     user_made_admin: "%{which_user} has been made a coordinator."
     you_have_left_group: "You have left %{which_group}."
+    invitations:
+      auto_added:
+        one: "%{count} member added"
+        other: "%{count} members added"
+      sent:
+        one: "%{count} invitation sent"
+        other: "%{count} invitations sent"
+      auto_added_and_sent: "%{auto_added_text} and %{sent_text}"
+
   warning:
     cant_remove_last_admin: "You are the last coordinator and cannot be removed."
     membership_request_already_approved: "Membership request has already been approved."
