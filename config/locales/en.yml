@@ -63,6 +63,9 @@ en:
       auto_added:
         one: "%{count} member added"
         other: "%{count} members added"
+      existing_member:
+        one: "%{count} member already in group"
+        other: "%{count} members already in group"
       sent:
         one: "%{count} invitation sent"
         other: "%{count} invitations sent"

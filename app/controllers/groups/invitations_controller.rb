@@ -8,27 +8,33 @@ class Groups::InvitationsController < GroupBaseController
   end
 
   def create
-    emails = params[:invite_people][:recipients].split(',')
-    existing_users = User.where(email: emails)
-    existing_emails = existing_users.pluck(:email)
-    already_in_group = existing_users.where
-    existing_users_not_in_group = existing_users - @group.members.all
-    new_emails = emails - existing_emails
+    # get all the emails
+    @emails = params[:invite_people][:recipients].split(',')
 
-    existing_users.each do |user|
+    # figure out people who we should auto-add
+    existing_users = User.where(email: @emails)
+    users_not_in_group = existing_users - @group.members.all
+    @users_in_group = existing_users - users_not_in_group
+
+    # auto-add users_not_in the group
+    users_not_in_group.each do |user|
       @group.add_member!(user)
     end
-    @num_auto_added = existing_users.count
+    @num_auto_added = users_not_in_group.count
 
+    # emails to send invites to (not yet users)
+    new_emails = @emails - existing_users.pluck(:email)
 
     @invite_people = InvitePeople.new(params[:invite_people])
     @invite_people.recipients = new_emails.join(',')
 
+    #check if there are people to invite by email. if there are, do it and set flash
     if @invite_people.valid?
       @num_invited = CreateInvitation.to_people_and_email_them(@invite_people, group: @group, inviter: current_user)
       set_invitation_success_flash
       redirect_to group_path(@group)
-    elsif @num_auto_added > 0
+    #there was nooone to invite... was there anyone auto-added?
+    elsif existing_users.count > 0 #@num_auto_added > 0 || @users_in_group.count > 0
       set_invitation_success_flash
       redirect_to group_path(@group)
     else
@@ -65,15 +71,32 @@ class Groups::InvitationsController < GroupBaseController
   end
 
   def set_invitation_success_flash
-    if @num_auto_added == 0 && @num_invited > 0
+    if @num_auto_added == 0 && @num_invited > 0 #only invites were sent
       flash[:notice] = t(:'notice.invitations.sent', count: @num_invited)
-    elsif @num_auto_added > 0 && @num_invited == 0
-      flash[:notice] = t(:'notice.invitations.auto_added', count: @num_auto_added)
-    else
+    elsif @num_auto_added > 0 && @num_invited == 0 #only users were auto-added
+      if @emails.count == @users_in_group.count #there were only existing members in the emails given
+        flash[:notice] = t(:'notice.invitations.existing_member', count: @users_in_group.count)
+      else #only users were auto-added
+        flash[:notice] = t(:'notice.invitations.auto_added', count: @num_auto_added)
+      end
+    else #a mix of users and new people were invited (and maybe existing members)
       flash[:notice] = t(:'notice.invitations.auto_added_and_sent',
                             auto_added_text: t(:'notice.invitations.auto_added', count: @num_auto_added),
                             sent_text: t(:'notice.invitations.sent', count: @num_invited))
       # flash[:notice] = t(:'notice.invitations.auto_added_and_sent', num_added: @num_auto_added, num_invited: @num_invited)
     end
+
+    #rewrite
+
+    # if #there were only existing members in the emails given (nothing happened)
+    #   # WARNING
+    # elsif #only users were auto-added
+
+    # elsif #only people were invited by email
+
+    # else  #(a mix of auto-add and invites)
+
+    # end
+
   end
 end
