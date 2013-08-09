@@ -19,6 +19,7 @@ class Groups::InvitationsController < GroupBaseController
     @invite_people.recipients = @emails_to_invite.join(',')
 
     @group.add_members!(@members_to_add, current_user)
+    #event
 
     if @invite_people.valid?
       CreateInvitation.to_people_and_email_them(@invite_people,

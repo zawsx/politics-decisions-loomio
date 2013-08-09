@@ -162,7 +162,7 @@ class Group < ActiveRecord::Base
   end
 
   def add_members!(users, inviter=nil)
-    users.each do |user|
+    users.map do |user|
       add_member!(user, inviter)
     end
   end

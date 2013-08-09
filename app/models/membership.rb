@@ -62,6 +62,7 @@ class Membership < ActiveRecord::Base
     return user_name ? user_name : user_email
   end
 
+  #start here
   def promote_to_member!(inviter=nil)
     # TODO: try to merge with approve!
     if request?
