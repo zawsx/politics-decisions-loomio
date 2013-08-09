@@ -109,30 +109,4 @@ describe Membership do
       end
     end
   end
-
-  describe "#promote_to_member!" do
-    before do
-      @membership = build :membership
-      @inviter = mock_model User
-    end
-
-    after { @membership.promote_to_member! @inviter }
-
-    context "membership is a request" do
-      it "approves the membership" do
-        @membership.stub :request? => true
-        @membership.should_receive(:inviter=).with @inviter
-        @membership.should_receive :approve
-        @membership.should_receive :save!
-        Events::UserAddedToGroup.should_receive(:publish!).with(@membership)
-      end
-    end
-
-    context "membership is not a request" do
-      it "does not change the membership" do
-        @membership.stub :request? => false
-        @membership.should_not_receive :approve!
-      end
-    end
-  end
 end

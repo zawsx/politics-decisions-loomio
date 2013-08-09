@@ -1,8 +1,8 @@
-class Events::MembershipRequestApproved < Event
+class Events::InvitationAccepted < Event
   after_create :notify_users!
 
   def self.publish!(membership)
-    create!(:kind => "membership_request_approved", :eventable => membership)
+    create!(:kind => "invitation_accepted", :eventable => membership)
   end
 
   def membership

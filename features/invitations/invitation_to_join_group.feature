@@ -14,6 +14,8 @@ Feature: Invitation to join group
     And there is a user called "Jim Jam" with email "jim@jam.com"
     When I invite "jim@jam.com" to our group
     Then "Jim Jam" should be auto-added to the group
+    And "Jim Jam" should receive a notification that they have been added
+    And "jim@jam.com" should receive an email
 
   @javascript
   Scenario: Coordinator invites existing group member

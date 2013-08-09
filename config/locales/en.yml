@@ -797,6 +797,9 @@ en:
   #
 
   email:
+    added_to_a_group:
+      subject: "You've been added to a group"
+      content: "Congratulations, you've been added to the group '%{which}' on Loomio!"
     unsubscribe: "Unsubscribe or change your email preferences:"
     unsubscribe_html: "<a href='%{link_path}'>%{link_text}</a> to unsubscribe or change your email preferences."
     view_comment: "Click here to view the comment on Loomio"

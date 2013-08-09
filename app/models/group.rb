@@ -158,6 +158,7 @@ class Group < ActiveRecord::Base
   def add_member!(user, inviter=nil)
     membership = find_or_build_membership_for_user(user)
     membership.inviter = inviter
+    membership.approve
     membership.save
     membership
   end

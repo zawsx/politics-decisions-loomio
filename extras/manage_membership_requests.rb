@@ -13,6 +13,7 @@ class ManageMembershipRequests
     else
       group = membership_request.group
       membership = group.add_member! requestor
+      Events::MembershipRequestApproved.publish!(membership)
     end
   end
 
