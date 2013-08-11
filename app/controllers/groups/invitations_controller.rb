@@ -19,7 +19,10 @@ class Groups::InvitationsController < GroupBaseController
     @invite_people.recipients = @emails_to_invite.join(',')
 
     memberships = @group.add_members!(@members_to_add, current_user)
-    memberships.each { |membership| Events::UserAddedToGroup.publish!(membership) }
+    memberships.each do |membership|
+      Events::UserAddedToGroup.publish!(membership)
+      UserMailer.delay.added_to_a_group(membership.user, membership.inviter, membership.group)
+    end
 
     if @invite_people.valid?
       CreateInvitation.to_people_and_email_them(@invite_people,

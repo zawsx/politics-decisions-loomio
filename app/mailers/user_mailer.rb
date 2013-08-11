@@ -49,10 +49,11 @@ class UserMailer < BaseMailer
 
   def added_to_a_group(user, inviter, group)
     @user = user
-    @
+    @group = group
     locale = best_locale(user.language_preference, inviter.language_preference)
     I18n.with_locale(locale) do
       mail to: user.email,
+           reply_to: inviter.email,
            subject: t("email.added_to_a_group.subject", which: group.name)
     end
   end
