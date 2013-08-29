@@ -176,7 +176,7 @@ en:
   user_settings: "User settings"
   email_preferences: "Email preferences"
   sign_out: "Sign out"
-  sign_in: "Sign in"
+  sign_in: "Log in"
   tagline: "Creating a world where it's easy for anyone to participate in decisions that affect them."
   or_sign_in_html: "If you've already got an account, <a href='%{link}'>sign in here</a>."
 
@@ -562,9 +562,9 @@ en:
   current_password: "Current password"
   password_details: "(we need your current password to confirm your changes)"
   cancel_my_account: "Cancel my account"
-  remember_me: "Remember me"
+  remember_me: "Keep me logged in"
   signing_in: "Signing in"
-  forgot_your_password: "Forgot your password?"
+  forgot_your_password: "Forgot password?"
   confirmation_not_received: "Didn't receive confirmation instructions?"
   unlock_not_received: "Didn't receive unlock instructions?"
 
