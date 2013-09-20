@@ -32,4 +32,38 @@ namespace :languages do
 
     puts "Remember to check EXPERIMENTAL_LANGUAGES array ^_^"
   end
+
+  task :check => :environment do
+    def flat_hash(hash, k = "")
+      return {k => hash} unless hash.is_a?(Hash)
+      hash.inject({}){ |h, v| h.merge! flat_hash(v[-1], k + '/' + v[0]) }
+    end
+
+    en = YAML.load_file("config/locales/en.yml")
+    es = YAML.load_file("config/locales/es.yml")
+
+
+    "/a/1/A/Standard".split('/')[2..-1].join(':')
+
+
+    # def flat_hash(h, k = [])
+    #   new_hash = {}
+    #   h.each_pair do |key, val|
+    #     if val.is_a?(Hash)
+    #       new_hash.merge!(flat_hash(val, k + [key]))
+    #     else
+    #       new_hash[k + [key]] = val
+    #     end
+    #   end
+    #   new_hash
+    # end
+
+    # def flat_hash(hash, k = [])
+    #   return {k => hash} unless hash.is_a?(Hash)
+    #   hash.inject({}){ |h, v| h.merge! flat_hash(v[-1], k + [v[0]]) }
+    # end
+
+
+
+  end
 end
