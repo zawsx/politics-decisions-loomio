@@ -48,3 +48,5 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require attachments
 //= require subscriptions
+//= require lib/markdown_converter
+//= require markdown_setup

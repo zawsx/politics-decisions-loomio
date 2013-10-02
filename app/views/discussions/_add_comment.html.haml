@@ -2,6 +2,7 @@
   = form_tag add_comment_discussion_path(discussion), :remote => true, id: "new-comment-form" do
     = render 'avatar', user: current_user, size: "medium", kind: nil, id: nil
     #comment-input{ data: {group: @group.id} }
+      #preview-container.js-render-as-markdown.hide
       .form-container
         = text_area_tag 'comment', "", id: 'new-comment', placeholder: t(:comment_form_placeholder)
         #attachment-container
@@ -10,6 +11,8 @@
       = submit_tag t(:comment_form_submit_button), class: "btn btn-small btn-success submit", id: 'post-new-comment', :data => {:disable_with => t(:comment_form_submit_button)}
       %a.btn.btn-small#preview-new-comment
         Preview
+      %a.btn.btn-small#markdown-help
+        %i.icon-question-sign
     .comment-toolbar
       -unless browser.ie? && browser.version.to_i < 10
         .attachment-icon#add-attachment-icon

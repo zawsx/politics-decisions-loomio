@@ -12,6 +12,8 @@ $ ->
   initializeDatepicker()
   initializeHelpNotices()
   collapseHomepageAccordian()
+  MarkdownSetup.init()
+
 
 
 ### EVENTS ###
@@ -202,11 +204,3 @@ Application.enableInlineEdition = ()->
 
 # Placeholder shim
 $.placeholder.shim();
-
-$ ->
-  # postBtn = $('#post-new-comment')
-  previewBtn = $('#preview-new-comment')
-  inputField = $('#new-comment')
-  previewBtn.click ->
-    previewBtn.toggleClass('active')
-    inputField.toggle()
