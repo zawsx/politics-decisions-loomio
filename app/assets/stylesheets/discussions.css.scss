@@ -269,8 +269,9 @@ body.discussions.show {
         @include box-shadow(0, 0, 0, 0);
       }
     }
-    #post-new-comment {
-      margin: 8px 5px 5px 45px;
+    #comment-input {
+      #post-new-comment{margin: 5px 1px 5px 45px;}
+      #preview-new-comment{margin-top: 5px;}
     }
     /** Code block padding (Stops avatars destroying indentation) */
     pre {
