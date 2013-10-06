@@ -1,7 +1,9 @@
+// Libraries
+@import "bootstrap"
 @import "bootstrap/mixins"
-@import "settings"
-@import "mixins"
 
+
+// ************ atomic structure ***************
 
 // "So, while atoms and quarks define rigid and clear rules for
 // the system overall, and utilities provide the outlining structural
@@ -9,10 +11,10 @@
 // the design can be more flexible and extend styles out from
 // those central tenets of the system."
 
-// @import all css files in here
-
 // Utilites are very basic plumbing
-// @import "utilites/clearfix"
+@import "utilities/vendor"
+@import "utilities/colors"
+@import "utilities/fonts"
 
 // Quarks are HTML elements
 // @import "quarks/paragraphs"
