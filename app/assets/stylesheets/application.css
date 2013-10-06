@@ -5,14 +5,5 @@
  *= require_self
  *= require lib/jquery.jqplot.min
  *= require lib/jquery.atwho
-
- *= require invitations
- *= require group_requests
- *= require help
- *= require contributions
- *= require inbox
- *= require manage_membership_requests
- *= require searches
- *= require subscriptions
  *= require atomic
  */
