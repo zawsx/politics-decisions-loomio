@@ -5,10 +5,6 @@
  *= require_self
  *= require lib/jquery.jqplot.min
  *= require lib/jquery.atwho
- *= require main
- *= require overide_bootstrap
- *= require icons
- *= require header
  *= require dashboard
  *= require groups
  *= require groups/public_groups
