@@ -1,11 +1,29 @@
 /*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require jquery.ui.datepicker
- *= require lib/jquery.jqplot.min
- *= require jquery.atwho
+*= require_self
+*= require jquery.ui.datepicker
+*= require lib/jquery.jqplot.min
+*= require jquery.atwho
+
+************ atomic **************
+
+// Utilities are very basic plumbing
+*= require utilities/libraries
+*= require utilities/vendor
+*= require utilities/colors
+*= require utilities/fonts
+
+// Quarks are HTML elements
+// example: quarks/paragraphs
+
+// Atoms are universal abstractions
+*= require atoms/activity_count
+
+// Molecules are for one-off structures, combining quarks and atoms
+*= require molecules/inbox_line_item
+
+************************************
+
+// Legacy css to be atomized
  *= require main
  *= require overide_bootstrap
  *= require icons
@@ -28,5 +46,4 @@
  *= require manage_membership_requests
  *= require searches
  *= require subscriptions
- *= require atomic
  */

@@ -1,0 +1,24 @@
+@mixin box-shadow($h-offset, $v-offset, $blur-distance, $spread-distance, $color) {
+  @each $target in -moz-box-shadow -webkit-box-shadow box-shadow {
+    #{$target}: $h-offset $v-offset $blur-distance $spread-distance $color;
+  }
+}
+
+@mixin border-radius($radius) {
+  @each $target in -moz-border-radius -webkit-border-radius border-radius {
+    #{$target}: $radius;
+  }
+}
+
+@mixin placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin box-sizing {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
