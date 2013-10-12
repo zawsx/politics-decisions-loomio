@@ -1,6 +1,7 @@
 @import "bootstrap/mixins";
-@import "settings";
-@import "mixins";
+@import "vendor";
+@import "colors";
+@import "fonts";
 
 
 body.discussions.new, body.discussions.create {

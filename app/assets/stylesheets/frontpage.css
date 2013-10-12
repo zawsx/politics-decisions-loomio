@@ -1,7 +1,7 @@
 /*
- *= require main
- *= require pages
- *= require invitations
- *= require contributions
- *= require help
+ *= require atomic
+ *= require legacy/pages
+ *= require legacy/invitations
+ *= require legacy/contributions
+ *= require legacy/help
 */
