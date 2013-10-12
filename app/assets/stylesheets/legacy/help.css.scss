@@ -1,5 +1,8 @@
-@import "settings";
-@import "mixins";
+@import "bootstrap/mixins";
+@import "utilities/vendor";
+@import "utilities/colors";
+@import "utilities/fonts";
+
 .help {
   h1 {
     font-size: 36px;

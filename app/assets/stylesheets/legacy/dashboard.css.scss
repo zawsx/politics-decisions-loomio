@@ -1,4 +1,7 @@
-@import "settings";
+@import "utilities/vendor";
+@import "utilities/colors";
+@import "utilities/fonts";
+
 
 body.dashboard {
   &.show {

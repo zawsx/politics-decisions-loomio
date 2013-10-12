@@ -1,8 +1,7 @@
 @import "bootstrap/mixins";
-@import "vendor";
-@import "colors";
-@import "fonts";
-
+@import "utilities/vendor";
+@import "utilities/colors";
+@import "utilities/fonts";
 
 body.discussions.new, body.discussions.create {
   #discussion-markdown-dropdown {

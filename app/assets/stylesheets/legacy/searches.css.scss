@@ -1,6 +1,7 @@
 @import "bootstrap/mixins";
-@import "settings";
-@import "mixins";
+@import "utilities/vendor";
+@import "utilities/colors";
+@import "utilities/fonts";
 
 body.searches {
     &.show {

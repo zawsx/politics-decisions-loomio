@@ -1,8 +1,7 @@
-// Place all the styles related to the inbox controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-@import "settings";
-@import "mixins";
+@import "bootstrap/mixins";
+@import "utilities/vendor";
+@import "utilities/colors";
+@import "utilities/fonts";
 
 #inbox-head {
   .span1 { width: 76px; }

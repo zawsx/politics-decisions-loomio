@@ -1,5 +1,6 @@
 /*
  *= require atomic
+ *= require legacy/main
  *= require legacy/pages
  *= require legacy/invitations
  *= require legacy/contributions

@@ -1,6 +1,7 @@
-@import "settings";
 @import "bootstrap/mixins";
-@import "mixins";
+@import "utilities/vendor";
+@import "utilities/colors";
+@import "utilities/fonts";
 
 body.subscriptions {
   color: $text-black;

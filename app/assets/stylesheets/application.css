@@ -5,7 +5,7 @@
  *= require_self
  *= require jquery.ui.datepicker
  *= require lib/jquery.jqplot.min
- *= require lib/jquery.atwho
+ *= require jquery.atwho
  *= require atomic
  *= require legacy/main
  *= require legacy/overide_bootstrap

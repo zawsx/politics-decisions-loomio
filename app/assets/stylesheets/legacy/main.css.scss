@@ -1,9 +1,9 @@
 @import "bootstrap";
 @import "bootstrap/mixins";
 @import "font-awesome";
-@import "vendor";
-@import "colors";
-@import "fonts";
+@import "utilities/vendor";
+@import "utilities/colors";
+@import "utilities/fonts";
 
 body {
   background-color: $main-background;
