@@ -809,7 +809,7 @@ en:
       context: "%{author} created a proposal in %{group_full_name}:"
     proposal_closed:
       intro: 'Your proposal "%{proposal_name}" has closed.'
-      specify_outcome: "Please click here to specify an outcome"
+      specify_outcome_and_notify_group: "Create an outcome and send it to your group!"
       subject: "Proposal closed - %{which}"
     proposal_blocked:
       intro: "A proposal you are facilitating has been blocked."
