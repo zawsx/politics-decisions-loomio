@@ -386,6 +386,7 @@ en:
   not_voted: "[Show members who have not yet decided]"
   outcome: "Outcome"
   outcome_placeholder: "What was the outcome of this proposal?"
+  outcome_submit: "Publish outcome"
 
   position_verbs:
     "yes": "agree"

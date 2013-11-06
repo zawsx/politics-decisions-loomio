@@ -1,4 +1,4 @@
 = t("email.proposal_closed.intro", proposal_name: @motion.name)
 \
 = t("email.proposal_closed.specify_outcome") + ":"
-= discussion_url(@motion.discussion, proposal: @motion)
+= discussion_url(@motion.discussion, proposal: @motion, focus_outcome_input: "true")

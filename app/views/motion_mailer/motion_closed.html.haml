@@ -3,4 +3,4 @@
   .proposal-text
     %p= t("email.proposal_closed.intro", proposal_name: @motion.name)
 
-    %p= link_to(t("email.proposal_closed.specify_outcome_and_notify_group"), discussion_url(@motion.discussion, proposal: @motion))
+    %p= link_to(t("email.proposal_closed.specify_outcome_and_notify_group"), discussion_url(@motion.discussion, proposal: @motion, focus_outcome_input: "true"))
