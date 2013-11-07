@@ -20,7 +20,6 @@ When(/^I click the link to create a proposal outcome$/) do
   link = links_in_email(current_email)[2]
   request_uri = URI::parse(link).request_uri
   visit request_uri
-  view_screenshot
 end
 
 # When(/^I see the proposal outcome field highlighted$/) do

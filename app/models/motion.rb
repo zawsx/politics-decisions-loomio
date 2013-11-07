@@ -68,6 +68,7 @@ class Motion < ActiveRecord::Base
     if closed?
       self.outcome = str
       save
+      fire_motion_outcome_event
     end
   end
 
