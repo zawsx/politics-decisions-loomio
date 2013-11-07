@@ -248,6 +248,10 @@ class Motion < ActiveRecord::Base
       Events::NewMotion.publish!(self)
     end
 
+    def fire_motion_outcome_event
+      Events::MotionOutcome.publish!(self)
+    end
+
     def fire_motion_closed_event(user)
       Events::MotionClosed.publish!(self, user)
     end

@@ -46,8 +46,7 @@ class MotionMailer < BaseMailer
     I18n.with_locale(locale) do
       mail  to: user.email,
             from: "#{motion.author.name} <noreply@loomio.org>",
-            reply_to: motion.author_name_and_email,
-            subject: "#{t(:proposal)}: #{@motion.name} - #{@group.name}"
+            subject: "#{t("email.proposal_outcome.subject")}: #{@motion.name} - #{@group.name}"
     end
   end
 
