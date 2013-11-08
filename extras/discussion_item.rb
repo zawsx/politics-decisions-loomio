@@ -22,6 +22,8 @@ class DiscussionItem
         DiscussionItems::DiscussionTitleEdited.new(event, event_item)
       when 'discussion_description_edited'
         DiscussionItems::DiscussionDescriptionEdited.new(event, event_item)
+      when 'motion_outcome'
+        DiscussionItems::MotionOutcome.new(event, event_item)
     end
   end
 end

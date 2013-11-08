@@ -38,7 +38,8 @@ class MotionMailer < BaseMailer
     end
   end
 
-  def motion_outcome(motion)
+  def motion_outcome(motion, user)
+    @user = user
     @motion = motion
     @group = motion.group
     @rendered_motion_description = render_rich_text(motion.description, false) #should replace false with motion.uses_markdown in future

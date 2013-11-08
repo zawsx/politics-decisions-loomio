@@ -314,6 +314,7 @@ en:
       by_user: "closed the proposal"
       by_expiry: "Proposal closed"
     motion_close_date_edited: "changed the closing date for the proposal"
+    motion_outcome: "published an outcome for the proposal"
     discussion_title_edited: "changed the discussion title"
     discussion_description_edited: "changed the discussion description"
 

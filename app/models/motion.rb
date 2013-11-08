@@ -64,11 +64,11 @@ class Motion < ActiveRecord::Base
     close! if closing_at <= Time.now
   end
 
-  def set_outcome!(str)
+  def set_outcome!(str, user=nil)
     if closed?
       self.outcome = str
       save
-      fire_motion_outcome_event
+      fire_motion_outcome_event(user)
     end
   end
 
@@ -249,7 +249,7 @@ class Motion < ActiveRecord::Base
       Events::NewMotion.publish!(self)
     end
 
-    def fire_motion_outcome_event
+    def fire_motion_outcome_event(user)
       Events::MotionOutcome.publish!(self)
     end
 
