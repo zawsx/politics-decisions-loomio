@@ -43,13 +43,7 @@
     -#"motion_blocked"]
     -#"new_discussion",
 
-  .card-row#create-a-proposal
-    .card
-      .card__header
-        %h3 Ready to make a decision?
-      .card__content
-        %a{'ng-href' => '/discussions/{{discussion.id}}/new_proposal'}
-          Create a proposal
+  %start_proposal
 
   %add_comment
 
