@@ -18,3 +18,7 @@ describe 'StartProposal Controller', ->
 
   it 'should start collapsed', ->
     expect($scope.isExpanded).toBe(false)
+
+  it 'expands on showForm()', ->
+    $scope.showForm()
+    expect($scope.isExpanded).toBe(true)

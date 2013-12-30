@@ -1,7 +1,7 @@
 angular.module('loomioApp').controller 'StartProposalController', ($scope, ProposalService) ->
   $scope.isExpanded = false
 
-  $scope.expand = ->
+  $scope.showForm = ->
     $scope.isExpanded = true
 
   $scope.collapseIfEmpty = ->

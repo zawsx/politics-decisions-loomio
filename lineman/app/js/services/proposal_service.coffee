@@ -1,4 +1,4 @@
-angular.module('loomioApp').service 'CommentService',
+angular.module('loomioApp').service 'ProposalService',
   class ProposalService
     constructor: (@$http) ->
     start: (proposal, discussion) ->

@@ -3,10 +3,28 @@
     .card__header
       %h3 Ready to make a decision?
     .card__content
-      %a.cuke-show-new-proposal-form-btn{href: '#', ng_click: 'showNewProposalForm()'}
+      %a.cuke-show-new-proposal-form-btn{href: '#', ng_click: 'showForm()'}
         Create a proposal
   .card.form
     .card__header
-      %h3 This is the form
+      %h3 Start a proposal
+
     .card__content
+      %form{ng_submit: 'submitProposal()'}
+        .form-group
+          %label{for: 'proposal-title-field'} Title
+          %input#proposal-title-field.form-control{placeholder: 'Eg: Let\'s go to the moon', ng_model: 'proposal.title'}
+
+        .form-group
+          %label{for: 'proposal-close-date-field'} Closes at
+          %input#proposal-close-date-field.form-control{type: :date, ng_model: 'proposal.close_at_date'}
+          %input#proposal-close-time-field.form-control{type: :time, ng_model: 'proposal.close_at_time'}
+
+        .form-group
+          %label{for: 'proposal-description-field'} Details
+          %textarea#proposal-description-field.form-control{ng_model: 'porposal.description', placeholder: 'Give enough detail so everyone knows exactly what it means to agree or disagree'}
+
+        .form-group
+          %button.btn.btn-primary{type: :submit}
+            Submit
       Right here

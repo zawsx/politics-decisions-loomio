@@ -13,16 +13,16 @@ describe 'ProposalService', ->
     httpBackend.verifyNoOutstandingExpectation()
     httpBackend.verifyNoOutstandingRequest()
 
-  describe 'start', ->
-    eventResponse =
-      id: 1
-      sequence_id: 1
-      proposal:
-        discussion_id: 1
-        author:
-          id: 1
-          name: 'jimmy'
-        title: 'hi'
-        description: 'hello'
+  #describe 'start', ->
+    #eventResponse =
+      #id: 1
+      #sequence_id: 1
+      #proposal:
+        #discussion_id: 1
+        #author:
+          #id: 1
+          #name: 'jimmy'
+        #title: 'hi'
+        #description: 'hello'
 
-    it 'posts the comment to the server', ->
+    #it 'posts the comment to the server', ->
