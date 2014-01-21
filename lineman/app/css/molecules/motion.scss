@@ -25,3 +25,10 @@
   .disagree{ @include make-xs-column(12); }
   .block{ @include make-xs-column(12); }
 }
+
+.vertical-center{
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -4px
+}

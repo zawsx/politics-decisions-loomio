@@ -26,12 +26,24 @@
         %i.fa.fa-warning{style: "color: red"}
 
     .row.statement-form{ng_show: 'voteFormIsExpanded'}
-      %form{ng_submit: 'submitVote()'}
-        %fieldset{ng_disable: 'voteFormIsDisabled'}
+      %form.form-horizontal{ng_submit: 'submitVote()'}
+        %fieldset.form-horizontal{ng_disable: 'voteFormIsDisabled'}
           .form-group
-            %textarea{ng_model: 'newVote.statement'}
+            %label.col-xs-3.control-label.vertical-center
+              Your position:
+            .col-xs-offset-3.col-xs-9
+              %p.form-control
+                {{newVote.position}}
+          .form-group
+            %label.col-xs-3.control-label.vertical-center
+              Your statement:
+            .col-xs-offset-3.col-xs-9
+              %textarea#input-statement.form-control{ng_model: 'newVote.statement'}
+          .form-inline.col-xs-offset-3
             %button.btn.btn-primary{type: :submit}
               Vote
+            %button.btn.btn-warning{ng_click: 'cancelVote()'}
+              Cancel
 
     -#.row.new-position
       -#.agree

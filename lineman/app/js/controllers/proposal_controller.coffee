@@ -12,6 +12,7 @@ angular.module('loomioApp').controller 'ProposalController', ($scope, ProposalSe
   $scope.submitVote = ->
     $scope.voteFormIsDisabled = true
     ProposalService.saveVote($scope.newVote, $scope.saveVoteSuccess, $scope.saveVoteError)
+    $scope.voteFormIsExpanded = false
 
   $scope.saveVoteSuccess = (event) ->
     $scope.voteFormIsExpanded = false
@@ -21,3 +22,6 @@ angular.module('loomioApp').controller 'ProposalController', ($scope, ProposalSe
   $scope.saveVoteError = (error) ->
     $scope.voteFormIsDisabled = false
     $scope.voteErrorMessages = error.messages
+
+  $scope.cancelVote = ->
+    $scope.voteFormIsExpanded = false
