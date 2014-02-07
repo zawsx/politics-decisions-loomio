@@ -3,9 +3,9 @@
     .card__header
       %h2
         {{proposal.name}}
-      .media__details 
+      .media__details
         proposed by {{proposal.author.name}}
-      .media__details 
+      .media__details
         closing in {{proposal.closing_at | timeFromNowInWords:true }}
     .card__content.row
       .proposal-description

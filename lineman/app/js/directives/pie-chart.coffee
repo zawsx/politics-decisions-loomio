@@ -31,10 +31,12 @@ angular.module('loomioApp').directive 'pieChart', (d3Helpers) ->
 		  .attr('d', arc)
 		  .attr('class', (d) -> d.data.type)
 		  .each((d) -> @._current = d)
-
+		console.log '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^', arcs
 		## watch for changes to proposal; make new array; make pie layout of array;
 		## attach to arcs object; and transition old to new points
 		scope.$watch 'ngModel', (updatedProposal, oldProposal) ->
+
+
 			if updatedProposal
 				d = d3Helpers.proposalArray updatedProposal
 				arcs.data(pie(d), (d) -> d.type )
