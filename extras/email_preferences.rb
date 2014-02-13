@@ -6,7 +6,8 @@ class EmailPreferences
            :to_param,
            :subscribed_to_daily_activity_email,
            :subscribed_to_proposal_closure_notifications,
-           :subscribed_to_mention_notifications, :to => :user
+           :subscribed_to_mention_notifications,
+           :subscribed_to_loomio_news, :to => :user
 
   def initialize(user)
     @user = user

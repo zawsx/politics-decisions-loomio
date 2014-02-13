@@ -715,6 +715,8 @@ en:
     group_activity_notifications: "Group Activity Notifications"
     group_activity_details: "For each group, check the box if you want to be emailed immediately about new discussions and decisions."
     update_preferences: "Update preferences"
+    loomio_news: "Loomio News"
+    loomio_news_description: "Send me the very occassional news email when Loomio has exciting news."
 
   new_user_form:
     create_an_account: "Create an account"
