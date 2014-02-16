@@ -1,11 +1,12 @@
 class ApplicationController < ActionController::Base
   include LocalesHelper
+  include ReadableUnguessableUrlsHelper
   protect_from_forgery
 
   before_filter :set_locale
   before_filter :initialize_search_form
   around_filter :user_time_zone, if: :current_user
-  helper :segmentio
+  helper :analytics_data
 
   rescue_from CanCan::AccessDenied do |exception|
     if current_user

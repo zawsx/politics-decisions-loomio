@@ -48,9 +48,10 @@ describe Membership do
       @membership = group.add_member! user
     end
 
-    it "removes subgroup memberships (if existing)" do
-      # Removes user from multiple subgroups
-      subgroup = create(:group, parent: group)
+    it "removes subgroup memberships if parent is hidden" do
+      group.privacy = 'hidden'
+      group.save
+      subgroup = create(:group, parent: group, privacy: 'hidden')
       subgroup.add_member! user
       group.reload
       @membership.reload
@@ -58,9 +59,18 @@ describe Membership do
       subgroup.users.should_not include(user)
     end
 
+    it "doesn't remove subgroup memberships if parent is not hidden" do
+      subgroup = create(:group, parent: group)
+      subgroup.add_member! user
+      group.reload
+      @membership.reload
+      @membership.destroy
+      subgroup.users.should include(user)
+    end
+
     context do
       before do
-        discussion = create(:discussion, group: group)
+        discussion = create_discussion group: group
         @motion = create(:motion, discussion: discussion)
         vote = Vote.new
         vote.user = user
@@ -75,7 +85,9 @@ describe Membership do
       end
 
       it "does not remove user's open votes for other groups" do
-        motion2 = create(:motion, author: user)
+        group2 = create(:group)
+        discussion2 = create_discussion group: group2
+        motion2 = create(:motion, author: user, discussion: discussion2 )
         vote = Vote.new
         vote.user = user
         vote.position = "yes"

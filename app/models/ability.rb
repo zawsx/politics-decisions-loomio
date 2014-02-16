@@ -7,6 +7,7 @@ class Ability
     @admin_group_ids = user.adminable_group_ids
     @member_group_ids = user.group_ids
 
+
     cannot :sign_up, User
 
     can :show, Group do |group|
@@ -67,8 +68,7 @@ class Ability
     end
 
     can :invite_outsiders, Group do |group|
-      # if group.is_a_subgroup? and group.parent_is_hidden?
-      if group.is_a_subgroup?
+      if group.is_a_subgroup? and group.parent_is_hidden?
         false
       else
         true
@@ -76,8 +76,10 @@ class Ability
     end
 
     can :create, Group do |group|
-      if group.parent_id.present?
-        @member_group_ids.include?(group.parent_id)
+      if group.is_top_level?
+        true
+      elsif @member_group_ids.include?(group.parent_id)
+        true
       else
         false
       end
@@ -125,11 +127,17 @@ class Ability
       group = discussion.group
       if discussion.archived?
         false
-      elsif group.privacy == 'public' || group.members.include?(user)
-        can? :show, group
+      elsif group.members.include?(user)
+        true
+      elsif discussion.public?
+        true
       else
         false
       end
+    end
+
+    can :update, Discussion do |discussion|
+      (discussion.author == user) or @admin_group_ids.include?(discussion.group_id)
     end
 
     can [:destroy,

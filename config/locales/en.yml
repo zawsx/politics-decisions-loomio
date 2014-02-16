@@ -42,6 +42,7 @@ en:
     cant_view_member_profile: "You're unable to view the member's profile because you are not in the same group."
     contribution: "Please log in to make a contribution."
     discussion_not_created: "Discussion could not be created."
+    discussion_not_moved: "You don't have permission to move this discussion to %{destination_group.name}"
     group_not_archived: "Group could not be archived."
     invalid_close_date: "Invalid close date, please check this date has not passed."
     invalid_email: "Please enter at least one valid email address"
@@ -112,6 +113,7 @@ en:
     close_date_changed: "Close date successfully changed."
     discussion_created: "Discussion successfully created."
     discussion_deleted: "Discussion successfully deleted."
+    discussion_moved: "Discussion successfully moved to %{group_name}"
     emails_sending: "Emails sending."
     group_archived: "Group archived successfully."
     group_created: "Group created successfully."
@@ -127,7 +129,7 @@ en:
   datetime:
     distance_in_words:
       less_than_x_seconds:
-        one:   "seconds"
+        one:   "second"
         other: "%{count} seconds"
       x_seconds:
         one:   "1 second"
@@ -165,6 +167,7 @@ en:
     blog: 'Blog'
     contact: 'Contact'
     privacy: 'Privacy'
+    public_groups: 'Public groups'
     terms: 'Terms'
 
   inbox:
@@ -217,6 +220,11 @@ en:
     header: "Welcome to your Home page"
     message: "<p>The home page shows you all of the current discussions in all the groups you are a member of.</p><p>You can start a discussion on a new topic by clicking the “Start a discussion” button.</p>"
 
+  prompt_visitor_to_authenticate:
+    header: "Log in or join group to participate"
+    body_html: |
+      <p>If you're a member of this group, you'll have to log in to participate.</p>
+      <p>If you're not a member, you can ask to join.</p>
 
   #
   # GROUP PAGE
@@ -229,7 +237,6 @@ en:
 
   invite_people: "Invite people"
   no_invitations_button: "No invitations left"
-  pending_invitations: 'Pending invitations'
   number_pending: '%{pending} pending'
   and_number_pending: 'and %{pending} pending'
   edit_memberships: 'Edit memberships'
@@ -249,6 +256,7 @@ en:
   email_group_members: "Email group members"
   edit_group_settings: "Edit group settings"
   leave_group: "Leave group"
+  confirm_leave_hidden_group: "Are you sure you wish to leave %{which_group}? You will also be removed from any subgroups."
   confirm_leave_group: "Are you sure you wish to leave %{which_group}?"
   deactivate_group: "De-activate group"
   confirm_deactivate_group: "Wait!!! Are you sure you want to de-activate %{which_group}? You will no longer be able to view the group. However, if you wish to get the group back you can ask us to reactivate it for you by sending an email to contact@loomio.org."
@@ -363,8 +371,10 @@ en:
   confirm_delete_comment: "Are you sure you want to delete this comment?"
 
   markdown_settings_more_info: "More info..."
-  edit_discussion_title: "Edit discussion title"
+  edit_discussion: "Edit discussion"
   move_discussion: "Move discussion"
+  move_discussion_to_hidden_group: "This discussion is currently public. Moving it to this hidden group will make it private."
+  move_discussion_where: "Where would you like to move this discussion to?"
   delete_discussion: "Delete discussion"
   confirm_delete_discussion: "Are you sure you want to permanently delete this discussion?"
 
@@ -596,6 +606,7 @@ en:
   unlock_not_received: "Didn't receive unlock instructions?"
   inactive_html: "Sorry, this account is currently inactive. If you have any questions please <a href='%{path_to_contact}'>get in touch</a>."
   create_an_account: 'Create an account'
+  log_in: "Log in"
 
   join_group:
     log_in: "Log in to join %{group_name}"
@@ -630,6 +641,8 @@ en:
     invitation_link: "Invitation link"
     link_help: "Click this link to join %{group} on Loomio:"
     copy: "If someone did not get their invitation email, please feel free to copy the invitation link above and give it to the recipient yourself."
+    pending_invitations: 'Pending invitations'
+    no_pending_invitations: "There are currently no pending invitations."
 
   #
   # SEARCH
@@ -639,6 +652,10 @@ en:
     description: "Below is a list of discussions and proposals that have '%{query}' in their title or description."
     header: "Search results for '%{query}'"
     placeholder: "Search"
+    empty_search: 'Empty search'
+    please_enter_a_search: 'Please enter a query in the search bar above'
+    no_match: 'There were no results that matched your query'
+
 
   #
   # EXAMPLE CONTENT
@@ -665,9 +682,11 @@ en:
   #
 
   discussion_form:
-    header: "Start a discussion"
-    who: "Which group would you like to start this discussion in?"
-    context: "Context"
+    new:
+      header: "Start a discussion"
+      who: "Which group would you like to start this discussion in?"
+    edit:
+      header: "Edit discussion"
 
   motion_form:
     header: "New proposal"
@@ -711,6 +730,10 @@ en:
     desc_header: "You're almost there!"
     desc_html: "As the group coordinator, you’re responsible for setting up and managing your Loomio group. After you choose a few settings, you can get into your new group, start a discussion or two, and send out some invitations! <p>When thinking about the simplest way you can describe your group, ask yourself: What do you want to achieve together? What types of decisions will you be making? Who will be involved?</p>"
     submit: "Take me to my group!"
+    payment_model:
+      header: Loomio is for everyone!
+      info: We have a payment model that suits any group, even those with no money :)
+      link: Find out more
 
   simple_form:
     "yes": 'Yes'
@@ -724,6 +747,13 @@ en:
       discussion:
         title: "Title"
         description: "Context"
+        privacy_public_header: "Public"
+        privacy_public_description: "Anyone can see this discussion"
+        privacy_private_header: "Private"
+        privacy_private_description: "Only members of %{group} can see this discussion"
+        privacy_hidden_description: "All discussions in a hidden group are private."
+        of: "of "
+        of_no_group: "of this group"
       group:
         name: "Group name"
         description: "Description"
@@ -732,14 +762,11 @@ en:
         members_invitable_by_members: "All group members"
         privacy: Privacy
         privacy_public_header: Public
-        privacy_public_description: Anyone can see the group and who's in it. Discussions are public by default.
-        privacy_public_description_short: Anyone can see this group and its discussions.
-        privacy_private_header: Private
-        privacy_private_description: Anyone can see the group and who's in it. Discussions are only visible to members by default.
-        privacy_private_description_short: Anyone can see this group. Only members can see discussions.
-        privacy_hidden_header: Hidden
-        privacy_hidden_description: Only members can see the group and its discussions. You cannot have public discussions in a hidden group.
-        privacy_hidden_description_short: Only members can see this group and its discussions.
+        privacy_public_description: Discussions are public, unless made private. Anyone can find the group and ask to join.
+        privacy_private_header: Mostly private
+        privacy_private_description: Discussions are private, unless you explicitly make them public. Anyone can find the group and ask to join.
+        privacy_hidden_header: Hidden (completely private)
+        privacy_hidden_description: Discussions are always private. Finding and joining the group is by invitation only.
         privacy_parent_group_members_header: Viewable by parent group members
         privacy_parent_group_members_description: Same as hidden, only the group and its discussions can be seen by parent group members.
         privacy_parent_group_members_description_short: Only members and parent group members can see this group and its discussions.
@@ -762,8 +789,8 @@ en:
 
     placeholders:
       discussion:
-        title: "What is the topic you'd like to discuss?"
-        description: "This information will appear at the top of the discussion page. Introduce the topic and give enough context for your group to have a well-informed discussion."
+        title: "Title"
+        description: "Give some context..."
       membership_request:
         introduction: "Write a few words about who you are and why you would like to join %{group_name}."
       motion:
@@ -780,6 +807,7 @@ en:
     submit:
       discussion:
         create: "Start discussion"
+        update: "Update discussion"
       motion:
         create: "Start proposal"
       user:
@@ -886,7 +914,6 @@ en:
   approve: "Approve"
   author: "Author"
   back: "Back"
-  by: "by"
   cancel: "Cancel"
   change: "Change"
   change_language: "Click here to use Loomio in %{language}"
@@ -924,7 +951,9 @@ en:
   photo:
   pricing: 'Pricing'
   prev: "Prev"
+  more: "More..."
   translate: "Help translate Loomio!"
+  translate_this_string: "Translate to %{language}"
   options: "Options"
   other: "Other"
   ok_got_it: "Okay, got it!"
@@ -936,10 +965,12 @@ en:
   send_email: "Send email"
   show_more: "Show More"
   start_a_group: "Start a group"
+  start_group: "Start group!"
   starting: "Starting"
   subject: "Subject"
   terms_of_service_html: "By clicking %{button_text}, you agree to Loomio's <a href='%{link_path}' target='_blank'>Terms of service</a>"
   thanks: "Thanks!"
+  translate: "Help translate Loomio!"
   unlike: "Unlike"
   until_close: "until close"
   update: "Update"

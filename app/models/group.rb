@@ -1,7 +1,11 @@
 class Group < ActiveRecord::Base
+  include ReadableUnguessableUrls
 
   class MaximumMembershipsExceeded < Exception
   end
+
+  attr_accessible :name, :privacy, :members_invitable_by, :parent, :parent_id, :description, :max_size, :cannot_contribute, :full_name, :payment_plan, :viewable_by_parent_members
+  acts_as_tree
 
   PRIVACY_CATEGORIES = ['public', 'private', 'hidden']
   INVITER_CATEGORIES = ['members', 'admins']
@@ -272,6 +276,10 @@ class Group < ActiveRecord::Base
     self.setup_completed_at.present?
   end
 
+  def mark_as_setup!
+    self.update_attribute(:setup_completed_at, Time.zone.now.utc)
+  end
+
   def update_full_name_if_name_changed
     if changes.include?('name')
       update_full_name
@@ -303,6 +311,10 @@ class Group < ActiveRecord::Base
     (subscription.present? && subscription.amount > 0)
   end
 
+  def is_hidden?
+    privacy == "hidden"
+  end
+
   private
 
   def calculate_full_name
@@ -319,13 +331,13 @@ class Group < ActiveRecord::Base
   end
 
   def limit_inheritance
-    unless parent_id.nil?
+    if parent_id.present?
       errors[:base] << "Can't set a subgroup as parent" unless parent.parent_id.nil?
     end
   end
 
   def privacy_allowed_by_parent
-    if parent.privacy == 'hidden' && self.privacy != 'hidden'
+    if parent && parent.privacy == 'hidden' && self.privacy != 'hidden'
       errors[:privacy] << "Parent group is hidden, subgroups must also be hidden"
     end
   end

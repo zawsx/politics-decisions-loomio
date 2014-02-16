@@ -5,10 +5,12 @@ class InboxController < BaseController
   end
 
   def size
-    @inbox = Inbox.new(current_user)
-    size = @inbox.get_size_without_load
+    load_inbox
+    size = @inbox.items_count
 
-    if size > 0
+    if size > 50
+      render text: '50+'
+    elsif size > 0
       render text: size
     else
       render text: ''
@@ -59,7 +61,8 @@ class InboxController < BaseController
   private
   def redirect_back_or_head_ok
     if request.xhr?
-      size = Inbox.new(current_user).get_size_without_load
+      load_inbox
+      size = @inbox.items_count
       size = '' if size == 0
       render js: "$('#inbox-count').text('#{size}')"
     else
@@ -68,8 +71,10 @@ class InboxController < BaseController
   end
 
   def load_inbox
-    @inbox = Inbox.new(current_user)
-    @inbox.load
+    unless @inbox
+      @inbox = Inbox.new(current_user)
+      @inbox.load
+    end
   end
 
   def load_resource_from_params

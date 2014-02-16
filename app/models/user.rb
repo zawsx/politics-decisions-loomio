@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   include AvatarInitials
+  include ReadableUnguessableUrls
 
   require 'net/http'
   require 'digest/md5'
@@ -103,6 +104,17 @@ class User < ActiveRecord::Base
   scope :admins, where(is_admin: true)
   scope :coordinators, joins(:memberships).where('memberships.access_level = ?', 'admin').group('users.id')
   #scope :unviewed_notifications, notifications.where('viewed_at IS NULL')
+  #
+
+  def cached_group_ids
+    @cached_group_ids ||= group_ids
+  end
+
+  def top_level_groups
+    parents = groups.parents_only.order(:name)
+    orphans = groups.where('parent_id not in (?)', parents.map(&:id))
+    (parents.to_a + orphans.to_a).sort{|a, b| a.full_name <=> b.full_name }
+  end
 
   def self.email_taken?(email)
     User.find_by_email(email).present?
@@ -114,6 +126,10 @@ class User < ActiveRecord::Base
 
   def name_and_email
     "#{name} <#{email}>"
+  end
+  
+  def primary_language
+    language_preference.split(',').first if language_preference    
   end
 
   # Provide can? and cannot? as methods for checking permissions

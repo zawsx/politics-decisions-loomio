@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Vote do
   let(:user) { create(:user) }
   let(:group) { create(:group) }
-  let(:discussion) { create(:discussion, group: group, author: user) }
+  let(:discussion) { create_discussion group: group, author: user }
   let(:motion) { create(:motion, discussion: discussion) }
 
   it { should have_many(:events).dependent(:destroy) }
@@ -20,8 +20,31 @@ describe Vote do
     it {should have(2).errors_on(:position)}
   end
 
+  context 'user votes' do
+    let(:vote) { Vote.create(user: user, motion: motion, position: "no") }
+    subject { vote }
+
+    its(:age) { should == 0 }
+
+    context 'user changes their position' do
+      let(:vote2) { Vote.create(user: user, motion: motion, position: "yes") }
+      before do
+        vote
+        vote2
+      end
+
+      subject { vote2 }
+      its(:age) { should == 0 }
+
+      it "should age the first vote" do
+        vote.reload
+        vote.age.should == 1
+      end
+    end
+  end
+
   it 'should only accept valid position values' do
-    vote = build(:vote, position: 'bad')
+    vote = build(:vote, position: 'bad', motion: motion)
     vote.valid?
     vote.should have(1).errors_on(:position)
   end
@@ -44,7 +67,7 @@ describe Vote do
 
   it 'cannot have a statement over 250 chars' do
     vote = Vote.new(position: 'yes')
-    vote.motion = create(:motion)
+    vote.motion = create(:motion, discussion: discussion)
     vote.user = user
     vote.statement = "a"*251
     vote.should_not be_valid
@@ -54,7 +77,7 @@ describe Vote do
     vote = Vote.new(position: "yes")
     vote.motion = motion
     vote.user = user
-    vote_time = stub "time"
+    vote_time = "time"
     motion.stub(:latest_vote_time).and_return(vote_time)
     motion.should_receive(:last_vote_at=).with(vote_time)
     vote.save!
@@ -94,14 +117,14 @@ describe Vote do
   end
   context "when a vote is created" do
     it "fires a 'new_vote' event" do
-      motion = create :motion
+      motion = create :motion, discussion: discussion
       Events::NewVote.should_receive(:publish!)
       vote = create :vote, :motion => motion, :position => "yes"
     end
   end
   context "when a vote is blocked" do
     it "fires a 'motion_blocked' event" do
-      motion = create :motion
+      motion = create :motion, discussion: discussion
       Events::MotionBlocked.should_receive(:publish!)
       vote = create :vote, :motion => motion, :position => "block"
     end

@@ -32,7 +32,6 @@ gem 'nokogiri', '~> 1.6.0'
 gem 'twitter-text', '~> 1.6.3'
 gem 'jquery-atwho-rails', '~> 0.4.1'
 gem 'redcarpet', '~> 3.0.0'
-gem 'twitter-text', '~> 1.6.3'
 gem 'paper_trail', '~> 2.7.2'
 gem 'unicorn', '~> 4.6.3'
 gem 'rack-canonical-host', '~> 0.0.8'
@@ -51,6 +50,9 @@ gem 'valid_email', '~> 0.0.4'
 gem 'font-awesome-sass-rails'
 gem 'rabl', '~> 0.8.6'
 gem 'sequenced', '~> 1.4.0'
+gem 'closure_tree', '~> 4.3.0'
+gem 'ruby-progressbar', '1.4.1'
+gem 'bing_translator', '~> 4.0.0'
 
 # Gems used only for assets and not required
 # in production environments by default.

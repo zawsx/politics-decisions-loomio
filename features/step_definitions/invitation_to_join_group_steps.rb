@@ -82,7 +82,7 @@ When(/^I follow an invitation link I have already used$/) do
 end
 
 Then(/^I should be redirected to the group page$/) do
-  URI.parse(current_url).path.should == group_path(@group)
+  URI.parse(current_url).path.should include group_path(@group)
 end
 
 Then(/^I should be told the invitation link has already been used$/) do
@@ -201,7 +201,8 @@ Then /^I should see "(.*?)" as an invited user of the subgroup$/ do |email|
 end
 
 Then /^I should see "(.*?)" as a member of the subgroup$/ do |name|
-  find("#users-list").should have_content(name)
+  visit group_memberships_path(@group)
+  page.should have_content(name)
 end
 
 Then /^I should get an email with subject "(.*?)"$/ do |arg1|
