@@ -16,12 +16,6 @@ Feature: Email preferences page
     And I click "Update preferences"
     Then I should not be subscribed to the Loomio news email
 
-  # Scenario: User enables Loomio news
-  #   When I visit the email preferences page
-  #   And I check "email_preferences_subscribed_to_loomio_news"
-  #   And I click "Update preferences"
-  #   Then I should be subscribed to the Loomio news email
-
   Scenario: User enables daily email
     When I visit the email preferences page
     And I check "email_preferences_subscribed_to_daily_activity_email"

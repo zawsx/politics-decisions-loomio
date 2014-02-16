@@ -70,5 +70,3 @@ Then(/^I should not be subscribed to the Loomio news email$/) do
   @user.reload
   @user.subscribed_to_loomio_news.should == false
 end
-
-
