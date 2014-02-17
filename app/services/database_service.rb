@@ -9,10 +9,9 @@ class DatabaseService
       p start_time
 
       destory_private_discussions
-      destroy_non_public_groups
-      # destroy_hidden_groups
+      destroy_non_public_groups  # destroy_hidden_groups
       destroy_archived_groups
-      sanitize_users
+      # sanitize_users
       destroy_invitations
 
       print "\n///////////////////////////////////////////////////\n"
@@ -22,6 +21,16 @@ class DatabaseService
 
 
   private
+
+  def self.destory_private_discussions
+    count = Discussion.unscoped.where(private: true).count
+    print "\n> Destroying private discussions (#{count}) & content\n"
+    progress_bar = ProgressBar.create( format: "(\e[32m%c/%C\e[0m) %a [%B] \e[31m%e\e[0m ", progress_mark: "\e[32m/\e[0m", total: count )
+    Discussion.unscoped.where(private: true).find_each do |d|
+      d.destroy
+      progress_bar.increment
+    end
+  end
 
   def self.destroy_non_public_groups
     count = Group.unscoped.where('privacy != ?', 'public').count
@@ -49,16 +58,6 @@ class DatabaseService
     progress_bar = ProgressBar.create( format: "(\e[32m%c/%C\e[0m) %a [%B] \e[31m%e\e[0m ", progress_mark: "\e[32m/\e[0m", total: count )
     Group.unscoped.where('archived_at IS NOT NULL').find_each do |g|
       g.destroy
-      progress_bar.increment
-    end
-  end
-
-  def self.destory_private_discussions
-    count = Discussion.unscoped.where(private: true).count
-    print "\n> Destroying private discussions (#{count}) & content\n"
-    progress_bar = ProgressBar.create( format: "(\e[32m%c/%C\e[0m) %a [%B] \e[31m%e\e[0m ", progress_mark: "\e[32m/\e[0m", total: count )
-    Discussion.unscoped.where(private: true).find_each do |d|
-      d.destroy
       progress_bar.increment
     end
   end
