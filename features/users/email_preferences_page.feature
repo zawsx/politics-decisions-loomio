@@ -9,13 +9,6 @@ Feature: Email preferences page
     And "Ben" belongs to "Pals"
     And I login as "ben@example.org"
 
-  Scenario: User disables Loomio news
-    Given I am subscribed to Loomio new email
-    When I visit the email preferences page
-    And I uncheck "email_preferences_subscribed_to_loomio_news"
-    And I click "Update preferences"
-    Then I should not be subscribed to the Loomio news email
-
   Scenario: User enables daily email
     When I visit the email preferences page
     And I check "email_preferences_subscribed_to_daily_activity_email"
