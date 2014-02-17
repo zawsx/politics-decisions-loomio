@@ -182,9 +182,9 @@ ActiveRecord::Schema.define(:version => 20140215042942) do
     t.boolean  "is_deleted",      :default => false, :null => false
     t.integer  "comments_count",  :default => 0,     :null => false
     t.integer  "items_count",     :default => 0,     :null => false
+    t.datetime "archived_at"
     t.boolean  "private"
     t.string   "key"
-    t.datetime "archived_at"
   end
 
   add_index "discussions", ["author_id"], :name => "index_discussions_on_author_id"
@@ -548,6 +548,7 @@ ActiveRecord::Schema.define(:version => 20140215042942) do
   end
 
   add_index "votes", ["motion_id", "user_id", "age"], :name => "vote_age_per_user_per_motion", :unique => true
+  add_index "votes", ["motion_id", "user_id"], :name => "index_votes_on_motion_id_and_user_id"
   add_index "votes", ["motion_id"], :name => "index_votes_on_motion_id"
 
 end
