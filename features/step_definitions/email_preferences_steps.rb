@@ -61,12 +61,3 @@ Given /^I am subscribed to group notifications about "(.*?)"$/ do |arg1|
   membership = @user.memberships.where(group_id: group_id).first
   membership.update_attribute(:subscribed_to_notification_emails, true)
 end
-
-Given(/^I am subscribed to Loomio new email$/) do
-  @user.update_attribute(:subscribed_to_loomio_news, true)
-end
-
-Then(/^I should not be subscribed to the Loomio news email$/) do
-  @user.reload
-  @user.subscribed_to_loomio_news.should == false
-end

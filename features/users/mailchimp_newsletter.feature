@@ -3,13 +3,13 @@ Feature: Mailchimp News
   In order to be informed about loomio news activity when I want to be
   I want to control when loomio will send me news
 
-  Scenario: User opts in to Loomio news during signs up
-    Given I'm not a Loomio user
-    When I visit the sign-up path
-    And I fill in the sign-up form
-    And I check "user_sibscribe_to_loomio_news"
-    And click submit
-    Then I should be subscribed to Loomio news
+  # Scenario: User opts in to Loomio news during sign up
+  #   Given I'm not a Loomio user
+  #   When I visit the sign-up path
+  #   And I fill in the sign-up form
+  #   And I check the option to subscribe to the Loomio news
+  #   And click submit
+  #   Then I should be subscribed to Loomio news
 
   Scenario: User disables Loomio news from email preferences
     Given I am a Loomio user
@@ -32,3 +32,8 @@ Feature: Mailchimp News
     When I receive a Loomio news email
     And I click the "unsubscribe" link in the email
     Then I should no longer be subscribed to the Loomio news
+
+
+  Synchronize unsubscribes on Loomio to Mailchimp
+
+  Synchronize subscribes on Loomio to Mailchimp
