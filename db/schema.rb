@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140213010856) do
+ActiveRecord::Schema.define(:version => 20140215042942) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -182,9 +182,9 @@ ActiveRecord::Schema.define(:version => 20140213010856) do
     t.boolean  "is_deleted",      :default => false, :null => false
     t.integer  "comments_count",  :default => 0,     :null => false
     t.integer  "items_count",     :default => 0,     :null => false
+    t.datetime "archived_at"
     t.boolean  "private"
     t.string   "key"
-    t.datetime "archived_at"
   end
 
   add_index "discussions", ["author_id"], :name => "index_discussions_on_author_id"
@@ -409,7 +409,6 @@ ActiveRecord::Schema.define(:version => 20140213010856) do
     t.integer  "read_activity_count", :default => 0,    :null => false
   end
 
-  add_index "motion_readers", ["user_id", "motion_id", "created_at"], :name => "index_motion_readers_on_user_id_and_motion_id_and_created_at"
   add_index "motion_readers", ["user_id", "motion_id"], :name => "index_motion_readers_on_user_id_and_motion_id"
 
   create_table "motions", :force => true do |t|
@@ -438,6 +437,7 @@ ActiveRecord::Schema.define(:version => 20140213010856) do
   end
 
   add_index "motions", ["author_id"], :name => "index_motions_on_author_id"
+  add_index "motions", ["discussion_id", "closed_at"], :name => "index_motions_on_discussion_id_and_closed_at", :order => {"closed_at"=>:desc}
   add_index "motions", ["discussion_id"], :name => "index_motions_on_discussion_id"
   add_index "motions", ["key"], :name => "index_motions_on_key", :unique => true
 
@@ -449,8 +449,10 @@ ActiveRecord::Schema.define(:version => 20140213010856) do
     t.datetime "viewed_at"
   end
 
+  add_index "notifications", ["event_id", "user_id"], :name => "index_notifications_on_event_id_and_user_id"
   add_index "notifications", ["event_id"], :name => "index_notifications_on_event_id"
   add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
+  add_index "notifications", ["viewed_at"], :name => "index_notifications_on_viewed_at"
 
   create_table "omniauth_identities", :force => true do |t|
     t.integer  "user_id"
@@ -546,7 +548,8 @@ ActiveRecord::Schema.define(:version => 20140213010856) do
     t.integer  "age",        :default => 0, :null => false
   end
 
-  add_index "votes", ["motion_id", "user_id", "age"], :name => "aged_votes_for_motions", :unique => true
+  add_index "votes", ["motion_id", "user_id", "age"], :name => "vote_age_per_user_per_motion", :unique => true
+  add_index "votes", ["motion_id", "user_id"], :name => "index_votes_on_motion_id_and_user_id"
   add_index "votes", ["motion_id"], :name => "index_votes_on_motion_id"
 
 end
