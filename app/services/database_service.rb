@@ -11,7 +11,7 @@ class DatabaseService
       destory_private_discussions
       destroy_non_public_groups  # destroy_hidden_groups
       destroy_archived_groups
-      # sanitize_users
+      sanitize_users
       destroy_invitations
 
       print "\n///////////////////////////////////////////////////\n"
