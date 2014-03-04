@@ -5,47 +5,113 @@
     %meta{content: "IE=Edge", "http-equiv" => "X-UA-Compatible"}/
     %title= title
     <!--[if lt IE 9]><script type="text/javascript" src="/assets/lib/excanvas.js"></script><![endif]-->
-    = stylesheet_link_tag    "frontpage"
+    = stylesheet_link_tag  "frontpage"
     = csrf_meta_tags
     = render 'social_metadata', description: @meta_description, title: @meta_title
 
   %body{class: "#{controller_name} #{action_name}"}
     - analytics_scope do
       = render 'google_tag_manager'
-    .container.home-flash
       = render 'flash_messages', :flash => flash
-    - if controller_name == 'pages'
-      = render 'github_fork_us'
-    .container#top
-      .inner-container
-        .row-fluid
-          .pull-right
-            - if controller_name == 'pages' && (action_name == 'home' || action_name == 'about')
-              =link_to 'Start a group', new_group_request_path, class: 'btn btn-success'
 
-            - unless current_page? new_user_session_path
-              =link_to t(:'devise.sessions.sign_in'), new_user_session_path, class: 'btn btn-info log-in-button'
-          .span3 &nbsp;
-          .span6
-            =link_to image_tag("logo-426px-mauve-matte.png"), "/"
-            %h2 collaborative decision-making
-        .frontpage-nav
-          =link_to('Purpose', '/purpose')
-          %span &middot;
+    .container-fluid
+      .nav
+        .logo
+        .twitter
+        .facebook
+        .github
+          = link_to t(:'frontpage.link.blog'), '#', class: 'blog'
+          = link_to t(:'frontpage.link.contact'), '#', class: 'contact'
+          = link_to t(:'frontpage.link.log_in'), '#', class: 'btn log_in'
 
-          =link_to('How it works', '/purpose#how-it-works')
-          %span &middot;
+      .row.hero
+        .col
+          = t(:'frontpage.hero.head')
+          = t(:'frontpage.hero.subhead')
+          = t(:'frontpage.hero.desc')
+          = link_to  t(:'frontpage.link.crowdfunding'), '#', class: 'btn'
+          %i.fa-fa-angle-right
+          %i.fa-fa-angle-down
 
-          =link_to('Pricing', '/pricing')
-          %span &middot;
 
-          =link_to('About us', '/about')
-          %span &middot;
+      .row.product
+        .col
+          = t(:'frontpage.product.header')
 
-          =link_to('Blog', blog_path)
 
-    = yield
+      .row
+        .col-xs-4
+          = t(:'frontpage.product.step1.header')
+          = t(:'frontpage.product.step1.desc')
+        .col-xs-4
+          = t(:'frontpage.product.step2.header')
+          = t(:'frontpage.product.step2.desc')
+        .col-xs-4
+          = t(:'frontpage.product.step3.header')
+          = t(:'frontpage.product.step3.desc')
 
-    = render 'footer_logged_out'
-    = javascript_include_tag "frontpage"
-    = javascript_include_tag 'https://browserid.org/include.js'
+
+      .row.crowdfunding
+        .col
+          = t(:'frontpage.crowdfunding.header')
+          = link_to t(:'frontpage.link.crowdfunding'), root_path
+          %i.fa.fa-angle-right
+
+
+      .row.prototype
+        .col
+          = t(:'frontpage.prototype.header')
+          = t(:'frontpage.prototype.subhead')
+
+      .row.quote
+        .col
+          = t(:'frontpage.quote.header.rushkoff')
+
+      .row.mobile
+        .col
+          = t(:'frontpage.mobile.header')
+
+      .row.quote
+        .col
+          = t(:'frontpage.quote.header.sifry')
+
+      .row.team
+        .col
+          = t(:'frontpage.team.header')
+          = t(:'frontpage.team.desc')
+          = link_to t(:'frontpage.link.more'), root_path
+          %i.fa.fa-angle-right
+
+      .row.ideals
+        .row
+          .col-xs-6
+            = t(:'frontpage.ideals.community.header')
+            = t(:'frontpage.ideals.community.desc')
+          .col-xs-6
+            = t(:'frontpage.ideals.independent.header')
+            = t(:'frontpage.ideals.independent.desc')
+      .row.ideals
+        .row
+          .col-xs-6
+            = t(:'frontpage.ideals.open.header')
+            = t(:'frontpage.ideals.open.desc')
+          .col-xs-6
+            = t(:'frontpage.ideals.gift.header')
+            = t(:'frontpage.ideals.gift.desc')
+
+      .row.vision
+        .col
+          = t(:'frontpage.vision.header')
+          = link_to t(:'frontpage.link.crowdfunding'), root_path
+
+      .row.footer
+        .col
+          = t(:'frontpage.link.top')
+          %i.fa.fa-angle-top
+          = t(:'frontpage.link.public_groups')
+          = t(:'frontpage.link.terms')
+          = t(:'frontpage.link.privacy')
+          = t(:'frontpage.link.services')
+
+
+
