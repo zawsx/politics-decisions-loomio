@@ -4,23 +4,35 @@
 @import "color";
 @import "buttons";
 
+// * { border: 1px solid #333; }
+
+
+body, h1, h3, h4, h5 {
+  font-family: 'OpenSans-Light';
+  color: $font;
+}
+
+h2 {
+  font-family: 'OpenSans-Bold';
+  font-size: 18px;
+}
+
 .home {
-  // * { border: 1px solid #333; }
+
 
   text-align: center;
   a:hover { text-decoration: none; }
 
-  p.lg {}
+  p.lg { font-size: 18px; }
 
   .block-link {
-    color: white;
     display: block;
+    h1, h2, h3, h4, h5, p { color: white; }
   }
 
 
   .content {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 48px 24px;
     @include screen-size(small-up) {
       width: 768px;
       margin: 0 auto;
@@ -70,4 +82,3 @@
     background-color: $slate
   }
 }
-
