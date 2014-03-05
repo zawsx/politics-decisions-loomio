@@ -4,14 +4,24 @@
 @import "buttons";
 
 .home {
+  * { border: 1px solid #333; }
 
   text-align: center;
+  a:hover { text-decoration: none; }
 
   p.lg {}
 
+  .block-link {
+    color: white;
+  }
+
   .navbar { text-align: left; }
 
-  .col { @include make-xs-column(12); }
+  .content {
+    @media (min-width: @screen-sm-min) { background-color: red; }
+    // @include make-xs-column(7);
+    border: 1px solid red;
+  }
 
   .hero {
     background-color: $ash;
@@ -19,6 +29,7 @@
 
   .crowdfunding {
     background-color: $blue;
+    &:hover { background-color: darken($blue, 6%); }
   }
 
   .mobile {
@@ -31,17 +42,16 @@
 
   .team {
     background-color: $orange;
+    &:hover { background-color: darken($orange, 6%); }
   }
 
   .vision {
     background-color: $purple;
+    &:hover { background-color: darken($purple, 6%); }
   }
 
   .footer {
     background-color: $slate
   }
-
-  * { border: 1px solid #333; }
-
 }
 

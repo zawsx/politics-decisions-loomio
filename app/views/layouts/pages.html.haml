@@ -18,26 +18,20 @@
       %nav.navbar.navbar-default
         .container-fluid
           .navbar-header
-            %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
             = link_to image_tag("logo.png"), root_path, class: 'navbar-brand', alt: 'Loomio'
-          .collapse.navbar-collapse
-            %ul.nav.nabar-nav
-              %li
-                %i.fa.fa-twitter
-              %li
-                %i.fa.fa-facebook
-              %li
-                %i.fa.fa-github
-              %li= link_to t(:'frontpage.link.blog'), '#', class: 'blog'
-              %li= link_to t(:'frontpage.link.contact'), '#', class: 'contact'
-              %li= link_to t(:'frontpage.link.log_in'), '#', class: 'btn btn-primary log_in'
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %i.fa.fa-twitter
+            %li
+              %i.fa.fa-facebook
+            %li
+              %i.fa.fa-github
+            %li= link_to t(:'frontpage.link.blog'), '#', class: 'blog'
+            %li= link_to t(:'frontpage.link.contact'), '#', class: 'contact'
+            %li= link_to t(:'frontpage.link.log_in'), '#', class: 'btn btn-primary log_in'
 
       .row.hero
-        .col
+        .content
           %h1= t(:'frontpage.hero.head')
           %h2= t(:'frontpage.hero.subhead')
           %p.lg= t(:'frontpage.hero.desc')
@@ -49,92 +43,98 @@
 
       .row.product
         .row
-          .col
+          .content
             %h1= t(:'frontpage.product.header')
         .row
-          .col-xs-4
-            = image_tag 'threads.png'
-            %h2= t(:'frontpage.product.step1.header')
-            %p= t(:'frontpage.product.step1.desc')
-          .col-xs-4
-            = image_tag 'weaving.png'
-            %h2= t(:'frontpage.product.step2.header')
-            %p= t(:'frontpage.product.step2.desc')
-          .col-xs-4
-            = image_tag 'braid.png'
-            %h2= t(:'frontpage.product.step3.header')
-            %p= t(:'frontpage.product.step3.desc')
+          .content
+            .col-xs-4
+              = image_tag 'threads.png'
+              %h2= t(:'frontpage.product.step1.header')
+              %p= t(:'frontpage.product.step1.desc')
+            .col-xs-4
+              = image_tag 'weaving.png'
+              %h2= t(:'frontpage.product.step2.header')
+              %p= t(:'frontpage.product.step2.desc')
+            .col-xs-4
+              = image_tag 'braid.png'
+              %h2= t(:'frontpage.product.step3.header')
+              %p= t(:'frontpage.product.step3.desc')
         .row
-          .col
+          .content
           = image_tag 'ipad.png'
 
 
       .row.crowdfunding
-        %a{href: '#', class: 'col'}
-          %h1= t(:'frontpage.crowdfunding.header')
-          %h2= t(:'frontpage.link.crowdfunding')
-          %i.fa.fa-angle-right
+        .content
+          %a{href: '#', class: 'col block-link'}
+            %h1= t(:'frontpage.crowdfunding.header')
+            %h2= t(:'frontpage.link.crowdfunding')
+            %i.fa.fa-angle-right
 
 
       .row.prototype
-        .col
+        .content
           %h1= t(:'frontpage.prototype.header')
           = image_tag 'wikimedia.png'
           %p.lg= t(:'frontpage.prototype.subhead')
 
 
       .row.quote
-        .col
+        .content
           %blockquote= t(:'frontpage.quote.header.rushkoff')
 
 
       .row.mobile
-        .col
+        .content
           = image_tag 'mobile.png'
 
       .row.quote
-        .col
+        .content
           %blockquote= t(:'frontpage.quote.header.sifry')
 
       .row
-        .col
+        .content
           = image_tag 'team.png'
 
       .row.team
-        %a{href: '#', class: 'col'}
-          %h1= t(:'frontpage.team.header')
-          %p.lg= t(:'frontpage.team.desc')
-          = t(:'frontpage.link.more')
-          %i.fa.fa-angle-right
+        .content
+          %a{href: '#', class: 'col block-link'}
+            %h1= t(:'frontpage.team.header')
+            %p.lg= t(:'frontpage.team.desc')
+            = t(:'frontpage.link.more')
+            %i.fa.fa-angle-right
 
       .row.ideals
-        .row
-          .col-xs-6
-            = image_tag 'community.png'
-            %h2= t(:'frontpage.ideals.community.header')
-            = t(:'frontpage.ideals.community.desc')
-          .col-xs-6
-            = image_tag 'indi.png'
-            %h2= t(:'frontpage.ideals.independent.header')
-            = t(:'frontpage.ideals.independent.desc')
+        .content
+          .row
+            .col-xs-6
+              = image_tag 'community.png'
+              %h2= t(:'frontpage.ideals.community.header')
+              = t(:'frontpage.ideals.community.desc')
+            .col-xs-6
+              = image_tag 'indi.png'
+              %h2= t(:'frontpage.ideals.independent.header')
+              = t(:'frontpage.ideals.independent.desc')
       .row.ideals
-        .row
-          .col-xs-6
-            = image_tag 'open.png'
-            %h2= t(:'frontpage.ideals.open.header')
-            = t(:'frontpage.ideals.open.desc')
-          .col-xs-6
-            = image_tag 'gift.png'
-            %h2= t(:'frontpage.ideals.gift.header')
-            = t(:'frontpage.ideals.gift.desc')
+        .content
+          .row
+            .col-xs-6
+              = image_tag 'open.png'
+              %h2= t(:'frontpage.ideals.open.header')
+              = t(:'frontpage.ideals.open.desc')
+            .col-xs-6
+              = image_tag 'gift.png'
+              %h2= t(:'frontpage.ideals.gift.header')
+              = t(:'frontpage.ideals.gift.desc')
 
       .row.vision
-        %a{href: '#', class: 'col'}
-          %h1= t(:'frontpage.vision.header')
-          %h2= t(:'frontpage.link.crowdfunding')
+        .content
+          %a{href: '#', class: 'col block-link'}
+            %h1= t(:'frontpage.vision.header')
+            %h2= t(:'frontpage.link.crowdfunding')
 
       .row.footer
-        .col
+        .content
           = t(:'frontpage.link.top')
           %i.fa.fa-angle-top
           = t(:'frontpage.link.public_groups')
