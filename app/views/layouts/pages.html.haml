@@ -14,21 +14,33 @@
       = render 'google_tag_manager'
       = render 'flash_messages', :flash => flash
 
-    .container-fluid
-      .navbar
-        = link_to image_tag("logo.png"), root_path, class: 'logo'
-        %i.fa.fa-twitter
-        %i.fa.fa-facebook
-        %i.fa.fa-github
-        = link_to t(:'frontpage.link.blog'), '#', class: 'blog'
-        = link_to t(:'frontpage.link.contact'), '#', class: 'contact'
-        = link_to t(:'frontpage.link.log_in'), '#', class: 'btn btn-primary log_in'
+    .container-fluid.home
+      %nav.navbar.navbar-default
+        .container-fluid
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            = link_to image_tag("logo.png"), root_path, class: 'navbar-brand', alt: 'Loomio'
+          .collapse.navbar-collapse
+            %ul.nav.nabar-nav
+              %li
+                %i.fa.fa-twitter
+              %li
+                %i.fa.fa-facebook
+              %li
+                %i.fa.fa-github
+              %li= link_to t(:'frontpage.link.blog'), '#', class: 'blog'
+              %li= link_to t(:'frontpage.link.contact'), '#', class: 'contact'
+              %li= link_to t(:'frontpage.link.log_in'), '#', class: 'btn btn-primary log_in'
 
-      .row-hero
+      .row.hero
         .col
-          = t(:'frontpage.hero.head')
-          = t(:'frontpage.hero.subhead')
-          = t(:'frontpage.hero.desc')
+          %h1= t(:'frontpage.hero.head')
+          %h2= t(:'frontpage.hero.subhead')
+          %p.lg= t(:'frontpage.hero.desc')
           %a{href: '#', class: 'btn btn-loomio btn-lg'}
             = t(:'frontpage.link.crowdfunding')
             %i.fa.fa-angle-right
@@ -36,44 +48,45 @@
 
 
       .row.product
-        .col
-          = t(:'frontpage.product.header')
-
-
-      .row
-        .col-xs-4
-          = image_tag 'threads.png'
-          = t(:'frontpage.product.step1.header')
-          = t(:'frontpage.product.step1.desc')
-        .col-xs-4
-          = image_tag 'weaving.png'
-          = t(:'frontpage.product.step2.header')
-          = t(:'frontpage.product.step2.desc')
-        .col-xs-4
-          = image_tag 'braid.png'
-          = t(:'frontpage.product.step3.header')
-          = t(:'frontpage.product.step3.desc')
-      .row
-        .col
-        = image_tag 'ipad.png'
-
+        .row
+          .col
+            %h1= t(:'frontpage.product.header')
+        .row
+          .col-xs-4
+            = image_tag 'threads.png'
+            %h2= t(:'frontpage.product.step1.header')
+            %p= t(:'frontpage.product.step1.desc')
+          .col-xs-4
+            = image_tag 'weaving.png'
+            %h2= t(:'frontpage.product.step2.header')
+            %p= t(:'frontpage.product.step2.desc')
+          .col-xs-4
+            = image_tag 'braid.png'
+            %h2= t(:'frontpage.product.step3.header')
+            %p= t(:'frontpage.product.step3.desc')
+        .row
+          .col
+          = image_tag 'ipad.png'
 
 
       .row.crowdfunding
         %a{href: '#', class: 'col'}
-          = t(:'frontpage.crowdfunding.header')
-          = t(:'frontpage.link.crowdfunding')
+          %h1= t(:'frontpage.crowdfunding.header')
+          %h2= t(:'frontpage.link.crowdfunding')
           %i.fa.fa-angle-right
 
 
       .row.prototype
         .col
-          = t(:'frontpage.prototype.header')
+          %h1= t(:'frontpage.prototype.header')
           = image_tag 'wikimedia.png'
-          = t(:'frontpage.prototype.subhead')
+          %p.lg= t(:'frontpage.prototype.subhead')
+
+
       .row.quote
         .col
-          = t(:'frontpage.quote.header.rushkoff')
+          %blockquote= t(:'frontpage.quote.header.rushkoff')
+
 
       .row.mobile
         .col
@@ -81,7 +94,7 @@
 
       .row.quote
         .col
-          = t(:'frontpage.quote.header.sifry')
+          %blockquote= t(:'frontpage.quote.header.sifry')
 
       .row
         .col
@@ -89,8 +102,8 @@
 
       .row.team
         %a{href: '#', class: 'col'}
-          = t(:'frontpage.team.header')
-          = t(:'frontpage.team.desc')
+          %h1= t(:'frontpage.team.header')
+          %p.lg= t(:'frontpage.team.desc')
           = t(:'frontpage.link.more')
           %i.fa.fa-angle-right
 
@@ -98,27 +111,27 @@
         .row
           .col-xs-6
             = image_tag 'community.png'
-            = t(:'frontpage.ideals.community.header')
+            %h2= t(:'frontpage.ideals.community.header')
             = t(:'frontpage.ideals.community.desc')
           .col-xs-6
             = image_tag 'indi.png'
-            = t(:'frontpage.ideals.independent.header')
+            %h2= t(:'frontpage.ideals.independent.header')
             = t(:'frontpage.ideals.independent.desc')
       .row.ideals
         .row
           .col-xs-6
             = image_tag 'open.png'
-            = t(:'frontpage.ideals.open.header')
+            %h2= t(:'frontpage.ideals.open.header')
             = t(:'frontpage.ideals.open.desc')
           .col-xs-6
             = image_tag 'gift.png'
-            = t(:'frontpage.ideals.gift.header')
+            %h2= t(:'frontpage.ideals.gift.header')
             = t(:'frontpage.ideals.gift.desc')
 
       .row.vision
         %a{href: '#', class: 'col'}
-          = t(:'frontpage.vision.header')
-          = t(:'frontpage.link.crowdfunding')
+          %h1= t(:'frontpage.vision.header')
+          %h2= t(:'frontpage.link.crowdfunding')
 
       .row.footer
         .col

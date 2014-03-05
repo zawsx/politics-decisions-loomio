@@ -3,35 +3,45 @@
 @import "color";
 @import "buttons";
 
+.home {
 
-.col { @include make-xs-column(12); }
+  text-align: center;
 
-.hero {
-  background-color: $ash;
+  p.lg {}
+
+  .navbar { text-align: left; }
+
+  .col { @include make-xs-column(12); }
+
+  .hero {
+    background-color: $ash;
+  }
+
+  .crowdfunding {
+    background-color: $blue;
+  }
+
+  .mobile {
+    background-color: $teal;
+  }
+
+  .quote {
+    background-color: $ash;
+  }
+
+  .team {
+    background-color: $orange;
+  }
+
+  .vision {
+    background-color: $purple;
+  }
+
+  .footer {
+    background-color: $slate
+  }
+
+  * { border: 1px solid #333; }
+
 }
 
-.crowdfunding {
-  background-color: $blue;
-}
-
-.mobile {
-  background-color: $teal;
-}
-
-.quote {
-  background-color: $ash;
-}
-
-.team {
-  background-color: $orange;
-}
-
-.vision {
-  background-color: $purple;
-}
-
-.footer {
-  background-color: $slate
-}
-
-* { border: 1px solid #333; }
