@@ -1,9 +1,10 @@
 @import "bootstrap";
 @import "bootstrap/mixins";
 @import "color";
+@import "buttons";
 
 .col {
-  @include make-xs-column(12);
+
 }
 
 .hero {

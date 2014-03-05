@@ -25,17 +25,18 @@
           = link_to t(:'frontpage.link.log_in'), '#', class: 'btn log_in'
 
       .row.hero
-        .col
+        .col-xs-12
           = t(:'frontpage.hero.head')
           = t(:'frontpage.hero.subhead')
           = t(:'frontpage.hero.desc')
-          = link_to  t(:'frontpage.link.crowdfunding'), '#', class: 'btn'
+          = link_to  t(:'frontpage.link.crowdfunding'), '#', class: 'btn btn-loomio btn-sm'
+          = link_to  t(:'frontpage.link.crowdfunding'), '#', class: 'btn btn-success'
           %i.fa-fa-angle-right
           %i.fa-fa-angle-down
 
 
       .row.product
-        .col
+        .col-xs-12
           = t(:'frontpage.product.header')
 
 
@@ -52,31 +53,31 @@
 
 
       .row.crowdfunding
-        .col
+        .col-xs-12
           = t(:'frontpage.crowdfunding.header')
           = link_to t(:'frontpage.link.crowdfunding'), root_path
           %i.fa.fa-angle-right
 
 
       .row.prototype
-        .col
+        .col-xs-12
           = t(:'frontpage.prototype.header')
           = t(:'frontpage.prototype.subhead')
 
       .row.quote
-        .col
+        .col-xs-12
           = t(:'frontpage.quote.header.rushkoff')
 
       .row.mobile
-        .col
+        .col-xs-12
           = t(:'frontpage.mobile.header')
 
       .row.quote
-        .col
+        .col-xs-12
           = t(:'frontpage.quote.header.sifry')
 
       .row.team
-        .col
+        .col-xs-12
           = t(:'frontpage.team.header')
           = t(:'frontpage.team.desc')
           = link_to t(:'frontpage.link.more'), root_path
@@ -100,12 +101,12 @@
             = t(:'frontpage.ideals.gift.desc')
 
       .row.vision
-        .col
+        .col-xs-12
           = t(:'frontpage.vision.header')
           = link_to t(:'frontpage.link.crowdfunding'), root_path
 
       .row.footer
-        .col
+        .col-xs-12
           = t(:'frontpage.link.top')
           %i.fa.fa-angle-top
           = t(:'frontpage.link.public_groups')

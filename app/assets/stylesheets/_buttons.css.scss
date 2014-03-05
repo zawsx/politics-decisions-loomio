@@ -1,0 +1,20 @@
+.btn-loomio {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 4px;
+
+  color: white;
+  background-color: $teal;
+  border-color: $teal;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+}
