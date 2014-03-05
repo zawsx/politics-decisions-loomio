@@ -66,7 +66,7 @@
 
       .row.crowdfunding
         .content
-          %a{href: '#', class: 'col block-link'}
+          %a{href: '#', class: 'content block-link'}
             %h1= t(:'frontpage.crowdfunding.header')
             %h2= t(:'frontpage.link.crowdfunding')
             %i.fa.fa-angle-right
@@ -85,16 +85,14 @@
 
 
       .row.mobile
-        .content
-          = image_tag 'mobile.png'
+        = image_tag 'mobile.png'
 
       .row.quote
         .content
           %blockquote= t(:'frontpage.quote.header.sifry')
 
       .row
-        .content
-          = image_tag 'team.png'
+        = image_tag 'team.png'
 
       .row.team
         .content

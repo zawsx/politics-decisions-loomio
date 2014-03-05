@@ -1,5 +1,6 @@
 @import "twitter/bootstrap";
 @import "twitter/bootstrap/mixins";
+@import "media_queries";
 @import "color";
 @import "buttons";
 
@@ -18,9 +19,13 @@
   .navbar { text-align: left; }
 
   .content {
-    @media (min-width: @screen-sm-min) { background-color: red; }
-    // @include make-xs-column(7);
-    border: 1px solid red;
+    padding-left: 24px;
+    padding-right: 24px;
+    @include screen-size(small-up) {
+      width: 768px;
+      margin: 0 auto;
+    }
+    // border: 1px solid red;
   }
 
   .hero {
