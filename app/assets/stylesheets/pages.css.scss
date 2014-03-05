@@ -3,10 +3,8 @@
 @import "color";
 @import "buttons";
 
-.row-hero { @include make-row();}
 
 .col { @include make-xs-column(12); }
-
 
 .hero {
   background-color: $ash;
@@ -28,9 +26,12 @@
   background-color: $orange;
 }
 
-.crowdfunding-bump {
+.vision {
   background-color: $purple;
 }
 
+.footer {
+  background-color: $slate
+}
 
-
+* { border: 1px solid #333; }

@@ -24,7 +24,7 @@
         = link_to t(:'frontpage.link.contact'), '#', class: 'contact'
         = link_to t(:'frontpage.link.log_in'), '#', class: 'btn btn-primary log_in'
 
-      .row.hero
+      .row-hero
         .col
           = t(:'frontpage.hero.head')
           = t(:'frontpage.hero.subhead')
@@ -53,60 +53,72 @@
           = image_tag 'braid.png'
           = t(:'frontpage.product.step3.header')
           = t(:'frontpage.product.step3.desc')
+      .row
+        .col
+        = image_tag 'ipad.png'
+
 
 
       .row.crowdfunding
-        .col
+        %a{href: '#', class: 'col'}
           = t(:'frontpage.crowdfunding.header')
-          = link_to t(:'frontpage.link.crowdfunding'), root_path
+          = t(:'frontpage.link.crowdfunding')
           %i.fa.fa-angle-right
 
 
       .row.prototype
         .col
           = t(:'frontpage.prototype.header')
+          = image_tag 'wikimedia.png'
           = t(:'frontpage.prototype.subhead')
-
       .row.quote
         .col
           = t(:'frontpage.quote.header.rushkoff')
 
       .row.mobile
         .col
-          = t(:'frontpage.mobile.header')
+          = image_tag 'mobile.png'
 
       .row.quote
         .col
           = t(:'frontpage.quote.header.sifry')
 
-      .row.team
+      .row
         .col
+          = image_tag 'team.png'
+
+      .row.team
+        %a{href: '#', class: 'col'}
           = t(:'frontpage.team.header')
           = t(:'frontpage.team.desc')
-          = link_to t(:'frontpage.link.more'), root_path
+          = t(:'frontpage.link.more')
           %i.fa.fa-angle-right
 
       .row.ideals
         .row
           .col-xs-6
+            = image_tag 'community.png'
             = t(:'frontpage.ideals.community.header')
             = t(:'frontpage.ideals.community.desc')
           .col-xs-6
+            = image_tag 'indi.png'
             = t(:'frontpage.ideals.independent.header')
             = t(:'frontpage.ideals.independent.desc')
       .row.ideals
         .row
           .col-xs-6
+            = image_tag 'open.png'
             = t(:'frontpage.ideals.open.header')
             = t(:'frontpage.ideals.open.desc')
           .col-xs-6
+            = image_tag 'gift.png'
             = t(:'frontpage.ideals.gift.header')
             = t(:'frontpage.ideals.gift.desc')
 
       .row.vision
-        .col
+        %a{href: '#', class: 'col'}
           = t(:'frontpage.vision.header')
-          = link_to t(:'frontpage.link.crowdfunding'), root_path
+          = t(:'frontpage.link.crowdfunding')
 
       .row.footer
         .col
