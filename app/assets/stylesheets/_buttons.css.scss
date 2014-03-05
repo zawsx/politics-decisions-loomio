@@ -9,7 +9,8 @@
   &:hover {
     text-decoration: none;
     color: white;
-    background-color: darken($teal, 10%)
+    background-color: darken($teal, 10%);
+    border-color: darken($teal, 10%);
   }
 
 }

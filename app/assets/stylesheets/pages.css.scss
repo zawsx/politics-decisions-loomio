@@ -1,11 +1,12 @@
-@import "bootstrap";
-@import "bootstrap/mixins";
+@import "twitter/bootstrap";
+@import "twitter/bootstrap/mixins";
 @import "color";
 @import "buttons";
 
-.col {
+.row-hero { @include make-row();}
 
-}
+.col { @include make-xs-column(12); }
+
 
 .hero {
   background-color: $ash;
