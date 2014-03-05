@@ -6,6 +6,8 @@
     %title= title
     <!--[if lt IE 9]><script type="text/javascript" src="/assets/lib/excanvas.js"></script><![endif]-->
     = stylesheet_link_tag  "frontpage"
+    = stylesheet_link_tag 'application', 'put any external link'
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
     = csrf_meta_tags
     = render 'social_metadata', description: @meta_description, title: @meta_title
 
@@ -15,20 +17,23 @@
       = render 'flash_messages', :flash => flash
 
     .container-fluid.home
-      %nav.navbar.navbar-default
-        .container-fluid
+      %nav.navbar
+        .content
           .navbar-header
             = link_to image_tag("logo.png"), root_path, class: 'navbar-brand', alt: 'Loomio'
           %ul.nav.navbar-nav.navbar-right
             %li
-              %i.fa.fa-twitter
+              %a{href: '#'}
+                %i.fa.fa-twitter
             %li
-              %i.fa.fa-facebook
+              %a{href: '#'}
+                %i.fa.fa-facebook
             %li
-              %i.fa.fa-github
+              %a{href: '#'}
+                %i.fa.fa-github
             %li= link_to t(:'frontpage.link.blog'), '#', class: 'blog'
             %li= link_to t(:'frontpage.link.contact'), '#', class: 'contact'
-            %li= link_to t(:'frontpage.link.log_in'), '#', class: 'btn btn-primary log_in'
+            %li= link_to t(:'frontpage.link.log_in'), '#', class: 'log_in'
 
       .row.hero
         .content
@@ -65,8 +70,8 @@
 
 
       .row.crowdfunding
-        .content
-          %a{href: '#', class: 'content block-link'}
+        %a{href: '#', class: 'block-link'}
+          .content
             %h1= t(:'frontpage.crowdfunding.header')
             %h2= t(:'frontpage.link.crowdfunding')
             %i.fa.fa-angle-right
@@ -95,8 +100,8 @@
         = image_tag 'team.png'
 
       .row.team
-        .content
-          %a{href: '#', class: 'col block-link'}
+        %a{href: '#', class: 'block-link'}
+          .content
             %h1= t(:'frontpage.team.header')
             %p.lg= t(:'frontpage.team.desc')
             = t(:'frontpage.link.more')
@@ -126,8 +131,8 @@
               = t(:'frontpage.ideals.gift.desc')
 
       .row.vision
-        .content
-          %a{href: '#', class: 'col block-link'}
+        %a{href: '#', class: 'block-link'}
+          .content
             %h1= t(:'frontpage.vision.header')
             %h2= t(:'frontpage.link.crowdfunding')
 

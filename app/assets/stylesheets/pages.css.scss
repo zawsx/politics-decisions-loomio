@@ -5,7 +5,7 @@
 @import "buttons";
 
 .home {
-  * { border: 1px solid #333; }
+  // * { border: 1px solid #333; }
 
   text-align: center;
   a:hover { text-decoration: none; }
@@ -14,9 +14,9 @@
 
   .block-link {
     color: white;
+    display: block;
   }
 
-  .navbar { text-align: left; }
 
   .content {
     padding-left: 24px;
@@ -27,6 +27,17 @@
     }
     // border: 1px solid red;
   }
+
+  .navbar {
+    text-align: left;
+    padding-top: 20px;
+    .content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .navbar-brand { padding: 0 15px; }
 
   .hero {
     background-color: $ash;
