@@ -12,7 +12,7 @@ en:
       privacy: 'Privacy'
       services: 'Services'
     hero:
-      head_html: 'The world needs a better way to <strong>make decisions together.</strong>'
+      head_html: 'The world needs a better way to <span>make decisions together.</span>'
       subhead: 'Help us build it.'
       desc: 'Loomio is free and open software for anyone, anywhere, to participate in decisions that aﬀect them'
     product:
