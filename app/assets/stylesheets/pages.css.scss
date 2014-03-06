@@ -84,14 +84,21 @@ p {
       font-size: 16px;
       font-family: 'OpenSans';
     }
-    li a.btn-teal {
+    li a.btn {
       color: white;
       padding: 6px 20px;
       margin: 10px;
     }
+    i { font-size: 22px; }
   }
 
-  .navbar-brand { padding: 0 15px; }
+  .navbar-brand {
+    padding: 0 15px;
+    img {
+      width: 90%;
+      padding: 4px 15px 0;
+    }
+  }
 
   .hero {
     background-color: $ash;
@@ -120,7 +127,7 @@ p {
   // gross customization of grio
   .content.header {
     padding-bottom: 0;
-    width: 48%;
+    width: 40%;
   }
 
   .decision-steps.content {
@@ -163,6 +170,10 @@ p {
       width: 88%;
       margin: 0 auto;
     }
+  }
+
+  .ideals {
+    h2 { font-weight: 700;}
   }
 
   .vision {

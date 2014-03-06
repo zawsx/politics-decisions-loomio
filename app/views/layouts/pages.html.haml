@@ -19,20 +19,20 @@
       %nav.navbar.navbar-default
         .content
           .navbar-header
-            = link_to image_tag("logo-orange-l.png"), root_path, class: 'navbar-brand', alt: 'Loomio'
+            = link_to image_tag("logo-orange.png"), root_path, class: 'navbar-brand', alt: 'Loomio'
           %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{href: '#'}
+                %i.fa.fa-github
             %li
               %a{href: '#'}
                 %i.fa.fa-twitter
             %li
               %a{href: '#'}
                 %i.fa.fa-facebook
-            %li
-              %a{href: '#'}
-                %i.fa.fa-github-alt
             %li= link_to t(:'frontpage.link.blog'), '#', class: 'blog'
             %li= link_to t(:'frontpage.link.contact'), '#', class: 'contact'
-            %li= link_to t(:'frontpage.link.log_in'), '#', class: 'btn btn-teal'
+            %li= link_to t(:'frontpage.link.log_in'), '#', class: 'btn btn-orange'
 
       .row.hero
         .content-container
