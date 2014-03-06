@@ -19,7 +19,7 @@
       %nav.navbar.navbar-default
         .content
           .navbar-header
-            = link_to image_tag("logo.png"), root_path, class: 'navbar-brand', alt: 'Loomio'
+            = link_to image_tag("logo-orange-l.png"), root_path, class: 'navbar-brand', alt: 'Loomio'
           %ul.nav.navbar-nav.navbar-right
             %li
               %a{href: '#'}
@@ -29,10 +29,10 @@
                 %i.fa.fa-facebook
             %li
               %a{href: '#'}
-                %i.fa.fa-github
+                %i.fa.fa-github-alt
             %li= link_to t(:'frontpage.link.blog'), '#', class: 'blog'
             %li= link_to t(:'frontpage.link.contact'), '#', class: 'contact'
-            %li= link_to t(:'frontpage.link.log_in'), '#', class: 'log_in'
+            %li= link_to t(:'frontpage.link.log_in'), '#', class: 'btn btn-teal'
 
       .row.hero
         .content-container
@@ -41,9 +41,9 @@
             %h1.header= t(:'frontpage.hero.head_html')
             %h2.subhead= t(:'frontpage.hero.subhead')
             %p.hero-text.description= t(:'frontpage.hero.desc')
-            %a{href: '#', class: 'btn btn-loomio btn-lg hero-text'}
+            %a{href: '#', class: 'btn btn-teal btn-lg hero-text'}
               = t(:'frontpage.link.crowdfunding')
-              %i.fa.fa-angle-right.fa-spin
+              %i.fa.fa-angle-right
 
 
       .row.product

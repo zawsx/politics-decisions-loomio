@@ -31,6 +31,7 @@ p {
 
 .btn-lg { padding: 6px 26px; }
 
+
 .home {
 
 
@@ -67,21 +68,26 @@ p {
       width: 960px;
       margin: 0 auto;
     }
-    // border: 1px solid red;
   }
 
   .navbar {
     text-align: left;
     border: none;
-    background-color: $ash;
+    background-color: white;
     margin-bottom: 0;
     .content {
-      padding: 22px 0;
+      padding: 15px 0 36px;
+      margin-bottom: 25px;
     }
     li a{
       color: $charcoal;
       font-size: 16px;
       font-family: 'OpenSans';
+    }
+    li a.btn-teal {
+      color: white;
+      padding: 6px 20px;
+      margin: 10px;
     }
   }
 
@@ -103,6 +109,7 @@ p {
       margin: 0 auto 26px;
       width: 70%;
     }
+    .content { padding-top: 40px; }
     i {
       vertical-align: middle;
       margin-left: 20px;
