@@ -41,7 +41,7 @@
             %h1.header= t(:'frontpage.hero.head_html')
             %h2.subhead= t(:'frontpage.hero.subhead')
             %p.hero-text.description= t(:'frontpage.hero.desc')
-            %a{href: '#', class: 'btn btn-teal btn-lg hero-text'}
+            %a{href: '', class: 'btn btn-teal btn-lg hero-text js-not-yet-button'}
               = t(:'frontpage.link.crowdfunding')
               %i.fa.fa-angle-right
 
@@ -71,7 +71,7 @@
 
 
       .row.crowdfunding
-        %a{href: '#', class: 'block-link'}
+        %a{href: '#', class: 'block-link js-not-yet-row'}
           .content
             %h1= t(:'frontpage.crowdfunding.header')
             %h2
@@ -133,7 +133,7 @@
               %p.gift= t(:'frontpage.ideals.gift.desc')
 
       .row.vision
-        %a{href: '#', class: 'block-link'}
+        %a{href: '#', class: 'block-link js-not-yet-row'}
           .content
             %h1= t(:'frontpage.vision.header')
             %h2
@@ -148,7 +148,7 @@
           = t(:'frontpage.link.terms')
           = t(:'frontpage.link.privacy')
           = t(:'frontpage.link.services')
-          = javascript_include_tag "frontpage"
-          = javascript_include_tag 'https://browserid.org/include.js'
 
+    = javascript_include_tag "frontpage"
+    = javascript_include_tag 'https://browserid.org/include.js'
 

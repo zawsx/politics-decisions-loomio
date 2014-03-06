@@ -194,4 +194,20 @@ p {
     background-color: $slate;
     color: white;
   }
+  .coming-soon-button {
+    font-size: 28px;
+    border-radius: 8px;
+  }
+  .coming-soon-row {
+    padding: 52px 26px;
+    color: #FFF;
+    font-size: 28px;
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+    .header {
+      font-size: 40px;
+    }
+  }
 }
