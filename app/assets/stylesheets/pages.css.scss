@@ -20,7 +20,6 @@ blockquote {
 }
 
 h2 {
-  font-weight: 700;
   font-family: 'OpenSans';
   font-size: 22px;
 }
@@ -39,7 +38,10 @@ p {
   text-align: center;
   a:hover { text-decoration: none; }
 
-  .hero-text { font-size: 24px; }
+  .hero-text {
+    font-size: 24px;
+    font-family: 'OpenSans-Light';
+  }
 
   .block-link {
     display: block;
@@ -52,9 +54,11 @@ p {
   }
 
   .decision-steps {
-    h2, p {
+    h2 {
+      font-weight: 700;
       color: $disabled;
     }
+    p { color: $disabled; }
   }
   .content-container { padding-bottom: 40px; }
   .content {
@@ -86,6 +90,7 @@ p {
   .hero {
     background-color: $ash;
     border-bottom: 1px solid $ash;
+    .image { width: 180px; }
     .header {
       font-size: 62px;
       margin-bottom: 52px;
@@ -124,6 +129,11 @@ p {
   .crowdfunding {
     background-color: $blue;
     &:hover { background-color: darken($blue, 6%); }
+    i {
+      vertical-align: middle;
+      margin-left: 10px;
+      font-size: 1.6em;
+    }
   }
 
   .mobile {
@@ -131,7 +141,7 @@ p {
     background-image:url('/assets/mobile.png');
     background-repeat: no-repeat;
     background-position: center;
-    height: 500px;
+    height: 600px;
 
   }
 
@@ -142,6 +152,10 @@ p {
   .team {
     background-color: $orange;
     &:hover { background-color: darken($orange, 6%); }
+    .hero-text {
+      width: 88%;
+      margin: 0 auto;
+    }
   }
 
   .vision {

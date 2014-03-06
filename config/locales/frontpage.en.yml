@@ -36,7 +36,7 @@ en:
     quote:
       header:
         rushkoff_html: "\"Loomio <strong>unleashes the internet's potential</strong> to bring people towards consensus rather than polarized debate.\" -Douglas Rushkoff"
-        sifry: 'Loomio is hitting a sweet spot between individual voice and collective decision. -Micah Sifry'
+        sifry_html: 'Loomio is hitting a sweet spot between <strong>individual voice</strong> and <strong>collective decision</strong>. -Micah Sifry'
     team:
       header: 'About Loomio'
       desc: 'We’re a small team of open-source developers and social justice activists working at Enspiral in Aotearoa New Zealand, with a wider network of friends, supporters and advisors all over the world.'

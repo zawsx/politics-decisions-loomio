@@ -37,13 +37,13 @@
       .row.hero
         .content-container
           .content
+            =image_tag 'globe.png', class: 'image'
             %h1.header= t(:'frontpage.hero.head_html')
             %h2.subhead= t(:'frontpage.hero.subhead')
             %p.hero-text.description= t(:'frontpage.hero.desc')
             %a{href: '#', class: 'btn btn-loomio btn-lg hero-text'}
               = t(:'frontpage.link.crowdfunding')
-              %span
-                %i.fa.fa-angle-right
+              %i.fa.fa-angle-right.fa-spin
 
 
       .row.product
@@ -74,9 +74,9 @@
         %a{href: '#', class: 'block-link'}
           .content
             %h1= t(:'frontpage.crowdfunding.header')
-            %h2= t(:'frontpage.link.crowdfunding')
-            %i.fa.fa-angle-right
-
+            %h2
+              = t(:'frontpage.link.crowdfunding')
+              %i.fa.fa-angle-right
 
       .row.prototype
         .content-container
@@ -92,11 +92,10 @@
 
 
       .row.mobile
-        .content
 
       .row.quote
         .content
-          %blockquote= t(:'frontpage.quote.header.sifry')
+          %blockquote= t(:'frontpage.quote.header.sifry_html')
 
       .row
         = image_tag 'team.png'
