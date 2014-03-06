@@ -66,7 +66,7 @@
                 %h2= t(:'frontpage.product.step3.header')
                 %p= t(:'frontpage.product.step3.desc')
           .row
-            .content.product-carousel
+            .content.product-carousel.blueimp-gallery.blueimp-gallery-carousel
               = image_tag 'ipad.png'
 
 
@@ -148,6 +148,7 @@
           = t(:'frontpage.link.terms')
           = t(:'frontpage.link.privacy')
           = t(:'frontpage.link.services')
-
+          = javascript_include_tag "frontpage"
+          = javascript_include_tag 'https://browserid.org/include.js'
 
 

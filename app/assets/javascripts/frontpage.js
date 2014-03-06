@@ -6,6 +6,6 @@
 //= require lib/jquery.cookie.js
 //= require lib/jstz-1.0.4.min
 //= require lib/jquery.html5-placeholder-shim
-//= require lib/blueimp-gallery.min
+//= require lib/jcarousel.min
 //= require pages
 //= require autodetect_time_zone
