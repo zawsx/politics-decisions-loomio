@@ -7,34 +7,60 @@
 // * { border: 1px solid #333; }
 
 
-body, h1, h3, h4, h5 {
+body, h1, h2, h3, h4, h5 {
   font-family: 'OpenSans-Light';
   color: $font;
 }
 
-h2 {
-  font-family: 'OpenSans-Bold';
-  font-size: 18px;
+h1, blockquote { font-size: 40px; line-height: 1.2; }
+
+blockquote {
+  border: none;
+  margin: 0;
 }
 
+h2 {
+  font-weight: 700;
+  font-family: 'OpenSans';
+  font-size: 22px;
+}
+
+p {
+  font-family: 'OpenSans';
+  font-size: 16px;
+}
+
+.btn-lg { padding: 6px 26px; }
+
 .home {
+
 
 
   text-align: center;
   a:hover { text-decoration: none; }
 
-  p.lg { font-size: 18px; }
+  .hero-text { font-size: 24px; }
 
   .block-link {
     display: block;
     h1, h2, h3, h4, h5, p { color: white; }
+    h2 {
+      font-weight: 400px;
+      font-size: 24px;
+      letter-spacing: 1.4px;
+    }
   }
 
-
+  .decision-steps {
+    h2, p {
+      color: $disabled;
+    }
+  }
+  .content-container { padding-bottom: 40px; }
   .content {
-    padding: 48px 24px;
+    padding: 52px 26px;
     @include screen-size(small-up) {
-      width: 768px;
+      width: 960px;
       margin: 0 auto;
     }
     // border: 1px solid red;
@@ -42,10 +68,16 @@ h2 {
 
   .navbar {
     text-align: left;
-    padding-top: 20px;
+    border: none;
+    background-color: $ash;
+    margin-bottom: 0;
     .content {
-      padding-left: 0;
-      padding-right: 0;
+      padding: 22px 0;
+    }
+    li a{
+      color: $charcoal;
+      font-size: 16px;
+      font-family: 'OpenSans';
     }
   }
 
@@ -53,7 +85,41 @@ h2 {
 
   .hero {
     background-color: $ash;
+    border-bottom: 1px solid $ash;
+    .header {
+      font-size: 62px;
+      margin-bottom: 52px;
+    }
+    .subhead {
+      font-size: 40px;
+      margin-bottom: 26px;
+    }
+    .hero-text.description {
+      margin: 0 auto 26px;
+      width: 70%;
+    }
+    i {
+      vertical-align: middle;
+      margin-left: 20px;
+      font-size: 1.8em;
+    }
   }
+
+  // gross customization of grio
+  .content.header {
+    padding-bottom: 0;
+    width: 48%;
+  }
+
+  .decision-steps.content {
+    padding-top: 38px;
+  }
+
+  .content.product-carousel {
+    padding-top: 26px;
+  }
+  //
+
 
   .crowdfunding {
     background-color: $blue;
@@ -62,6 +128,11 @@ h2 {
 
   .mobile {
     background-color: $teal;
+    background-image:url('/assets/mobile.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+
   }
 
   .quote {

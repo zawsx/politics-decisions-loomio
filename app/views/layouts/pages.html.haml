@@ -16,7 +16,7 @@
       = render 'flash_messages', :flash => flash
 
     .container-fluid.home
-      %nav.navbar
+      %nav.navbar.navbar-default
         .content
           .navbar-header
             = link_to image_tag("logo.png"), root_path, class: 'navbar-brand', alt: 'Loomio'
@@ -35,37 +35,39 @@
             %li= link_to t(:'frontpage.link.log_in'), '#', class: 'log_in'
 
       .row.hero
-        .content
-          %h1= t(:'frontpage.hero.head')
-          %h2= t(:'frontpage.hero.subhead')
-          %p.lg= t(:'frontpage.hero.desc')
-          %a{href: '#', class: 'btn btn-loomio btn-lg'}
-            = t(:'frontpage.link.crowdfunding')
-            %i.fa.fa-angle-right
-          %i.fa.fa-angle-down
+        .content-container
+          .content
+            %h1.header= t(:'frontpage.hero.head_html')
+            %h2.subhead= t(:'frontpage.hero.subhead')
+            %p.hero-text.description= t(:'frontpage.hero.desc')
+            %a{href: '#', class: 'btn btn-loomio btn-lg hero-text'}
+              = t(:'frontpage.link.crowdfunding')
+              %span
+                %i.fa.fa-angle-right
 
 
       .row.product
-        .row
-          .content
-            %h1= t(:'frontpage.product.header')
-        .row
-          .content
-            .col-xs-4
-              = image_tag 'threads.png'
-              %h2= t(:'frontpage.product.step1.header')
-              %p= t(:'frontpage.product.step1.desc')
-            .col-xs-4
-              = image_tag 'weaving.png'
-              %h2= t(:'frontpage.product.step2.header')
-              %p= t(:'frontpage.product.step2.desc')
-            .col-xs-4
-              = image_tag 'braid.png'
-              %h2= t(:'frontpage.product.step3.header')
-              %p= t(:'frontpage.product.step3.desc')
-        .row
-          .content
-          = image_tag 'ipad.png'
+        .content-container
+          .row
+            .content.header
+              %h1= t(:'frontpage.product.header_html')
+          .row.decision-steps
+            .content
+              .col-xs-4
+                = image_tag 'threads-hover.png'
+                %h2= t(:'frontpage.product.step1.header')
+                %p= t(:'frontpage.product.step1.desc')
+              .col-xs-4
+                = image_tag 'weaving.png'
+                %h2= t(:'frontpage.product.step2.header')
+                %p= t(:'frontpage.product.step2.desc')
+              .col-xs-4
+                = image_tag 'braid.png'
+                %h2= t(:'frontpage.product.step3.header')
+                %p= t(:'frontpage.product.step3.desc')
+          .row
+            .content.product-carousel
+              = image_tag 'ipad.png'
 
 
       .row.crowdfunding
@@ -77,19 +79,20 @@
 
 
       .row.prototype
-        .content
-          %h1= t(:'frontpage.prototype.header')
-          = image_tag 'wikimedia.png'
-          %p.lg= t(:'frontpage.prototype.subhead')
+        .content-container
+          .content
+            %h1= t(:'frontpage.prototype.header_html')
+            = image_tag 'wikimedia.png'
+            %p.hero-text= t(:'frontpage.prototype.subhead_html')
 
 
       .row.quote
         .content
-          %blockquote= t(:'frontpage.quote.header.rushkoff')
+          %blockquote= t(:'frontpage.quote.header.rushkoff_html')
 
 
       .row.mobile
-        = image_tag 'mobile.png'
+        .content
 
       .row.quote
         .content
@@ -102,7 +105,7 @@
         %a{href: '#', class: 'block-link'}
           .content
             %h1= t(:'frontpage.team.header')
-            %p.lg= t(:'frontpage.team.desc')
+            %p.hero-text= t(:'frontpage.team.desc')
             %h2
               = t(:'frontpage.link.more')
               %i.fa.fa-angle-right
@@ -113,22 +116,22 @@
             .col-xs-6
               = image_tag 'community.png'
               %h2= t(:'frontpage.ideals.community.header')
-              = t(:'frontpage.ideals.community.desc')
+              %p= t(:'frontpage.ideals.community.desc')
             .col-xs-6
               = image_tag 'indi.png'
               %h2= t(:'frontpage.ideals.independent.header')
-              = t(:'frontpage.ideals.independent.desc')
+              %p= t(:'frontpage.ideals.independent.desc')
       .row.ideals
         .content
           .row
             .col-xs-6
               = image_tag 'open.png'
               %h2= t(:'frontpage.ideals.open.header')
-              = t(:'frontpage.ideals.open.desc')
+              %p= t(:'frontpage.ideals.open.desc')
             .col-xs-6
               = image_tag 'gift.png'
               %h2= t(:'frontpage.ideals.gift.header')
-              = t(:'frontpage.ideals.gift.desc')
+              %p= t(:'frontpage.ideals.gift.desc')
 
       .row.vision
         %a{href: '#', class: 'block-link'}
