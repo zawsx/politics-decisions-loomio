@@ -110,7 +110,7 @@
               %i.fa.fa-angle-right
 
       .row.ideals
-        .content
+        .content.first
           .row
             .col-xs-6
               = image_tag 'community.png'
@@ -126,17 +126,19 @@
             .col-xs-6
               = image_tag 'open.png'
               %h2= t(:'frontpage.ideals.open.header')
-              %p= t(:'frontpage.ideals.open.desc')
+              %p.open= t(:'frontpage.ideals.open.desc_html')
             .col-xs-6
               = image_tag 'gift.png'
               %h2= t(:'frontpage.ideals.gift.header')
-              %p= t(:'frontpage.ideals.gift.desc')
+              %p.gift= t(:'frontpage.ideals.gift.desc')
 
       .row.vision
         %a{href: '#', class: 'block-link'}
           .content
             %h1= t(:'frontpage.vision.header')
-            %h2= t(:'frontpage.link.crowdfunding')
+            %h2
+              = t(:'frontpage.link.crowdfunding')
+              %i.fa.fa-angle-right
 
       .row.footer
         .content

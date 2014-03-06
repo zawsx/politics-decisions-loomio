@@ -12,7 +12,7 @@ en:
       privacy: 'Privacy'
       services: 'Services'
     hero:
-      head_html: 'The world needs a better way to <strong>make decisions together.</strong>'
+      head_html: 'The world needs a better way to <span>make decisions together.</span>'
       subhead: 'Help us build it.'
       desc: 'Loomio is free and open software for anyone, anywhere, to participate in decisions that aﬀect them'
     product:
@@ -49,7 +49,7 @@ en:
         desc: 'We maintain a space for any group to come together, that is independent of political or corporate interest. We will never sell your data.'
       open:
         header: 'Free and open software'
-        desc: 'Loomio’s code is a public resource that anyone can run, read, learn from, modify and redistribute.'
+        desc_html: 'Loomio’s <a href="#">code</a> is a public resource that anyone can run, read, learn from, modify and redistribute.'
       gift:
         header: 'Gift economy'
         desc: 'Loomio is supported by those who pay according to their means. This keeps the platform free of advertising and accessible to groups with no money.'
