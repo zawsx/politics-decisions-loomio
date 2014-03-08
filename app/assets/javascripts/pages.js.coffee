@@ -49,6 +49,9 @@ $ ->
 		$('#product-carousel').carousel('next')
 	return
 
+$ ->
+	$('#prototype-carousel').carousel('pause')
+
 
 $ ->
 

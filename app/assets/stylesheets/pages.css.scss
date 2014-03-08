@@ -32,11 +32,17 @@ p {
 
 .btn-lg { padding: 8px 26px; }
 
-.fa-angle-right {
-  vertical-align: middle;
-  margin: -5px 0 0 10px;
-  font-size: 1.6em;
+
+.btn {
+  .fa-angle-right {
+    vertical-align: middle;
+    margin: -5px 0 0 10px;
+    font-size: 1.6em;
+  }
 }
+
+
+
 
 
 .home {
@@ -91,8 +97,6 @@ p {
       h2.active {
         color: #23C092;
       }
-
-
 
     }
 
@@ -175,7 +179,6 @@ p {
       cursor: pointer;
     }
 
-
     .step-img {
       margin: auto;
       width: 128px;
@@ -206,49 +209,48 @@ p {
       }
     }
 
-
-
-
-
-
-
-
-
-
     padding-top: 26px;
   }
   //
 
 
-  #product-carousel {
+  #product-carousel, #prototype-carousel {
     cursor: pointer;
+    .carousel-control {
+      position: absolute;
+      z-index: 5;
+      display: inline-block;
 
-      .carousel-control {
-        position: absolute;
-
-        z-index: 5;
-        display: inline-block;
-
-        .fa {
-          color: #37362F;
-          font-size: 60px;
-        }
-
-        &.left-control {
-          top: 43.7%;
-          left: -77px;
-        }
-
-        &.right-control {
-          top: 44.5%;
-          left: 890px;
-        }
-
-
-
+      .fa {
+        color: #37362F;
+        font-size: 56px;
       }
 
+      &.left-ctrl {
+        left: -77px;
+      }
+
+      &.right-ctrl {
+        left: 890px;
+      }
     }
+  }
+
+  #product-carousel {
+    .carousel-control {
+      top: 44%;
+    }
+  }
+
+  #prototype-carousel {
+    .carousel-control {
+      top: 34%;
+    }
+  }
+
+
+
+
 
 
   .crowdfunding {
