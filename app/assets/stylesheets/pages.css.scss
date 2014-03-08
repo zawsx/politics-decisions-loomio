@@ -166,15 +166,20 @@ p {
 
   .decision-steps.content {
     padding-top: 38px;
+
   }
 
   .content {
 
+    .step {
+      cursor: pointer;
+    }
+
+
     .step-img {
       margin: auto;
       width: 128px;
-      height: 127px;
-      cursor:pointer;
+      height: 128p  x;
       background-repeat: no-repeat;
     }
 
@@ -195,32 +200,13 @@ p {
     }
 
     #braid .step-img {
-      background-image:url(/assets/braid-hover.png);
+      background-image:url(/assets/braid-hover-large4.png);
       &.hide-background {
         background:transparent;
       }
     }
 
-    .product-carousel {
-      .carousel-control {
-        position: absolute;
-        top: 45%;
-        z-index: 5;
-        display: inline-block;
 
-      .left {
-        left: -92%%;
-      }
-
-      .right {
-        right: 92%;
-      }
-
-    }
-
-
-
-  }
 
 
 
@@ -232,6 +218,37 @@ p {
     padding-top: 26px;
   }
   //
+
+
+  #product-carousel {
+    cursor: pointer;
+
+      .carousel-control {
+        position: absolute;
+
+        z-index: 5;
+        display: inline-block;
+
+        .fa {
+          color: #37362F;
+          font-size: 60px;
+        }
+
+        &.left-control {
+          top: 43.7%;
+          left: -77px;
+        }
+
+        &.right-control {
+          top: 44.5%;
+          left: 890px;
+        }
+
+
+
+      }
+
+    }
 
 
   .crowdfunding {
