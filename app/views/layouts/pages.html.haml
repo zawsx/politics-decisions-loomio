@@ -53,21 +53,34 @@
               %h1= t(:'frontpage.product.header_html')
           .row.decision-steps
             .content
-              .col-xs-4
-                = image_tag 'threads-hover.png'
+              #threads.col-xs-4
+                .step-img.hide-background
+                  = image_tag 'threads.png', {class: 'top'}
                 %h2= t(:'frontpage.product.step1.header')
                 %p= t(:'frontpage.product.step1.desc')
-              .col-xs-4
-                = image_tag 'weaving.png'
+              #weaving.col-xs-4
+                .step-img.hide-background
+                  = image_tag 'weaving.png', {class: 'top'}
                 %h2= t(:'frontpage.product.step2.header')
                 %p= t(:'frontpage.product.step2.desc')
-              .col-xs-4
-                = image_tag 'braid.png'
+              #braid.col-xs-4
+                .step-img.hide-background
+                  = image_tag 'braid.png', {class: 'top'}
                 %h2= t(:'frontpage.product.step3.header')
                 %p= t(:'frontpage.product.step3.desc')
           .row
-            .content.product-carousel.blueimp-gallery.blueimp-gallery-carousel
-              = image_tag 'ipad.png'
+            #product-carousel.content.product-carousel.carousel.slide{"data-ride" => 'carousel'}
+              .carousel-inner
+                .item.active
+                  = image_tag 'ipad-1.png'
+                .item
+                  = image_tag 'ipad-2.png'
+                .item
+                  = image_tag 'ipad-3.png'
+              %a.carousel-control{href: '#product-carousel', "data-slide" => 'prev'}
+                %i.fa.fa-angle-left
+              %a.carousel-control{href: '#product-carousel', "data-slide" => 'next'}
+                %i.fa.fa-angle-right
 
 
       .row.crowdfunding
