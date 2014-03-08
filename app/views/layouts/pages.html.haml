@@ -54,10 +54,10 @@
           .row.decision-steps
             .content
               #threads.col-xs-4.step
-                .step-img.hide-background
-                  = image_tag 'threads.png', {class: 'top'}
-                %h2= t(:'frontpage.product.step1.header')
-                %p= t(:'frontpage.product.step1.desc')
+                .step-img
+                  = image_tag 'threads.png', {class: 'top', style: 'opacity:0'}
+                %h2.active= t(:'frontpage.product.step1.header')
+                %p.active= t(:'frontpage.product.step1.desc')
               #weaving.col-xs-4.step
                 .step-img.hide-background
                   = image_tag 'weaving.png', {class: 'top'}
@@ -93,9 +93,14 @@
 
       .row.prototype
         .content-container
-          .content
-            %h1= t(:'frontpage.prototype.header_html')
-            = image_tag 'wikimedia.png'
+          .row
+            .content.header
+              %h1= t(:'frontpage.prototype.header_html')
+          .row
+            #prototype-carousel.content.prototype-carousel.carousel.slide{"data-ride" => 'carousel'}
+              .carousel-inner
+                .item.active
+                  = image_tag 'wikimedia.png'
             %p.hero-text= t(:'frontpage.prototype.subhead_html')
 
 
