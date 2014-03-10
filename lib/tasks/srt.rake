@@ -1,6 +1,6 @@
 namespace :srt do
 
-LOCALES = [ :en, :cs, :ca, :pt_BR, :ja, :el, :fr ]
+LOCALES = [ :en, :cs, :ca, :pt_BR, :ja, :el, :fr, :es ]
 
 VIDEO_TEMPLATE = {
   t06: '00:00:03,900 --> 00:00:08,509',
