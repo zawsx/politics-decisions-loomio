@@ -50,6 +50,12 @@ SRT_FILE_NAME = "loomio_cf"
       ordered_times.each do |time|
         key = "video.#{VIDEO_TEMPLATE.key(time)}"
 
+        unless locale.to_s == 'en'
+          if I18n.t(key ,locale: locale) == I18n.t(key ,locale: 'en')
+            puts "[#{locale}] Missing #{key}: #{I18n.t(key ,locale: 'en')}"
+          end
+        end
+
         row =[]
         row << time
         row << I18n.t(key ,locale: locale)
@@ -68,7 +74,7 @@ SRT_FILE_NAME = "loomio_cf"
 
     end
 
-    puts `cat tmp/#{SRT_FILE_NAME}.en.srt`
+    # puts `cat tmp/#{SRT_FILE_NAME}.en.srt`
   end
 
 end
