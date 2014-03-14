@@ -1,13 +1,5 @@
 pt_BR:
   video:
-    t01: |
-      [Loomio
-      programa de código aberto
-      para tomar decisões colaborativamente]
-    t02: "O mundo precisa de uma melhor maneira de tomar decisões em conjunto. A internet está mudando o que é possível."
-    t03: "[A VERDADEIRA DEMOCRACIA PRECISA INCLUIR TODO MUNDO]"
-    t04: "[DEMOCRACIA = COLABORAÇÃO.]"
-    t05: "[VAMOS FAZER ACONTECER EM CONJUNTO.]"
     t06: "Oi, eu sou ALANNA. Faço parte de um pequeno time de desenvolvedores de código aberto, facilitadores e ativistas aqui na Nova Zelândia"
     t07: Nós estamos trabalhando em um projeto chamado Loomio.
     t08: "É uma ferramenta online simples para tomar decisões colaborativamente."
@@ -27,12 +19,8 @@ pt_BR:
     t22: "constrói concordâncias e trabalha quaisquer preocupações,"
     t23: "e decide um curso de ação claro a ser tomado que funcione para todos. "
     t24: "Esse processo flexível e dinâmico destrava uma sabedoria coletiva, chegando em conjunto a resultados melhores do que qualquer indivíduo teria por si só."
-    t25: "[Celular]"
     t26: "Loomio 1.0 funcionará em todos os dispositivos, abrindo as portas para as partes do mundo onde computadores são escassos."
-    t27: "[Seguro]"
     t28: "Você pode hospedá-lo por conta própria, para ter o controle completo da sua própria privacidade."
-    t29: "[Fácil]"
-    t30: "[Acessível]"
     t31: "O mais importante, ele é pensado para ser super fácil de usar e acessível, para que qualquer pessoa possa participar."
     t32: "O Loomio será sempre um programa de código livre e aberto."
     t33: "Nós estamos construindo uma infraestrutura pública para tomada de decisões, realizada em público."
@@ -46,5 +34,3 @@ pt_BR:
     t40: "Então é um trabalho para todos nós."
     t41: "Essa peça que falta na internet será desenvolvida em plataformas abertas, para o bem comum?"
     t42: "Você pode ajudar a tomar essa decisão agora mesmo, doando para esse projeto."
-    t43: "[Apoie o Loomio]"
-    t44: "[Compartilhe essa campanha]"

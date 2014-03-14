@@ -1,0 +1,136 @@
+1
+00:00:03,900 --> 00:00:08,509
+Hoi ik ben ALANNA. Ik maak deel uit van een klein team van open-source ontwikkelaars, bijdragers en activisten hier in Nieuw Zeeland.
+
+2
+00:00:08,509 --> 00:00:12,500
+We werken aan een project genaamd Loomio.
+
+3
+00:00:12,500 --> 00:00:15,700
+Het is een simpel online gereedschap voor gezamenlijke besluitvorming.
+
+4
+00:00:16,300 --> 00:00:25,000
+Hoi ik ben RICHARD. Toen ik betrokken raakte bij de Occupy beweging merkte ik hoe enorm krachtig het kan werken als ieders stem meetelt bij besluitvorming.
+
+5
+00:00:25,000 --> 00:00:30,400
+Maar het kan alleen persoonlijk. Op grote schaal zal het nooit werken.
+
+6
+00:00:30,500 --> 00:00:35,200
+Het lijkt raar, maar er is geen makkelijke manier om gezamenlijk online beslissingen te nemen.
+
+7
+00:00:35,200 --> 00:00:40,300
+E-mail en social media zijn gewoon niet gemaakt om online discussie tot heldere overeenkomst te brengen.
+
+8
+00:00:40,300 --> 00:00:46,000
+Het is net dat ontbrekende stukje van het internet dat we nodig hebben om online communiceren om te zetten in daadwerkelijke actie.
+
+9
+00:00:46,100 --> 00:00:48,900
+Dus dat is waar we de afgelopen 18 maanden aan hebben gewerkt.
+
+10
+00:00:48,900 --> 00:00:59,400
+Op het moment dat we ons prototype lanceerden, werden we overwelmd door duizenden groepen overal ter wereld - van studentenorganisaties en gemeenteraden tot software projecten en buurtgroepen.
+
+11
+00:01:00,000 --> 00:01:02,900
+We hebben veel geleerd van iedereen die mooie dingen heeft gedaan met het prototype.
+
+12
+00:01:02,900 --> 00:01:05,500
+We kennen haar mogelijkheden en haar beperkingen.
+
+13
+00:01:06,500 --> 00:01:08,300
+Nu is het tijd voor het echte werk.
+
+14
+00:01:08,400 --> 00:01:12,800
+Loomio 1.0 - een gereedschap voor echt betrokken besluitvorming.
+
+15
+00:01:12,800 --> 00:01:15,059
+In de kern is het eigenlijk heel simpel:
+
+16
+00:01:15,600 --> 00:01:18,000
+je bespreekt dingen en hoort andermans visie,
+
+17
+00:01:18,000 --> 00:01:20,600
+bouw aan overeenstemming en werk aan eventuele zorgen,
+
+18
+00:01:20,600 --> 00:01:24,500
+en bepaal een heldere strategie die voor iedereen werkt.
+
+19
+00:01:24,600 --> 00:01:32,900
+Dit flexibele en dynamische proces ontsluit collectieve wijsheid om tot betere resultaten te komen dan een individu in zijn of haar eentje kan. 
+
+20
+00:01:33,300 --> 00:01:39,600
+Loomio 1.0 zal op alle apparaten werken en opent daarmee delen van de wereld waar computers schaars zijn.
+
+21
+00:01:39,600 --> 00:01:44,200
+Je kan het zelf 'hosten' om je privacy volledig in eigen hand te houden.
+
+22
+00:01:44,200 --> 00:01:49,540
+Belangrijker nog, het is ontworpen om super makkelijk te zijn in gebruik en tevens erg toegankelijk zodat iedereen mee kan doen.
+
+23
+00:01:49,540 --> 00:01:52,500
+Loomio zal altijd vrije en open-source software blijven.
+
+24
+00:01:52,800 --> 00:01:56,740
+We bouwen openbare infrastructuur voor besluitvorming, gehouden in het publieke domein.
+
+25
+00:01:56,740 --> 00:02:05,100
+Omdat Loomio ondersteund wordt door 'crowdfunding', kan het project bestaan door de gemeenschap die dit mogelijk wil maken, niet door adverteerders of mensen die jouw gegevens willen verkopen.
+
+26
+00:02:05,200 --> 00:02:08,400
+We hebben al het onderzoek en ontwerp gedaan, nu moeten we het alleen nog bouwen.
+
+27
+00:02:08,600 --> 00:02:19,819
+Een geweldig team is samengekomen met precies de juiste vaardigheden om dit mogelijk te maken: een ontwerp team dat gepassioneerd is over design waarin de gebruiker centraal staat, gecombineerd met groepsproces experts die tientallen jaren ervaring hebben.
+
+28
+00:02:19,819 --> 00:02:26,600
+Om deze volgende stap te nemen, moet het kernteam volledig toegewijd aan de slag kunnen zonder zich zorgen te maken over hoe ze brood op de plank krijgt.
+
+29
+00:02:26,610 --> 00:02:29,400
+En dat is waarom we nu jouw hulp nodig hebben.
+
+30
+00:02:29,470 --> 00:02:35,000
+We omarmen donaties en vragen om jouw steun zodat we iets geweldigs terug kunnen geven aan de wereld.
+
+31
+00:02:35,200 --> 00:02:42,400
+Je steunt niet alleen een visie, je krijgt een gereedschap dat een verschil zal maken in je eigen leven, je werk en in de buurt.
+
+32
+00:02:42,400 --> 00:02:44,200
+Dus het is aan ons allemaal.
+
+33
+00:02:44,300 --> 00:02:49,500
+Zal dit ontbrekende stuk van het internet ontwikkeld worden op open platformen, voor het algemeen belang?
+
+34
+00:02:49,600 --> 00:02:54,000
+Je kan helpen deze beslissing nu te maken, door te doneren aan dit project.
+

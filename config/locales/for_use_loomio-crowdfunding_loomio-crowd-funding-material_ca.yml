@@ -1,9 +1,5 @@
 ca:
   video:
-    t02: "El món necessita una manera millor per prendre decisions plegats. Internet està cambiant el que és possible."
-    t03: "[LA VERTADERA DEMOCRÀCIA NECESSITA INCLOURE A TOTHOM]"
-    t04: "[DEMOCRÀCIA = COL·LABORACIÓ.]"
-    t05: "[FEM-HO POSSIBLE JUNTS]"
     t06: "Hola, sóc l'ALANNA. Formo part d'un petit grup de desenvolupadors de software lliure, facilitadors i activistes aquí, a Nova Zelanda."
     t07: Estem treballant en un projecte anomenat Loomio
     t08: "És una simple eina online que permet la presa de decisions colaborativa."
@@ -23,12 +19,8 @@ ca:
     t22: "arribeu a acords i treballeu en els dubtes o preocupacions,"
     t23: "i decidiu un camí a seguir que satisfaci a tothom."
     t24: "Aquest procés dinàmic i flexible desencadena la saviesa col·lectiva, arribant a millors resultats conjuntament que cap individual hagués aconseguit sol."
-    t25: "[Mòvil]"
     t26: "Loomio 1.0 funcionarà en tots els dispositius, fent-lo arribar a parts del món on els ordinadors són escassos."
-    t27: "[Segur]"
     t28: "El pots allotjar tú mateix, prenent control absolut de la teva privacitat."
-    t29: "[Fàcil]"
-    t30: "[Accessible]"
     t31: "I el més important, està dissenyat per a que sigui molt fàcil d'utilitzar i accessible, així tothom pot participar-hi."
     t32: "Loomio serà sempre gratuït i de codi obert."
     t33: "Estem construïnt una infraestructura pública per a la presa de decisions, basada en el bé comú."
@@ -42,5 +34,3 @@ ca:
     t40: "Així que depèn de tots nosaltres."
     t41: "Serà aquesta peça que manca a internet desenvolupada en plataformes obertes i pel bé públic?"
     t42: "Pots ajudar a prendre aquesta decisió ara mateix, fent una donació a aquest projecte."
-    t43: "[Ajuda a Loomio]"
-    t44: "[Comparteix aquesta campanya]"

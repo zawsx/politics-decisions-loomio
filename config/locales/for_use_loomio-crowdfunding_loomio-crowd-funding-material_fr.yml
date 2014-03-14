@@ -1,13 +1,5 @@
 fr:
   video:
-    t01: |
-      [Loomio
-      logiciel open source
-      de prise de décision collaborative]
-    t02: "Le monde a besoin d'une meilleure manière de prendre les décisions ensemble. Internet change ce qu'il est possible de faire."
-    t03: "[LA VRAIE DEMOCRATIE A BESOIN D'INCLURE TOUT LE MONDE]"
-    t04: "[DEMOCRATIE = COLLABORATION.]"
-    t05: "[RENDONS-LE POSSIBLE ENSEMBLE.]"
     t06: "Salut, je suis ALANNA. Je fais partie d'une petite équipe de développeurs open source, de facilitateurs et d'activistes, ici en Nouvelle-Zélande."
     t07: Nous travaillons sur un projet appelé Loomio.
     t08: "C'est un outil en ligne simple pour la prise de décision collaborative."
@@ -27,12 +19,8 @@ fr:
     t22: "construire un accord et travailler avec toutes les préoccupations de chacun,"
     t23: "et de décider d'un plan d'action clair qui fonctionne pour tout le monde."
     t24: "Ce processus souple et dynamique déverrouille la sagesse collective, pour atteindre de meilleurs résultats, qu'une personne seule ne pourrait atteindre."
-    t25: "[Mobile]"
     t26: "Loomio 1.0 fonctionnera sur tous les appareils, lui permettant de toucher des parties du monde où les ordinateurs sont rares."
-    t27: "[sûr]"
     t28: "Vous pouvez l'héberger vous-même, pour avoir un contrôle complet de votre propre vie privée."
-    t29: "[Facile]"
-    t30: "[Accessible]"
     t31: "Plus important encore, il est conçu pour être très facile à utiliser et accessible, pour que tout le monde puisse participer. "
     t32: "Loomio sera toujours un logiciel libre et open source."
     t33: "Nous construisons l'infrastructure publique pour la décision prise en commun."
@@ -46,5 +34,3 @@ fr:
     t40: "Donc la balle est dans notre camp, à nous tous."
     t41: "Est-ce que ce morceau qui manque à Internet sera développé sur des plate-formes ouvertes, pour le bien public ?"
     t42: "Vous pouvez aider à faire cette décision tout de suite, en faisant un don au projet."
-    t43: "[Supporter Loomio]"
-    t44: "[Partager cette campagne]"

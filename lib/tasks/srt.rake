@@ -1,6 +1,6 @@
 namespace :srt do
 
-LOCALES = [ :en, :cs, :ca, :pt_BR, :ja, :el, :fr, :es ]
+LOCALES = [:en, :pt_BR, :el, :es, :ca, :cs, :fr, :ja, :nl_NL, :vi]
 
 VIDEO_TEMPLATE = {
   t06: '00:00:03,900 --> 00:00:08,509',
@@ -63,7 +63,7 @@ SRT_FILE_NAME = "loomio_cf"
         rows << row
       end
 
-      File.open("tmp/#{SRT_FILE_NAME}.#{locale}.srt", 'w') do |file|
+      File.open("config/locales/cf_subtitles/#{SRT_FILE_NAME}.#{locale}.srt", 'w') do |file|
         rows.each_with_index do |row,i|
           file.puts i+1
           file.puts row[0]

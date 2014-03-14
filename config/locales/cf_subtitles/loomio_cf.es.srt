@@ -36,7 +36,7 @@ Así que eso es lo que hemos estado trabjando en por los últimos 18 meses.
 
 10
 00:00:48,900 --> 00:00:59,400
-Tan pronto como nos lanzamos nuestro prototipo, peticiones de grupo nos inundaron de todo el mundo - de los movimientos estudiantiles y los ayuntamientos, a los proyectos de software y grupos comunitarios.
+En cuanto  liberamos el prototipo, nos desbordaron miles de peticiones de grupos al rededor del mundo desde movimientos estudiantiles, Gobiernos Locales, proyectos de software y grupos comunitarios.
 
 11
 00:01:00,000 --> 00:01:02,900
@@ -92,7 +92,7 @@ Loomio siempre será open-source software y gratis.
 
 24
 00:01:52,800 --> 00:01:56,740
-Estamos construyendo infraestructura pública de decisiones, para el bien común.
+Estamos construyendo infraestructura publica para la toma de decisiones, sostenido por el bien común.
 
 25
 00:01:56,740 --> 00:02:05,100

@@ -1,13 +1,5 @@
 cs:
   video:
-    t01: |
-      [Loomio
-      open-source software
-      pro společné rozhodování]
-    t02: "Svět potřebuje lepší způsob, jak společně rozhodovat. Internet mění, co je možné."
-    t03: "[SKUTEČNÁ DEMOKRACIE MUSÍ ZAHRNOUT VŠECHNY]"
-    t04: "[DEMOKRACIE = SPOLUPRÁCE.]"
-    t05: "[POJĎME TO USKUTEČNIT.]"
     t06: "Ahoj, jsem ALLANA. Jsem součástí malého týmu open-source vývojářů, zprostředkovatelů a aktivistů tady na Novém Zélandu."
     t07: Pracujeme na projektu nazývaném Loomio
     t08: "Je to jednoduchý webový nástroj pro společné rozhodování."
@@ -27,12 +19,8 @@ cs:
     t22: "vybudujete souhlas a vypořádáte se se všemi obavami"
     t23: "a dohodnete se na jednoznačném průběhu akce, který bude vyhovovat všem."
     t24: "Tento flexibilní, dynamický proces odkrývá kolektivní moudrost, dosahující lepších výsledků společně než by sám dosáhl jednotlivec."
-    t25: "[Portabilní]"
     t26: "Loomio 1.0 bude fungovat na všech zaříneních, zpřístupňující ho částem světa, kde počítačů je pomálu."
-    t27: "[Bezpečné]"
     t28: "Můžete si jej hostovat sami, abyste měl(a) kompletní kontrolu nad svým soukromím."
-    t29: "[Jednoduché]"
-    t30: "[Přístupné]"
     t31: "A co je nejdůležitější, je navržen tak, aby byl opravdu snadno použitelný a přístupný, takže se může zúčastnit kdokoliv."
     t32: "Loomio bude vždy bezplatný svobodný open-source software."
     t33: "Budujeme veřejnou infrastrukturu pro rozhodování, v rukou prostého lidu."
@@ -46,5 +34,3 @@ cs:
     t40: "Takže to je na nás všech."
     t41: "Bude tento chybějící kousek internetu vyvíjen na otevřených platformách pro veřejné dobro?"
     t42: "Můžete pomoci tomuto rozhodnutí právě teď, přispěním tomuto projektu."
-    t43: "[Podpořte Loomio]"
-    t44: "[Sdílejte tuto kampaň]"
