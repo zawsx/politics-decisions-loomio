@@ -711,8 +711,7 @@ en:
       translations: 'Translation enquiries'
     messages:
       email_html:        "Fill out this form, or send an email to <a href='mailto:%{email}'>%{email}</a>"
-      phone:        "If you'd rather speak to someone directly, you can call %{name} on %{number}"
-      social_html:       "You can also join us on <a href='%{facebook}' target='_blank'>facebook</a> and <a href='%{twitter}' target='_blank'>twitter</a>!"
+      social_html:       "You can also join us on<br/><a href='%{facebook}' target='_blank'>facebook</a>, <a href='%{google}' target='_blank'>google+</a>, and <a href='%{twitter}' target='_blank'>twitter</a>!"
 
   #
   # FORMS
@@ -940,6 +939,14 @@ en:
       ignore: "If you did not request to join Loomio please ignore this email."
 
 
+
+  #
+  # CAMPAIGNS
+  #
+
+  campaign:
+    crowdfunding_html: "Hey! Loomio is about to get a whole lot better. <a href='http://love.loomio.org'>Check out our crowdfunding campaign!</a>"
+
   #
   # COMMON WORDS
   #
@@ -979,7 +986,6 @@ en:
   new_activity: "New activity"
   next: "Next"
   ok_got_it: "Okay, got it!"
-  options: "Options"
   other: "Other"
   outcome: "Outcome"
   password: "Password"
@@ -991,7 +997,6 @@ en:
   translate: "Help translate Loomio!"
   translate_this_string: "Translate to %{language}"
   options: "Options"
-  other: "Other"
   ok_got_it: "Okay, got it!"
   remove: "Remove"
   save: "Save"
