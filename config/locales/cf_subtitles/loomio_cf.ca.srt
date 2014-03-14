@@ -1,0 +1,136 @@
+1
+00:00:03,900 --> 00:00:08,509
+Hola, sóc l'ALANNA. Formo part d'un petit grup de desenvolupadors de software lliure, facilitadors i activistes aquí, a Nova Zelanda.
+
+2
+00:00:08,509 --> 00:00:12,500
+Estem treballant en un projecte anomenat Loomio
+
+3
+00:00:12,500 --> 00:00:15,700
+És una simple eina online que permet la presa de decisions colaborativa.
+
+4
+00:00:16,300 --> 00:00:25,000
+Hola, sóc en RICHARD. Mentre estava involucrat en el moviment Occupy vaig experimentar com de poderós pot ser quan la veu de tothom és escoltada durant la presa de decisions.
+
+5
+00:00:25,000 --> 00:00:30,400
+Però si només és possible en persona, no pot funcionar mai a gran escala.
+
+6
+00:00:30,500 --> 00:00:35,200
+Pot semblar esbojarrat, però no hi ha una manera senzilla de prendre decisions plegats online.
+
+7
+00:00:35,200 --> 00:00:40,300
+El correu electrònic i les xarxes socials no van ser creades per conduïr discussions online cap a un acord concret.
+
+8
+00:00:40,300 --> 00:00:46,000
+És com la peça que falta a Internet i que necessitem per convertir converses online en accions en el món real.
+
+9
+00:00:46,100 --> 00:00:48,900
+Doncs això és en el que hem estat treballant els últims 18 mesos.
+
+10
+00:00:48,900 --> 00:00:59,400
+Tan bon punt vàrem llançar el nostr prototip vàrem ser inundats per milers de grups d'arreu del mon - des de moviments d'estudiants i ajuntaments fins a projectes de software i comunitats.
+
+11
+00:01:00,000 --> 00:01:02,900
+Hem aprés un munt de tota la gent fent coses extraordinàries amb el prototip.
+
+12
+00:01:02,900 --> 00:01:05,500
+Coneixem el seu potencial i també les seves limitacions.
+
+13
+00:01:06,500 --> 00:01:08,300
+És moment de crear una eina real
+
+14
+00:01:08,400 --> 00:01:12,800
+Loomio 1.0 - una eina realment inclusiva per prendre decisions.
+
+15
+00:01:12,800 --> 00:01:15,059
+Els principis són realment simples:
+
+16
+00:01:15,600 --> 00:01:18,000
+parleu i escolteu diferents perspectives,
+
+17
+00:01:18,000 --> 00:01:20,600
+arribeu a acords i treballeu en els dubtes o preocupacions,
+
+18
+00:01:20,600 --> 00:01:24,500
+i decidiu un camí a seguir que satisfaci a tothom.
+
+19
+00:01:24,600 --> 00:01:32,900
+Aquest procés dinàmic i flexible desencadena la saviesa col·lectiva, arribant a millors resultats conjuntament que cap individual hagués aconseguit sol.
+
+20
+00:01:33,300 --> 00:01:39,600
+Loomio 1.0 funcionarà en tots els dispositius, fent-lo arribar a parts del món on els ordinadors són escassos.
+
+21
+00:01:39,600 --> 00:01:44,200
+El pots allotjar tú mateix, prenent control absolut de la teva privacitat.
+
+22
+00:01:44,200 --> 00:01:49,540
+I el més important, està dissenyat per a que sigui molt fàcil d'utilitzar i accessible, així tothom pot participar-hi.
+
+23
+00:01:49,540 --> 00:01:52,500
+Loomio serà sempre gratuït i de codi obert.
+
+24
+00:01:52,800 --> 00:01:56,740
+Estem construïnt una infraestructura pública per a la presa de decisions, basada en el bé comú.
+
+25
+00:01:56,740 --> 00:02:05,100
+Finançant Loomio a través del micromecenatge, el projecte pot ser conduït per la comunitat de gent que el vol fer possible, no per anunciants o gent que vol vendre les teves dades.
+
+26
+00:02:05,200 --> 00:02:08,400
+Hem fet tota la recerca i el disseny, ara només ens cal construïr-lo.
+
+27
+00:02:08,600 --> 00:02:19,819
+Un equip impressionant amb les habilitats necessàries s'ha juntat per fer-ho possible: un equip de desenvolupament apassionat pel disseny centrat en l'usuari, aparellat amb experts en processos grupals amb dècades d'experiència en tasques de facilitació.
+
+28
+00:02:19,819 --> 00:02:26,600
+Per fer aquest següent pas, l'equip ha de dedicar-hi tot el seu temps, sense haver de preocupar-se per com guanyar quelcom per poder menjar.
+
+29
+00:02:26,610 --> 00:02:29,400
+I és just aquí on necessitem la teva ajuda.
+
+30
+00:02:29,470 --> 00:02:35,000
+Estem adaptant l'economia del regal i demanant el teu suport, així podrem retornar al món quelcom sorprenent.
+
+31
+00:02:35,200 --> 00:02:42,400
+No estàs només donant suport a una visió, també t'emportes una eina que pot fer millorar la teva vida, la teva feina i la teva comunitat.
+
+32
+00:02:42,400 --> 00:02:44,200
+Així que depèn de tots nosaltres.
+
+33
+00:02:44,300 --> 00:02:49,500
+Serà aquesta peça que manca a internet desenvolupada en plataformes obertes i pel bé públic?
+
+34
+00:02:49,600 --> 00:02:54,000
+Pots ajudar a prendre aquesta decisió ara mateix, fent una donació a aquest projecte.
+

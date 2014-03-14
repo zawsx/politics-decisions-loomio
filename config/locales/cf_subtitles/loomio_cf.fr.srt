@@ -1,0 +1,136 @@
+1
+00:00:03,900 --> 00:00:08,509
+Salut, je suis ALANNA. Je fais partie d'une petite équipe de développeurs open source, de facilitateurs et d'activistes, ici en Nouvelle-Zélande.
+
+2
+00:00:08,509 --> 00:00:12,500
+Nous travaillons sur un projet appelé Loomio.
+
+3
+00:00:12,500 --> 00:00:15,700
+C'est un outil en ligne simple pour la prise de décision collaborative.
+
+4
+00:00:16,300 --> 00:00:25,000
+Salut, je suis RICHARD. Quand je me suis impliqué dans le mouvement Occupy, j'ai expérimenté à quel point ça peut être massivement stimulant quand la voix de tout le monde est inclue dans un processus de prise de décision.
+
+5
+00:00:25,000 --> 00:00:30,400
+Mais si ça ne peut que se produire en personne, ça ne pourra jamais marcher à grande échelle.
+
+6
+00:00:30,500 --> 00:00:35,200
+Ca semble fou, mais il n'y a aucun moyen simple de prendre des décisions ensemble sur internet.
+
+7
+00:00:35,200 --> 00:00:40,300
+Les emails et les médias sociaux n'ont tout simplement pas été faits pour amener les discussions en ligne à un accord clair
+
+8
+00:00:40,300 --> 00:00:46,000
+C'est comme un morceau qui manque à internet, et dont nous avons besoin pour passer de la discussion en ligne à l'action réelle.
+
+9
+00:00:46,100 --> 00:00:48,900
+Donc c'est ce sur quoi nous travaillons depuis les 18 derniers mois.
+
+10
+00:00:48,900 --> 00:00:59,400
+Dès que nous avons sorti notre prototype, nous avons été submergés par des milliers de groupes à travers le monde - ça allait des mouvements étudiants et des conseils de ville, jusqu'à des projets logiciels et des groupes communautaires.
+
+11
+00:01:00,000 --> 00:01:02,900
+Nous avons beaucoup appris de tous ces gens qui font de super choses avec le prototype.
+
+12
+00:01:02,900 --> 00:01:05,500
+Nous connaissons son potentiel, et nous connaissons ses limitations.
+
+13
+00:01:06,500 --> 00:01:08,300
+Maintenant il est temps de construire le vrai truc.
+
+14
+00:01:08,400 --> 00:01:12,800
+Loomio 1.0 - un outil pour la prise de décision vraiment inclusive.
+
+15
+00:01:12,800 --> 00:01:15,059
+A la base, c'est en réalité vraiment simple :
+
+16
+00:01:15,600 --> 00:01:18,000
+Vous pouvez parler des différents sujets et entendre des points de vue différents,
+
+17
+00:01:18,000 --> 00:01:20,600
+construire un accord et travailler avec toutes les préoccupations de chacun,
+
+18
+00:01:20,600 --> 00:01:24,500
+et de décider d'un plan d'action clair qui fonctionne pour tout le monde.
+
+19
+00:01:24,600 --> 00:01:32,900
+Ce processus souple et dynamique déverrouille la sagesse collective, pour atteindre de meilleurs résultats, qu'une personne seule ne pourrait atteindre.
+
+20
+00:01:33,300 --> 00:01:39,600
+Loomio 1.0 fonctionnera sur tous les appareils, lui permettant de toucher des parties du monde où les ordinateurs sont rares.
+
+21
+00:01:39,600 --> 00:01:44,200
+Vous pouvez l'héberger vous-même, pour avoir un contrôle complet de votre propre vie privée.
+
+22
+00:01:44,200 --> 00:01:49,540
+Plus important encore, il est conçu pour être très facile à utiliser et accessible, pour que tout le monde puisse participer. 
+
+23
+00:01:49,540 --> 00:01:52,500
+Loomio sera toujours un logiciel libre et open source.
+
+24
+00:01:52,800 --> 00:01:56,740
+Nous construisons l'infrastructure publique pour la décision prise en commun.
+
+25
+00:01:56,740 --> 00:02:05,100
+En donnant à Loomio les ressources à travers le financement participatif, le projet peut être piloté par la communauté de gens qui veulent que cela se produise, pas par les annonceurs ou les personnes qui veulent vendre vos données.
+
+26
+00:02:05,200 --> 00:02:08,400
+Nous avons fait toutes les parties recherche et design, et maintenant nous avons juste à le construire.
+
+27
+00:02:08,600 --> 00:02:19,819
+Une équipe incroyable est venue avec exactement les bonnes compétences pour y arriver : une équipe de développement qui est passionnée de design centré sur l'utilisateur, couplée avec des experts du processus de groupe avec des décennies d'expérience en animation.
+
+28
+00:02:19,819 --> 00:02:26,600
+Pour accéder à cette prochaine étape, l'équipe de base doit consacrer tout son temps à Loomio sans se soucier de la façon dont ils vont se nourrir.
+
+29
+00:02:26,610 --> 00:02:29,400
+Et voila pourquoi nous avons maintenant besoin de votre aide maintenant.
+
+30
+00:02:29,470 --> 00:02:35,000
+Nous adoptons l'économie du don et demandons votre soutien, afin que nous puissions rendre quelque chose d'incroyable au public.
+
+31
+00:02:35,200 --> 00:02:42,400
+Vous ne supportez pas qu'une vision, vous obtenez un outil qui va faire une différence dans votre propre vie, dans votre travail, et dans votre communauté.
+
+32
+00:02:42,400 --> 00:02:44,200
+Donc la balle est dans notre camp, à nous tous.
+
+33
+00:02:44,300 --> 00:02:49,500
+Est-ce que ce morceau qui manque à Internet sera développé sur des plate-formes ouvertes, pour le bien public ?
+
+34
+00:02:49,600 --> 00:02:54,000
+Vous pouvez aider à faire cette décision tout de suite, en faisant un don au projet.
+

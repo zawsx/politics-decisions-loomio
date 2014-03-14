@@ -1,0 +1,136 @@
+1
+00:00:03,900 --> 00:00:08,509
+Ahoj, jsem ALLANA. Jsem součástí malého týmu open-source vývojářů, zprostředkovatelů a aktivistů tady na Novém Zélandu.
+
+2
+00:00:08,509 --> 00:00:12,500
+Pracujeme na projektu nazývaném Loomio
+
+3
+00:00:12,500 --> 00:00:15,700
+Je to jednoduchý webový nástroj pro společné rozhodování.
+
+4
+00:00:16,300 --> 00:00:25,000
+Ahoj, jsem RICHARD. Když jsem se zapojil do hnutí Occupy, zakusil jsem, jakou moc dává, když hlas každého je zahrnut v rozhodovacím procesu.
+
+5
+00:00:25,000 --> 00:00:30,400
+Ale pokud to lze jen osobně, nemůže to nikdy fungovat ve větším měřítku.
+
+6
+00:00:30,500 --> 00:00:35,200
+Zní to bláznivě, ale není jednoduchý způsob, jak společně rozhodovat online.
+
+7
+00:00:35,200 --> 00:00:40,300
+Email a sociální sítě nebyly vytvořeny k tomu, aby online diskuze docílili dohody.
+
+8
+00:00:40,300 --> 00:00:46,000
+Je to takovým chybějícím kouskem Internetu, který potřebujeme k přeměnění online diskuzí ve skutečnou akci.
+
+9
+00:00:46,100 --> 00:00:48,900
+Takže na tom jsme pracovali posledních 18 měsíců.
+
+10
+00:00:48,900 --> 00:00:59,400
+Hned jak jsme vydali prototyp, byli jsme zaplaveni tisíci skupinami po celém světě - od studentských hnutí a městských rad k software projektům a komunitním skupinám.
+
+11
+00:01:00,000 --> 00:01:02,900
+Naučili jsme se hodně od všech, co s naším prototypem dělají skvělé věci.
+
+12
+00:01:02,900 --> 00:01:05,500
+Jsme si vědomi jeho potenciálu i jeho omezení.
+
+13
+00:01:06,500 --> 00:01:08,300
+Teď je načas vytvořit tu skutečnou věc.
+
+14
+00:01:08,400 --> 00:01:12,800
+Loomio 1.0 - nástroj pro skutečně inkluzivní rozhodování
+
+15
+00:01:12,800 --> 00:01:15,059
+Ve své podstatě je to vlastně velmi jednoduché:
+
+16
+00:01:15,600 --> 00:01:18,000
+téma prodiskutujete a vyslechnete si jiné perspektivy,
+
+17
+00:01:18,000 --> 00:01:20,600
+vybudujete souhlas a vypořádáte se se všemi obavami
+
+18
+00:01:20,600 --> 00:01:24,500
+a dohodnete se na jednoznačném průběhu akce, který bude vyhovovat všem.
+
+19
+00:01:24,600 --> 00:01:32,900
+Tento flexibilní, dynamický proces odkrývá kolektivní moudrost, dosahující lepších výsledků společně než by sám dosáhl jednotlivec.
+
+20
+00:01:33,300 --> 00:01:39,600
+Loomio 1.0 bude fungovat na všech zaříneních, zpřístupňující ho částem světa, kde počítačů je pomálu.
+
+21
+00:01:39,600 --> 00:01:44,200
+Můžete si jej hostovat sami, abyste měl(a) kompletní kontrolu nad svým soukromím.
+
+22
+00:01:44,200 --> 00:01:49,540
+A co je nejdůležitější, je navržen tak, aby byl opravdu snadno použitelný a přístupný, takže se může zúčastnit kdokoliv.
+
+23
+00:01:49,540 --> 00:01:52,500
+Loomio bude vždy bezplatný svobodný open-source software.
+
+24
+00:01:52,800 --> 00:01:56,740
+Budujeme veřejnou infrastrukturu pro rozhodování, v rukou prostého lidu.
+
+25
+00:01:56,740 --> 00:02:05,100
+Zajištění zdrojů Loomio přes crowdfunding umožňuje, aby tento projekt může byl řízený komunitou lidí, která o něj stojí, ne inzerenty či lidmi, kteří chtějí prodat vaše data.
+
+26
+00:02:05,200 --> 00:02:08,400
+Udělali jsme všechen výzkum a design, teď jen stačí to vytvořit.
+
+27
+00:02:08,600 --> 00:02:19,819
+Skvělá skupina se spojila s přesně těmi správnými dovednostmi, které jsou zapotřebí, aby se toto stalo realitou: vývojový tým vášnivý o uživatelsky přívětivém designu, spolu s experty na spolupráci ve skupinách s mnohaletou zkušeností se zprostředkováváním.
+
+28
+00:02:19,819 --> 00:02:26,600
+Abychom postoupili, jádro týmu tomu musí věnovat všechen svůj čas bez obav o tom, jak se nají.
+
+29
+00:02:26,610 --> 00:02:29,400
+A proto potřebujeme vaši pomoc.
+
+30
+00:02:29,470 --> 00:02:35,000
+Spoléháme na ekonomii darů a žádáme vás o vaší podporu, abychom světu mohli poskytnout něco úžasného.
+
+31
+00:02:35,200 --> 00:02:42,400
+Nejen, že podporujete vizi, ale získáte nástroj, který ovlivní váš vlastní život, vaši práci a vaši komunitu.
+
+32
+00:02:42,400 --> 00:02:44,200
+Takže to je na nás všech.
+
+33
+00:02:44,300 --> 00:02:49,500
+Bude tento chybějící kousek internetu vyvíjen na otevřených platformách pro veřejné dobro?
+
+34
+00:02:49,600 --> 00:02:54,000
+Můžete pomoci tomuto rozhodnutí právě teď, přispěním tomuto projektu.
+

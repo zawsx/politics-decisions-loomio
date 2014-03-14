@@ -1,0 +1,136 @@
+1
+00:00:03,900 --> 00:00:08,509
+Hola, Soy Alanna. Soy parte de un pequeño equipo de open-source desarolladores, facilitadores in activistas en Nueva Zelanda.
+
+2
+00:00:08,509 --> 00:00:12,500
+Estamos trabajando en un proyecto llamado Loomio.
+
+3
+00:00:12,500 --> 00:00:15,700
+Es una herramienta virtual y sencilla para la toma de decisiones colectiva.
+
+4
+00:00:16,300 --> 00:00:25,000
+Hola, Soy Richard. Cuando participe del movimiento Occupy pude experimentar lo poderoso que puede ser cuando todas las voces son incluidas en el proceso de toma de decisiones.
+
+5
+00:00:25,000 --> 00:00:30,400
+Pero si solo funciona de manera personal, nunca podrá funcionar a gran escala.
+
+6
+00:00:30,500 --> 00:00:35,200
+Loco pero cierto, no hay manera sencilla de tomar decisiones online.
+
+7
+00:00:35,200 --> 00:00:40,300
+Correo electrónico y los medios sociales no fueron inventados para la discusión y el entendimiento claro.
+
+8
+00:00:40,300 --> 00:00:46,000
+Es como una pieza que falta de Internet que necesitamos, para convertir la charla en línea en acción concreta.
+
+9
+00:00:46,100 --> 00:00:48,900
+Así que eso es lo que hemos estado trabjando en por los últimos 18 meses.
+
+10
+00:00:48,900 --> 00:00:59,400
+Tan pronto como nos lanzamos nuestro prototipo, peticiones de grupo nos inundaron de todo el mundo - de los movimientos estudiantiles y los ayuntamientos, a los proyectos de software y grupos comunitarios.
+
+11
+00:01:00,000 --> 00:01:02,900
+Aprendimos un montón de las personas que usan y hacen cosas maravillosas  con el prototipo.
+
+12
+00:01:02,900 --> 00:01:05,500
+Conocemos el potencial, y sabemos sus limitaciones.
+
+13
+00:01:06,500 --> 00:01:08,300
+Ahora es hora de construir la verdad.
+
+14
+00:01:08,400 --> 00:01:12,800
+Loomio 1.0 - una herramienta para la toma de decisiones verdaderamente inclusiva de tod@s.
+
+15
+00:01:12,800 --> 00:01:15,059
+En los màs profundo, es en realidad muy simple:
+
+16
+00:01:15,600 --> 00:01:18,000
+se habla y se escuchan perspectivas diferentes, 
+
+17
+00:01:18,000 --> 00:01:20,600
+se construye acuerdo y se trabaja ante todas las inquietudes, 
+
+18
+00:01:20,600 --> 00:01:24,500
+y se decide un camino claro de acción que funciona para tod@s.
+
+19
+00:01:24,600 --> 00:01:32,900
+Este proceso dinamico y flexible desbloquea la sabiduría colectiva, llegando a mejores resultados que cualquier individuo podría obtener por si solo.
+
+20
+00:01:33,300 --> 00:01:39,600
+Loomio 1.0 funcionara en cualquier dispositivo, abriendo las posibilidades de uso en partes del mundo donde las computadoras son escasas o inaccesibles. 
+
+21
+00:01:39,600 --> 00:01:44,200
+Lo puedas manejar tu mismo, para así tener control completo de la privacidad de tu grupo.
+
+22
+00:01:44,200 --> 00:01:49,540
+Y lo más importante es que esta diseñado para ser súper fácil y accesible de usar, para que tod@s puedan utilizarlo.
+
+23
+00:01:49,540 --> 00:01:52,500
+Loomio siempre será open-source software y gratis.
+
+24
+00:01:52,800 --> 00:01:56,740
+Estamos construyendo infraestructura pública de decisiones, para el bien común.
+
+25
+00:01:56,740 --> 00:02:05,100
+Obteniendo los recursos a través de la campaña de financiación colectiva,  el proyecto puede ser impulsado por la comunidad de personas que quieren que esto  suceda, y no por los anunciantes, o las personas que quieren vender tus datos.
+
+26
+00:02:05,200 --> 00:02:08,400
+Hemos hecho toda la investigación y diseño, ahora solo tenemos que construirlo.
+
+27
+00:02:08,600 --> 00:02:19,819
+Un equipo increíble se ha juntado con  los conocimientos adecuados para hacer que esto suceda: un equipo de desarrolladores  apasionados del diseño centrado en el usuario, junto con expertos en procesos de grupo, con décadas de experiencia en la facilitación.
+
+28
+00:02:19,819 --> 00:02:26,600
+Para dar el siguiente paso, el equipo central tiene que dedicar todo su tiempo a ello sin tener que preocuparse sobre cómo sobrevivirían durante este tiempo.
+
+29
+00:02:26,610 --> 00:02:29,400
+Por eso necesitamos tu ayuda.
+
+30
+00:02:29,470 --> 00:02:35,000
+Adoptamos la economia del regalo y buscamos tu apoyo para poder devolver al mundo algo fantástico.
+
+31
+00:02:35,200 --> 00:02:42,400
+No solo contribuyes a una vision, también estas recibiendo una herramienta que hará una diferencia en tu vida, trabajo y comunidad.
+
+32
+00:02:42,400 --> 00:02:44,200
+Depende de todos.
+
+33
+00:02:44,300 --> 00:02:49,500
+Sera esta herramienta desarrollada en open-platforms para el bien común?
+
+34
+00:02:49,600 --> 00:02:54,000
+Puedas ayudar en esa decisión ahora mismo, dando a este proyecto.
+
