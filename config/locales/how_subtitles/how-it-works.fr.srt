@@ -1,0 +1,158 @@
+1
+00:00:00,700 --> 00:00:04,500
+Loomio est un outil en ligne simple et convivial pour permettre le travail en commun
+
+2
+00:00:05,000 --> 00:00:09,700
+Il offre un espace en ligne neutre et indépendant pour prendre des décisions ensemble.
+
+3
+00:00:09,700 --> 00:00:12,000
+Voici un groupe de personnes actives et différentes.
+
+4
+00:00:12,300 --> 00:00:17,670
+Elles n'ont pas le temps pour de nombreuses réunions, et les e-mails ne suffisent pas pour des discussions complexes entre beaucoup de personnes à la fois.
+
+5
+00:00:17,670 --> 00:00:19,900
+Voyons comment elles utilisent plutôt Loomio.
+
+6
+00:00:19,900 --> 00:00:24,600
+N'importe qui peut démarrer une discussion sur n'importe quel sujet, 
+c'est simple, clair et précis
+
+7
+00:00:25,000 --> 00:00:30,800
+Vous pouvez décrire le contexte pour une discussion bien informée,
+et joindre des fichiers, photos, documents et des liens.
+
+8
+00:00:30,800 --> 00:00:35,700
+Le contexte peut être mis à jour comme un wiki,
+au fil de la discussion.
+
+9
+00:00:35,700 --> 00:00:38,500
+La discussion du groupe se poursuit en bas à gauche.
+
+10
+00:00:38,500 --> 00:00:41,200
+N'importe qui peut ajouter des informations et partager son point de vue.
+
+11
+00:00:41,200 --> 00:00:43,770
+Cette partie du processus n'a pas pas de durée définie.
+
+12
+00:00:43,770 --> 00:00:48,440
+Plus les personnes participent, mieux le problème est
+compris. Et les idées commencent à émerger.
+
+13
+00:00:48,440 --> 00:00:53,500
+Quand une solution potentielle apparaît, 
+n'importe qui peut lancer une proposition, qui a une échéance bien définie.
+
+14
+00:00:53,800 --> 00:00:56,500
+La prise de décision s'opère sur la droite.
+
+15
+00:00:56,500 --> 00:01:01,300
+Quand les personnes expriment leur position, on leur
+demande de l'expliquer en une phrase.
+
+16
+00:01:01,300 --> 00:01:06,400
+Cela permet de voir facilement pourquoi les personnes se positionnent
+comme elles le font, et met en valeur les points importants.
+
+17
+00:01:06,400 --> 00:01:09,500
+Les personnes rejoignant la discussion en cours de route peuvent rapidement rattraper leur retard.
+
+18
+00:01:09,500 --> 00:01:12,799
+On peut facilement voir ce qui est discuté et comment le groupe se positionne.
+
+19
+00:01:12,799 --> 00:01:18,000
+Les personnes peuvent choisir leur niveau d'investissement
+et de temps consacré, tout en restant dans la boucle.
+
+20
+00:01:18,000 --> 00:01:21,500
+Si vous avez une vraie divergence, vous pouvez utiliser le drapeau rouge.
+
+21
+00:01:21,500 --> 00:01:25,700
+Vous pouvez changer d'avis sur votre position si
+une nouvelle information apparaît.
+
+22
+00:01:25,700 --> 00:01:29,100
+Les personnes arrivent alors à comprendre des choses
+qu'elles n'auraient peut-être pas imaginées au début.
+
+23
+00:01:29,100 --> 00:01:32,300
+Vous pouvez "@mentionner" des personnes pour qu'elles soient prévenues.
+
+24
+00:01:32,300 --> 00:01:39,000
+Parfois, une proposition initiale rejetée peut être une étape utile vers une nouvelle proposition qui satisfera tout le monde.
+
+25
+00:01:39,000 --> 00:01:43,649
+On peut facilement se concentrer sur les points d'achoppement
+et faire ressortir les sujets importants du problème.
+
+26
+00:01:43,649 --> 00:01:46,909
+Loomio crée automatiquement une archive au fur et à mesure.
+
+27
+00:01:46,909 --> 00:01:51,000
+Si vous devez vous référer à une ancienne décision,
+vous verrez clairement comment elle a émergé.
+
+28
+00:01:51,200 --> 00:01:54,860
+Le groupe converge sur une solution satisfaisant tout le monde.
+
+29
+00:01:54,860 --> 00:02:03,300
+Ce processus souple et dynamique libère la sagesse collective, apportant de meilleures solutions que toutes les solutions imaginées par des individus.
+
+30
+00:02:03,700 --> 00:02:07,300
+Tout le monde se sent écouté et des vraies bonnes décisions sont prises.
+
+31
+00:02:07,300 --> 00:02:12,500
+Quand une proposition est adoptée, il y a déjà
+une forte compréhension partagée et un consensus dans le groupe.
+
+32
+00:02:12,500 --> 00:02:15,200
+Vous pouvez définir un résultat clair et lisible pour tout le monde.
+
+33
+00:02:15,700 --> 00:02:21,000
+Le tableau de bord Loomio affiche toutes les décisions en cours
+et vous pouvez les suivre d'un coup d'œil.
+
+34
+00:02:21,000 --> 00:02:24,100
+Vous pouvez facilement rechercher d'anciennes discussions, ou en créer une nouvelle.
+
+35
+00:02:24,100 --> 00:02:29,500
+Loomio aide les groupes à prendre de bonnes décisions ensembles, plus efficacement et avec plus d'engagement.
+
+36
+00:02:29,500 --> 00:02:32,000
+Vous pouvez créer votre groupe Loomio dès aujourd'hui!
+

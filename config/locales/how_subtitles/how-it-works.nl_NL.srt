@@ -1,0 +1,158 @@
+1
+00:00:00,700 --> 00:00:04,500
+Loomio is een makkelijk gebruiksvriendelijk online gereedschap voor samenwerken in groepen.
+
+2
+00:00:05,000 --> 00:00:09,700
+Het biedt een neutrale en onafhankelijke online plek voor groepen om samen beslissingen te maken.
+
+3
+00:00:09,700 --> 00:00:12,000
+Het is een diverse groep van bezige mensen.
+
+4
+00:00:12,300 --> 00:00:17,670
+Ze hebben geen tijd om veel te vergaderen en e-mail werkt niet voor complexe discussies met veel mensen tegelijkertijd.
+
+5
+00:00:17,670 --> 00:00:19,900
+Laten we eens kijken hoe ze Loomio gebruiken.
+
+6
+00:00:19,900 --> 00:00:24,600
+Iedereen kan een discussie beginnen over een willekeurig onderwerp,
+het is makkelijk, helder en gericht
+
+7
+00:00:25,000 --> 00:00:30,800
+Je kan een context opgeven voor een goed geïnformeerde discussie,
+en bestanden, foto's, documenten en snelkoppelingen bijvoegen.
+
+8
+00:00:30,800 --> 00:00:35,700
+De context kan bewerkt worden zoals een wiki,
+en kan dus bijgewerkt worden terwijl de discussie loopt.
+
+9
+00:00:35,700 --> 00:00:38,500
+De groepsdialoog gaat door aan linkerzijde van het scherm.
+
+10
+00:00:38,500 --> 00:00:41,200
+Iedereen kan informatie toevoegen en zijn of haar perspectief geven.
+
+11
+00:00:41,200 --> 00:00:43,770
+Dit deel van het proces heeft geen tijdslimiet.
+
+12
+00:00:43,770 --> 00:00:48,440
+Naarmate meer mensen deelnemen, wordt het probleem
+beter begrepen en beginnen ideeën te groeien.
+
+13
+00:00:48,440 --> 00:00:53,500
+Wanneer zich een mogelijke oplossing aandient
+kan iedereen een voorstel indienen, welke een duidelijke tijdslimiet heeft.
+
+14
+00:00:53,800 --> 00:00:56,500
+Beslissingen maken gebeurt aan de rechterzijde van je scherm.
+
+15
+00:00:56,500 --> 00:01:01,300
+Wanneer iemand zijn standpunt duidelijk maakt
+wordt hem gevraagd om in een zin een duidelijke uitleg te geven.
+
+16
+00:01:01,300 --> 00:01:06,400
+Dit maakt het makkelijk om te zien waarom mensen
+er zo tegenover staan en het belicht de kernpunten.
+
+17
+00:01:06,400 --> 00:01:09,500
+Mensen die later invoegen in de discussie kunnen snel inhalen wat ze gemist hebben.
+
+18
+00:01:09,500 --> 00:01:12,799
+Het is eenvoudig om te zien wat er wordt besproken en hoe de groep er tegenover staat.
+
+19
+00:01:12,799 --> 00:01:18,000
+Mensen kunnen hun eigen tijd en betrokkenheid
+indelen, terwijl ze wel op de hoogte blijven.
+
+20
+00:01:18,000 --> 00:01:21,500
+Als je een serieus bezwaar hebt, kan je de rode vlag gebruiken.
+
+21
+00:01:21,500 --> 00:01:25,700
+Je kan ten alle tijde je standpunt veranderen
+als er nieuwe informatie aan het licht komt.
+
+22
+00:01:25,700 --> 00:01:29,100
+Mensen beginnen dingen te begrijpen waar ze
+in eerste instantie niet over na hebben gedacht.
+
+23
+00:01:29,100 --> 00:01:32,300
+Je kan @-benoemingen gebruiken om bepaalde mensen op de hoogte te stellen.
+
+24
+00:01:32,300 --> 00:01:39,000
+Soms kan een afgewezen voorstel in een vroeg stadium een productieve stap zijn die leidt tot een nieuw voorstel dat iedereen aangaat -
+
+25
+00:01:39,000 --> 00:01:43,649
+het is eenvoudig om de knelpunten aan de kaak te stellen
+en de belangrijke aspecten naar voren te brengen.
+
+26
+00:01:43,649 --> 00:01:46,909
+Loomio maakt automatisch een archief terwijl je bezig bent.
+
+27
+00:01:46,909 --> 00:01:51,000
+Als je ooit wil refereren aan een eerdere beslissing
+dan is het makkelijk te zien wat eruit kwam.
+
+28
+00:01:51,200 --> 00:01:54,860
+De groep komt uit bij een oplossing die voor iedereen werkt.
+
+29
+00:01:54,860 --> 00:02:03,300
+Dit flexibele, dynamische proces benut de collectieve wijsheid van jouw groep om betere ideeën te creëren dan iemand in zijn eentje had kunnen bedenken.
+
+30
+00:02:03,700 --> 00:02:07,300
+Iedereen voelt zich gehoord en beslissingen met hoge kwaliteit kunnen bereikt worden.
+
+31
+00:02:07,300 --> 00:02:12,500
+Als een voorstel doorgang vindt, is er reeds
+een sterke eensgezindheid en overeenstemming binnen de groep.
+
+32
+00:02:12,500 --> 00:02:15,200
+Je kan een duidelijke uitkomst opgeven die voor iedereen te zien is.
+
+33
+00:02:15,700 --> 00:02:21,000
+Het Loomio dashboard laat alle open discussies en 
+hun voortgang zien.
+
+34
+00:02:21,000 --> 00:02:24,100
+Het is eenvoudig om te zoeken naar eerdere discussies of een nieuwe te beginnen.
+
+35
+00:02:24,100 --> 00:02:29,500
+Loomio helpt groepen samen geweldige beslissingen te nemen, efficiëntie te verhogen en  betrokkenheid te vergroten. 
+
+36
+00:02:29,500 --> 00:02:32,000
+Je kan je eigen Loomio groep vandaag nog starten!
+

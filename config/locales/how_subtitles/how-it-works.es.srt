@@ -1,0 +1,158 @@
+1
+00:00:00,700 --> 00:00:04,500
+Loomio es un herramienta de Internet amigable y sencilla para la colaboración en grupo.
+
+2
+00:00:05,000 --> 00:00:09,700
+Proporciona un espacio neutral e independiente donde los grupos toman decisiones conjuntas.
+
+3
+00:00:09,700 --> 00:00:12,000
+Es un grupo variado de gente atareada.
+
+4
+00:00:12,300 --> 00:00:17,670
+No tienen tiempo para un montón de reuniones, y el correo electrónico no sirve para discusiones complejas con muchas personas a la vez.
+
+5
+00:00:17,670 --> 00:00:19,900
+Veamos cómo, en su lugar, usan Loomio.
+
+6
+00:00:19,900 --> 00:00:24,600
+Todos/as pueden iniciar una discusión sobre cualquier tema,
+es simple, claro y enfocado
+
+7
+00:00:25,000 --> 00:00:30,800
+Puedes incluir contexto, para una discusión bien fundamentada,
+y adjuntar archivos, imágenes, documentos y enlaces.
+
+8
+00:00:30,800 --> 00:00:35,700
+El contexto puede editarse como una wiki,
+pudiendo así actualizarse según progresa la discusión.
+
+9
+00:00:35,700 --> 00:00:38,500
+El diálogo grupal continúa en el lado izquierdo.
+
+10
+00:00:38,500 --> 00:00:41,200
+Cualquiera puede añadir información y dar su perspectiva.
+
+11
+00:00:41,200 --> 00:00:43,770
+Esta parte del proceso no tiene un límite de tiempo.
+
+12
+00:00:43,770 --> 00:00:48,440
+Cuanta más gente participa, el asunto es
+mejor comprendido y las ideas comienzan a emerger.
+
+13
+00:00:48,440 --> 00:00:53,500
+Cuando una solución potencial aflora,
+cualquiera puede iniciar una propuesta, la cual tendrá un plazo definido.
+
+14
+00:00:53,800 --> 00:00:56,500
+La toma de decisiones se desarrolla en el lado derecho.
+
+15
+00:00:56,500 --> 00:01:01,300
+Cuando alguien manifiesta su posición, es
+invitado a dar un resumen de una frase explicando su decisión.
+
+16
+00:01:01,300 --> 00:01:06,400
+Esto permite ver fácilmente por qué lo consideran
+de esa forma y resalta los puntos principales.
+
+17
+00:01:06,400 --> 00:01:09,500
+Las personas que llegan tarde a la discusión pueden rápidamente ponerse al día.
+
+18
+00:01:09,500 --> 00:01:12,799
+Es fácil observar qué se discute y cómo lo ve el grupo.
+
+19
+00:01:12,799 --> 00:01:18,000
+Las gente puede establecer sus propios compromisos de tiempo
+y nivel de dedicación, a la vez que se mantienen en el ciclo.
+
+20
+00:01:18,000 --> 00:01:21,500
+Si tienes serias objeciones, puedes usar la opción de la señal roja.
+
+21
+00:01:21,500 --> 00:01:25,700
+Puedes cambiar de opinión sobre tu posición según
+nueva información vaya apareciendo.
+
+22
+00:01:25,700 --> 00:01:29,100
+Las personas llegan a comprender cosas sobre
+las que podrían no haber pensado en un primer momento.
+
+23
+00:01:29,100 --> 00:01:32,300
+Puedes @mencionar a personas específicas para notificarlas.
+
+24
+00:01:32,300 --> 00:01:39,000
+A veces, el fracaso de una primera propuesta puede ser un paso productivo que conduce a una nueva propuesta, abordando las preocupaciones de todos.
+
+25
+00:01:39,000 --> 00:01:43,649
+Es fácil afinar en los puntos de fricción
+y sacar a la luz los aspectos importantes del asunto.
+
+26
+00:01:43,649 --> 00:01:46,909
+Loomio crea automáticamente un archivo a medida que avanzas.
+
+27
+00:01:46,909 --> 00:01:51,000
+Si alguna vez necesitas consultar una pasada decisión,
+es muy claro ver cómo se produjo.
+
+28
+00:01:51,200 --> 00:01:54,860
+El grupo converge en una solución que funciona para todos.
+
+29
+00:01:54,860 --> 00:02:03,300
+Esta proceso flexible y dinámico libera la sabiduría colectiva, llegando juntos a mejores resultados de los que a cualquier individuo se le habrían ocurrido por su cuenta.
+
+30
+00:02:03,700 --> 00:02:07,300
+Todo el mundo se siente escuchado y verdaderas decisiones de alta calidad pueden alcanzarse.
+
+31
+00:02:07,300 --> 00:02:12,500
+Cuando una propuesta tiene éxito, hay ya una 
+sólida comprensión compartida y acuerdo en el grupo.
+
+32
+00:02:12,500 --> 00:02:15,200
+Puedes especificar un resultado claro para que todos/as lo vean.
+
+33
+00:02:15,700 --> 00:02:21,000
+El panel de Loomio muestra todas tus decisiones abiertas, y
+puedes ver cómo marchan de un solo vistazo.
+
+34
+00:02:21,000 --> 00:02:24,100
+Es sencillo buscar pasadas discusiones o iniciar una nueva.
+
+35
+00:02:24,100 --> 00:02:29,500
+Loomio ayuda a los grupos a tomar grandes decisiones en conjunto, incrementando la eficiencia y el compromiso.
+
+36
+00:02:29,500 --> 00:02:32,000
+¡Puedes iniciar tu propio grupo Loomio hoy!
+

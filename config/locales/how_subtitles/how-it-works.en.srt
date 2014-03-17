@@ -1,0 +1,158 @@
+1
+00:00:00,700 --> 00:00:04,500
+Loomio is a simple user-friendly online tool for group collaboration.
+
+2
+00:00:05,000 --> 00:00:09,700
+It provides a neutral and independent online space for groups to make decisions together.
+
+3
+00:00:09,700 --> 00:00:12,000
+This is a diverse group of busy people.
+
+4
+00:00:12,300 --> 00:00:17,670
+They don't have time for lots of meetings and email doesn't work for complex discusion with lots of people at once.
+
+5
+00:00:17,670 --> 00:00:19,900
+Let's see how they use Loomio instead.
+
+6
+00:00:19,900 --> 00:00:24,600
+Anyone can start a discussion on any topic,
+it's simple, clear, and focused
+
+7
+00:00:25,000 --> 00:00:30,800
+You can include context for a well informed discussion,
+and attach files, photos, documents, and links.
+
+8
+00:00:30,800 --> 00:00:35,700
+The context can be edited like a wiki,
+so it can be updated as the discussion progresses.
+
+9
+00:00:35,700 --> 00:00:38,500
+Group dialogue continues down the left hand side.
+
+10
+00:00:38,500 --> 00:00:41,200
+Anyone can add information and give their perspective.
+
+11
+00:00:41,200 --> 00:00:43,770
+This part of the process doesn't have a time limit.
+
+12
+00:00:43,770 --> 00:00:48,440
+As more people participate, the issue is
+better understood and ideas begin to emerge.
+
+13
+00:00:48,440 --> 00:00:53,500
+When a potential solution surfaces
+anyone can start a proposal, which has a clear time limit.
+
+14
+00:00:53,800 --> 00:00:56,500
+Decision-making happens on the right hand side.
+
+15
+00:00:56,500 --> 00:01:01,300
+When people state their position they're
+prompted to give a one-sentence summary explaining their decision.
+
+16
+00:01:01,300 --> 00:01:06,400
+This makes it easy to see why people feel the way
+they do and highlights the main points.
+
+17
+00:01:06,400 --> 00:01:09,500
+People coming into the discussion later can quickly catch up.
+
+18
+00:01:09,500 --> 00:01:12,799
+It's easy to see what's being discussed and how the group feels.
+
+19
+00:01:12,799 --> 00:01:18,000
+People can set their own time commitment
+and level of engagement, while still keeping in the loop.
+
+20
+00:01:18,000 --> 00:01:21,500
+If you have a serious concern you can use the red flag option.
+
+21
+00:01:21,500 --> 00:01:25,700
+You can change your mind about your position as
+new information comes to light.
+
+22
+00:01:25,700 --> 00:01:29,100
+People come to understand things they
+might not have thought of at first.
+
+23
+00:01:29,100 --> 00:01:32,300
+You can at-mention specific people to notify them.
+
+24
+00:01:32,300 --> 00:01:39,000
+Sometimes an early proposal failing can be a productive step that leads to a new proposal addressing everyone's concerns -
+
+25
+00:01:39,000 --> 00:01:43,649
+it's easy to hone in on the sticking
+points and bring out the important aspects of the issue.
+
+26
+00:01:43,649 --> 00:01:46,909
+Loomio automatically creates an archive as you go.
+
+27
+00:01:46,909 --> 00:01:51,000
+If you ever need to refer to past decision
+it's really clear to see how it came about.
+
+28
+00:01:51,200 --> 00:01:54,860
+The group converges on a solution that works for everyone.
+
+29
+00:01:54,860 --> 00:02:03,300
+This flexible, dynamic process unlocks collective wisdom, coming to better outcomes together than any individual would have come up with on their own.
+
+30
+00:02:03,700 --> 00:02:07,300
+Everyone feels heard and really high quality decisions can be reached.
+
+31
+00:02:07,300 --> 00:02:12,500
+When a proposal succeeds, there's a
+strong shared understanding and agreement in the group already.
+
+32
+00:02:12,500 --> 00:02:15,200
+You can specify a clear outcome for everyone to see.
+
+33
+00:02:15,700 --> 00:02:21,000
+The Loomio dashboard shows all your open decisions and
+you can see how they're going at a glance.
+
+34
+00:02:21,000 --> 00:02:24,100
+It's easy to search for past discussions or start a new one.
+
+35
+00:02:24,100 --> 00:02:29,500
+Loomio helps groups make great decisions together, increasing efficiency and engagement.
+
+36
+00:02:29,500 --> 00:02:32,000
+You can start your own Loomio group today!
+
