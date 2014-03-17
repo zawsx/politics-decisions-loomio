@@ -54,7 +54,9 @@ class User < ActiveRecord::Base
 
   has_many :groups,
            :through => :memberships,
-           conditions: { archived_at: nil }
+           conditions: { archived_at: nil },
+           order: 'groups.full_name asc'
+
   has_many :public_groups,
            :through => :memberships,
            :source => :group,

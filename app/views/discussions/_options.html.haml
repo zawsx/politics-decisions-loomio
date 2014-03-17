@@ -19,7 +19,7 @@
     - private_int = @discussion.private ? 1 : 0
     = form_tag move_discussion_path(discussion), method: :post, data: {hidden_group_ids: hidden_destination_group_ids.join(' '), private_discussion: @discussion.private }, class: 'move-discussion-form' do
       .modal-body
-        = select_tag :destination_group_id, options_for_select(destination_groups.map{|g| [g.name, g.id]})
+        = select_tag :destination_group_id, options_for_select(destination_groups.map{|g| [g.full_name, g.id]})
       .warn-move-will-make-private{style: "display: none"}
         %i.fa.fa-lock
         = t(:move_discussion_to_hidden_group)
