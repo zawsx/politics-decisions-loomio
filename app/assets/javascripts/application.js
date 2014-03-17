@@ -46,3 +46,4 @@
 //= require searches
 //= require attachments
 //= require subscriptions
+// = require i18n_viz
