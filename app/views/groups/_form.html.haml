@@ -6,9 +6,20 @@
 = simple_form_for group, form_params do |f|
   = f.input :name, label: false
   = f.input :description, as: :text, label: false
-  = f.input :privacy, :as => 'radio_buttons', collection: privacy_options, disabled: privacy_options_disabled
-  - if group.is_a_subgroup?
-    = f.input :viewable_by_parent_members, inline_label: group_viewable_by_parent_label(group), label: false
+  = f.input :visible,
+    as: :radio_buttons,
+    collection: [['Yep, visible to te publico', true],
+                 ['not visible to the public', false]],
+    disabled: group.is_subgroup? && !group.parent.visible?
+
+  = f.input :discussions_private_by_default,
+    as: :radio_buttons,
+    collection: [['Private by default', true],
+                 ['Public by default', false]],
+    disabled: group.is_subgroup? && !group.parent.visible?
+
+  - if group.is_subgroup?
+    = f.input :visible_to_parent_members, inline_label: group_viewable_by_parent_label(group), label: false
 
   = f.input :members_invitable_by, :as => "radio_buttons", collection: group_invitable_by_options(group)
   = f.input :parent_id, :as => :hidden, :input_html => { :value => group.parent.id } if group.parent

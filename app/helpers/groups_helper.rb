@@ -10,7 +10,7 @@ module GroupsHelper
   end
 
   def show_next_steps?(group)
-    user_signed_in? && current_user.is_group_admin?(group) && !group.next_steps_completed? && @group.is_top_level?
+    user_signed_in? && current_user.is_group_admin?(group) && !group.next_steps_completed? && @group.is_parent?
   end
 
   def show_subscription_prompt?(group)
@@ -18,7 +18,7 @@ module GroupsHelper
       ( group.created_at < 1.month.ago ) &&
       !group.has_subscription_plan? &&
       !group.has_manual_subscription? &&
-      !group.is_a_subgroup?
+      !group.is_subgroup?
   end
 
   def pending_membership_requests_count(group)
@@ -84,7 +84,7 @@ module GroupsHelper
       header = t "simple_form.labels.group.privacy_#{privacy_setting}_header"
       description = t "simple_form.labels.group.privacy_#{privacy_setting}_description"
 
-      if privacy_setting != 'hidden' && group.is_a_subgroup? && group.parent.privacy == 'hidden'
+      if privacy_setting != 'hidden' && group.is_subgroup? && group.parent.privacy == 'hidden'
         disabled_class = 'disabled'
         text_color = '#CCCCCC'
       else
@@ -98,7 +98,7 @@ module GroupsHelper
   end
 
   def group_privacy_options_disabled(group)
-    if group.is_a_subgroup? && group.parent.privacy == 'hidden'
+    if group.is_subgroup? && group.parent.privacy == 'hidden'
       ['public', 'private']
     else
       []
@@ -106,7 +106,7 @@ module GroupsHelper
   end
 
   def group_viewable_by_parent_label(group)
-    t(:'simple_form.labels.group.viewable_by_parent_members_header', group: group.parent.name)
+    t(:'simple_form.labels.group.visible_to_parent_members_header', group: group.parent.name)
   end
 
   def group_invitable_by_options(group)
