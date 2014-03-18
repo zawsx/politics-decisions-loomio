@@ -29,10 +29,7 @@ class Group < ActiveRecord::Base
   pg_search_scope :search_full_name, against: [:name, :description],
     using: {tsearch: {dictionary: "english"}}
 
-  scope :visible_on_explore_front_page, -> {  more_than_n_members(1).
-                                              more_than_n_discussions(2).
-                                              categorised_any.
-                                              parents_only }
+  scope :visible_on_explore_front_page, -> { categorised_any.parents_only }
 
   scope :categorised_any, -> { where('groups.category_id IS NOT NULL') }
 

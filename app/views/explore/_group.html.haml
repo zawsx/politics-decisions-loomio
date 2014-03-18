@@ -1,8 +1,8 @@
 .group
   .group-container
-    %h1=group.full_name
+    %h1=link_to group.full_name, group
     %p.description=group.description
-    -group.motions.last(5).each do |motion|
+    -group.motions.public.last(5).each do |motion|
       .row-fluid
         .span1.motion-sparkline
           -values = motion.vote_counts.values
@@ -10,5 +10,6 @@
             0,0,0,0,1
           -else
             =values.join(',')
-        .span11.motion-summary=motion.title
+        .span11.motion-summary=link_to motion.title, motion
 
+    =link_to t(:'explore.go_to_group', group_name: group.full_name)
