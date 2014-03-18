@@ -1,0 +1,28 @@
+@import 'settings';
+@import "bootstrap/mixins";
+@import "mixins";
+
+
+.explore {
+  .main-container {
+    background-color: $main-background;
+  }
+
+  
+  .category-header {
+    background-color: white;
+    margin-bottom: 1em;
+    padding: .5em;
+  }
+
+  .group-container {
+    background-color: white;
+    margin-bottom: 1em;
+    padding: .5em;
+  }
+
+  .groups-row {
+    margin-bottom: 1.4em;
+  }
+}
+

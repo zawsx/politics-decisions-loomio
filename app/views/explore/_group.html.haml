@@ -1,0 +1,14 @@
+.group
+  .group-container
+    %h1=group.full_name
+    %p.description=group.description
+    -group.motions.last(5).each do |motion|
+      .row-fluid
+        .span1.motion-sparkline
+          -values = motion.vote_counts.values
+          -if values.sum == 0
+            0,0,0,0,1
+          -else
+            =values.join(',')
+        .span11.motion-summary=motion.title
+
