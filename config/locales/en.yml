@@ -198,7 +198,11 @@ en:
 
   edit_discussion_context: "Edit discussion context"
   request_new_group: "Start a group"
-  request_or_find_new_group_html: "<a href='%{new_group_link}'>Start a new group</a>, or <a href='%{existing_group_link}'>find an existing group </a>"
+  start_new_group: "Start a new group"
+  start_new_group_hint: "To start making decisions"
+  find_a_group: "Find a group"
+  find_a_group_hint: "To explore public groups"
+  no_group_header: "Welcome to Loomio Beta"
   empty_notifications: "You do not have any notifications yet."
   see_all_notifications: "See all notifications"
   profile: "Profile"
@@ -345,6 +349,7 @@ en:
   current_decision: "Current decision"
   previous_decisions: "Previous decisions"
   see_previous_decisions: "See previous decisions"
+  see_more: "See more"
   create_new_proposal: "Create new proposal"
   empty_decision_list_html: "Ready to make a decision? <br> Anyone can start a proposal."
   empty_decision_index: "This group has not made any decisions yet."
@@ -621,7 +626,7 @@ en:
   confirmation_not_received: "Didn't receive confirmation instructions?"
   unlock_not_received: "Didn't receive unlock instructions?"
   inactive_html: "Sorry, this account is currently inactive. If you have any questions please <a href='%{path_to_contact}'>get in touch</a>."
-  create_an_account: 'Create an account'
+  create_an_account_html: 'Create a Loomio Beta account'
   log_in: "Log in"
 
   join_group:
