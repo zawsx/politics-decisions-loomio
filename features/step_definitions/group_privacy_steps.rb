@@ -2,7 +2,7 @@ Given /^an open group exists$/ do
   @group = FactoryGirl.create :group
   @group.add_admin! FactoryGirl.create :user
   @group.visible = true
-  @group.discussions_private_by_default = false
+  @group.private_discissions_only = false
   @group.description = "This is an *Open Group* group, which would formally have been called a 'public group'"
   @group.save!
 end
@@ -11,7 +11,7 @@ Given /^a public group exists$/ do
   @group = FactoryGirl.create :group
   @group.add_admin! FactoryGirl.create :user
   @group.visible = true
-  @group.discussions_private_by_default = false
+  @group.private_discussions_only = false
   @group.description = "this group is public"
   @group.save!
 end
@@ -19,7 +19,7 @@ end
 Given /^a hidden group exists$/ do
   @group = FactoryGirl.create :group
   @group.visible = false
-  @group.discussions_private_by_default = true
+  @group.private_discussions_only = true
   @group.description = "this group is hidden"
   @group.save
 end
@@ -27,7 +27,7 @@ end
 Given(/^a public group exists with a Spanish\-speaking admin "(.*?)"$/) do |arg1|
   @group = FactoryGirl.create :group
   @group.visible = true
-  @group.discussions_private_by_default = false
+  @group.private_discussions_only = false
   @group.save
   admin = @group.admins.first
   admin.update_attribute(:selected_locale, "es")
@@ -36,23 +36,23 @@ Given(/^a public group exists with a Spanish\-speaking admin "(.*?)"$/) do |arg1
 end
 
 Given /^a public sub\-group exists$/ do
-  @parent_group = FactoryGirl.create :group, visible: true, discussions_private_by_default: false
+  @parent_group = FactoryGirl.create :group, visible: true, private_discussions_only: false
   @sub_group = FactoryGirl.create :group, parent: @parent_group,
                                           visible: true,
-                                          discussions_private_by_default: false
+                                          private_discussions_only: false
 end
 
 Given /^a hidden sub\-group exists$/ do
   @parent_group = FactoryGirl.create :group
   @sub_group = FactoryGirl.create :group, :parent => @parent_group
   @sub_group.visible = false
-  @sub_group.discussions_private_by_default = true
+  @sub_group.private_discussions_only = true
   @sub_group.save
 end
 
 Given /^a sub\-group viewable by parent\-group members exists$/ do
   @parent_group = FactoryGirl.create :group
-  @sub_group = FactoryGirl.create :group, :parent => @parent_group, visible: false, discussions_private_by_default: true, visible_to_parent_members: true
+  @sub_group = FactoryGirl.create :group, :parent => @parent_group, visible: false, private_discussions_only: true, visible_to_parent_members: true
   @sub_group.save
 end
 
@@ -118,7 +118,7 @@ Given /^I am a member of a parent\-group that has a sub\-group viewable by paren
   @parent_group = FactoryGirl.create :group
   @admin_user = FactoryGirl.create :user
   @parent_group.add_admin! @admin_user
-  @sub_group = FactoryGirl.create :group, :parent => @parent_group, visible: false, discussions_private_by_default: true, :visible_to_parent_members => true
+  @sub_group = FactoryGirl.create :group, :parent => @parent_group, visible: false, private_discussions_only: true, :visible_to_parent_members => true
   @sub_group.add_admin! @admin_user
   @parent_group.add_member! @user
 end
@@ -176,12 +176,12 @@ Given(/^I am a member of a parent\-group that has sub\-groups I don't belong to$
   @sub_groups << FactoryGirl.create(:group,
                                     parent: @parent_group,
                                     visible: true,
-                                    discussions_private_by_default: false,
+                                    private_discussions_only: false,
                                     visible_to_parent_members: true)
   @sub_groups << FactoryGirl.create(:group,
                                     parent: @parent_group,
                                     visible: false,
-                                    discussions_private_by_default: true,
+                                    private_discussions_only: true,
                                     visible_to_parent_members: true)
 end
 
@@ -202,7 +202,7 @@ Given(/^I am a coordinator of a public group$/) do
   @group = FactoryGirl.create :group
   @group.add_admin! @user
   @group.visible = true
-  @group.discussions_private_by_default = false
+  @group.private_discussions_only = false
 end
 
 When(/^I set the group to hidden$/) do

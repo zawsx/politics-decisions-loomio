@@ -4,7 +4,7 @@ class FixPrivacy < ActiveRecord::Migration
 
   def up
     add_column :groups, :visible, :boolean, default: true, null: false
-    add_column :groups, :discussions_private_by_default, :boolean, default: true, null: false
+    add_column :groups, :private_discussions_only, :boolean, default: true, null: false
     rename_column :groups, :viewable_by_parent_members, :visible_to_parent_members
     add_index :groups, :visible
 
@@ -17,13 +17,13 @@ class FixPrivacy < ActiveRecord::Migration
       case 
       when ['public', 'everyone'].include?(group.privacy)
         group.visible = true
-        group.discussions_private_by_default = false
+        group.private_discussions_only = false
       when ['private'].include?(group.privacy)
         group.visible = true
-        group.discussions_private_by_default = true
+        group.private_discussions_only = false
       when ['hidden', 'secret', 'members', 'parent_group_members'].include?(group.privacy)
         group.visible = false
-        group.discussions_private_by_default = true
+        group.private_discussions_only = true
       else
         puts "weird privacy group #{group.id} value #{group.privacy}"
       end
@@ -31,11 +31,13 @@ class FixPrivacy < ActiveRecord::Migration
       progress_bar.increment
     end
 
+    change_column :groups, :private_discussions_only, :boolean, default: nil, null: false
+
 
   end
 
   def down
-    remove_column :groups, :discussions_private_by_default
+    remove_column :groups, :private_discussions_only
     remove_column :groups, :visible
     rename_column :groups, :visible_to_parent_members, :viewable_by_parent_members
   end

@@ -803,6 +803,11 @@ en:
         members_invitable_by_coordinators: "Coordinators only"
         members_invitable_by_members: "All group members"
         privacy: Privacy
+        visibility_visible_header: 'Visible'
+        visibility_hidden_header: 'Hidden'
+        visibility_visible_description: 'People can find this group and ask to join.'
+        visibility_hidden_description: 'Joining this group is by invitation only.'
+
         privacy_public_header: Public
         privacy_public_description: Discussions are public, unless made private. Anyone can find the group and ask to join.
         privacy_private_header: Mostly private

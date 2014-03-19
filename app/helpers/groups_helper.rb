@@ -78,31 +78,14 @@ module GroupsHelper
     icon_button(new_params)
   end
 
-  def group_privacy_options(group)
-    privacy_settings = []
-    Group::PRIVACY_CATEGORIES.each do |privacy_setting|
-      header = t "simple_form.labels.group.privacy_#{privacy_setting}_header"
-      description = t "simple_form.labels.group.privacy_#{privacy_setting}_description"
+  def group_visibility_options(group)
+    options = []
+    {visible: true, hidden: false}.each_pair do |name, value|
+      html = render 'edit_visibility_option', group: group, name: name
 
-      if privacy_setting != 'hidden' && group.is_subgroup? && group.parent.privacy == 'hidden'
-        disabled_class = 'disabled'
-        text_color = '#CCCCCC'
-      else
-        disabled_class = ''
-        text_color = ''
-      end
-      privacy_settings << ["<span class='privacy-setting-header #{disabled_class}'>#{header}</strong><br />
-                            <p style='color:#{text_color}'>#{description}</p>".html_safe, privacy_setting.to_sym]
+      options << [html, value]
     end
-    privacy_settings
-  end
-
-  def group_privacy_options_disabled(group)
-    if group.is_subgroup? && group.parent.privacy == 'hidden'
-      ['public', 'private']
-    else
-      []
-    end
+    options
   end
 
   def group_viewable_by_parent_label(group)

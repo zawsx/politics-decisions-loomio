@@ -1,0 +1,6 @@
+- disabled = 'disabled' if group.parent_is_hidden?
+%span.privacy-setting-header.group{class: "#{disabled}"}
+  = t "simple_form.labels.group.visibility_#{name}_label"
+  -# hey these dumb tags where here when I arrived
+  %br
+  %p= t "simple_form.labels.group.visibility_#{name}_description"
