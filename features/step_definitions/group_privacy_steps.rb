@@ -2,7 +2,7 @@ Given /^an open group exists$/ do
   @group = FactoryGirl.create :group
   @group.add_admin! FactoryGirl.create :user
   @group.visible = true
-  @group.private_discissions_only = false
+  @group.private_discussions_only = false
   @group.description = "This is an *Open Group* group, which would formally have been called a 'public group'"
   @group.save!
 end

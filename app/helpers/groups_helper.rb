@@ -79,7 +79,7 @@ module GroupsHelper
   end
 
   def label_and_description(label, description)
-    render('label_and_description', label: label, description: description)
+    render('groups/label_and_description', label: label, description: description)
   end
 
   def user_sees_private_discussions_message?(user, group)
