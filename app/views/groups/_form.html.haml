@@ -8,8 +8,8 @@
   = f.input :visible,
             label: 'Finding and joining the group',
             as: :radio_buttons,
-            collection: [[label_and_description('Listed', 'People can find the group and ask to join it'), true],
-                         [label_and_description('Unlisted', 'The group won\'t be publicised. Membership by invitation only'), false]]
+            collection: [[label_and_description('Findable and Joinable', 'People can find the group and ask to join it'), true],
+                         [label_and_description('Hidden and Invite only', 'The group wont be indexed by search engines or listed publicly on our site. Membership by invitation only'), false]]
 
   = f.input :private_discussions_only,
             label: "Allow private discussions?",

@@ -3,6 +3,14 @@
 @import "mixins";
 
 body.groups {
+  &.edit, &.new, &.create, &.update {
+    .described-label {
+      i {
+        font-size: 0.9em;
+        color: $mid-grey;
+      }
+    }
+  }
   &.show {
     .discussion-preview .discussion-title { margin-top: 7px; }
     .discussion-preview.showing-group .discussion-title { margin-top: 0; }
