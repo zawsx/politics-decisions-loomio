@@ -237,6 +237,7 @@ Given(/^I am a coordinator of a hidden subgroup with hidden parent$/) do
 end
 
 Then(/^I should not see the invitations field$/) do
+  view_screenshot
   page.should_not have_css("#invitees")
 end
 
