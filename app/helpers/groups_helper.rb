@@ -78,23 +78,8 @@ module GroupsHelper
     icon_button(new_params)
   end
 
-  def group_visibility_options(group)
-    options = []
-    {visible: true, hidden: false}.each_pair do |name, value|
-      html = render 'edit_visibility_option', group: group, name: name
-
-      options << [html, value]
-    end
-    options
-  end
-
-  def group_viewable_by_parent_label(group)
-    t(:'simple_form.labels.group.visible_to_parent_members_header', group: group.parent.name)
-  end
-
-  def group_invitable_by_options(group)
-    [[t('simple_form.labels.group.members_invitable_by_coordinators'), :admins],
-     [t('simple_form.labels.group.members_invitable_by_members'), :members]]
+  def label_and_description(label, description)
+    render('label_and_description', label: label, description: description)
   end
 
   def user_sees_private_discussions_message?(user, group)

@@ -5,7 +5,7 @@ class Group < ActiveRecord::Base
   end
 
   #even though we have permitted_params this needs to be here.. it's an issue
-  attr_accessible :name, :members_invitable_by, :parent, :parent_id, :description, :max_size, :cannot_contribute, :full_name, :payment_plan, :visible_to_parent_members, :category_id, :max_size, :visible
+  attr_accessible :name, :members_invitable_by, :parent, :parent_id, :description, :max_size, :cannot_contribute, :full_name, :payment_plan, :visible_to_parent_members, :category_id, :max_size, :visible, :private_discussions_only
   acts_as_tree
 
   INVITER_CATEGORIES = ['members', 'admins']
