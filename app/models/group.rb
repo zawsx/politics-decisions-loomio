@@ -244,7 +244,7 @@ class Group < ActiveRecord::Base
   end
 
   def has_membership_request_with_email?(email)
-    membership_requests.where(email: email).present?
+    membership_requests.where(email: email).any?
   end
 
   def is_setup?
