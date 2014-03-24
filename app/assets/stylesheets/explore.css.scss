@@ -13,7 +13,12 @@ body.explore {
     margin-bottom: 0;
     text-transform: uppercase;
   }
-
+  a {
+    color: #3995DF;
+  }
+  a:hover {
+    &:hover { color: darken(#3995DF, 6%); }
+  }
   .card {
     background-color: white;
     padding: 1.5em 1.6em;
@@ -37,6 +42,12 @@ body.explore {
     h1 {
       font-size: 22px;
       text-transform: none;
+      margin-bottom: 10px;
+    }
+    .group-link {
+      a {
+        color: #C0B0AB;
+      }
     }
   }
 
@@ -46,14 +57,25 @@ body.explore {
 
 
 ul.discussion-list{
+  font-family: 'OpenSans-Light', 'OpenSans', sans-serif;
+  font-weight: 300;
+  margin-bottom: 1.1em;
   li {
     a {
       color: $dark-grey;
     }
-
+    p {
+      font-family: 'OpenSans-Light', 'OpenSans', sans-serif;
+      font-weight: 300;
+    }
     line-height: 2em;
     padding: .5em 0;
 
+    .title {
+      width: 88%;
+      margin-left: 1.1em;
+      font-size: 16px;
+    }
     .discussion-icon{
       text-align: center;
       color: #fff;
@@ -81,7 +103,7 @@ ul.discussion-list{
         line-height: 4em;
       }
       width: 2em;
-      margin: 0 0.5em;
+      margin-top: .4em;
       display: inline-block;
       height: 1.7em;
       .activity-badge{
@@ -113,7 +135,6 @@ ul.discussion-list{
       background: $even-lighter-grey;
     }
 
-    border-top: 1px solid $lighter-grey;
     .time {
       color: $dark-grey;
       span {
@@ -123,5 +144,10 @@ ul.discussion-list{
     }
   }
 }
+.campaign a {
+  color: #fff;
+  &:hover { color: #fff; }
+}
+
 }
 
