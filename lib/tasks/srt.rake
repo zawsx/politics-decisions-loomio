@@ -44,7 +44,7 @@ namespace :srt do
 
 SRT_FILE_NAME = "how-it-works"
 SRT_SAVE_FOLDER = 'how_subtitles'
-LOCALES = [:en, :es, :uk, :fr, :nl_NL, :el]
+LOCALES = [:en, :es, :uk, :fr, :nl_NL, :el, :pt_BR, :da]
 
 VIDEO_TEMPLATE = {
   t1: '00:00:00,700 --> 00:00:04,500',
@@ -87,6 +87,7 @@ VIDEO_TEMPLATE = {
 
   task :build => :environment do
     puts "generating srt for #{LOCALES}"
+    puts "#{LOCALES.count} languages"
     ordered_times = VIDEO_TEMPLATE.values.sort
 
     LOCALES.each do |locale|

@@ -1,0 +1,159 @@
+1
+00:00:00,700 --> 00:00:04,500
+Loomio er et simpelt og brugervenligt online redskab til samarbejde i grupper.
+
+2
+00:00:05,000 --> 00:00:09,700
+Der tilbyder et neutralt og uafhængigt online forum for grupper at tage beslutninger i.
+
+3
+00:00:09,700 --> 00:00:12,000
+Dette er en bred gruppe af travle mennesker.
+
+4
+00:00:12,300 --> 00:00:17,670
+De har ikke tid til en masse møder eller email, som ikke fungerer i komplekse diskussioner med mange mennesker på en gang. 
+
+5
+00:00:17,670 --> 00:00:19,900
+Lad os se, hvordan de bruger Loomio i stedet.
+
+6
+00:00:19,900 --> 00:00:24,600
+Alle kan begynde en diskussion om ethvert emne.
+Det er simpelt, gennemskueligt og fokuseret
+
+7
+00:00:25,000 --> 00:00:30,800
+Man kan tilføje kontekst for at gøre diskussionen mere velinformeret
+og vedhæfte filer, foto, dokumenter og links.
+
+8
+00:00:30,800 --> 00:00:35,700
+Konteksten kan redigeres som i en wiki,
+så den kan vedligeholdes sammen med at diskussionen udvikler sig.
+
+9
+00:00:35,700 --> 00:00:38,500
+Dialog i gruppen fortsætter nederst til venstre.
+
+10
+00:00:38,500 --> 00:00:41,200
+Enhver kan tilføje information og levere deres syn på sagen.
+
+11
+00:00:41,200 --> 00:00:43,770
+Denne del af processen har ikke en tidsbegrænsning.
+
+12
+00:00:43,770 --> 00:00:48,440
+Som flere personer deltager, forstås problemet
+bedre, og idéer begynder at formes.
+
+13
+00:00:48,440 --> 00:00:53,500
+Når en mulig løsning begynder at vise sig,
+kan enhver påbegynde et forslag, som har en fast tidsbegrænsning.
+
+14
+00:00:53,800 --> 00:00:56,500
+Beslutninger tages i højre side.
+
+15
+00:00:56,500 --> 00:01:01,300
+Når personer afgiver deres beslutning, bliver de
+bedt om at give en begrundelse på en sætning.
+
+16
+00:01:01,300 --> 00:01:06,400
+Det gør det lettere at overskue, hvorfor deltagere mener det,
+de gør, og fremhæver hovedpointerne.
+
+17
+00:01:06,400 --> 00:01:09,500
+Folk, der går ind i diskussionen, kan hurtigt få et overblik.
+
+18
+00:01:09,500 --> 00:01:12,799
+Det er let at se, hvad der bliver diskuteret, og hvad gruppen mener.
+
+19
+00:01:12,799 --> 00:01:18,000
+Deltagere kan selv bestemme, hvor meget tid de bruger,
+og hvor meget, de deltager, men samtidigt holde sig opdateret.
+
+20
+00:01:18,000 --> 00:01:21,500
+Hvis man har en alvorlig bekymring, kan man rejse det røde flag.
+
+21
+00:01:21,500 --> 00:01:25,700
+Man kan ændre mening om sine beslutninger,
+hvis ny information kommer for dagen.
+
+22
+00:01:25,700 --> 00:01:29,100
+Deltagere kan få forståelse for ting,
+de ikke oprindeligt har tænkt på.
+
+23
+00:01:29,100 --> 00:01:32,300
+Man kan @nævne folk for at gøre dem opmærksomme.
+
+24
+00:01:32,300 --> 00:01:39,000
+Et tidligere forslag, der bliver nedstemt, kan vise sig, at være det skridt,
+der leder til et nyt forslag, der tager hensyn til alles bekymringer -
+
+25
+00:01:39,000 --> 00:01:43,649
+det er let at nå ind til de ømme punkter
+og grave de vigtige aspekter af problemet frem i lyset.
+
+26
+00:01:43,649 --> 00:01:46,909
+Loomio konstruerer automatisk et arkiv, som diskussionen udvikler sig.
+
+27
+00:01:46,909 --> 00:01:51,000
+Hvis man får brug for at granske en tidligere beslutning,
+er det let at se, hvordan den blev truffet.
+
+28
+00:01:51,200 --> 00:01:54,860
+Gruppen konvergerer mod et beslutning, der fungerer for alle.
+
+29
+00:01:54,860 --> 00:02:03,300
+Denne fleksible og dynamiske proces låser op for den kollektive visdom og når bedre udbytter, end den enkelte deltager ville have nået frem til.
+
+30
+00:02:03,700 --> 00:02:07,300
+Alle føler sig hørt, og beslutninger af høj kvalitet kan opnås.
+
+31
+00:02:07,300 --> 00:02:12,500
+Når en beslutning bliver truffet, vil der allerede
+være en dyb og delt forståelse og enighed i gruppen.
+
+32
+00:02:12,500 --> 00:02:15,200
+Man kan angive et klart udbytte, som alle kan se.
+
+33
+00:02:15,700 --> 00:02:21,000
+Loomios instrumentbræt viser alle åbne diskussioner
+og du kan hurtigt se, hvordan de forløber.
+
+34
+00:02:21,000 --> 00:02:24,100
+Det er let at lede efter en gammel diskussion eller at starte en ny.
+
+35
+00:02:24,100 --> 00:02:29,500
+Loomio hjælper grupper til at opnå fantastiske beslutninger sammen og forøger effektivitet og engagement.
+
+36
+00:02:29,500 --> 00:02:32,000
+Du kan starte din Loomio gruppe allerede idag!
+
