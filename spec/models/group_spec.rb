@@ -26,7 +26,7 @@ describe Group do
       @group.visible.should be_true
     end
     it "defaults to members invitable by members" do
-      @group.members_invitable_by.should == 'members'
+      @group.members_can_add_members = true
     end
     it "has a full_name" do
       @group.full_name.should == @group.name

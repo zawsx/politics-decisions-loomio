@@ -18,7 +18,7 @@ class GroupsController < GroupBaseController
     @subgroup = Group.new(parent: parent,
                           visible: parent.visible,
                           private_discussions_only: parent.private_discussions_only)
-    @subgroup.members_invitable_by = parent.members_invitable_by
+    @subgroup.members_can_add_members = parent.members_can_add_members
   end
 
   def create

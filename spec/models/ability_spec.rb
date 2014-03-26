@@ -92,7 +92,7 @@ describe "User abilities" do
     end
 
     context "group members invitable by members" do
-      before { group.update_attributes(:members_invitable_by => 'members') }
+      before { group.update_attribute(:members_can_add_members, true) }
       it { should     be_able_to(:add_members, group) }
       it { should     be_able_to(:invite_people, group) }
       it { should     be_able_to(:manage_membership_requests, group) }
@@ -102,7 +102,7 @@ describe "User abilities" do
     end
 
     context "group members invitable by admins" do
-      before { group.update_attributes(:members_invitable_by => 'admins') }
+      before { group.update_attribute(:members_can_add_members, false) }
       it { should_not be_able_to(:add_members, group) }
       it { should_not be_able_to(:invite_people, group) }
       it { should_not be_able_to(:manage_membership_requests, group) }
@@ -174,7 +174,7 @@ describe "User abilities" do
     end
 
     context "group members invitable by admins" do
-      before { group.update_attributes(:members_invitable_by => 'admins') }
+      before { group.update_attribute(:members_can_add_members, false) }
       it { should     be_able_to(:add_members, group) }
       it { should     be_able_to(:invite_people, group) }
       it { should     be_able_to(:manage_membership_requests, group) }

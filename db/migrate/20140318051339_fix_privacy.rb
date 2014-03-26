@@ -7,6 +7,7 @@ class FixPrivacy < ActiveRecord::Migration
     add_column :groups, :private_discussions_only, :boolean, default: true, null: false
     add_column :groups, :discussions_private_default, :boolean, default: nil, null: true
     rename_column :groups, :viewable_by_parent_members, :visible_to_parent_members
+    add_column :groups,  :members_can_add_members, :boolean, default: false, null: false
     add_index :groups, :visible
 
     Group.reset_column_information
@@ -31,6 +32,14 @@ class FixPrivacy < ActiveRecord::Migration
       else
         puts "weird privacy group #{group.id} value #{group.privacy}"
       end
+
+      case group.members_invitable_by
+      when 'members'
+        group.members_can_add_members = true
+      when 'admins'
+        group.members_can_add_members = false
+      end
+
       group.save
       progress_bar.increment
     end
@@ -41,6 +50,7 @@ class FixPrivacy < ActiveRecord::Migration
   end
 
   def down
+    remove_column :groups, :members_can_add_members
     remove_column :groups, :discussions_private_default
     remove_column :groups, :private_discussions_only
     remove_column :groups, :visible

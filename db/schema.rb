@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140318051339) do
+ActiveRecord::Schema.define(:version => 20140325024625) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -80,8 +80,9 @@ ActiveRecord::Schema.define(:version => 20140318051339) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "position",   :default => 0, :null => false
   end
 
   create_table "comment_votes", :force => true do |t|
@@ -347,6 +348,7 @@ ActiveRecord::Schema.define(:version => 20140318051339) do
     t.boolean  "visible",                     :default => true,           :null => false
     t.boolean  "private_discussions_only",    :default => true,           :null => false
     t.boolean  "discussions_private_default"
+    t.boolean  "members_can_add_members",     :default => false,          :null => false
   end
 
   add_index "groups", ["archived_at", "id"], :name => "index_groups_on_archived_at_and_id"

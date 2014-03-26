@@ -118,44 +118,44 @@ end
 When /^I fill details for the subgroup$/ do
   fill_in "group_name", :with => 'test group'
   choose "group_privacy_public"
-  choose "group_members_invitable_by_members"
+  choose "group_members_can_add_members_true"
 end
 
 When /^I fill details for public all members invite subgroup$/ do
   fill_in "group_name", :with => 'test group'
   choose "group_privacy_public"
-  choose "group_members_invitable_by_members"
+  choose "group_members_can_add_members_true"
   click_on 'group_form_submit'
 end
 
 When /^I fill details for public admin only invite subgroup$/ do
   fill_in "group_name", :with => 'test group'
   choose "group_privacy_public"
-  choose "group_members_invitable_by_admins"
+  choose "group_members_can_add_members_false"
 end
 
 When /^I fill details for members only all members invite subgroup$/ do
   fill_in "group_name", :with => 'test group'
   choose "group_privacy_hidden"
-  choose "group_members_invitable_by_members"
+  choose "group_members_can_add_members_true"
 end
 
 When /^I fill details for members only admin invite subgroup$/ do
   fill_in "group_name", :with => 'test group'
   choose "group_privacy_hidden"
-  choose "group_members_invitable_by_admins"
+  choose "group_members_can_add_members_false"
 end
 
 When /^I fill details for members and parent members only all members invite subgroup$/ do
   fill_in "group_name", :with => 'test group'
   choose "group_privacy_hidden"
-  choose "group_members_invitable_by_members"
+  choose "group_members_can_add_members_true"
 end
 
 When /^I fill details for members and parent members admin only invite ubgroup$/ do
   fill_in "group_name", :with => 'test group'
   choose "group_privacy_hidden"
-  choose "group_members_invitable_by_admins"
+  choose "group_members_can_add_members_false"
 end
 
 When /^I visit the group page for "(.*?)"$/ do |group_name|

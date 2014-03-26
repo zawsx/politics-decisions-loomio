@@ -5,14 +5,12 @@ class Group < ActiveRecord::Base
   end
 
   #even though we have permitted_params this needs to be here.. it's an issue
-  attr_accessible :name, :members_invitable_by, :parent, :parent_id, :description, :max_size, :cannot_contribute, :full_name, :payment_plan, :visible_to_parent_members, :category_id, :max_size, :visible, :private_discussions_only, :discussions_private_default
+  attr_accessible :name, :members_can_add_members, :parent, :parent_id, :description, :max_size, :cannot_contribute, :full_name, :payment_plan, :visible_to_parent_members, :category_id, :max_size, :visible, :private_discussions_only, :discussions_private_default
   acts_as_tree
 
-  INVITER_CATEGORIES = ['members', 'admins']
   PAYMENT_PLANS = ['pwyc', 'subscription', 'manual_subscription', 'undetermined']
   validates_presence_of :name
   validates_inclusion_of :payment_plan, in: PAYMENT_PLANS
-  validates_inclusion_of :members_invitable_by, in: INVITER_CATEGORIES
   validates :description, :length => { :maximum => 250 }
   validates :name, :length => { :maximum => 250 }
 
@@ -21,7 +19,6 @@ class Group < ActiveRecord::Base
   validate :subgroups_are_hidden, if: :is_hidden?
   validate :visible_to_parent_members_is_false, if: :is_parent?
 
-  after_initialize :set_defaults
   before_save :update_full_name_if_name_changed
 
   include PgSearch
@@ -181,10 +178,6 @@ class Group < ActiveRecord::Base
     parent.present? && parent.is_hidden?
   end
 
-  def members_can_invite_members?
-    members_invitable_by == 'members'
-  end
-
   def is_parent?
     parent_id.blank?
   end
@@ -199,6 +192,10 @@ class Group < ActiveRecord::Base
 
   def membership(user)
     memberships.where("group_id = ? AND user_id = ?", id, user.id).first
+  end
+
+  def members_can_invite_members?
+    members_can_add_members?
   end
 
   def add_member!(user, inviter=nil)
@@ -300,10 +297,6 @@ class Group < ActiveRecord::Base
     else
       parent_name + " - " + name
     end
-  end
-
-  def set_defaults
-    self.members_invitable_by ||= 'members'
   end
 
   def limit_inheritance

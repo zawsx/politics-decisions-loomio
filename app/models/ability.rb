@@ -49,19 +49,18 @@ class Ability
 
     can [:add_members,
          :manage_membership_requests], Group do |group|
-      case group.members_invitable_by
-      when 'members'
+
+      if group.members_can_add_members?
         @member_group_ids.include?(group.id)
-      when 'admins'
+      else
         @admin_group_ids.include?(group.id)
       end
     end
 
     can :invite_people, Group do |group|
-      case group.members_invitable_by
-      when 'members'
+      if group.members_can_add_members?
         @member_group_ids.include?(group.id)
-      when 'admins'
+      else
         @admin_group_ids.include?(group.id)
       end
     end
