@@ -46,6 +46,11 @@ class User < ActiveRecord::Base
            :class_name => 'Membership',
            :dependent => :destroy
 
+  has_many :adminable_groups,
+           :through => :admin_memberships,
+           :class_name => 'Group',
+           :source => :group
+
   has_many :memberships,
            :dependent => :destroy
 
@@ -65,15 +70,18 @@ class User < ActiveRecord::Base
            :through => :admin_memberships,
            :class_name => 'Group',
            :source => :group
+           :conditions => { :privacy => 'public' }
 
   has_many :discussions,
            :through => :groups
+
   has_many :authored_discussions,
            :class_name => 'Discussion',
            :foreign_key => 'author_id'
 
   has_many :motions,
            :through => :discussions
+
   has_many :authored_motions,
            :class_name => 'Motion',
            :foreign_key => 'author_id'
@@ -157,7 +165,11 @@ class User < ActiveRecord::Base
 
 
   def is_group_admin?(group)
-    adminable_groups.include?(group)
+    admin_memberships.where(group_id: group.id).any?
+  end
+
+  def is_group_member?(group)
+    memberships.where(group_id: group.id).any?
   end
 
   def time_zone_city
@@ -168,9 +180,6 @@ class User < ActiveRecord::Base
     self[:time_zone] || 'UTC'
   end
 
-  def is_group_member?(group)
-    memberships.for_group(group).exists?
-  end
 
   def is_parent_group_member?(group)
     memberships.for_group(group.parent).exists? if group.parent
