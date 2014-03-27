@@ -9,8 +9,13 @@ class Group < ActiveRecord::Base
   acts_as_tree
 
   PAYMENT_PLANS = ['pwyc', 'subscription', 'manual_subscription', 'undetermined']
+  DISCUSSION_PRIVACY_OPTIONS = ['public_only', 'private_only', 'public_or_private']
+  MEMBERSHIP_GRANTED_UPON_OPTIONS = ['request', 'approval', 'invitation']
+
   validates_presence_of :name
   validates_inclusion_of :payment_plan, in: PAYMENT_PLANS
+  validates_inclusion_of :discussion_privacy, in: DISCUSSION_PRIVACY_OPTIONS
+  validates_inclusion_of :membership_granted_upon, in: MEMBERSHIP_GRANTED_UPON_OPTIONS
   validates :description, :length => { :maximum => 250 }
   validates :name, :length => { :maximum => 250 }
 

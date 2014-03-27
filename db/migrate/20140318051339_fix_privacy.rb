@@ -8,6 +8,7 @@ class FixPrivacy < ActiveRecord::Migration
     rename_column :groups, :viewable_by_parent_members, :visible_to_parent_members
     add_column :groups,  :members_can_add_members, :boolean, default: false, null: false
     add_index :groups, :visible
+    add_column :groups, :membership_granted_upon, :string, default: nil
 
     Group.reset_column_information
 
@@ -19,12 +20,15 @@ class FixPrivacy < ActiveRecord::Migration
       when ['public', 'everyone'].include?(group.privacy)
         group.visible = true
         group.discussion_privacy = 'public_or_private'
+        group.membership_granted_upon = 'approval'
       when ['private'].include?(group.privacy)
         group.visible = true
         group.discussion_privacy = 'public_or_private'
+        group.membership_granted_upon = 'approval'
       when ['hidden', 'secret', 'members', 'parent_group_members'].include?(group.privacy)
         group.visible = false
         group.discussion_privacy = 'private_only'
+        group.membership_granted_upon = 'invitation'
       else
         puts "weird privacy group #{group.id} value #{group.privacy}"
       end
@@ -41,6 +45,7 @@ class FixPrivacy < ActiveRecord::Migration
     end
 
     change_column :groups, :discussion_privacy, :string, default: nil, null: false
+    change_column :groups, :membership_granted_upon, :string, default: nil, null: false
 
 
   end
