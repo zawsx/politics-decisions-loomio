@@ -17,7 +17,7 @@ class GroupsController < GroupBaseController
     parent = Group.published.find(params[:id])
     @subgroup = Group.new(parent: parent,
                           visible: parent.visible,
-                          private_discussions_only: parent.private_discussions_only)
+                          discussion_privacy: parent.discussion_privacy)
     @subgroup.members_can_add_members = parent.members_can_add_members
   end
 

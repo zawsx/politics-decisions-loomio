@@ -5,7 +5,8 @@ class Group < ActiveRecord::Base
   end
 
   #even though we have permitted_params this needs to be here.. it's an issue
-  attr_accessible :name, :members_can_add_members, :parent, :parent_id, :description, :max_size, :cannot_contribute, :full_name, :payment_plan, :visible_to_parent_members, :category_id, :max_size, :visible, :private_discussions_only, :discussions_private_default
+  attr_accessible :name, :members_can_add_members, :parent, :parent_id, :description, :max_size, :cannot_contribute, :full_name, :payment_plan, :visible_to_parent_members, :category_id, :max_size, :visible, :discussion_privacy
+
   acts_as_tree
 
   PAYMENT_PLANS = ['pwyc', 'subscription', 'manual_subscription', 'undetermined']
@@ -196,6 +197,20 @@ class Group < ActiveRecord::Base
 
   def members_can_invite_members?
     members_can_add_members?
+  end
+
+  def private_discussions_only?
+    discussion_privacy == 'private_only'
+  end
+
+  def discussion_private_default
+    case discussion_privacy
+    when 'public_or_private' then nil
+    when 'public_only' then false
+    when 'private_only' then true
+    else
+      raise "invalid discussion_privacy value"
+    end
   end
 
   def add_member!(user, inviter=nil)

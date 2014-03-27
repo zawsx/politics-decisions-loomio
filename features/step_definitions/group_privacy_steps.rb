@@ -1,28 +1,29 @@
-Given /^an open group exists$/ do
-  @group = FactoryGirl.create :group
-  @group.add_admin! FactoryGirl.create :user
-  @group.visible = true
-  @group.private_discussions_only = false
-  @group.description = "This is an *Open Group* group, which would formally have been called a 'public group'"
-  @group.save!
-end
+#Given /^an open group exists$/ do
+  #@group = FactoryGirl.create :group
+  #@group.add_admin! FactoryGirl.create :user
+  #@group.visible = true
+  #@group.discussion_privacy = 'public_only'
+  #@group.description = "This is an *Open Group* group, which would formally have been called a 'public group'"
+  #@group.save!
+#end
 
-Given /^a public group exists$/ do
-  @group = FactoryGirl.create :group
-  @group.add_admin! FactoryGirl.create :user
-  @group.visible = true
-  @group.private_discussions_only = false
-  @group.description = "this group is public"
-  @group.save!
-end
+#Given /^a public group exists$/ do
+  #@group = FactoryGirl.create :group
+  #@group.add_admin! FactoryGirl.create :user
+  #@group.visible = true
+  #@group.private_discussions_only = false
+  #@group.discussion_privacy = 'public_only'
+  #@group.description = "this group is public"
+  #@group.save!
+#end
 
-Given /^a hidden group exists$/ do
-  @group = FactoryGirl.create :group
-  @group.visible = false
-  @group.private_discussions_only = true
-  @group.description = "this group is hidden"
-  @group.save
-end
+#Given /^a hidden group exists$/ do
+  #@group = FactoryGirl.create :group
+  #@group.visible = false
+  #@group.private_discussions_only = true
+  #@group.description = "this group is hidden"
+  #@group.save
+#end
 
 Given(/^a public group exists with a Spanish\-speaking admin "(.*?)"$/) do |arg1|
   @group = FactoryGirl.create :group
@@ -176,12 +177,13 @@ Given(/^I am a member of a parent\-group that has sub\-groups I don't belong to$
   @sub_groups << FactoryGirl.create(:group,
                                     parent: @parent_group,
                                     visible: true,
-                                    private_discussions_only: false,
+                                    discussion_privacy: 'public_or_private',
                                     visible_to_parent_members: true)
+
   @sub_groups << FactoryGirl.create(:group,
                                     parent: @parent_group,
                                     visible: false,
-                                    private_discussions_only: true,
+                                    discussion_privacy: 'private_only',
                                     visible_to_parent_members: true)
 end
 
@@ -202,7 +204,7 @@ Given(/^I am a coordinator of a public group$/) do
   @group = FactoryGirl.create :group
   @group.add_admin! @user
   @group.visible = true
-  @group.private_discussions_only = false
+  @group.discussion_privacy = 'public_or_private'
 end
 
 When(/^I set the group to hidden$/) do

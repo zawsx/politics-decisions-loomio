@@ -11,11 +11,12 @@
             collection: [[label_and_description('Findable and Joinable', 'People can find the group and ask to join it'), true],
                          [label_and_description('Hidden and Invite only', 'The group wont be indexed by search engines or listed publicly on our site. Membership by invitation only'), false]]
 
-  = f.input :private_discussions_only,
-            label: "Allow private discussions?",
+  = f.input :discussion_privacy,
+            label: "Discussion Privacy",
             as: :radio_buttons,
-            collection: [['Allow public discussions', false],
-                         ['Private discussions only', true]]
+            collection: [['Public discussions only', 'public_only'],
+                         ['Public and private discussions allowed', 'public_or_private'],
+                         ['Private discussions only', 'private_only']]
 
   - if group.is_subgroup?
     = f.input :visible_to_parent_members,

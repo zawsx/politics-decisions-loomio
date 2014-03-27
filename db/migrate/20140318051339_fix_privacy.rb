@@ -4,8 +4,7 @@ class FixPrivacy < ActiveRecord::Migration
 
   def up
     add_column :groups, :visible, :boolean, default: true, null: false
-    add_column :groups, :private_discussions_only, :boolean, default: true, null: false
-    add_column :groups, :discussions_private_default, :boolean, default: nil, null: true
+    add_column :groups, :discussion_privacy, :string, default: nil, null: false
     rename_column :groups, :viewable_by_parent_members, :visible_to_parent_members
     add_column :groups,  :members_can_add_members, :boolean, default: false, null: false
     add_index :groups, :visible
@@ -19,16 +18,13 @@ class FixPrivacy < ActiveRecord::Migration
       case 
       when ['public', 'everyone'].include?(group.privacy)
         group.visible = true
-        group.private_discussions_only = false
-        group.discussions_private_default = false
+        group.discussion_privacy = 'public_or_private'
       when ['private'].include?(group.privacy)
         group.visible = true
-        group.private_discussions_only = false
-        group.discussions_private_default = true
+        group.discussion_privacy = 'public_or_private'
       when ['hidden', 'secret', 'members', 'parent_group_members'].include?(group.privacy)
         group.visible = false
-        group.private_discussions_only = true
-        group.discussions_private_default = true
+        group.discussion_privacy = 'private_only'
       else
         puts "weird privacy group #{group.id} value #{group.privacy}"
       end
@@ -51,7 +47,6 @@ class FixPrivacy < ActiveRecord::Migration
 
   def down
     remove_column :groups, :members_can_add_members
-    remove_column :groups, :discussions_private_default
     remove_column :groups, :private_discussions_only
     remove_column :groups, :visible
     rename_column :groups, :visible_to_parent_members, :viewable_by_parent_members

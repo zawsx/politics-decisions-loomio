@@ -226,13 +226,18 @@ describe Discussion do
         end
 
         context "group is private only" do
-          before { group.private_discussions_only = true }
+          before { group.discussion_privacy = 'private_only' }
           it { should be_true }
         end
 
-        context "group is not private only" do
-          before { group.private_discussions_only = false }
+        context "group is public or private" do
+          before { group.discussion_privacy = 'public_or_private' }
           it { should be_nil }
+        end
+
+        context "group is public only" do
+          before { group.discussion_privacy = 'public_only' }
+          it { should be_false }
         end
       end
 

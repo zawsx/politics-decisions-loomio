@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Queries::VisibleDiscussions do
   let(:user) { create :user }
-  let(:group) { create :group, private_discussions_only: false }
+  let(:group) { create :group, discussion_privacy: 'public_or_private' }
   let(:discussion) { create_discussion group: group, private: true }
 
   subject do
@@ -40,7 +40,7 @@ describe Queries::VisibleDiscussions do
   describe 'group privacy' do
     context 'public discussions allowed' do
       before do
-        group.update_attribute(:private_discussions_only, false)
+        group.update_attribute(:discussion_privacy, 'public_or_private')
         discussion.update_attribute(:private, false)
       end
 
@@ -56,7 +56,7 @@ describe Queries::VisibleDiscussions do
 
     context 'private discussions only' do
       before do
-        group.update_attribute(:private_discussions_only, true)
+        group.update_attribute(:discussion_privacy, 'private_only')
         discussion.update_attribute(:private, true)
       end
 
@@ -64,22 +64,18 @@ describe Queries::VisibleDiscussions do
         subject.should_not include discussion
       end
 
-      it 'members can see discussions', focus: true do
+      it 'members can see discussions' do
         group.add_member! user
-        #p "discussion is private" if discussion.private?
-        #p "group is private discussions only" if group.private_discussions_only?
-        #p "discussion belongs to group" if discussion.group == group
-        #p "user belongs to group" if group.members.include? user
         subject.should include discussion
       end
     end
 
     context 'viewable by parent group members' do
-      let(:parent_group) { create :group, private_discussions_only: true }
+      let(:parent_group) { create :group, discussion_privacy: 'private_only' }
       let(:group) { create :group,
                            parent: parent_group,
                            visible_to_parent_members: true,
-                           private_discussions_only: true }
+                           discussion_privacy: 'private_only' }
 
       before do
         discussion.update_attribute(:private, true)

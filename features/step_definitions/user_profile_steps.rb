@@ -3,7 +3,7 @@ Given /^I am in one of the same groups as another user$/ do
   @group.add_member!(@user)
   @other_user = FactoryGirl.create(:user)
   @group.add_member!(@other_user)
-  @private_group = FactoryGirl.create(:group, visible: false, private_discussions_only: true)
+  @private_group = FactoryGirl.create(:group, visible: false, discussion_privacy: 'private_only')
   @private_group.add_member!(@other_user)
 end
 
@@ -11,13 +11,13 @@ Given /^I am not in any of the same groups as another user$/ do
   @group = FactoryGirl.create(:group, visible: true)
   @group.add_member!(@user)
   @other_user = FactoryGirl.create(:user)
-  @private_group = FactoryGirl.create(:group, visible: false, private_discussions_only: true)
+  @private_group = FactoryGirl.create(:group, visible: false, discussion_privacy: 'private_only')
   @private_group.add_member!(@other_user)
 end
 
 Given /^another user exists$/ do
   @other_user = FactoryGirl.create(:user)
-  @private_group = FactoryGirl.create(:group, visible: false, private_discussions_only: true)
+  @private_group = FactoryGirl.create(:group, visible: false, discussion_privacy: 'private_only')
   @private_group.add_member!(@other_user)
 end
 
