@@ -17,6 +17,7 @@ class Discussion < ActiveRecord::Base
   scope :without_open_motions, where("discussions.id NOT IN (SELECT discussion_id FROM motions WHERE id IS NOT NULL AND motions.closed_at IS NULL)")
   scope :with_open_motions, joins(:motions).merge(Motion.voting)
 
+  scope :not_by_helper_bot, -> { where('author_id NOT IN (?)', User.helper_bots.pluck(:id)) }
 
   validates_presence_of :title, :group, :author, :group_id
   validate :private_is_not_nil

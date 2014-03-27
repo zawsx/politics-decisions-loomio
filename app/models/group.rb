@@ -6,7 +6,6 @@ class Group < ActiveRecord::Base
 
   #even though we have permitted_params this needs to be here.. it's an issue
   attr_accessible :name, :members_can_add_members, :parent, :parent_id, :description, :max_size, :cannot_contribute, :full_name, :payment_plan, :visible_to_parent_members, :category_id, :max_size, :visible, :discussion_privacy
-
   acts_as_tree
 
   PAYMENT_PLANS = ['pwyc', 'subscription', 'manual_subscription', 'undetermined']
@@ -29,9 +28,10 @@ class Group < ActiveRecord::Base
   scope :public, where(visible: true)
   scope :hidden, where(visible: false)
 
-  scope :visible_on_explore_front_page, -> { categorised_any.parents_only }
+  scope :visible_on_explore_front_page, -> { published.categorised_any.parents_only }
 
   scope :categorised_any, -> { where('groups.category_id IS NOT NULL') }
+  scope :in_category, -> (category) { where(category_id: category.id) }
 
   scope :archived, lambda { where('archived_at IS NOT NULL') }
   scope :published, lambda { where(archived_at: nil) }
@@ -40,7 +40,7 @@ class Group < ActiveRecord::Base
 
   scope :sort_by_popularity, order('memberships_count DESC')
 
-  scope :visible_to_the_public, where(visible: true)
+  scope :visible_to_the_public, published.where(visible: true).parents_only
   scope :visible, where(visible: true)
 
   scope :manual_subscription, -> { where(payment_plan: 'manual_subscription') }
@@ -81,7 +81,6 @@ class Group < ActiveRecord::Base
   has_one :group_request
 
   has_many :memberships,
-    :conditions => {:access_level => Membership::MEMBER_ACCESS_LEVELS},
     :dependent => :destroy,
     :extend => GroupMemberships
 
@@ -94,7 +93,7 @@ class Group < ActiveRecord::Base
            dependent: :destroy
 
   has_many :admin_memberships,
-    :conditions => {:access_level => 'admin'},
+    :conditions => { admin: true },
     :class_name => 'Membership',
     :dependent => :destroy
 
@@ -113,9 +112,9 @@ class Group < ActiveRecord::Base
   has_many :discussions, :dependent => :destroy
   has_many :motions, :through => :discussions
 
-  belongs_to :parent, class_name: "Group"
+  belongs_to :parent, :class_name => "Group"
   belongs_to :category
-  has_many :subgroups, class_name: "Group", :foreign_key => 'parent_id', conditions: { archived_at: nil }
+  has_many :subgroups, :class_name => "Group", :foreign_key => 'parent_id', conditions: { archived_at: nil }
 
   has_one :subscription, dependent: :destroy
 

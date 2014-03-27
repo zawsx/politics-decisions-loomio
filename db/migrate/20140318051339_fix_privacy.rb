@@ -4,7 +4,7 @@ class FixPrivacy < ActiveRecord::Migration
 
   def up
     add_column :groups, :visible, :boolean, default: true, null: false
-    add_column :groups, :discussion_privacy, :string, default: nil, null: false
+    add_column :groups, :discussion_privacy, :string, default: nil
     rename_column :groups, :viewable_by_parent_members, :visible_to_parent_members
     add_column :groups,  :members_can_add_members, :boolean, default: false, null: false
     add_index :groups, :visible
@@ -40,7 +40,7 @@ class FixPrivacy < ActiveRecord::Migration
       progress_bar.increment
     end
 
-    change_column :groups, :private_discussions_only, :boolean, default: nil, null: false
+    change_column :groups, :discussion_privacy, :string, default: nil, null: false
 
 
   end
