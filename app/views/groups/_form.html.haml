@@ -6,13 +6,20 @@
   = f.input :description, as: :text, label: false
 
   = f.input :visible,
-            label: 'Finding and joining the group',
+            label: 'Finding the group',
             as: :radio_buttons,
-            collection: [[label_and_description('Findable and Joinable', 'People can find the group and ask to join it'), true],
-                         [label_and_description('Hidden and Invite only', 'The group wont be indexed by search engines or listed publicly on our site. Membership by invitation only'), false]]
+            collection: [['Anyone can see the group', true],
+                         ['Only members can see the group', false]]
+
+  = f.input :membership_granted_upon,
+            label: 'Joining the group',
+            as: :radio_buttons,
+            collection: [['Anyone can join', 'request'],
+                         ['Anyone can request to join', 'approval'],
+                         ['Invitation only', 'invitation']]
 
   = f.input :discussion_privacy,
-            label: "Discussion Privacy",
+            label: 'Discussion Privacy',
             as: :radio_buttons,
             collection: [['Public discussions only', 'public_only'],
                          ['Public and private discussions allowed', 'public_or_private'],
