@@ -12,7 +12,7 @@ Then(/^a totally open subgroup should be created$/) do
   group = Group.find_by_name('subgroup')
   group.description.should == 'description'
   group.should be_visible
-  group.should_not be_private_discussions_only
+  group.should be_public_discussions_only
   group.should be_visible_to_parent_members
   group.members_can_add_members.should be_true
 end
