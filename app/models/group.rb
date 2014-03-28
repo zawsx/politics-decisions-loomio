@@ -110,6 +110,8 @@ class Group < ActiveRecord::Base
            class_name: 'Invitation',
            conditions: {accepted_at: nil, cancelled_at: nil}
 
+  after_initialize :set_defaults
+
   alias :users :members
 
   has_many :requested_users, :through => :membership_requests, source: :user
@@ -204,6 +206,10 @@ class Group < ActiveRecord::Base
   end
 
   def private_discussions_only?
+    discussion_privacy == 'private_only'
+  end
+
+  def public_discussions_only?
     discussion_privacy == 'private_only'
   end
 
@@ -304,6 +310,10 @@ class Group < ActiveRecord::Base
 
 
   private
+  def set_defaults
+    self.discussion_privacy ||= 'public_or_private'
+    self.membership_granted_upon ||= 'approval'
+  end
   def visible_to_parent_members_is_false
     if visible_to_parent_members?
       errors[:visible_to_parent_members] << "does not makes sence for parent groups"

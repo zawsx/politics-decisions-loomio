@@ -66,12 +66,6 @@ class User < ActiveRecord::Base
            :source => :group,
            :conditions => { visible: true }
 
-  has_many :adminable_groups,
-           :through => :admin_memberships,
-           :class_name => 'Group',
-           :source => :group
-           :conditions => { :privacy => 'public' }
-
   has_many :discussions,
            :through => :groups
 

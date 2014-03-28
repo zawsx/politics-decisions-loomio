@@ -348,6 +348,7 @@ ActiveRecord::Schema.define(:version => 20140327010054) do
     t.boolean  "visible",                   :default => true,           :null => false
     t.string   "discussion_privacy",                                    :null => false
     t.boolean  "members_can_add_members",   :default => false,          :null => false
+    t.string   "membership_granted_upon",                               :null => false
   end
 
   add_index "groups", ["archived_at", "id"], :name => "index_groups_on_archived_at_and_id"

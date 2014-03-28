@@ -255,7 +255,7 @@ describe Discussion do
 
     context "discussion is public when group is private only" do
       before do
-        group.private_discussions_only = true
+        group.discussion_privacy = 'private_only'
         discussion.group = group
         discussion.private = false
         discussion.valid?
