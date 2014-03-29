@@ -42,6 +42,7 @@ class Group < ActiveRecord::Base
   scope :sort_by_popularity,
         order('memberships_count DESC')
 
+  scope :include_admins, includes(:admins)
   scope :visible_to_the_public,
         published.
         where(privacy: 'public').
