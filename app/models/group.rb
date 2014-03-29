@@ -181,7 +181,7 @@ class Group < ActiveRecord::Base
     !visible?
   end
 
-  def parent_is_hidden?
+  def is_subgroup_of_hidden_parent?
     parent.present? && parent.is_hidden?
   end
 
@@ -309,6 +309,7 @@ class Group < ActiveRecord::Base
   end
 
 
+
   private
   def set_defaults
     self.discussion_privacy ||= 'public_or_private'
@@ -336,7 +337,7 @@ class Group < ActiveRecord::Base
   end
 
   def privacy_allowed_by_parent
-    if parent_is_hidden? && visible?
+    if is_subgroup_of_hidden_parent? && visible?
       errors[:visible] << "The parent group is hidden so this group must be also"
     end
   end

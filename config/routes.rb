@@ -16,10 +16,6 @@ Loomio::Application.routes.draw do
   get "/explore/search", to: "explore#search", as: :search_explore
   get "/explore/category/:id", to: "explore#category", as: :category_explore
 
-  get "/groups", to: 'public_groups#index', as: :public_groups
-
-  get "/new_group", to: 'groups#new'
-
   resource :search, only: :show
 
   devise_for :users, controllers: { sessions: 'users/sessions',
@@ -42,32 +38,31 @@ Loomio::Application.routes.draw do
 
   resources :invitations, only: [:show, :create, :destroy]
 
-  resources :groups, path: 'g', only: [:create, :edit] do
-    scope module: :groups do
-      resources :memberships, only: [:index, :destroy, :new, :create] do
-        member do
-         post :make_admin
-         post :remove_admin
-        end
+  resources :groups, path: 'g', only: [:new, :create, :edit, :update] do
+    resources :memberships, only: [:index, :destroy, :new, :create] do
+      member do
+       post :make_admin
+       post :remove_admin
       end
-      resource :subscription, controller: 'subscriptions', only: [:new, :show] do
-        collection do
-          post :checkout
-          get :confirm
-          get :payment_failed
-        end
-      end
-      scope controller: 'group_setup' do
-        member do
-          get :setup
-          put :finish
-        end
-      end
-
-      get :ask_to_join, controller: 'membership_requests', action: :new
-      resources :membership_requests, only: [:create]
-      get :membership_requests,  to: 'manage_membership_requests#index', as: 'membership_requests'
     end
+
+    resource :subscription, controller: 'subscriptions', only: [:new, :show] do
+      collection do
+        post :checkout
+        get :confirm
+        get :payment_failed
+      end
+    end
+    scope controller: 'group_setup' do
+      member do
+        get :setup
+        put :finish
+      end
+    end
+
+    get :ask_to_join, controller: 'membership_requests', action: :new
+    resources :membership_requests, only: [:create]
+    get :membership_requests,  to: 'manage_membership_requests#index', as: 'membership_requests'
 
     member do
       post :add_members
