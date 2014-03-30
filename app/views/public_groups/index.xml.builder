@@ -7,7 +7,7 @@ atom_feed do |feed|
   	entry.title(group.name)
   	  entry.content(group.description, type: :text)
 	  entry.author do |author|
-	    author.name group.contact_person
+	    author.name group.contact_person.name
 	  end
     end
   end
