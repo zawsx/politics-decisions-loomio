@@ -175,6 +175,9 @@ When(/^I visit my group's memberships index$/) do
   click_on 'More'
 end
 
+When(/^I click on the subscribe to feed link$/) do
+  click_on('Subscribe to feed')
+end
 
 Then /^I email the group members$/ do
   click_on "Email group members"
@@ -205,4 +208,18 @@ Then /^the group has another subgroup with a discussion I am an admin of$/ do
   @subgroup1 = FactoryGirl.create(:group, parent: @group)
   @subgroup1.add_admin!(@user)
   @discussion = create_discussion :group => @subgroup1
+end
+
+Then /^I should see a subscribe to feed link$/ do
+  page.should have_css('#rss-feed-link')
+end
+
+Then /^I should not see a subscribe to feed link$/ do
+  page.should_not have_css('#rss-feed-link')
+end
+
+Then /^I should see an xml feed$/ do                                                                                                                            
+    response = Hash.from_xml page.body
+    response['feed']['title'].should =~ /#{@group.name}/
+    response['feed']['subtitle'].should =~ /#{@group.description}/
 end
