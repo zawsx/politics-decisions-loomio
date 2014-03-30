@@ -5,7 +5,7 @@ class FixPrivacy < ActiveRecord::Migration
   def up
     add_column :groups, :visible, :boolean, default: true, null: false
     add_column :groups, :discussion_privacy, :string, default: nil
-    rename_column :groups, :viewable_by_parent_members, :visible_to_parent_members
+    rename_column :groups, :viewable_by_parent_members, :parent_members_can_see_discussions
     add_column :groups,  :members_can_add_members, :boolean, default: false, null: false
     add_index :groups, :visible
     add_column :groups, :membership_granted_upon, :string, default: nil
@@ -54,6 +54,6 @@ class FixPrivacy < ActiveRecord::Migration
     remove_column :groups, :members_can_add_members
     remove_column :groups, :private_discussions_only
     remove_column :groups, :visible
-    rename_column :groups, :visible_to_parent_members, :viewable_by_parent_members
+    rename_column :groups, :parent_members_can_see_discussions, :viewable_by_parent_members
   end
 end

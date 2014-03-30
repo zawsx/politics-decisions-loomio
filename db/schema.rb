@@ -320,35 +320,35 @@ ActiveRecord::Schema.define(:version => 20140327010054) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "privacy",                   :default => "private"
+    t.string   "privacy",                            :default => "private"
     t.string   "members_invitable_by"
     t.integer  "parent_id"
-    t.boolean  "email_new_motion",          :default => true
-    t.boolean  "hide_members",              :default => false
-    t.boolean  "beta_features",             :default => false
+    t.boolean  "email_new_motion",                   :default => true
+    t.boolean  "hide_members",                       :default => false
+    t.boolean  "beta_features",                      :default => false
     t.text     "description"
-    t.integer  "memberships_count",         :default => 0,              :null => false
+    t.integer  "memberships_count",                  :default => 0,              :null => false
     t.datetime "archived_at"
-    t.integer  "max_size",                  :default => 300,            :null => false
-    t.boolean  "cannot_contribute",         :default => false
+    t.integer  "max_size",                           :default => 300,            :null => false
+    t.boolean  "cannot_contribute",                  :default => false
     t.integer  "distribution_metric"
     t.string   "sectors"
     t.string   "other_sector"
-    t.integer  "discussions_count",         :default => 0,              :null => false
-    t.integer  "motions_count",             :default => 0,              :null => false
+    t.integer  "discussions_count",                  :default => 0,              :null => false
+    t.integer  "motions_count",                      :default => 0,              :null => false
     t.string   "country_name"
     t.datetime "setup_completed_at"
-    t.boolean  "next_steps_completed",      :default => false,          :null => false
+    t.boolean  "next_steps_completed",               :default => false,          :null => false
     t.string   "full_name"
-    t.string   "payment_plan",              :default => "undetermined"
-    t.boolean  "visible_to_parent_members", :default => false,          :null => false
+    t.string   "payment_plan",                       :default => "undetermined"
+    t.boolean  "parent_members_can_see_discussions", :default => false,          :null => false
     t.string   "key"
-    t.boolean  "can_start_group",           :default => true
+    t.boolean  "can_start_group",                    :default => true
     t.integer  "category_id"
-    t.boolean  "visible",                   :default => true,           :null => false
-    t.string   "discussion_privacy",                                    :null => false
-    t.boolean  "members_can_add_members",   :default => false,          :null => false
-    t.string   "membership_granted_upon",                               :null => false
+    t.boolean  "visible",                            :default => true,           :null => false
+    t.string   "discussion_privacy",                                             :null => false
+    t.boolean  "members_can_add_members",            :default => false,          :null => false
+    t.string   "membership_granted_upon",                                        :null => false
   end
 
   add_index "groups", ["archived_at", "id"], :name => "index_groups_on_archived_at_and_id"

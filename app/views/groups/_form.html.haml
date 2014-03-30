@@ -5,13 +5,13 @@
   = f.input :name, label: 'Group name'
   = f.input :description, as: :text
 
-  = f.input :visible,
-            label: 'Finding the group',
-            as: :radio_buttons,
-            collection: [['Anyone can see the group', true],
-                         ['Only members can see the group', false]]
 
   - if group.is_subgroup_of_hidden_parent?
+    = f.input :visible,
+              label: 'Finding the group',
+              as: :radio_buttons,
+              collection: [["Anyone in #{group.parent_name} see the group", true],
+                           ["Only members can see the group", false]]
     = f.input :membership_granted_upon,
               label: 'Joining the group',
               as: :radio_buttons,
@@ -19,6 +19,12 @@
                            ["Anyone in #{group.parent_name} can request to join", 'approval'],
                            ["Invitation only", 'invitation']]
   - else
+    = f.input :visible,
+              label: 'Finding the group',
+              as: :radio_buttons,
+              collection: [['Anyone can see the group', true],
+                           ['Only members can see the group', false]]
+
     = f.input :membership_granted_upon,
               label: 'Joining the group',
               as: :radio_buttons,
@@ -48,4 +54,5 @@
 
   = f.input :parent_id, :as => :hidden, :input_html => { :value => group.parent.id } if group.parent
   = f.submit submit_text, class: 'btn btn-info btn-large', id: 'group_form_submit', :data => { :disable_with => submit_text }
+  = f.button :button, 'Reset', :type => 'reset', :class => 'btn'
 
