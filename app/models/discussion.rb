@@ -156,13 +156,11 @@ class Discussion < ActiveRecord::Base
     !private
   end
 
-  def private
+  def inherit_group_privacy!
     if self[:private].nil? and group.present?
       self[:private] = group.discussion_private_default
     end
-    self[:private]
   end
-
 
   private
 
@@ -180,11 +178,11 @@ class Discussion < ActiveRecord::Base
   end
 
   def privacy_is_permitted_by_group
-    if (self.private == false) and group.private_discussions_only?
+    if self.public? and group.private_discussions_only?
       errors.add(:private, "must be private in this group")
     end
 
-    if self.private and group.public_discussions_only?
+    if self.private? and group.public_discussions_only?
       errors.add(:private, "must be public in this group")
     end
   end

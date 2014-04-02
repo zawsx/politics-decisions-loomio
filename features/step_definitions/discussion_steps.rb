@@ -7,7 +7,6 @@ When /^I visit the discussion page$/ do
 end
 
 Then /^I should see the discussion$/ do
-  view_screenshot
   find('#activity-list')
 end
 

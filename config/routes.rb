@@ -39,30 +39,32 @@ Loomio::Application.routes.draw do
   resources :invitations, only: [:show, :create, :destroy]
 
   resources :groups, path: 'g', only: [:new, :create, :edit, :update] do
-    resources :memberships, only: [:index, :destroy, :new, :create] do
-      member do
-       post :make_admin
-       post :remove_admin
+    scope module: :groups do
+      resources :memberships, only: [:index, :destroy, :new, :create] do
+        member do
+         post :make_admin
+         post :remove_admin
+        end
       end
-    end
 
-    resource :subscription, controller: 'subscriptions', only: [:new, :show] do
-      collection do
-        post :checkout
-        get :confirm
-        get :payment_failed
+      resource :subscription, controller: 'subscriptions', only: [:new, :show] do
+        collection do
+          post :checkout
+          get :confirm
+          get :payment_failed
+        end
       end
-    end
-    scope controller: 'group_setup' do
-      member do
-        get :setup
-        put :finish
+      scope controller: 'group_setup' do
+        member do
+          get :setup
+          put :finish
+        end
       end
-    end
 
-    get :ask_to_join, controller: 'membership_requests', action: :new
-    resources :membership_requests, only: [:create]
-    get :membership_requests,  to: 'manage_membership_requests#index', as: 'membership_requests'
+      get :ask_to_join, controller: 'membership_requests', action: :new
+      resources :membership_requests, only: [:create]
+      get :membership_requests,  to: 'manage_membership_requests#index', as: 'membership_requests'
+    end
 
     member do
       post :add_members

@@ -23,6 +23,7 @@ Feature: User creates discussion
     And I fill in the discussion details and submit the form
     Then a discussion should be created
 
+  @javascript
   Scenario: Members get emailed when a discussion is created
     Given "Ben" is a member of the group
     And "Hannah" is a member of the group
