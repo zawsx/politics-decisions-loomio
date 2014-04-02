@@ -5,7 +5,7 @@ class Group < ActiveRecord::Base
   end
 
   #even though we have permitted_params this needs to be here.. it's an issue
-  attr_accessible :name, :members_can_add_members, :parent, :parent_id, :description, :max_size, :cannot_contribute, :full_name, :payment_plan, :visible_to_parent_members, :category_id, :max_size, :visible, :discussion_privacy
+  attr_accessible :name, :members_can_add_members, :parent, :parent_id, :description, :max_size, :cannot_contribute, :full_name, :payment_plan, :is_visible_to_parent_members, :category_id, :max_size, :visible, :discussion_privacy
   acts_as_tree
 
   PAYMENT_PLANS = ['pwyc', 'subscription', 'manual_subscription', 'undetermined']
@@ -18,11 +18,8 @@ class Group < ActiveRecord::Base
   validates_inclusion_of :membership_granted_upon, in: MEMBERSHIP_GRANTED_UPON_OPTIONS
   validates :description, :length => { :maximum => 250 }
   validates :name, :length => { :maximum => 250 }
-
   validate :limit_inheritance
-  validate :privacy_allowed_by_parent, if: :is_subgroup?
-  validate :subgroups_are_hidden, if: :is_hidden?
-  validate :visible_to_parent_members_is_false, if: :is_parent?
+  validate :validate_parent_members_can_see_discussions
 
   before_save :update_full_name_if_name_changed
 
@@ -169,11 +166,11 @@ class Group < ActiveRecord::Base
     end
   end
 
-  def archived?
+  def is_archived?
     self.archived_at.present?
   end
 
-  def is_public?
+  def is_visible?
     visible?
   end
 
@@ -181,8 +178,20 @@ class Group < ActiveRecord::Base
     !visible?
   end
 
+  def is_visible_to_public?
+    (is_parent? || is_subgroup_of_visible_parent?) && visible?
+  end
+
+  def is_visible_to_parent_members?
+    is_subgroup? && is_visible?
+  end
+
   def is_subgroup_of_hidden_parent?
-    parent.present? && parent.is_hidden?
+    is_subgroup? && parent.is_hidden?
+  end
+
+  def is_subgroup_of_visible_parent?
+    is_subgroup? && parent.is_visible?
   end
 
   def is_parent?
@@ -199,10 +208,6 @@ class Group < ActiveRecord::Base
 
   def membership(user)
     memberships.where("group_id = ? AND user_id = ?", id, user.id).first
-  end
-
-  def members_can_invite_members?
-    members_can_add_members?
   end
 
   def private_discussions_only?
@@ -247,10 +252,6 @@ class Group < ActiveRecord::Base
   def find_or_create_membership(user, inviter)
     membership = memberships.where(user_id: user.id).first
     membership ||= Membership.create!(group: self, user: user, inviter: inviter)
-  end
-
-  def has_admin_user?(user)
-    admins.include?(user) || (parent && parent.admins.include?(user))
   end
 
   def user_membership_or_request_exists? user
@@ -308,18 +309,22 @@ class Group < ActiveRecord::Base
     (subscription.present? && subscription.amount > 0)
   end
 
-
-
   private
+  def validate_parent_members_can_see_discussions
+    self.errors.add(:parent_members_can_see_discussions) unless parent_members_can_see_discussions_is_valid?
+  end
+
+  def parent_members_can_see_discussions_is_valid?
+    if parent_members_can_see_discussions
+      is_hidden? and is_subgroup_of_hidden_parent?
+    else
+      true
+    end
+  end
+
   def set_defaults
     self.discussion_privacy ||= 'public_or_private'
     self.membership_granted_upon ||= 'approval'
-  end
-
-  def visible_to_parent_members_is_false
-    if visible_to_parent_members?
-      errors[:visible_to_parent_members] << "does not makes sence for parent groups"
-    end
   end
 
   def calculate_full_name
@@ -333,18 +338,6 @@ class Group < ActiveRecord::Base
   def limit_inheritance
     if parent_id.present?
       errors[:base] << "Can't set a subgroup as parent" unless parent.parent_id.nil?
-    end
-  end
-
-  def privacy_allowed_by_parent
-    if is_subgroup_of_hidden_parent? && visible?
-      errors[:visible] << "The parent group is hidden so this group must be also"
-    end
-  end
-
-  def subgroups_are_hidden
-    if subgroups.any?{|g| g.is_hidden?}
-      errors[:privacy] << "There are non hidden subgroups, so this group cannot be hidden"
     end
   end
 end

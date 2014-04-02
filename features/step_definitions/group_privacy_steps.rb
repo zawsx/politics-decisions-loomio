@@ -49,7 +49,7 @@ end
 
 Given /^a sub\-group viewable by parent\-group members exists$/ do
   @parent_group = FactoryGirl.create :group
-  @sub_group = FactoryGirl.create :group, :parent => @parent_group, visible: false, discussion_privacy: 'private_only', visible_to_parent_members: true
+  @sub_group = FactoryGirl.create :group, :parent => @parent_group, visible: false, discussion_privacy: 'private_only', is_visible_to_parent_members: true
   @sub_group.save
 end
 
@@ -115,7 +115,7 @@ Given /^I am a member of a parent\-group that has a sub\-group viewable by paren
   @parent_group = FactoryGirl.create :group
   @admin_user = FactoryGirl.create :user
   @parent_group.add_admin! @admin_user
-  @sub_group = FactoryGirl.create :group, :parent => @parent_group, visible: false, discussion_privacy: 'private_only', :visible_to_parent_members => true
+  @sub_group = FactoryGirl.create :group, :parent => @parent_group, visible: false, discussion_privacy: 'private_only', :is_visible_to_parent_members => true
   @sub_group.add_admin! @admin_user
   @parent_group.add_member! @user
 end
@@ -174,13 +174,13 @@ Given(/^I am a member of a parent\-group that has sub\-groups I don't belong to$
                                     parent: @parent_group,
                                     visible: true,
                                     discussion_privacy: 'public_or_private',
-                                    visible_to_parent_members: true)
+                                    is_visible_to_parent_members: true)
 
   @sub_groups << FactoryGirl.create(:group,
                                     parent: @parent_group,
                                     visible: false,
                                     discussion_privacy: 'private_only',
-                                    visible_to_parent_members: true)
+                                    is_visible_to_parent_members: true)
 end
 
 Given(/^those sub\-groups have discussions$/) do
@@ -244,13 +244,13 @@ When(/^I visit the edit subgroup page$/) do
 end
 
 When(/^I set the subgroup to be viewable by parent members$/) do
-  check 'group_visible_to_parent_members'
+  check 'group_is_visible_to_parent_members'
   click_on 'group_form_submit'
 end
 
 Then(/^the subgroup should be viewable by parent members$/) do
   @subgroup.reload
-  @subgroup.should be_visible_to_parent_members
+  @subgroup.should be_is_visible_to_parent_members
 end
 
 When(/^I set the group to private$/) do

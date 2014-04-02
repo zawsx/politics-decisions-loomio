@@ -91,7 +91,7 @@ describe "User abilities" do
       should_not be_able_to(:destroy, @membership)
     end
 
-    context "group members invitable by members" do
+    context "members can add members" do
       before { group.update_attribute(:members_can_add_members, true) }
       it { should     be_able_to(:add_members, group) }
       it { should     be_able_to(:invite_people, group) }
@@ -101,34 +101,43 @@ describe "User abilities" do
       it { should_not be_able_to(:destroy, @other_membership) }
     end
 
-    context "group members invitable by admins" do
+    context "members cannot add members" do
       before { group.update_attribute(:members_can_add_members, false) }
       it { should_not be_able_to(:add_members, group) }
       it { should_not be_able_to(:invite_people, group) }
       it { should_not be_able_to(:manage_membership_requests, group) }
       it { should_not be_able_to(:approve, membership_request) }
       it { should_not be_able_to(:ignore, membership_request) }
+      it { should_not be_able_to(:destroy, @other_membership) }
     end
 
     context "viewing a subgroup they do not belong to" do
       let(:subgroup) { create(:group, parent: group) }
-      let(:private_subgroup_discussion) { create_discussion group: subgroup, private: true }
-      let(:public_subgroup_discussion) { create_discussion group: subgroup, private: false }
 
-      context "visible subgroup" do
-        before { subgroup.update_attributes(visible: true) }
+      context "visible subgroup, visible parent" do
+        before do
+          group.update_attributes(visible: true)
+          subgroup.update_attributes(visible: true)
+        end
         it { should     be_able_to(:show, subgroup) }
         it { should     be_able_to(:request_membership, subgroup) }
       end
 
-      context "hidden subgroup", focus: true do
-        before { subgroup.update_attributes(visible: false, visible_to_parent_members: false) }
+      context "hidden subgroup, visible parent" do
+        before do
+          group.update_attributes(visible: true)
+          subgroup.update_attributes(visible: false)
+        end
+
         it { should_not be_able_to(:show, subgroup) }
         it { should_not be_able_to(:request_membership, subgroup) }
       end
 
-      context "hidden subgroup viewable by parent members" do
-        before { subgroup.update_attributes(visible: false, visible_to_parent_members: true) }
+      context "subgroup viewable by parent members" do
+        before do
+          group.update_attributes(visible: false)
+          subgroup.update_attributes(visible: true)
+        end
         it { should     be_able_to(:show, subgroup) }
         it { should     be_able_to(:request_membership, subgroup) }
       end
@@ -198,7 +207,7 @@ describe "User abilities" do
     end
     it { should_not be_able_to(:view_payment_details, sub_group) }
     it { should_not be_able_to(:choose_subscription_plan, sub_group) }
-    it { should     be_able_to(:invite_outsiders, sub_group) }
+    it { should     be_able_to(:invite_people, sub_group) }
   end
 
   context "non-member of a group" do

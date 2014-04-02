@@ -68,7 +68,7 @@ class Discussion < ActiveRecord::Base
     self.update_attribute(:archived_at, DateTime.now)
   end
 
-  def archived?
+  def is_archived?
     archived_at.present?
   end
 

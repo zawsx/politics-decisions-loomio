@@ -825,7 +825,7 @@ en:
         group_members_invitable_by:
           "Only coordinators"
         submit: Submit
-        visible_to_parent_members_header: Allow all %{group} members to see this subgroup and its discussions
+        is_visible_to_parent_members_header: Allow all %{group} members to see this subgroup and its discussions
       membership_request:
         introduction: "Introduce yourself"
       motion:

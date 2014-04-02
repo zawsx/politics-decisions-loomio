@@ -70,11 +70,12 @@ describe Queries::VisibleDiscussions do
       end
     end
 
-    context 'viewable by parent group members' do
-      let(:parent_group) { create :group, discussion_privacy: 'private_only' }
+    context 'parent_members_can_see_discussions' do
+      let(:parent_group) { create :group, visible: false, discussion_privacy: 'private_only' }
       let(:group) { create :group,
                            parent: parent_group,
-                           visible_to_parent_members: true,
+                           parent_members_can_see_discussions: true,
+                           visible: false,
                            discussion_privacy: 'private_only' }
 
       before do

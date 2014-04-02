@@ -8,6 +8,7 @@ When(/^a group is made visible, join on request$/) do
 end
 
 Then(/^discussion privacy is set to public, and other options are disabled$/) do
+  view_screenshot
   find('#group_discussion_privacy_public_only')['selected'].should == 'selected'
   find('#group_discussion_privacy_public_or_private')['disabled'].should == 'disabled'
   find('#group_discussion_privacy_private_only')['disabled'].should == 'disabled'

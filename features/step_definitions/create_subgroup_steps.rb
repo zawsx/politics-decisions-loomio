@@ -3,7 +3,7 @@ When(/^I create a totally open subgroup$/) do
   fill_in 'group_description', with: 'description'
   choose 'group_visible_true'
   choose 'group_discussion_privacy_public_only'
-  check  'group_visible_to_parent_members'
+  check  'group_is_visible_to_parent_members'
   choose 'group_members_can_add_members_true'
   click_on 'group_form_submit'
 end
@@ -13,7 +13,7 @@ Then(/^a totally open subgroup should be created$/) do
   group.description.should == 'description'
   group.should be_visible
   group.should be_public_discussions_only
-  group.should be_visible_to_parent_members
+  group.should be_is_visible_to_parent_members
   group.members_can_add_members.should be_true
 end
 
@@ -31,7 +31,7 @@ Then(/^a locked down subgroup should be created$/) do
   group.description.should == 'description'
   group.should_not be_visible
   group.should be_private_discussions_only
-  group.should_not be_visible_to_parent_members
+  group.should_not be_is_visible_to_parent_members
   group.members_can_add_members.should be_false
 end
 

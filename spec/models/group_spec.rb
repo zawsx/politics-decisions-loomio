@@ -18,19 +18,6 @@ describe Group do
     it "must have a name" do
       @group.should have(1).errors_on(:name)
     end
-
-    it "has memberships" do
-      @group.respond_to?(:memberships)
-    end
-    it "defaults to private" do
-      @group.visible.should be_true
-    end
-    it "defaults to members invitable by members" do
-      @group.members_can_add_members = true
-    end
-    it "has a full_name" do
-      @group.full_name.should == @group.name
-    end
   end
 
   describe 'invitations_remaining' do
@@ -78,10 +65,6 @@ describe Group do
       @group.reload
     end
 
-    it "by default is not viewable by parent members" do
-      Group.new(:parent => @group).should_not be_visible_to_parent_members
-    end
-
     context "subgroup.full_name" do
       it "contains parent name" do
         @subgroup.full_name.should == "#{@group.name} - #{@subgroup.name}"
@@ -107,31 +90,40 @@ describe Group do
       @group.add_admin!(@user)
     end
 
-    it "can be administered by admin of parent" do
-      @subgroup = build(:group, :parent => @group)
-      @subgroup.has_admin_user?(@user)
-    end
-
     it "can add a member" do
       @group.add_member!(@user)
       @group.users.should include(@user)
     end
 
-    context "creating a subgroup" do
+    context "a subgroup" do
       before :each do
         @subgroup = build(:group, :parent => @group)
       end
 
-      it "can create hidden subgroups" do
+      it "can be hidden" do
         @subgroup.visible = false
         @subgroup.valid?
         @subgroup.should have(0).errors_on(:visible)
       end
+    end
+  end
 
-      it "returns an error when tries to create subgroup that is not hidden" do
-        @subgroup.visible = true
-        @subgroup.valid?
-        @subgroup.should have(1).errors_on(:visible)
+  describe "parent_members_can_see_discussions_is_valid?" do
+    context "parent_members_can_see_discussions = true" do
+      it "for a parent group" do
+        expect { create(:group, parent_members_can_see_discussions: true) }.to raise_error
+      end
+
+      it "for a hidden subgroup" do
+        expect { create(:group, visible: false, parent: create(:group), parent_members_can_see_discussions: true) }.to raise_error
+      end
+
+      it "for a visible subgroup of visible parent" do
+        expect { create(:group, visible: true, parent: create(:group, visible: true), parent_members_can_see_discussions: true) }.to raise_error
+      end
+
+      it "for a hidden subgroup of hidden parent" do
+        expect { create(:group, visible: false, parent: create(:group, visible: false), parent_members_can_see_discussions: true) }.to_not raise_error
       end
     end
   end

@@ -9,47 +9,43 @@ describe GroupDiscussionsViewer do
   end
 
   describe 'viewing visible group' do
-    let(:public_group) { create :group, visible: true, name: 'public group' }
-    let(:public_subgroup) { create :group, parent: public_group, visible: true, name: 'public subgroup' }
-    let(:hidden_subgroup) { create :group, parent: public_group, visible: false, name: 'hidden subgroup' }
-    let(:vbpm_subgroup) { create :group, visible: false, visible_to_parent_members: true, parent: public_group, name: 'hidden vbpm subgroup' }
+    let(:visible_group) { create :group, visible: true, name: 'public group' }
+    let(:visible_subgroup) { create :group, parent: visible_group, visible: true, name: 'public subgroup' }
+    let(:hidden_subgroup) { create :group, parent: visible_group, visible: false, name: 'hidden subgroup' }
 
-    subject { groups_displayed(user: user, group: public_group) }
+    subject { groups_displayed(user: user, group: visible_group) }
 
     before do
-      public_group
-      public_subgroup
+      visible_group
+      visible_subgroup
       hidden_subgroup
-      vbpm_subgroup
     end
 
-    context 'as guest', focus: true do
-      it { should include public_group,
-                          public_subgroup }
+    context 'as guest' do
+      it { should include visible_group,
+                          visible_subgroup }
 
       its(:size){should == 2}
     end
 
     context 'as member of parent group' do
-      before { public_group.add_member!(user) }
+      before { visible_group.add_member!(user) }
 
       context 'only' do
-        it { should include public_group,
-                            public_subgroup,
-                            vbpm_subgroup }
+        it { should include visible_group,
+                            visible_subgroup }
 
-        its(:size){should == 3}
+        its(:size){should == 2}
       end
 
       context 'and hidden subgroup' do
         before { hidden_subgroup.add_member!(user) }
 
-        it {should include public_group,
-                           public_subgroup,
-                           hidden_subgroup,
-                           vbpm_subgroup }
+        it {should include visible_group,
+                           visible_subgroup,
+                           hidden_subgroup }
 
-        its(:size){should == 4}
+        its(:size){should == 3}
       end
     end
   end
@@ -57,7 +53,7 @@ describe GroupDiscussionsViewer do
   describe 'when viewing hidden group' do
     let(:hidden_group) { create :group, visible: false }
     let(:hidden_subgroup) { create :group, parent: hidden_group, visible: false }
-    let(:vbpm_subgroup) { create :group, visible: false, visible_to_parent_members: true, parent: hidden_group }
+    let(:visible_subgroup) { create :group, visible: true, parent: hidden_group }
 
     subject { groups_displayed(user: user,
                                group: hidden_group) }
@@ -66,15 +62,16 @@ describe GroupDiscussionsViewer do
       its(:size){ should == 0 }
     end
 
-    context 'as member of group' do
+    context 'as member of parent group' do
       before do
         hidden_group.add_member!(user)
-        vbpm_subgroup
+        hidden_subgroup
+        visible_subgroup
       end
 
       context 'only' do
         it { should include hidden_group,
-                            vbpm_subgroup }
+                            visible_subgroup }
 
         its(:size) { should == 2 }
       end
@@ -84,7 +81,7 @@ describe GroupDiscussionsViewer do
 
         it { should include hidden_group,
                             hidden_subgroup,
-                            vbpm_subgroup }
+                            visible_subgroup }
 
         its(:size) { should == 3 }
       end
