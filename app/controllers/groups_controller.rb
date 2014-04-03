@@ -16,8 +16,8 @@ class GroupsController < GroupBaseController
   def add_subgroup
     parent = Group.published.find(params[:id])
     @subgroup = Group.new(parent: parent,
-                          visible: parent.visible,
-                          discussion_privacy: parent.discussion_privacy)
+                          is_visible_to_public: parent.is_visible_to_public,
+                          discussion_privacy_options: parent.discussion_privacy_options)
     @subgroup.members_can_add_members = parent.members_can_add_members
   end
 
@@ -46,7 +46,7 @@ class GroupsController < GroupBaseController
 
   def update
     if @group.update_attributes(permitted_params.group)
-      if @group.is_hidden?
+      if @group.private_discussions_only?
         @group.discussions.update_all(private: true)
       end
       Measurement.increment('groups.update.success')
@@ -129,7 +129,7 @@ class GroupsController < GroupBaseController
     end
 
     def assign_meta_data
-      if @group.visible?
+      if @group.is_visible_to_public?
         @meta_title = @group.name
         @meta_description = @group.description
       end

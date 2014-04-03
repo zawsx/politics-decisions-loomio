@@ -35,7 +35,7 @@ class Queries::VisibleDiscussions < Delegator
       relation.where("-- group_id is in requested group_ids
                       group_id IN (:group_ids) AND
                       -- the discussion is public
-                      ((discussions.private = FALSE AND groups.discussion_privacy != 'private_only') OR
+                      ((discussions.private = FALSE AND groups.discussion_privacy_options != 'private_only') OR
                       -- or they are a member of the group
                        (group_id IN (:user_group_ids)) OR
                       -- or user belongs to parent group and permission is inherited
@@ -45,7 +45,7 @@ class Queries::VisibleDiscussions < Delegator
     elsif user.present? && group_ids.blank?
       relation.where('group_id IN (:user_group_ids)', user_group_ids: user.cached_group_ids)
     elsif user.blank? && group_ids.present?
-      relation.where("group_id IN (:group_ids) AND discussions.private = FALSE AND groups.discussion_privacy != 'private_only'",
+      relation.where("group_id IN (:group_ids) AND discussions.private = FALSE AND groups.discussion_privacy_options != 'private_only'",
                                   group_ids: group_ids)
     else
       []

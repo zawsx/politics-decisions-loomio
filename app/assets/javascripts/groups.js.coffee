@@ -46,11 +46,11 @@ $ ->
     $('form.new_group input, form.edit_group input').prop('disabled', false)
     $('form.new_group label, form.edit_group label').removeClass('disabled')
 
-    if $('#group_visible_false').is(':checked')
+    if $('#group_visible_to_public_false').is(':checked')
       set_invitation_only()
       set_private_discussions_only()
 
-    if $('#group_visible_true').is(':checked')
+    if $('#group_visible_to_public_true').is(':checked')
       #if anyone can join
       if $('#group_membership_granted_upon_request').is(':checked')
         set_public_discussions_only()

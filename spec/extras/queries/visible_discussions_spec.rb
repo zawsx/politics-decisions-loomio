@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Queries::VisibleDiscussions do
   let(:user) { create :user }
-  let(:group) { create :group, discussion_privacy: 'public_or_private' }
+  let(:group) { create :group, discussion_privacy_options: 'public_or_private' }
   let(:discussion) { create_discussion group: group, private: true }
 
   subject do
@@ -40,7 +40,7 @@ describe Queries::VisibleDiscussions do
   describe 'group privacy' do
     context 'public discussions allowed' do
       before do
-        group.update_attribute(:discussion_privacy, 'public_or_private')
+        group.update_attribute(:discussion_privacy_options, 'public_or_private')
         discussion.update_attribute(:private, false)
       end
 
@@ -56,7 +56,7 @@ describe Queries::VisibleDiscussions do
 
     context 'private discussions only' do
       before do
-        group.update_attribute(:discussion_privacy, 'private_only')
+        group.update_attribute(:discussion_privacy_options, 'private_only')
         discussion.update_attribute(:private, true)
       end
 
@@ -71,12 +71,13 @@ describe Queries::VisibleDiscussions do
     end
 
     context 'parent_members_can_see_discussions' do
-      let(:parent_group) { create :group, visible: false, discussion_privacy: 'private_only' }
+      let(:parent_group) { create :group, is_visible_to_public: false, discussion_privacy_options: 'private_only' }
       let(:group) { create :group,
                            parent: parent_group,
                            parent_members_can_see_discussions: true,
-                           visible: false,
-                           discussion_privacy: 'private_only' }
+                           is_visible_to_public: false,
+                           is_visible_to_parent_members: true,
+                           discussion_privacy_options: 'private_only' }
 
       before do
         discussion.update_attribute(:private, true)

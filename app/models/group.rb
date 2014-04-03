@@ -5,7 +5,9 @@ class Group < ActiveRecord::Base
   end
 
   #even though we have permitted_params this needs to be here.. it's an issue
-  attr_accessible :name, :members_can_add_members, :parent, :parent_id, :description, :max_size, :cannot_contribute, :full_name, :payment_plan, :is_visible_to_parent_members, :category_id, :max_size, :visible, :discussion_privacy
+  attr_accessible :name, :members_can_add_members, :parent, :parent_id, :description, :max_size,
+                  :cannot_contribute, :full_name, :payment_plan,
+                  :category_id, :max_size, :is_visible_to_parent_members, :is_visible_to_public, :discussion_privacy_options
   acts_as_tree
 
   PAYMENT_PLANS = ['pwyc', 'subscription', 'manual_subscription', 'undetermined']
@@ -14,13 +16,13 @@ class Group < ActiveRecord::Base
 
   validates_presence_of :name
   validates_inclusion_of :payment_plan, in: PAYMENT_PLANS
-  validates_inclusion_of :discussion_privacy, in: DISCUSSION_PRIVACY_OPTIONS
+  validates_inclusion_of :discussion_privacy_options, in: DISCUSSION_PRIVACY_OPTIONS
   validates_inclusion_of :membership_granted_upon, in: MEMBERSHIP_GRANTED_UPON_OPTIONS
   validates :description, :length => { :maximum => 250 }
   validates :name, :length => { :maximum => 250 }
   validate :limit_inheritance
   validate :validate_parent_members_can_see_discussions
-  validate :validate_parent_members_can_see_group
+  validate :validate_is_visible_to_parent_members
 
   before_save :update_full_name_if_name_changed
 
@@ -171,29 +173,43 @@ class Group < ActiveRecord::Base
     self.archived_at.present?
   end
 
-  def is_visible?
-    visible?
+  def is_hidden_from_public?
+    !is_visible_to_public?
   end
 
-  def is_hidden?
-    !visible?
+  def visible_to=(term)
+    case term
+    when 'public'
+      self.is_visible_to_public = true
+      self.is_visible_to_parent_members = false
+    when 'parent_members'
+      self.is_visible_to_public = false
+      self.is_visible_to_parent_members = true
+    when 'members'
+      self.is_visible_to_public = false
+      self.is_visible_to_parent_members = false
+    else
+      raise "visible_to term not recognised: #{term}"
+    end
   end
 
-  def is_visible_to_public?
-    (is_parent? || is_subgroup_of_visible_parent?) && visible?
+  def visible_to
+    if is_visible_to_public?
+      'public'
+    elsif is_visible_to_parent_members?
+      'parent_members'
+    else
+      'members'
+    end
   end
 
-  def is_visible_to_parent_members?
-    is_subgroup? && is_visible?
-  end
+  # def is_subgroup_of_hidden_parent?
+  #   is_subgroup? && parent.is_hidden?
+  # end
 
-  def is_subgroup_of_hidden_parent?
-    is_subgroup? && parent.is_hidden?
-  end
-
-  def is_subgroup_of_visible_parent?
-    is_subgroup? && parent.is_visible?
-  end
+  # def is_subgroup_of_visible_parent?
+  #   is_subgroup? && parent.is_visible?
+  # end
 
   def is_parent?
     parent_id.blank?
@@ -212,15 +228,15 @@ class Group < ActiveRecord::Base
   end
 
   def private_discussions_only?
-    discussion_privacy == 'private_only'
+    discussion_privacy_options == 'private_only'
   end
 
   def public_discussions_only?
-    discussion_privacy == 'private_only'
+    discussion_privacy_options == 'private_only'
   end
 
   def discussion_private_default
-    case discussion_privacy
+    case discussion_privacy_options
     when 'public_or_private' then nil
     when 'public_only' then false
     when 'private_only' then true
@@ -315,28 +331,28 @@ class Group < ActiveRecord::Base
     self.errors.add(:parent_members_can_see_discussions) unless parent_members_can_see_discussions_is_valid?
   end
 
-  def validate_parent_members_can_see_group
-    self.errors.add(:parent_members_can_see_group) unless parent_members_can_see_group_is_valid?
+  def validate_is_visible_to_parent_members
+    self.errors.add(:is_visible_to_parent_members) unless visible_to_parent_members_is_valid?
   end
 
   def parent_members_can_see_discussions_is_valid?
-    if parent_members_can_see_discussions
-      is_hidden? and is_subgroup_of_hidden_parent?
+    if parent_members_can_see_discussions?
+      is_visible_to_parent_members?
     else
       true
     end
   end
 
-  def parent_members_can_see_group_is_valid?
-    if parent_members_can_see_group
-      is_hidden? and is_subgroup?
+  def visible_to_parent_members_is_valid?
+    if is_visible_to_parent_members?
+      is_hidden_from_public? and is_subgroup?
     else
       true
     end
   end
 
   def set_defaults
-    self.discussion_privacy ||= 'public_or_private'
+    self.discussion_privacy_options ||= 'public_or_private'
     self.membership_granted_upon ||= 'approval'
   end
 

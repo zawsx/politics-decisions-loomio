@@ -81,7 +81,7 @@ describe Group do
 
   context "an existing hidden group" do
     before :each do
-      @group = create(:group, visible: false)
+      @group = create(:group, is_visible_to_public: false)
       @user = create(:user)
     end
 
@@ -94,39 +94,28 @@ describe Group do
       @group.add_member!(@user)
       @group.users.should include(@user)
     end
-
-    context "a subgroup" do
-      before :each do
-        @subgroup = build(:group, :parent => @group)
-      end
-
-      it "can be hidden" do
-        @subgroup.visible = false
-        @subgroup.valid?
-        @subgroup.should have(0).errors_on(:visible)
-      end
-    end
   end
 
   describe "visible_to" do
     let(:group) { build(:group) }
+    subject { group.visible_to }
 
     before do
-      group.visible_to_public = false
-      group.visible_to_parent_members = false
+      group.is_visible_to_public = false
+      group.is_visible_to_parent_members = false
     end
 
-    context "visible_to_public = true" do
-      before { group.visible_to_public = true }
+    context "is visible_to_public = true" do
+      before { group.is_visible_to_public = true }
       it {should == "public"}
     end
 
-    context "visible_to_parent_members = true" do
-      before { group.visible_to_parent_members = true }
+    context "is_visible_to_parent_members = true" do
+      before { group.is_visible_to_parent_members = true }
       it {should == "parent_members"}
     end
 
-    context "visible_to_public, visible_to_parent_members both false" do
+    context "is_visible_to_public, is_visible_to_parent_members both false" do
       it {should == "members"}
     end
   end
@@ -135,45 +124,58 @@ describe Group do
     context "public" do
       before { group.visible_to = 'public' }
 
-      it "sets visible_to_public = true" do
-        group.visible_to_public.should be_true
-        group.visible_to_parent_members.should be_false
+      it "sets is_visible_to_public = true" do
+        group.is_visible_to_public.should be_true
+        group.is_visible_to_parent_members.should be_false
       end
     end
 
     context "parent_members" do
       before { group.visible_to = 'parent_members' }
-      it "sets visible_to_parent_members = true" do
-        group.visible_to_public.should be_false
-        group.visible_to_parent_members.should be_true
+      it "sets is_visible_to_parent_members = true" do
+        group.is_visible_to_public.should be_false
+        group.is_visible_to_parent_members.should be_true
       end
     end
 
     context "members" do
       before { group.visible_to = 'members' }
-      it "sets visible_to_parent_members and public = false" do
-        group.visible_to_public.should be_false
-        group.visible_to_parent_members.should be_false
+      it "sets is_visible_to_parent_members and public = false" do
+        group.is_visible_to_public.should be_false
+        group.is_visible_to_parent_members.should be_false
       end
     end
   end
 
   describe "parent_members_can_see_discussions_is_valid?" do
     context "parent_members_can_see_discussions = true" do
-      it "for a parent group" do
-        expect { create(:group, parent_members_can_see_discussions: true) }.to raise_error
+      it "errors for a parent group" do
+        expect { create(:group,
+                        parent_members_can_see_discussions: true) }.to raise_error
       end
 
-      it "for a hidden subgroup" do
-        expect { create(:group, visible: false, parent: create(:group), parent_members_can_see_discussions: true) }.to raise_error
+      it "errors for a hidden_from_everyone subgroup" do
+        expect { create(:group,
+                        is_visible_to_public: false,
+                        is_visible_to_parent_members: false,
+                        parent: create(:group),
+                        parent_members_can_see_discussions: true) }.to raise_error
       end
 
-      it "for a visible subgroup of visible parent" do
-        expect { create(:group, visible: true, parent: create(:group, visible: true), parent_members_can_see_discussions: true) }.to raise_error
+      it "errors for a visible_to_public subgroup" do
+        expect { create(:group,
+                        is_visible_to_public: true,
+                        parent: create(:group,
+                                       is_visible_to_public: true),
+                        parent_members_can_see_discussions: true) }.to raise_error
       end
 
-      it "for a hidden subgroup of hidden parent" do
-        expect { create(:group, visible: false, parent: create(:group, visible: false), parent_members_can_see_discussions: true) }.to_not raise_error
+      it "does not error for a visible to parent subgroup" do
+        expect { create(:group,
+                        is_visible_to_public: false,
+                        is_visible_to_parent_members: true,
+                        parent: create(:group),
+                        parent_members_can_see_discussions: true) }.to_not raise_error
       end
     end
 
@@ -186,15 +188,23 @@ describe Group do
   describe "parent_members_can_see_group_is_valid?" do
     context "parent_members_can_see_group = true" do
       it "for a parent group" do
-        expect { create(:group, parent_members_can_see_group: true) }.to raise_error
+        expect { create(:group,
+                        parent_members_can_see_group: true) }.to raise_error
       end
 
       it "for a hidden subgroup" do
-        expect { create(:group, visible: false, parent: create(:group),parent_members_can_see_group: true) }.to_not raise_error
+        expect { create(:group,
+                        is_visible_to_public: false,
+                        is_visible_to_parent_members: true,
+                        parent: create(:group)) }.to_not raise_error
       end
 
       it "for a visible subgroup" do
-        expect { create(:group, visible: true, parent: create(:group), parent_members_can_see_group: true) }.to raise_error
+        expect { create(:group,
+                        is_visible_to_public: true,
+                        parent: create(:group,
+                                       is_visible_to_public: true),
+                        parent_members_can_see_group: true) }.to raise_error
       end
     end
   end

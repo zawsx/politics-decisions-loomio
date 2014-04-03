@@ -9,9 +9,9 @@ describe GroupDiscussionsViewer do
   end
 
   describe 'viewing visible group' do
-    let(:visible_group) { create :group, visible: true, name: 'public group' }
-    let(:visible_subgroup) { create :group, parent: visible_group, visible: true, name: 'public subgroup' }
-    let(:hidden_subgroup) { create :group, parent: visible_group, visible: false, name: 'hidden subgroup' }
+    let(:visible_group) { create :group, is_visible_to_public: true, name: 'public group' }
+    let(:visible_subgroup) { create :group, parent: visible_group, is_visible_to_public: true, name: 'public subgroup' }
+    let(:hidden_subgroup) { create :group, parent: visible_group, is_visible_to_public: false, name: 'hidden subgroup' }
 
     subject { groups_displayed(user: user, group: visible_group) }
 
@@ -51,9 +51,9 @@ describe GroupDiscussionsViewer do
   end
 
   describe 'when viewing hidden group' do
-    let(:hidden_group) { create :group, visible: false }
-    let(:hidden_subgroup) { create :group, parent: hidden_group, visible: false }
-    let(:visible_subgroup) { create :group, visible: true, parent: hidden_group }
+    let(:hidden_group) { create :group, is_visible_to_public: false }
+    let(:hidden_subgroup) { create :group, parent: hidden_group, is_visible_to_public: false }
+    let(:visible_subgroup) { create :group, is_visible_to_public: true, parent: hidden_group }
 
     subject { groups_displayed(user: user,
                                group: hidden_group) }

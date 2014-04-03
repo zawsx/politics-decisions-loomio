@@ -116,8 +116,8 @@ describe "User abilities" do
 
       context "visible subgroup, visible parent" do
         before do
-          group.update_attributes(visible: true)
-          subgroup.update_attributes(visible: true)
+          group.update_attributes(is_visible_to_public: true)
+          subgroup.update_attributes(is_visible_to_public: true)
         end
         it { should     be_able_to(:show, subgroup) }
         it { should     be_able_to(:request_membership, subgroup) }
@@ -125,8 +125,8 @@ describe "User abilities" do
 
       context "hidden subgroup, visible parent" do
         before do
-          group.update_attributes(visible: true)
-          subgroup.update_attributes(visible: false)
+          group.update_attributes(is_visible_to_public: true)
+          subgroup.update_attributes(is_visible_to_public: false)
         end
 
         it { should_not be_able_to(:show, subgroup) }
@@ -135,8 +135,8 @@ describe "User abilities" do
 
       context "subgroup viewable by parent members" do
         before do
-          group.update_attributes(visible: false)
-          subgroup.update_attributes(visible: true)
+          group.update_attributes(is_visible_to_public: false)
+          subgroup.update_attributes(is_visible_to_parent_members: true)
         end
         it { should     be_able_to(:show, subgroup) }
         it { should     be_able_to(:request_membership, subgroup) }
@@ -213,7 +213,7 @@ describe "User abilities" do
   context "non-member of a group" do
 
     context 'hidden group' do
-      let(:group) { create(:group, visible: false) }
+      let(:group) { create(:group, is_visible_to_public: false) }
       let(:discussion) { create_discussion group: group, private: true }
       let(:new_motion) { Motion.new(discussion_id: discussion.id) }
       let(:motion) { create(:motion, discussion: discussion) }
@@ -250,7 +250,7 @@ describe "User abilities" do
     end
 
     context "public group" do
-      let(:group) { create(:group, visible: true) }
+      let(:group) { create(:group, is_visible_to_public: true) }
       let(:private_discussion) { create_discussion group: group, private: true }
       let(:public_discussion) { create_discussion group: group, private: false }
       let(:new_motion) { Motion.new(discussion_id: private_discussion.id) }

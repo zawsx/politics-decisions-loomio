@@ -47,8 +47,8 @@ class PermittedParams < Struct.new(:params, :user)
   end
 
   def group_attributes
-    [:parent_id, :name, :visible, :discussion_privacy, :members_can_add_members, :description, :next_steps_completed, :payment_plan,
-     :parent_members_can_see_group, :parent_members_can_see_discussions, :membership_granted_upon]
+    [:parent_id, :name, :is_visible_to_public, :discussion_privacy, :members_can_add_members, :description, :next_steps_completed, :payment_plan,
+     :is_visible_to_parent_members, :parent_members_can_see_discussions, :membership_granted_upon]
   end
 
   def discussion_attributes

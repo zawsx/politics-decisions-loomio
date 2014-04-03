@@ -211,7 +211,7 @@ describe Discussion do
     end
   end
 
-  describe '#private' do
+  describe '#inherit_group_privacy' do
     # provides a default when the discussion is new
     # when present passes the value on unmodified
     let(:discussion) { Discussion.new }
@@ -226,17 +226,26 @@ describe Discussion do
         end
 
         context "group is private only" do
-          before { group.discussion_privacy = 'private_only' }
+          before do
+            group.discussion_privacy_options = 'private_only'
+            discussion.inherit_group_privacy!
+          end
           it { should be_true }
         end
 
         context "group is public or private" do
-          before { group.discussion_privacy = 'public_or_private' }
+          before do
+            group.discussion_privacy_options = 'public_or_private'
+            discussion.inherit_group_privacy!
+          end
           it { should be_nil }
         end
 
         context "group is public only" do
-          before { group.discussion_privacy = 'public_only' }
+          before do
+            group.discussion_privacy_options = 'public_only'
+            discussion.inherit_group_privacy!
+          end
           it { should be_false }
         end
       end
@@ -255,7 +264,7 @@ describe Discussion do
 
     context "discussion is public when group is private only" do
       before do
-        group.discussion_privacy = 'private_only'
+        group.discussion_privacy_options = 'private_only'
         discussion.group = group
         discussion.private = false
         discussion.valid?

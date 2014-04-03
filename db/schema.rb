@@ -345,9 +345,9 @@ ActiveRecord::Schema.define(:version => 20140327010054) do
     t.string   "key"
     t.boolean  "can_start_group",                    :default => true
     t.integer  "category_id"
-    t.boolean  "visible",                            :default => true,           :null => false
-    t.string   "discussion_privacy",                                             :null => false
-    t.boolean  "parent_members_can_see_group",       :default => false,          :null => false
+    t.boolean  "is_visible_to_public",               :default => false,          :null => false
+    t.boolean  "is_visible_to_parent_members",       :default => false,          :null => false
+    t.string   "discussion_privacy_options",                                     :null => false
     t.boolean  "members_can_add_members",            :default => false,          :null => false
     t.string   "membership_granted_upon",                                        :null => false
   end
@@ -355,10 +355,10 @@ ActiveRecord::Schema.define(:version => 20140327010054) do
   add_index "groups", ["archived_at", "id"], :name => "index_groups_on_archived_at_and_id"
   add_index "groups", ["category_id"], :name => "index_groups_on_category_id"
   add_index "groups", ["full_name"], :name => "index_groups_on_full_name"
+  add_index "groups", ["is_visible_to_public"], :name => "index_groups_on_is_visible_to_public"
   add_index "groups", ["key"], :name => "index_groups_on_key", :unique => true
   add_index "groups", ["name"], :name => "index_groups_on_name"
   add_index "groups", ["parent_id"], :name => "index_groups_on_parent_id"
-  add_index "groups", ["visible"], :name => "index_groups_on_visible"
 
   create_table "invitations", :force => true do |t|
     t.string   "recipient_email",                    :null => false
