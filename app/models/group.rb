@@ -20,6 +20,7 @@ class Group < ActiveRecord::Base
   validates :name, :length => { :maximum => 250 }
   validate :limit_inheritance
   validate :validate_parent_members_can_see_discussions
+  validate :validate_parent_members_can_see_group
 
   before_save :update_full_name_if_name_changed
 
@@ -314,9 +315,21 @@ class Group < ActiveRecord::Base
     self.errors.add(:parent_members_can_see_discussions) unless parent_members_can_see_discussions_is_valid?
   end
 
+  def validate_parent_members_can_see_group
+    self.errors.add(:parent_members_can_see_group) unless parent_members_can_see_group_is_valid?
+  end
+
   def parent_members_can_see_discussions_is_valid?
     if parent_members_can_see_discussions
       is_hidden? and is_subgroup_of_hidden_parent?
+    else
+      true
+    end
+  end
+
+  def parent_members_can_see_group_is_valid?
+    if parent_members_can_see_group
+      is_hidden? and is_subgroup?
     else
       true
     end

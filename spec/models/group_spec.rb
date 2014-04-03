@@ -108,6 +108,56 @@ describe Group do
     end
   end
 
+  describe "visible_to" do
+    let(:group) { build(:group) }
+
+    before do
+      group.visible_to_public = false
+      group.visible_to_parent_members = false
+    end
+
+    context "visible_to_public = true" do
+      before { group.visible_to_public = true }
+      it {should == "public"}
+    end
+
+    context "visible_to_parent_members = true" do
+      before { group.visible_to_parent_members = true }
+      it {should == "parent_members"}
+    end
+
+    context "visible_to_public, visible_to_parent_members both false" do
+      it {should == "members"}
+    end
+  end
+
+  describe "visible_to=" do
+    context "public" do
+      before { group.visible_to = 'public' }
+
+      it "sets visible_to_public = true" do
+        group.visible_to_public.should be_true
+        group.visible_to_parent_members.should be_false
+      end
+    end
+
+    context "parent_members" do
+      before { group.visible_to = 'parent_members' }
+      it "sets visible_to_parent_members = true" do
+        group.visible_to_public.should be_false
+        group.visible_to_parent_members.should be_true
+      end
+    end
+
+    context "members" do
+      before { group.visible_to = 'members' }
+      it "sets visible_to_parent_members and public = false" do
+        group.visible_to_public.should be_false
+        group.visible_to_parent_members.should be_false
+      end
+    end
+  end
+
   describe "parent_members_can_see_discussions_is_valid?" do
     context "parent_members_can_see_discussions = true" do
       it "for a parent group" do
@@ -124,6 +174,27 @@ describe Group do
 
       it "for a hidden subgroup of hidden parent" do
         expect { create(:group, visible: false, parent: create(:group, visible: false), parent_members_can_see_discussions: true) }.to_not raise_error
+      end
+    end
+
+    context "both are true" do
+      it "raises error about it"
+      # dont merge before there is a spec here
+    end
+  end
+
+  describe "parent_members_can_see_group_is_valid?" do
+    context "parent_members_can_see_group = true" do
+      it "for a parent group" do
+        expect { create(:group, parent_members_can_see_group: true) }.to raise_error
+      end
+
+      it "for a hidden subgroup" do
+        expect { create(:group, visible: false, parent: create(:group),parent_members_can_see_group: true) }.to_not raise_error
+      end
+
+      it "for a visible subgroup" do
+        expect { create(:group, visible: true, parent: create(:group), parent_members_can_see_group: true) }.to raise_error
       end
     end
   end

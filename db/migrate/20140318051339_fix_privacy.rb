@@ -6,6 +6,7 @@ class FixPrivacy < ActiveRecord::Migration
     add_column :groups, :visible, :boolean, default: true, null: false
     add_column :groups, :discussion_privacy, :string, default: nil
     rename_column :groups, :viewable_by_parent_members, :parent_members_can_see_discussions
+    add_column :groups, :parent_members_can_see_group, :boolean, default: false, null: false
     add_column :groups,  :members_can_add_members, :boolean, default: false, null: false
     add_index :groups, :visible
     add_column :groups, :membership_granted_upon, :string, default: nil
@@ -16,7 +17,7 @@ class FixPrivacy < ActiveRecord::Migration
     progress_bar = ProgressBar.create( format: "(\e[32m%c/%C\e[0m) %a |%B| \e[31m%e\e[0m ", progress_mark: "\e[32m/\e[0m", total: Group.count )
 
     Group.find_each do |group|
-      case 
+      case
       when ['public', 'everyone'].include?(group.privacy)
         group.visible = true
         group.discussion_privacy = 'public_or_private'
@@ -25,10 +26,16 @@ class FixPrivacy < ActiveRecord::Migration
         group.visible = true
         group.discussion_privacy = 'public_or_private'
         group.membership_granted_upon = 'approval'
-      when ['hidden', 'secret', 'members', 'parent_group_members'].include?(group.privacy)
+      when ['hidden', 'secret', 'members',].include?(group.privacy)
         group.visible = false
         group.discussion_privacy = 'private_only'
         group.membership_granted_upon = 'invitation'
+      when ['parent_group_members'].include?(group.privacy)
+        group.visible = false
+        group.discussion_privacy = 'private_only'
+        group.membership_granted_upon = 'invitation'
+        group.parent_members_can_see_group = true
+        group.parent_members_can_see_discussions = true
       else
         puts "weird privacy group #{group.id} value #{group.privacy}"
       end
@@ -38,6 +45,11 @@ class FixPrivacy < ActiveRecord::Migration
         group.members_can_add_members = true
       when 'admins'
         group.members_can_add_members = false
+      end
+
+      if group.viewable_by_parent_members?
+        group.parent_members_can_see_group = true
+        group.parent_members_can_see_discussions = true
       end
 
       group.save
@@ -55,5 +67,6 @@ class FixPrivacy < ActiveRecord::Migration
     remove_column :groups, :private_discussions_only
     remove_column :groups, :visible
     rename_column :groups, :parent_members_can_see_discussions, :viewable_by_parent_members
+    remove_column :groups, :parent_members_can_see_group
   end
 end

@@ -347,6 +347,7 @@ ActiveRecord::Schema.define(:version => 20140327010054) do
     t.integer  "category_id"
     t.boolean  "visible",                            :default => true,           :null => false
     t.string   "discussion_privacy",                                             :null => false
+    t.boolean  "parent_members_can_see_group",       :default => false,          :null => false
     t.boolean  "members_can_add_members",            :default => false,          :null => false
     t.string   "membership_granted_upon",                                        :null => false
   end
