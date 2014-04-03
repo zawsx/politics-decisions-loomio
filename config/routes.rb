@@ -12,7 +12,12 @@ Loomio::Application.routes.draw do
     end
   end
 
+  get "/explore", to: 'explore#index', as: :explore
+  get "/explore/search", to: "explore#search", as: :search_explore
+  get "/explore/category/:id", to: "explore#category", as: :category_explore
+
   get "/groups", to: 'public_groups#index', as: :public_groups
+
   get "/new_group", to: 'groups#new'
 
   resource :search, only: :show
